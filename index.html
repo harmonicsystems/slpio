@@ -15,7 +15,8 @@
     <meta property="og:description" content="A practical, clinician-first resource for speech-language pathologists navigating language models in clinical and educational settings." />
     <meta property="og:url" content="https://www.slpio.org/" />
     <meta property="og:site_name" content="SLP/IO" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SLP/IO — SLP + LLM Field Guide" />
     <meta name="twitter:description" content="A clinician-built field guide for responsible AI use in speech-language pathology." />
 
@@ -43,6 +44,11 @@
           "qualifications": "MS CCC-SLP",
           "url": "https://www.slpio.org/",
           "worksFor": {
+            "@type": "Organization",
+            "@id": "https://www.slpio.org/#organization"
+          },
+          "sameAs": ["https://github.com/harmonicsystems"],
+          "affiliation": {
             "@type": "Organization",
             "@id": "https://www.slpio.org/#organization"
           },
@@ -74,7 +80,7 @@
           "author": { "@id": "https://www.slpio.org/#author" },
           "publisher": { "@id": "https://www.slpio.org/#organization" },
           "datePublished": "2025-05-01",
-          "dateModified": "2026-03-30",
+          "dateModified": "2026-04-02",
           "mainEntityOfPage": "https://www.slpio.org/",
           "keywords": ["SLP", "speech-language pathology", "LLM", "AI ethics", "IEP goals", "clinical documentation", "ASHA", "HIPAA", "FERPA"],
           "about": [
@@ -122,6 +128,14 @@
             },
             {
               "@type": "Question",
+              "name": "What are appropriate uses of LLMs in speech-language pathology?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Appropriate uses include structuring progress notes, brainstorming IEP goal wording, drafting parent-friendly explanations, simplifying clinical jargon, organizing treatment session ideas, and structured ethical reflection. Red flags include entering identifiable student information, copying AI outputs directly into legal documents, using AI for diagnostic decisions, and letting polished language disguise weak clinical reasoning."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "What is SLP/IO and who created it?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -158,12 +172,37 @@
         --header-height: 72px;
         --radius: 12px;
         --radius-sm: 8px;
+        --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+        --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.08);
+        --code-bg: #1e2530;
+        --code-fg: #a8e6cf;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary: #4a9eed;
+            --primary-light: rgba(74,158,237,0.1);
+            --primary-glow: rgba(74,158,237,0.15);
+            --secondary: #1e2530;
+            --dark: #e8e8e8;
+            --light: #141920;
+            --accent-green: #3cc974;
+            --accent-red: #e05a4f;
+            --accent-amber: #f0963a;
+            --text-muted: #8b95a3;
+            --border: #2a3140;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15);
+            --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.3);
+            --code-bg: #0d1117;
+            --code-fg: #7ee6b0;
+        }
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-        font-family: "Roboto Mono", monospace;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
         color: var(--dark);
         background: var(--light);
         overflow-x: hidden;
@@ -187,7 +226,7 @@
         top: 0;
         width: 100%;
         height: var(--header-height);
-        background: rgba(255,255,255,0.85);
+        background: color-mix(in srgb, var(--light) 85%, transparent);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         z-index: 1000;
@@ -205,6 +244,7 @@
     }
 
     .logo {
+        font-family: "Roboto Mono", monospace;
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--primary);
@@ -275,6 +315,36 @@
     }
 
     /* ── Hero ── */
+    .hero-wrapper {
+        background: linear-gradient(135deg, var(--light) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+        pointer-events: none;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: -10%;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 60%);
+        pointer-events: none;
+        animation: float 10s ease-in-out infinite reverse;
+    }
+
     .hero {
         max-width: 960px;
         margin: auto;
@@ -283,30 +353,6 @@
         align-items: center;
         padding: 4rem 2rem;
         position: relative;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: -100px;
-        right: -200px;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-        pointer-events: none;
-        animation: float 8s ease-in-out infinite;
-    }
-
-    .hero::after {
-        content: '';
-        position: absolute;
-        bottom: -50px;
-        left: -150px;
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 70%);
-        pointer-events: none;
-        animation: float 10s ease-in-out infinite reverse;
     }
 
     @keyframes float {
@@ -343,9 +389,10 @@
     }
 
     .hero-content h1 {
-        font-size: 2.75rem;
+        font-family: "Roboto Mono", monospace;
+        font-size: 3.25rem;
         font-weight: 700;
-        line-height: 1.15;
+        line-height: 1.1;
         margin-bottom: 1.25rem;
         background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
         -webkit-background-clip: text;
@@ -401,6 +448,7 @@
     }
 
     h2 {
+        font-family: "Roboto Mono", monospace;
         font-size: 1.75rem;
         color: var(--dark);
         margin-bottom: 0.75rem;
@@ -413,9 +461,16 @@
     .section-intro {
         color: var(--text-muted);
         line-height: 1.7;
-        font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 0.92rem;
+    }
+
+    /* ── Alternating Sections ── */
+    .section-alt {
+        background: var(--secondary);
+        max-width: 100%;
+        padding-left: calc((100% - 960px) / 2 + 2rem);
+        padding-right: calc((100% - 960px) / 2 + 2rem);
     }
 
     /* ── Divider ── */
@@ -423,12 +478,26 @@
         max-width: 960px;
         margin: 0 auto;
         padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
 
     .section-divider hr {
         border: none;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--border), transparent);
+        flex: 1;
+    }
+
+    .section-divider::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: var(--border);
+        border-radius: 50%;
+        position: absolute;
     }
 
     /* ── Principles ── */
@@ -446,6 +515,7 @@
         transition: all var(--transition);
         position: relative;
         overflow: hidden;
+        box-shadow: var(--card-shadow);
     }
 
     .principle-card::before {
@@ -462,7 +532,7 @@
 
     .principle-card:hover {
         border-color: var(--primary);
-        box-shadow: 0 4px 20px var(--primary-glow);
+        box-shadow: var(--card-shadow-hover);
         transform: translateY(-2px);
     }
 
@@ -513,6 +583,7 @@
         border-radius: var(--radius);
         padding: 1.75rem;
         border: 1px solid var(--border);
+        box-shadow: var(--card-shadow);
     }
 
     .col-card.good { border-top: 3px solid var(--accent-green); background: rgba(39,174,96,0.03); }
@@ -562,10 +633,11 @@
         padding: 1.5rem;
         transition: all var(--transition);
         position: relative;
+        box-shadow: var(--card-shadow);
     }
 
     .template-card:hover {
-        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        box-shadow: var(--card-shadow-hover);
         transform: translateY(-2px);
     }
 
@@ -596,7 +668,6 @@
         font-size: 0.82rem;
         color: var(--text-muted);
         margin-bottom: 0.75rem;
-        font-family: 'Poppins', sans-serif;
     }
 
     .code-block {
@@ -606,10 +677,11 @@
 
     .code-block code {
         display: block;
-        background: #1e2530;
-        color: #a8e6cf;
+        background: var(--code-bg);
+        color: var(--code-fg);
         padding: 1rem 1.25rem;
         border-radius: var(--radius-sm);
+        font-family: "Roboto Mono", monospace;
         font-size: 0.78rem;
         line-height: 1.6;
         white-space: pre-wrap;
@@ -645,6 +717,7 @@
         padding: 1.5rem;
         border-radius: var(--radius);
         border: 1px solid var(--border);
+        box-shadow: var(--card-shadow);
     }
 
     .evidence-col.supported { border-top: 3px solid var(--accent-green); }
@@ -763,11 +836,12 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         transition: all var(--transition);
+        box-shadow: var(--card-shadow);
     }
 
     .literacy-card:hover {
         border-color: var(--primary);
-        box-shadow: 0 4px 20px var(--primary-glow);
+        box-shadow: var(--card-shadow-hover);
         transform: translateY(-2px);
     }
 
@@ -904,8 +978,7 @@
     .about-text {
         font-size: 0.92rem;
         line-height: 1.85;
-        color: #444;
-        font-family: 'Poppins', sans-serif;
+        color: var(--text-muted);
         font-weight: 400;
     }
 
@@ -1192,6 +1265,8 @@
         font-size: 0.82rem;
         outline: none;
         transition: border-color var(--transition);
+        background: var(--light);
+        color: var(--dark);
     }
 
     .chat-input-area input:focus { border-color: var(--primary); }
@@ -1253,8 +1328,9 @@
         transition: opacity var(--transition);
     }
 
+    .origin-card { box-shadow: var(--card-shadow); }
     .origin-card:hover::before { opacity: 1; }
-    .origin-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px var(--primary-glow); }
+    .origin-card:hover { transform: translateY(-2px); box-shadow: var(--card-shadow-hover); }
 
     .origin-card i {
         font-size: 1.3rem;
@@ -1275,8 +1351,7 @@
         border-left: 4px solid var(--primary);
         font-size: 0.9rem;
         line-height: 1.8;
-        color: #444;
-        font-family: 'Poppins', sans-serif;
+        color: var(--text-muted);
     }
 
     .origin-statement strong { color: var(--dark); }
@@ -1363,6 +1438,279 @@
         border-color: rgba(0,90,171,0.2);
     }
 
+    /* ── PHI Safety Check ── */
+    .phi-checker {
+        margin-top: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        background: var(--light);
+    }
+
+    .phi-questions { list-style: none; padding: 0; }
+
+    .phi-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .phi-question:last-child { border-bottom: none; }
+
+    .phi-toggle {
+        display: flex;
+        gap: 0.5rem;
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+
+    .phi-toggle button {
+        padding: 4px 14px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--light);
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        transition: all var(--transition);
+        color: var(--text-muted);
+    }
+
+    .phi-toggle button:hover { border-color: var(--primary); color: var(--primary); }
+    .phi-toggle button.active-yes { background: rgba(192,57,43,0.1); border-color: var(--accent-red); color: var(--accent-red); }
+    .phi-toggle button.active-no { background: rgba(39,174,96,0.1); border-color: var(--accent-green); color: var(--accent-green); }
+
+    .phi-result {
+        margin-top: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        display: none;
+    }
+
+    .phi-result.safe { background: rgba(39,174,96,0.08); border-left: 4px solid var(--accent-green); display: block; }
+    .phi-result.caution { background: rgba(230,126,34,0.08); border-left: 4px solid var(--accent-amber); display: block; }
+    .phi-result.unsafe { background: rgba(192,57,43,0.08); border-left: 4px solid var(--accent-red); display: block; }
+
+    /* ── Model Quick Reference ── */
+    .model-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .model-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+    }
+
+    .model-card:hover {
+        border-color: var(--primary);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
+    }
+
+    .model-card h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .model-card ul { list-style: none; padding: 0; }
+
+    .model-card ul li {
+        padding: 0.4rem 0;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+        color: var(--text-muted);
+    }
+
+    .model-card ul li:last-child { border-bottom: none; }
+
+    .model-card ul li strong {
+        display: block;
+        font-size: 0.7rem;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--dark);
+        margin-bottom: 2px;
+    }
+
+    /* ── Before / After ── */
+    .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .ba-panel {
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+    }
+
+    .ba-panel.before {
+        border-top: 3px solid var(--accent-amber);
+        background: rgba(230,126,34,0.03);
+    }
+
+    .ba-panel.after {
+        border-top: 3px solid var(--accent-green);
+        background: rgba(39,174,96,0.03);
+    }
+
+    .ba-panel h3 {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .ba-panel .ba-content {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .ba-panel.before .ba-content { font-style: italic; }
+
+    .ba-panel .ba-field { margin-bottom: 0.5rem; }
+
+    .ba-panel .ba-field strong {
+        color: var(--dark);
+        font-size: 0.78rem;
+        font-style: normal;
+    }
+
+    /* ── Prompt Patterns ── */
+    .pattern-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .pattern-card {
+        padding: 1.25rem 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+    }
+
+    .pattern-card:hover {
+        border-color: var(--primary);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
+    }
+
+    .pattern-card .pattern-num {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.35rem;
+    }
+
+    .pattern-card strong {
+        display: block;
+        font-size: 0.88rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.4;
+    }
+
+    .pattern-card p {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    .pattern-example {
+        font-size: 0.78rem;
+        font-family: "Roboto Mono", monospace;
+        background: var(--code-bg);
+        color: var(--code-fg);
+        padding: 0.6rem 0.85rem;
+        border-radius: var(--radius-sm);
+        line-height: 1.5;
+        margin-top: 0.5rem;
+    }
+
+    /* ── IEP Clarity ── */
+    .iep-examples { margin-top: 1.5rem; }
+
+    .iep-example-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        margin-bottom: 1.25rem;
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+    }
+
+    .iep-example-card:last-child { margin-bottom: 0; }
+
+    .iep-example-card:hover {
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    .iep-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+    }
+
+    .iep-before, .iep-after {
+        padding: 0.85rem 1rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.82rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    .iep-before {
+        background: rgba(192,57,43,0.05);
+        border-left: 3px solid var(--accent-red);
+        color: var(--text-muted);
+    }
+
+    .iep-annotation {
+        padding: 0.65rem 1rem;
+        font-size: 0.78rem;
+        color: var(--accent-amber);
+        line-height: 1.6;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+    }
+
+    .iep-after {
+        background: rgba(39,174,96,0.05);
+        border-left: 3px solid var(--accent-green);
+        color: var(--dark);
+        margin-bottom: 0;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
         .nav-links { display: none; }
@@ -1379,13 +1727,16 @@
             padding: 1rem 2rem;
             gap: 0.75rem;
         }
-        .hero-content h1 { font-size: 1.9rem; }
-        .two-col, .evidence-grid, .literacy-grid, .origin-grid, .projects-grid { grid-template-columns: 1fr; }
+        .hero-content h1 { font-size: 2.1rem; }
+        .section-alt { padding-left: 1.25rem; padding-right: 1.25rem; }
+        .two-col, .evidence-grid, .literacy-grid, .origin-grid, .projects-grid, .before-after, .pattern-grid, .model-grid { grid-template-columns: 1fr; }
         .principles-grid { grid-template-columns: 1fr; }
         .project-card.featured { grid-column: auto; }
         .roadmap-grid { grid-template-columns: 1fr; }
         section { padding: 3rem 1.25rem; }
         .hero-meta { flex-direction: column; gap: 0.5rem; }
+        .phi-question { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        .phi-toggle { margin-left: 0; }
     }
     </style>
 </head>
@@ -1415,6 +1766,7 @@
 
     <main>
         <!-- ── Hero ── -->
+        <div class="hero-wrapper">
         <section class="hero" id="hero">
             <div class="hero-content reveal">
                 <div class="hero-label">
@@ -1431,19 +1783,25 @@
                     </p>
                 </div>
 
-                <div class="hero-meta">
+                <div style="margin-top:2rem;">
+                    <a class="btn-primary" href="#principles" style="margin-right:0.75rem;">Read the principles</a>
+                    <a href="#templates" style="font-weight:600; font-size:0.88rem; color:var(--primary); text-decoration:none; border-bottom:2px solid var(--primary); padding-bottom:2px;">Jump to templates &rarr;</a>
+                </div>
+
+                <div class="hero-meta" style="margin-top:2rem;">
                     <span><i class="ph-duotone ph-stethoscope"></i> Built by a clinician</span>
                     <span><i class="ph-duotone ph-scales"></i> Aligned with ASHA ethics</span>
                     <span><i class="ph-duotone ph-waveform"></i> A Harmonic Systems project</span>
-                    <span><i class="ph-duotone ph-arrows-clockwise"></i> Last updated March 2026</span>
+                    <span><i class="ph-duotone ph-arrows-clockwise"></i> Last updated April 2026</span>
                 </div>
             </div>
         </section>
+        </div>
 
         <div class="section-divider"><hr/></div>
 
         <!-- ── Why This Exists ── -->
-        <section id="origin">
+        <section id="origin" class="section-alt">
             <div class="section-header reveal">
                 <div class="section-label">Origin</div>
                 <h2>Why This <span class="accent">Exists</span></h2>
@@ -1485,7 +1843,7 @@
             <div class="section-header reveal">
                 <div class="section-label">Foundation</div>
                 <h2>Core <span class="accent">Principles</span></h2>
-                <p class="section-intro">Not rules imposed from outside the field. These reflect how thoughtful clinicians already think about tools, documentation, and professional responsibility.</p>
+                <p class="section-intro">SLP/IO defines six core principles for responsible use of language models in speech-language pathology practice. Not rules imposed from outside the field — these reflect how thoughtful clinicians already think about tools, documentation, and professional responsibility.</p>
             </div>
             <div class="principles-grid">
                 <div class="principle-card reveal">
@@ -1524,7 +1882,7 @@
         <div class="section-divider"><hr/></div>
 
         <!-- ── Use Cases ── -->
-        <section id="use-cases">
+        <section id="use-cases" class="section-alt">
             <div class="section-header reveal">
                 <div class="section-label">Practice</div>
                 <h2>Use Cases <span class="accent">& Red Flags</span></h2>
@@ -1555,6 +1913,111 @@
                         <li><span class="cross">&#10007;</span> Polished wording hiding non-measurable goals</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><hr/></div>
+
+        <!-- ── PHI Safety Check ── -->
+        <section id="phi-check">
+            <div class="section-header reveal">
+                <div class="section-label">Self-Check</div>
+                <h2>Is This Prompt <span class="accent">Safe?</span></h2>
+                <p class="section-intro">Before you paste anything into a public AI tool, run through this quick check. It takes ten seconds and could save you a compliance headache.</p>
+            </div>
+
+            <div class="phi-checker reveal">
+                <ul class="phi-questions">
+                    <li class="phi-question">
+                        <span>Does your prompt contain any student or client names?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                    <li class="phi-question">
+                        <span>Does it include dates of birth, ages with other identifying info, or ID numbers?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                    <li class="phi-question">
+                        <span>Does it mention a specific school, district, or facility name?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                    <li class="phi-question">
+                        <span>Does it include diagnosis codes or medical details tied to an identifiable person?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                    <li class="phi-question">
+                        <span>Does it contain session dates or scheduling info linked to a specific individual?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                    <li class="phi-question">
+                        <span>Are you using a tool with a BAA (Business Associate Agreement) in place?</span>
+                        <div class="phi-toggle">
+                            <button onclick="phiAnswer(this, 'yes')">Yes</button>
+                            <button onclick="phiAnswer(this, 'no')">No</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="phi-result" id="phiResult"></div>
+            </div>
+        </section>
+
+        <div class="section-divider"><hr/></div>
+
+        <!-- ── Model Quick Reference ── -->
+        <section id="model-reference" class="section-alt">
+            <div class="section-header reveal">
+                <div class="section-label">Choosing a Tool</div>
+                <h2>Model <span class="accent">Quick Reference</span></h2>
+                <p class="section-intro">Not all language models are the same. Here is how the major options compare for SLP-specific workflows &mdash; not benchmarks, but practical differences that matter in a clinical context.</p>
+            </div>
+            <div class="model-grid">
+                <div class="model-card reveal">
+                    <h4>ChatGPT <span style="font-size:0.7rem; color:var(--text-muted); font-weight:400;">(OpenAI)</span></h4>
+                    <ul>
+                        <li><strong>Best for</strong>Quick drafts, brainstorming, general-purpose writing</li>
+                        <li><strong>Tone</strong>Tends toward polished, corporate-sounding language</li>
+                        <li><strong>SLP sweet spot</strong>Fast goal brainstorms, parent email drafts, activity ideas</li>
+                        <li><strong>Watch out for</strong>Can sound too generic &mdash; outputs need voice editing</li>
+                        <li><strong>Privacy</strong>Public by default; Enterprise/Team plans available with data controls</li>
+                    </ul>
+                </div>
+                <div class="model-card reveal">
+                    <h4>Claude <span style="font-size:0.7rem; color:var(--text-muted); font-weight:400;">(Anthropic)</span></h4>
+                    <ul>
+                        <li><strong>Best for</strong>Nuanced writing, longer documents, ethical reflection</li>
+                        <li><strong>Tone</strong>More natural, follows instructions closely, less boilerplate</li>
+                        <li><strong>SLP sweet spot</strong>Progress notes, IEP goal review, structured clinical reflection</li>
+                        <li><strong>Watch out for</strong>Can be overly cautious with disclaimers</li>
+                        <li><strong>Privacy</strong>Public by default; business plans available with data controls</li>
+                    </ul>
+                </div>
+                <div class="model-card reveal">
+                    <h4>Gemini <span style="font-size:0.7rem; color:var(--text-muted); font-weight:400;">(Google)</span></h4>
+                    <ul>
+                        <li><strong>Best for</strong>Research summaries, data organization, multi-step analysis</li>
+                        <li><strong>Tone</strong>Variable &mdash; can be verbose or overly structured</li>
+                        <li><strong>SLP sweet spot</strong>Literature reviews, data trend summaries, caseload organization</li>
+                        <li><strong>Watch out for</strong>Can hallucinate citations &mdash; always verify sources</li>
+                        <li><strong>Privacy</strong>Public by default; Workspace plans offer enterprise controls</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="callout-box reveal" style="margin-top:2rem;">
+                <p><strong>The real answer:</strong> The best model is the one you learn to prompt well and review critically. None of them are clinical tools. All of them are capable assistants when used within appropriate boundaries. Start with whichever you have access to and focus on developing good habits around de-identification, review, and maintaining your clinical voice.</p>
             </div>
         </section>
 
@@ -1614,16 +2077,127 @@
                     </div>
                 </div>
             </div>
+
+            <h3 style="margin-top:2.5rem; font-size:0.95rem;" class="reveal">Before &amp; After</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-top:0.5rem; font-family:'Poppins',sans-serif;" class="reveal">Here is what it looks like in practice. Messy session notes in, structured documentation out &mdash; with your clinical judgment doing the real work.</p>
+            <div class="before-after">
+                <div class="ba-panel before reveal">
+                    <h3><i class="ph-duotone ph-pencil-simple-line" style="color:var(--accent-amber)"></i> Raw Session Notes</h3>
+                    <div class="ba-content">worked on /s/ blends today, still struggling with initial position, used minimal pairs, about 60% accuracy with verbal cues, seemed frustrated toward end of session, mom asked about home practice</div>
+                </div>
+                <div class="ba-panel after reveal">
+                    <h3><i class="ph-duotone ph-check-circle" style="color:var(--accent-green)"></i> Structured Output</h3>
+                    <div class="ba-content">
+                        <div class="ba-field"><strong>Target:</strong> /s/ blends, initial position</div>
+                        <div class="ba-field"><strong>Activity:</strong> Minimal pair contrasts</div>
+                        <div class="ba-field"><strong>Performance:</strong> 60% accuracy with verbal cueing</div>
+                        <div class="ba-field"><strong>Clinical Note:</strong> Student demonstrated frustration toward end of session, suggesting possible fatigue or task difficulty. Consider adjusting session pacing or task complexity.</div>
+                        <div class="ba-field"><strong>Follow-up:</strong> Mother inquired about home practice opportunities &mdash; send suggested activities.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="callout-box reveal" style="margin-top:1.5rem;">
+                <p><strong>What the AI did:</strong> Organized, structured, and surfaced a clinical interpretation. <strong>What it didn't do:</strong> Add any details that weren't in the original notes. That's the line.</p>
+            </div>
+        </section>
+
+        <div class="section-divider"><hr/></div>
+
+        <!-- ── Prompt Patterns ── -->
+        <section id="prompt-patterns" class="section-alt">
+            <div class="section-header reveal">
+                <div class="section-label">Beyond Templates</div>
+                <h2>Prompt <span class="accent">Patterns</span></h2>
+                <p class="section-intro">Templates give you a starting point. Patterns teach you why they work &mdash; so you can write better prompts on your own, for any situation.</p>
+            </div>
+            <div class="pattern-grid">
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 01</div>
+                    <strong>Set your role</strong>
+                    <p>Telling the model who you are gives it context for tone, vocabulary, and scope.</p>
+                    <div class="pattern-example">"I am an SLP working in a school setting with students ages 5&ndash;12."</div>
+                </div>
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 02</div>
+                    <strong>Constrain the output</strong>
+                    <p>Preventing hallucination starts with telling the model not to invent details.</p>
+                    <div class="pattern-example">"Do not add details I did not provide. Only organize what I give you."</div>
+                </div>
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 03</div>
+                    <strong>Define the format</strong>
+                    <p>Structured requests get structured responses. Tell it exactly what you want back.</p>
+                    <div class="pattern-example">"Return this as: Target, Level of Support, Performance Data, Clinical Interpretation."</div>
+                </div>
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 04</div>
+                    <strong>Strip identity first</strong>
+                    <p>De-identify before you paste. Replace names with [Student], schools with [School], etc.</p>
+                    <div class="pattern-example">"[Student] is a 7-year-old in [School] receiving services for articulation."</div>
+                </div>
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 05</div>
+                    <strong>Ask for reflection, not answers</strong>
+                    <p>Use the model as a thinking partner, not an authority. The clinical decision stays with you.</p>
+                    <div class="pattern-example">"Help me think through the ethical considerations. Do not give me a definitive answer."</div>
+                </div>
+                <div class="pattern-card reveal">
+                    <div class="pattern-num">Pattern 06</div>
+                    <strong>Specify what "good" looks like</strong>
+                    <p>Give the model your quality criteria so it can check its own output.</p>
+                    <div class="pattern-example">"The goal must be observable, measurable, include conditions and criteria, and specify level of support."</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><hr/></div>
+
+        <!-- ── IEP Clarity Toolkit ── -->
+        <section id="iep-clarity">
+            <div class="section-header reveal">
+                <div class="section-label">Practical Toolkit</div>
+                <h2>IEP Goal <span class="accent">Clarity</span></h2>
+                <p class="section-intro">Polished wording does not equal a good goal. These before-and-after examples show common pitfalls and how to fix them &mdash; with annotations on exactly what went wrong.</p>
+            </div>
+            <div class="iep-examples">
+                <div class="iep-example-card reveal">
+                    <div class="iep-label">Example 1 &mdash; Vague &rarr; Specific</div>
+                    <div class="iep-before">"Student will improve articulation skills as measured by therapist observation."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> No target sound specified. No accuracy criterion. No context for production. "Therapist observation" is not a measurement method.</div>
+                    <div class="iep-after">"Given a structured activity with visual supports, [Student] will produce /r/ in the initial position of words with 80% accuracy across 3 consecutive data collection sessions as measured by SLP data tracking."</div>
+                </div>
+                <div class="iep-example-card reveal">
+                    <div class="iep-label">Example 2 &mdash; Unmeasurable &rarr; Measurable</div>
+                    <div class="iep-before">"Student will improve expressive language skills."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> "Improve" is not measurable. No baseline, no target, no conditions, no supports. This goal cannot be tracked or defended.</div>
+                    <div class="iep-after">"Given a visual scene display and minimal verbal cueing, [Student] will combine 2+ words to request, comment, or protest across 3 different communication partners with 70% independence over 4 consecutive sessions."</div>
+                </div>
+                <div class="iep-example-card reveal">
+                    <div class="iep-label">Example 3 &mdash; Generic &rarr; Individualized</div>
+                    <div class="iep-before">"Student will increase vocabulary as measured by curriculum-based assessment."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> Which vocabulary? What level of mastery? "Increase" tells us nothing. CBA alone does not specify what the student can actually do.</div>
+                    <div class="iep-after">"Given pre-taught Tier 2 vocabulary from grade-level science and social studies units, [Student] will define and use targeted words in context (spoken or written) with 75% accuracy across 3 data points as measured by clinician-created probes."</div>
+                </div>
+                <div class="iep-example-card reveal">
+                    <div class="iep-label">Example 4 &mdash; AI-Generated Gloss &rarr; Clinical Precision</div>
+                    <div class="iep-before">"Student will demonstrate enhanced pragmatic communication abilities in various social contexts throughout the school day."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> This is what happens when you paste an AI output directly into an IEP. It sounds professional but says nothing. No observable behavior, no criteria, no conditions.</div>
+                    <div class="iep-after">"During structured small-group activities with 1 verbal prompt, [Student] will initiate a topic-relevant comment or question directed at a peer in 4 out of 5 opportunities across 3 consecutive sessions as measured by SLP observation and data collection."</div>
+                </div>
+            </div>
+            <div class="callout-box reveal" style="margin-top:1.5rem;">
+                <p><strong>The pattern:</strong> Every strong goal answers four questions &mdash; Under what conditions? What observable behavior? To what measurable criteria? How will you track it? If any answer is missing, the goal is not ready for an IEP.</p>
+            </div>
         </section>
 
         <div class="section-divider"><hr/></div>
 
         <!-- ── Evidence ── -->
-        <section id="evidence">
+        <section id="evidence" class="section-alt">
             <div class="section-header reveal">
                 <div class="section-label">Research</div>
                 <h2>What the <span class="accent">Evidence</span> Says</h2>
-                <p class="section-intro">The evidence base for LLMs in clinical documentation is growing, but still early. Here is an honest summary across disciplines.</p>
+                <p class="section-intro">Current evidence (2025–2026) supports LLMs as documentation copilots that improve efficiency and structure, but not as independent authors for clinical or legal documents. Here is an honest summary across disciplines.</p>
             </div>
             <div class="evidence-grid">
                 <div class="evidence-col supported reveal">
@@ -1739,7 +2313,7 @@
         <div class="section-divider"><hr/></div>
 
         <!-- ── Changelog & Roadmap ── -->
-        <section id="changelog">
+        <section id="changelog" class="section-alt">
             <div class="section-header reveal">
                 <div class="section-label">Living Document</div>
                 <h2>Updates <span class="accent">& Roadmap</span></h2>
@@ -1748,6 +2322,13 @@
 
             <h3 style="margin-top:1.5rem; font-size:0.95rem;">Recent Changes</h3>
             <div class="changelog">
+                <div class="changelog-entry reveal">
+                    <div class="changelog-date">Apr 2026</div>
+                    <div class="changelog-body">
+                        <h4>GEO optimization &amp; new content sections <span class="changelog-tag tag-new">New</span></h4>
+                        <p>Added PHI Safety Check interactive tool, Model Quick Reference (ChatGPT vs Claude vs Gemini for SLPs), Before &amp; After documentation example, Prompt Patterns guide, and IEP Goal Clarity Toolkit with annotated before/after examples. Plus structured data, llms.txt, and updated robots.txt for search discoverability.</p>
+                    </div>
+                </div>
                 <div class="changelog-entry reveal">
                     <div class="changelog-date">Mar 2026</div>
                     <div class="changelog-body">
@@ -1846,7 +2427,7 @@
         <div class="section-divider"><hr/></div>
 
         <!-- ── Contact ── -->
-        <section id="contact">
+        <section id="contact" class="section-alt">
             <div class="section-header reveal">
                 <div class="section-label">Connect</div>
                 <h2>Get <span class="accent">Involved</span></h2>
@@ -1936,6 +2517,55 @@
             btn.textContent = 'Copied!';
             setTimeout(() => btn.textContent = 'Copy', 2000);
         });
+    }
+
+    // ── PHI Safety Check ──
+    function phiAnswer(btn, answer) {
+        const toggle = btn.parentElement;
+        toggle.querySelectorAll('button').forEach(b => {
+            b.classList.remove('active-yes', 'active-no');
+        });
+        btn.classList.add(answer === 'yes' ? 'active-yes' : 'active-no');
+        updatePhiResult();
+    }
+
+    function updatePhiResult() {
+        const questions = document.querySelectorAll('.phi-question');
+        const result = document.getElementById('phiResult');
+        let answered = 0;
+        let yesCount = 0;
+        let baaYes = false;
+
+        questions.forEach((q, i) => {
+            const active = q.querySelector('.phi-toggle button.active-yes, .phi-toggle button.active-no');
+            if (active) {
+                answered++;
+                if (active.classList.contains('active-yes')) {
+                    if (i === 5) { baaYes = true; } else { yesCount++; }
+                } else {
+                    if (i === 5) { baaYes = false; }
+                }
+            }
+        });
+
+        if (answered < 6) {
+            result.className = 'phi-result';
+            result.style.display = 'none';
+            return;
+        }
+
+        result.style.display = 'block';
+
+        if (yesCount === 0 && baaYes) {
+            result.className = 'phi-result safe';
+            result.innerHTML = '<strong>You\'re good.</strong> No identifiable information detected and you have a BAA in place. This prompt is safe for use with your AI tool. As always, review any output before it goes into a clinical or legal document.';
+        } else if (yesCount === 0 && !baaYes) {
+            result.className = 'phi-result caution';
+            result.innerHTML = '<strong>Proceed with caution.</strong> Your prompt appears de-identified, which is good. However, you\'re using a public tool without a BAA. This is acceptable for general-purpose tasks (brainstorming, reformatting) but not for anything tied to a specific student\'s record. Consider whether an enterprise plan would better fit your workflow.';
+        } else {
+            result.className = 'phi-result unsafe';
+            result.innerHTML = '<strong>Stop &mdash; do not send this prompt.</strong> Your prompt contains identifiable information that violates HIPAA/FERPA when entered into a public AI tool. Remove all names, dates of birth, school names, ID numbers, and identifiable details before proceeding. Replace with placeholders like [Student], [School], etc.';
+        }
     }
 
     // ── Chat Widget ──
