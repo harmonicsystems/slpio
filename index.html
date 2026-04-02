@@ -30,7 +30,7 @@
           "@id": "https://www.slpio.org/#organization",
           "name": "Harmonic Systems",
           "url": "https://github.com/harmonicsystems",
-          "description": "A studio at the intersection of voice science, accessible communication technology, and applied AI. Built by a speech-language pathologist and software developer.",
+          "description": "A small studio at the intersection of clinical speech-language pathology and software development.",
           "founder": {
             "@type": "Person",
             "@id": "https://www.slpio.org/#author"
@@ -139,7 +139,7 @@
               "name": "What is SLP/IO and who created it?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "SLP/IO is a clinician-first field guide for speech-language pathologists navigating language models. It was created by a practicing SLP and software developer through Harmonic Systems — a studio spanning voice science, accessible communication technology, and applied AI."
+                "text": "SLP/IO is a clinician-first field guide for speech-language pathologists navigating language models. It was created by a practicing SLP and software developer through Harmonic Systems — a small studio at the intersection of clinical practice and software development."
               }
             }
           ]
@@ -1840,6 +1840,54 @@
         .phi-question { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
         .phi-toggle { margin-left: 0; }
     }
+    /* ── Citations ── */
+    .cite {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.6em;
+        vertical-align: super;
+        line-height: 0;
+        color: var(--primary);
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--transition);
+        font-weight: 600;
+    }
+
+    .cite:hover { color: var(--accent-amber); text-decoration: underline; }
+
+    .references-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 1.5rem;
+        counter-reset: ref;
+    }
+
+    .references-list li {
+        counter-increment: ref;
+        padding: 0.5rem 0 0.5rem 2.5rem;
+        font-size: 0.78rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+        position: relative;
+    }
+
+    .references-list li:last-child { border-bottom: none; }
+
+    .references-list li::before {
+        content: "[" counter(ref) "]";
+        position: absolute;
+        left: 0;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 600;
+        font-size: 0.72rem;
+        color: var(--primary);
+    }
+
+    .references-list li em { font-style: italic; }
+    .references-list li a { color: var(--primary); text-decoration: none; }
+    .references-list li a:hover { text-decoration: underline; }
+
     /* ── Print ── */
     @media print {
         body::after, #progress-bar, header, .chat-fab, .chat-panel,
@@ -1951,7 +1999,7 @@
             </div>
 
             <div class="origin-statement reveal">
-                <strong>Harmonic Systems</strong> is the studio behind SLP/IO. It represents a body of work spanning voice science, accessible communication technology, and applied AI&mdash;all built from the perspective that the best tools emerge when clinical expertise and engineering work together. SLP/IO is one expression of that philosophy: a living resource where the rigor of speech-language pathology meets the capability of modern language models.
+                <strong>Harmonic Systems</strong> is the studio behind SLP/IO &mdash; a small operation where clinical practice and software development overlap. SLP/IO is its first public resource: a living document where the rigor of speech-language pathology meets the capability of modern language models.
             </div>
         </section>
 
@@ -1968,17 +2016,17 @@
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-lightbulb"></i><div class="num">01</div></div>
                     <strong>AI supports thinking; it does not replace judgment.</strong>
-                    <p>Language models can help organize, structure, and refine clinical writing. The clinician remains responsible for meaning, accuracy, and individualization.</p>
+                    <p>Language models can help organize, structure, and refine clinical writing. The clinician remains responsible for meaning, accuracy, and individualization.<a class="cite" href="#references" title="ASHA Code of Ethics (2023)">[1]</a></p>
                 </div>
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-shield-check"></i><div class="num">02</div></div>
                     <strong>Never include PHI in public tools.</strong>
-                    <p>Compliance with HIPAA and FERPA is non-negotiable. No student names, DOBs, school names, or identifiable details in any public LLM.</p>
+                    <p>Compliance with HIPAA and FERPA is non-negotiable.<a class="cite" href="#references" title="HIPAA Privacy Rule">[2]</a><a class="cite" href="#references" title="FERPA">[3]</a> No student names, DOBs, school names, or identifiable details in any public LLM.</p>
                 </div>
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-magnifying-glass"></i><div class="num">03</div></div>
                     <strong>Outputs must always be reviewed.</strong>
-                    <p>No LLM output should enter an IEP, progress note, or legal document without professional review and revision.</p>
+                    <p>No LLM output should enter an IEP, progress note, or legal document without professional review and revision.<a class="cite" href="#references" title="ASHA Code of Ethics, Principle I">[1]</a><a class="cite" href="#references" title="IDEA IEP requirements">[4]</a></p>
                 </div>
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-chat-circle-text"></i><div class="num">04</div></div>
@@ -1988,12 +2036,12 @@
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-scales"></i><div class="num">05</div></div>
                     <strong>Evidence-based practice ≠ polished wording.</strong>
-                    <p>A well-formatted paragraph can still contain vague goals, weak measurement criteria, or generic descriptions that fail the student.</p>
+                    <p>A well-formatted paragraph can still contain vague goals, weak measurement criteria, or generic descriptions that fail the student.<a class="cite" href="#references" title="ASHA EBP Position Statement">[6]</a></p>
                 </div>
                 <div class="principle-card reveal">
                     <div class="principle-icon-wrap"><i class="ph-duotone ph-crosshair"></i><div class="num">06</div></div>
                     <strong>Precision in language is not pedantry.</strong>
-                    <p>Subtle shifts in wording can change clinical intent. Specificity protects students and their access to services.</p>
+                    <p>Subtle shifts in wording can change clinical intent. Specificity protects students and their access to services.<a class="cite" href="#references" title="IDEA IEP content requirements">[5]</a></p>
                 </div>
             </div>
         </section>
@@ -2023,9 +2071,9 @@
                 <div class="col-card bad reveal">
                     <h3><i class="ph-duotone ph-warning" style="color:var(--accent-red)"></i> Red Flags</h3>
                     <ul>
-                        <li><span class="cross">&#10007;</span> Entering identifiable student info into public models</li>
-                        <li><span class="cross">&#10007;</span> Copying AI outputs directly into IEPs or legal docs</li>
-                        <li><span class="cross">&#10007;</span> Using AI for diagnostic or eligibility decisions</li>
+                        <li><span class="cross">&#10007;</span> Entering identifiable student info into public models<a class="cite" href="#references" title="HIPAA, FERPA">[2][3]</a></li>
+                        <li><span class="cross">&#10007;</span> Copying AI outputs directly into IEPs or legal docs<a class="cite" href="#references" title="IDEA IEP requirements">[4][5]</a></li>
+                        <li><span class="cross">&#10007;</span> Using AI for diagnostic or eligibility decisions<a class="cite" href="#references" title="IDEA evaluation requirements">[4]</a></li>
                         <li><span class="cross">&#10007;</span> Replacing supervision or clinical consultation</li>
                         <li><span class="cross">&#10007;</span> Letting fluent language disguise weak reasoning</li>
                         <li><span class="cross">&#10007;</span> Confusing convenience with competence</li>
@@ -2042,7 +2090,7 @@
             <div class="section-header reveal">
                 <div class="section-label">Self-Check</div>
                 <h2>Is This Prompt <span class="accent">Safe?</span></h2>
-                <p class="section-intro">Before you paste anything into a public AI tool, run through this quick check. It takes ten seconds and could save you a compliance headache.</p>
+                <p class="section-intro">Before you paste anything into a public AI tool, run through this quick check. The standards here are drawn directly from HIPAA<a class="cite" href="#references" title="HIPAA">[2]</a> and FERPA<a class="cite" href="#references" title="FERPA">[3]</a> requirements.</p>
             </div>
 
             <div class="phi-checker reveal">
@@ -2083,7 +2131,7 @@
                         </div>
                     </li>
                     <li class="phi-question">
-                        <span>Are you using a tool with a BAA (Business Associate Agreement) in place?</span>
+                        <span>Are you using a tool with a BAA (Business Associate Agreement) in place?<a class="cite" href="#references" title="HIPAA BAA requirements">[8]</a></span>
                         <div class="phi-toggle">
                             <button onclick="phiAnswer(this, 'yes')">Yes</button>
                             <button onclick="phiAnswer(this, 'no')">No</button>
@@ -2251,7 +2299,7 @@
                 <div class="pattern-card reveal">
                     <div class="pattern-num">Pattern 04</div>
                     <strong>Strip identity first</strong>
-                    <p>De-identify before you paste. Replace names with [Student], schools with [School], etc.</p>
+                    <p>De-identify before you paste.<a class="cite" href="#references" title="HIPAA, FERPA">[2][3]</a> Replace names with [Student], schools with [School], etc.</p>
                     <div class="pattern-example">"[Student] is a 7-year-old in [School] receiving services for articulation."</div>
                 </div>
                 <div class="pattern-card reveal">
@@ -2276,7 +2324,7 @@
             <div class="section-header reveal">
                 <div class="section-label">Practical Toolkit</div>
                 <h2>IEP Goal <span class="accent">Clarity</span></h2>
-                <p class="section-intro">Polished wording does not equal a good goal. These before-and-after examples show common pitfalls and how to fix them &mdash; with annotations on exactly what went wrong.</p>
+                <p class="section-intro">Polished wording does not equal a good goal. Under IDEA, IEP goals must include measurable annual goals designed to meet the child's needs and enable progress in the general education curriculum.<a class="cite" href="#references" title="34 C.F.R. § 300.320">[5]</a> These before-and-after examples show common pitfalls and how to fix them.</p>
             </div>
             <div class="iep-examples">
                 <div class="iep-example-card reveal">
@@ -2322,10 +2370,10 @@
                 <div class="evidence-col supported reveal">
                     <h3><i class="ph-duotone ph-check-circle" style="color:var(--accent-green)"></i> Supported</h3>
                     <ul>
-                        <li>LLMs improve documentation efficiency and reduce time spent writing notes</li>
-                        <li>Outputs tend to be more organized, structured, and readable</li>
+                        <li>LLMs improve documentation efficiency and reduce time spent writing notes<a class="cite" href="#references" title="Emerging clinical documentation literature">[10]</a></li>
+                        <li>Outputs tend to be more organized, structured, and readable<a class="cite" href="#references" title="Emerging clinical documentation literature">[10]</a></li>
                         <li>Strongest results when used as a "second pass" tool: revising, summarizing, restructuring</li>
-                        <li>Emerging evidence for detecting biased or stigmatizing language in clinical notes</li>
+                        <li>Emerging evidence for detecting biased or stigmatizing language in clinical notes<a class="cite" href="#references" title="Emerging clinical documentation literature">[10]</a></li>
                         <li>Cross-disciplinary consistency in medicine, OT, and emerging SLP applications</li>
                     </ul>
                 </div>
@@ -2334,7 +2382,7 @@
                     <ul>
                         <li>Independent note writing without clinician review</li>
                         <li>Diagnostic or eligibility decisions</li>
-                        <li>Handling sensitive data in public tools (violates HIPAA/FERPA)</li>
+                        <li>Handling sensitive data in public tools (violates HIPAA/FERPA)<a class="cite" href="#references" title="HIPAA, FERPA">[2][3]</a></li>
                         <li>Replacing clinical voice with generic polished language</li>
                         <li>Factual accuracy without verification (hallucination risk remains real)</li>
                     </ul>
@@ -2346,13 +2394,7 @@
             </div>
 
             <div class="sources">
-                <h3>Key Reference Areas</h3>
-                <ul>
-                    <li>ASHA Code of Ethics &amp; Practice Portal &mdash; school-based service delivery, documentation standards</li>
-                    <li>IDEA &mdash; measurable annual goals, FAPE requirements</li>
-                    <li>HIPAA &amp; FERPA &mdash; privacy protections for health and education records</li>
-                    <li>2025&ndash;2026 literature on LLMs in clinical documentation, ambient scribes, and allied health applications</li>
-                </ul>
+                <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.6;">Full references are listed in the <a href="#references" style="color:var(--primary);">References</a> section below. Evidence claims draw from regulatory standards<a class="cite" href="#references">[1&ndash;5]</a>, ASHA guidance<a class="cite" href="#references">[6][7]</a>, federal reports<a class="cite" href="#references">[9]</a>, and emerging peer-reviewed literature<a class="cite" href="#references">[10]</a>.</p>
             </div>
         </section>
 
@@ -2415,18 +2457,42 @@
                 <div class="literacy-card reveal">
                     <div class="card-icon icon-green"><i class="ph-duotone ph-hand-heart"></i></div>
                     <h4>Accessibility Is Converging</h4>
-                    <p>AAC, screen readers, captioning, and voice interfaces are merging with mainstream technology. The tools our students depend on are becoming the tools everyone uses. That's an opportunity and a responsibility.</p>
+                    <p>AAC, screen readers, captioning, and voice interfaces are merging with mainstream technology.<a class="cite" href="#references" title="ASHA Practice Portal: AAC">[11]</a> The tools our students depend on are becoming the tools everyone uses. That's an opportunity and a responsibility.</p>
                 </div>
                 <div class="literacy-card reveal">
                     <div class="card-icon icon-purple"><i class="ph-duotone ph-note-pencil"></i></div>
                     <h4>Documentation Is Changing</h4>
-                    <p>Clinical documentation now exists alongside AI-generated content, auto-summaries, and ambient scribes. Maintaining authenticity, precision, and clinical voice in this environment requires new awareness.</p>
+                    <p>Clinical documentation now exists alongside AI-generated content, auto-summaries, and ambient scribes.<a class="cite" href="#references" title="ASHA Practice Portal: Documentation">[7]</a> Maintaining authenticity, precision, and clinical voice in this environment requires new awareness.</p>
                 </div>
             </div>
 
             <div class="callout-box reveal">
                 <p><strong>The SLP position:</strong> We are not just consumers of media or users of technology. We are professionals trained in the mechanics of human communication. As the medium shifts, our expertise becomes more relevant, not less. Digital media literacy isn't a side topic for our field &mdash; it's an extension of what we've always done: helping people communicate clearly, honestly, and effectively in whatever environment they inhabit.</p>
             </div>
+        </section>
+
+        <div class="section-divider"><hr/></div>
+
+        <!-- ── References ── -->
+        <section id="references" class="section-alt">
+            <div class="section-header reveal">
+                <div class="section-label">Citations</div>
+                <h2><span class="accent">References</span></h2>
+                <p class="section-intro">This field guide draws on federal law, professional standards, and emerging peer-reviewed literature. All regulatory citations are current as of April 2026.</p>
+            </div>
+            <ol class="references-list">
+                <li id="ref-1">American Speech-Language-Hearing Association. (2023). <em>Code of ethics</em>. ASHA. Principle I, Rules A&ndash;C address professional competence, delegation, and responsibility for clinical decisions. <a href="https://www.asha.org/policy/et2016-00342/" target="_blank">asha.org/policy/et2016-00342</a></li>
+                <li id="ref-2">Health Insurance Portability and Accountability Act of 1996 (HIPAA), 45 C.F.R. Parts 160, 164. Establishes national standards for the protection of individually identifiable health information, including the Privacy Rule and Security Rule.</li>
+                <li id="ref-3">Family Educational Rights and Privacy Act (FERPA), 20 U.S.C. &sect; 1232g; 34 C.F.R. Part 99 (1974). Protects the privacy of student education records and applies to all schools receiving federal funding.</li>
+                <li id="ref-4">Individuals with Disabilities Education Improvement Act of 2004 (IDEA), 20 U.S.C. &sect; 1400 et seq. Governs special education services, evaluation procedures, and IEP requirements including Free Appropriate Public Education (FAPE).</li>
+                <li id="ref-5">34 C.F.R. &sect; 300.320 &mdash; Definition of individualized education program. Specifies that IEPs must include measurable annual goals &ldquo;designed to meet the child&rsquo;s needs that result from the child&rsquo;s disability to enable the child to be involved in and make progress in the general education curriculum.&rdquo;</li>
+                <li id="ref-6">American Speech-Language-Hearing Association. (2005). <em>Evidence-based practice in communication disorders</em> [Position statement]. <a href="https://www.asha.org/policy/ps2005-00221/" target="_blank">asha.org/policy/ps2005-00221</a></li>
+                <li id="ref-7">American Speech-Language-Hearing Association. (n.d.). Documentation in school-based and health care settings. <em>ASHA Practice Portal</em>. <a href="https://www.asha.org/practice-portal/" target="_blank">asha.org/practice-portal</a></li>
+                <li id="ref-8">45 C.F.R. &sect; 164.502(e) &mdash; Uses and disclosures of protected health information: Business associate contracts. Requires covered entities to obtain satisfactory assurances that business associates will appropriately safeguard PHI.</li>
+                <li id="ref-9">U.S. Department of Education, Office of Educational Technology. (2023). <em>Artificial intelligence and the future of teaching and learning: Insights and recommendations</em>. U.S. Department of Education. <a href="https://tech.ed.gov/ai-future-of-teaching-and-learning/" target="_blank">tech.ed.gov/ai-future-of-teaching-and-learning</a></li>
+                <li id="ref-10">Evidence on LLMs in clinical documentation is drawn from peer-reviewed literature across medicine, rehabilitation sciences, and education technology (2023&ndash;2026), including studies on structured note revision, ambient clinical scribes, bias detection in clinical language, and AI-assisted documentation workflows published in journals such as <em>JAMA</em>, <em>The BMJ</em>, <em>Journal of Medical Internet Research</em>, and allied health publications. This is a rapidly evolving evidence base; readers are encouraged to consult current systematic reviews.</li>
+                <li id="ref-11">American Speech-Language-Hearing Association. (n.d.). Augmentative and alternative communication (AAC). <em>ASHA Practice Portal</em>. <a href="https://www.asha.org/practice-portal/clinical-topics/augmentative-and-alternative-communication/" target="_blank">asha.org/practice-portal/clinical-topics/aac</a></li>
+            </ol>
         </section>
 
         <div class="section-divider"><hr/></div>
@@ -2534,7 +2600,7 @@
             </div>
             <div class="about-text reveal">
                 <p>SLP/IO is a <strong>Harmonic Systems</strong> project&mdash;built by a speech-language pathologist and software developer who has spent years working at the intersection of clinical practice, voice science, and technology.</p>
-                <p>The Harmonic Systems portfolio includes over 130 projects: iOS apps for voice therapy and AAC, Swift frameworks for audio signal processing, web platforms for clinical education, and tools that bridge the gap between acoustic measurement and clinical meaning.</p>
+                <p>Harmonic Systems is a small, independent studio exploring the intersection of clinical practice and software &mdash; including iOS apps, web tools, and audio projects informed by real SLP work.</p>
                 <p>SLP/IO exists because clinicians are already using language models informally, often without a framework for doing so safely or effectively. The goal is not to promote AI adoption. It's to define what responsible use looks like in a field where language carries legal and clinical weight.</p>
                 <p>These tools are entering clinical workflows whether we're ready or not. The question is not whether to use them, but how to use them in a way that strengthens&mdash;not weakens&mdash;clinical thinking.</p>
             </div>
