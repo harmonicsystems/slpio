@@ -1,0 +1,28 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('patterns');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="Clinical <span class='accent'>Patterns</span>"
+    label="Patterns"
+    description="Your clinical philosophy shapes how you should prompt an LLM. These patterns map clinical orientations — naturalistic, discrete trial, family-centered — to specific LLM interaction strategies. This is the piece nobody else is doing."
+>
+    {sorted.map((entry) => (
+        <a href={`/patterns/${entry.id}/`} class="nav-card">
+            <div style="font-size:0.65rem; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; color:var(--primary); margin-bottom:0.5rem; font-family:'Poppins',sans-serif;">
+                {entry.data.clinicalOrientation}
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            {entry.data.contrasts && (
+                <div style="margin-top:0.5rem; font-size:0.7rem; color:var(--text-muted); font-style:italic;">
+                    Contrasts with: {entry.data.contrasts}
+                </div>
+            )}
+        </a>
+    ))}
+</SectionIndexLayout>

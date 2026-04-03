@@ -2,12 +2,17 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const [foundations, tasks, settings, domains, resources] = await Promise.all([
+  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary] = await Promise.all([
     getCollection('foundations'),
     getCollection('tasks'),
     getCollection('settings'),
     getCollection('domains'),
     getCollection('resources'),
+    getCollection('prompts'),
+    getCollection('workflows'),
+    getCollection('patterns'),
+    getCollection('antipatterns'),
+    getCollection('glossary'),
   ]);
 
   const index = [
@@ -50,6 +55,46 @@ export const GET: APIRoute = async () => {
       layer: 'Resources',
       icon: e.data.icon || '',
       body: e.body || '',
+    })),
+    ...prompts.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/prompts/${e.id}/`,
+      layer: 'Prompts',
+      icon: '',
+      body: e.body || '',
+    })),
+    ...workflows.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/workflows/${e.id}/`,
+      layer: 'Workflows',
+      icon: '',
+      body: e.body || '',
+    })),
+    ...patterns.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/patterns/${e.id}/`,
+      layer: 'Patterns',
+      icon: '',
+      body: e.body || '',
+    })),
+    ...antipatterns.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/antipatterns/${e.id}/`,
+      layer: 'Antipatterns',
+      icon: '',
+      body: e.body || '',
+    })),
+    ...glossary.map((e) => ({
+      title: e.data.term,
+      description: e.data.slpDefinition,
+      url: `/glossary/${e.id}/`,
+      layer: 'Glossary',
+      icon: '',
+      body: (e.data.techDefinition + ' ' + (e.body || '')),
     })),
   ];
 

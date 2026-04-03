@@ -1,0 +1,26 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('glossary');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="<span class='accent'>Glossary</span>"
+    label="Bridge the Gap"
+    description="SLPs know 'pragmatics' but not 'temperature.' Developers know 'hallucination' but not 'functional communication.' Each term is defined from both directions."
+>
+    {sorted.map((entry) => (
+        <a href={`/glossary/${entry.id}/`} class="nav-card">
+            <h3 style="font-family:'Roboto Mono',monospace; letter-spacing:-0.5px;">{entry.data.term}</h3>
+            <p style="font-size:0.78rem; margin-bottom:0.25rem;"><strong>Clinical:</strong> {entry.data.slpDefinition.slice(0, 120)}...</p>
+            <p style="font-size:0.78rem;"><strong>Tech:</strong> {entry.data.techDefinition.slice(0, 120)}...</p>
+            {entry.data.aliases && entry.data.aliases.length > 0 && (
+                <div style="margin-top:0.5rem; font-size:0.65rem; color:var(--text-muted); font-style:italic;">
+                    Also: {entry.data.aliases.join(', ')}
+                </div>
+            )}
+        </a>
+    ))}
+</SectionIndexLayout>

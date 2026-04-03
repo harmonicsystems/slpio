@@ -1,0 +1,25 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('workflows');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="Multi-Step <span class='accent'>Workflows</span>"
+    label="Workflows"
+    description="Not every clinical task is a single prompt. These workflows walk you through multi-step sequences — with decision points where your clinical judgment overrides the tool."
+>
+    {sorted.map((entry) => (
+        <a href={`/workflows/${entry.id}/`} class="nav-card">
+            <div style="display:flex; gap:0.75rem; margin-bottom:0.75rem; font-size:0.7rem; color:var(--text-muted); font-family:'Poppins',sans-serif;">
+                <span><i class="ph ph-steps"></i> {entry.data.stepCount} steps</span>
+                <span><i class="ph ph-clock"></i> {entry.data.estimatedTime}</span>
+                <span style="text-transform:capitalize;">{entry.data.difficulty}</span>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+        </a>
+    ))}
+</SectionIndexLayout>

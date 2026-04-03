@@ -48,11 +48,20 @@ const { title, description = 'A practical, clinician-first field guide for speec
             <div class="nav-links" id="nav-links">
                 <a href="/">Home</a>
                 <a href="/foundations/">Foundations</a>
-                <a href="/tasks/">Tasks</a>
-                <a href="/settings/">Settings</a>
+                <a href="/prompts/">Prompts</a>
+                <a href="/workflows/">Workflows</a>
                 <a href="/domains/">Domains</a>
-                <a href="/resources/">Resources</a>
-                <a href="/about/">About</a>
+                <div class="nav-more" id="nav-more">
+                    <button class="nav-more-btn" id="nav-more-btn">More <i class="ph ph-caret-down"></i></button>
+                    <div class="nav-dropdown" id="nav-dropdown">
+                        <a href="/tasks/">Tasks</a>
+                        <a href="/settings/">Settings</a>
+                        <a href="/patterns/">Patterns</a>
+                        <a href="/antipatterns/">Antipatterns</a>
+                        <a href="/glossary/">Glossary</a>
+                        <a href="/resources/">Resources</a>
+                    </div>
+                </div>
                 <Search />
             </div>
         </nav>
@@ -86,18 +95,34 @@ const { title, description = 'A practical, clinician-first field guide for speec
         (function() {
             var hamburger = document.getElementById('hamburger');
             var navLinks = document.getElementById('nav-links');
-            if (!hamburger || !navLinks) return;
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('open');
-                navLinks.classList.toggle('open');
-            });
-            // Close menu when a nav link is clicked
-            navLinks.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('open');
-                    navLinks.classList.remove('open');
+            var navMore = document.getElementById('nav-more');
+            var navMoreBtn = document.getElementById('nav-more-btn');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('open');
+                    navLinks.classList.toggle('open');
                 });
-            });
+                navLinks.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('open');
+                        navLinks.classList.remove('open');
+                        if (navMore) navMore.classList.remove('open');
+                    });
+                });
+            }
+
+            if (navMore && navMoreBtn) {
+                navMoreBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navMore.classList.toggle('open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!navMore.contains(e.target)) {
+                        navMore.classList.remove('open');
+                    }
+                });
+            }
         })();
     </script>
 </body>
@@ -165,6 +190,59 @@ const { title, description = 'A practical, clinician-first field guide for speec
         position: relative;
         text-decoration: none;
     }
+
+    /* ── Nav Dropdown ── */
+    .nav-more {
+        position: relative;
+    }
+
+    .nav-more-btn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: var(--text-muted);
+        font-size: 0.82rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding: 0;
+        transition: color var(--transition);
+    }
+
+    .nav-more-btn:hover { color: var(--primary); }
+    .nav-more-btn i { font-size: 0.7rem; transition: transform 0.2s ease; }
+    .nav-more.open .nav-more-btn i { transform: rotate(180deg); }
+
+    .nav-dropdown {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        min-width: 180px;
+        background: color-mix(in srgb, var(--light) 97%, transparent);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+
+    .nav-more.open .nav-dropdown { display: block; }
+
+    .nav-dropdown a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.82rem;
+        transition: background var(--transition);
+    }
+
+    .nav-dropdown a:hover { background: var(--primary-light); }
+    .nav-dropdown a::after { display: none !important; }
 
     .nav-links a::after {
         content: '';
@@ -264,6 +342,20 @@ const { title, description = 'A practical, clinician-first field guide for speec
         }
         .nav-links.open a:hover { background: var(--primary-light); }
         .nav-links.open a::after { display: none; }
+        .nav-more { width: 100%; }
+        .nav-more-btn { padding: 0.65rem 0.5rem; font-size: 0.92rem; width: 100%; }
+        .nav-dropdown {
+            position: static;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            backdrop-filter: none;
+            padding: 0 0 0 1rem;
+            min-width: auto;
+        }
+        .nav-more .nav-dropdown { display: none; }
+        .nav-more.open .nav-dropdown { display: block; }
+        .nav-dropdown a { font-size: 0.88rem; }
         .community-bar { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
 </style>
