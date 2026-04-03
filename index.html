@@ -738,6 +738,7 @@
     .tag-comm { background: #fef3e2; color: var(--accent-amber); }
     .tag-iep { background: #e8faf0; color: var(--accent-green); }
     .tag-ethics { background: #fbe8e8; color: var(--accent-red); }
+    .tag-medical { background: #f0e8fa; color: #7b2d8e; }
 
     .template-card h3 {
         font-size: 1rem;
@@ -2061,12 +2062,13 @@
                 <h2>Use Cases <span class="accent">& Red Flags</span></h2>
                 <p class="section-intro">Language models are most useful where documentation is structured and repetitive. They are weakest where individualization, interpretation, and context matter most.</p>
             </div>
+            <h3 style="margin-top:1.5rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;" class="reveal"><i class="ph-duotone ph-graduation-cap" style="color:var(--primary)"></i> &nbsp;Schools &amp; Early Intervention</h3>
             <div class="two-col">
                 <div class="col-card good reveal">
                     <h3><i class="ph-duotone ph-check-circle" style="color:var(--accent-green)"></i> Appropriate Use</h3>
                     <ul>
                         <li><span class="check">&#10003;</span> Structuring and organizing progress notes</li>
-                        <li><span class="check">&#10003;</span> Brainstorming goal wording (with clinician editing)</li>
+                        <li><span class="check">&#10003;</span> Brainstorming IEP goal wording (with clinician editing)</li>
                         <li><span class="check">&#10003;</span> Drafting parent-friendly explanations</li>
                         <li><span class="check">&#10003;</span> Simplifying complex professional language</li>
                         <li><span class="check">&#10003;</span> Organizing treatment session ideas</li>
@@ -2084,6 +2086,32 @@
                         <li><span class="cross">&#10007;</span> Letting fluent language disguise weak reasoning</li>
                         <li><span class="cross">&#10007;</span> Confusing convenience with competence</li>
                         <li><span class="cross">&#10007;</span> Polished wording hiding non-measurable goals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top:2.5rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;" class="reveal"><i class="ph-duotone ph-hospital" style="color:var(--primary)"></i> &nbsp;Medical, Rehab &amp; Skilled Nursing</h3>
+            <div class="two-col">
+                <div class="col-card good reveal">
+                    <h3><i class="ph-duotone ph-check-circle" style="color:var(--accent-green)"></i> Appropriate Use</h3>
+                    <ul>
+                        <li><span class="check">&#10003;</span> Structuring dysphagia progress notes and session documentation</li>
+                        <li><span class="check">&#10003;</span> Organizing cognitive-linguistic assessment findings into narrative format</li>
+                        <li><span class="check">&#10003;</span> Drafting patient/family education materials in plain language</li>
+                        <li><span class="check">&#10003;</span> Structuring prior authorization and medical necessity letters</li>
+                        <li><span class="check">&#10003;</span> Summarizing discharge recommendations into readable format</li>
+                        <li><span class="check">&#10003;</span> Brainstorming functional goal wording for SNF or rehab settings</li>
+                    </ul>
+                </div>
+                <div class="col-card bad reveal">
+                    <h3><i class="ph-duotone ph-warning" style="color:var(--accent-red)"></i> Red Flags</h3>
+                    <ul>
+                        <li><span class="cross">&#10007;</span> Entering patient names, MRNs, or PHI into public models<a class="cite" href="#references" title="HIPAA">[2]</a></li>
+                        <li><span class="cross">&#10007;</span> AI interpreting instrumental findings (MBSS, FEES)<a class="cite" href="#references" title="ASHA Code of Ethics">[1]</a></li>
+                        <li><span class="cross">&#10007;</span> Generating diet level recommendations or aspiration risk judgments</li>
+                        <li><span class="cross">&#10007;</span> Copying AI language directly into medical records</li>
+                        <li><span class="cross">&#10007;</span> Using AI output as basis for swallowing safety decisions</li>
+                        <li><span class="cross">&#10007;</span> Substituting AI summaries for clinical reasoning in discharge planning</li>
                     </ul>
                 </div>
             </div>
@@ -2249,10 +2277,39 @@
                         <code>Rewrite the following clinical text so it is understandable to someone without a clinical background. Keep the meaning accurate but use plain language. Do not oversimplify in ways that change the clinical intent. Text: [paste text]</code>
                     </div>
                 </div>
+                <div class="template-card reveal">
+                    <span class="tag tag-medical">Medical SLP</span>
+                    <h3>Instrumental Report Organizer</h3>
+                    <p>Structure raw MBSS or FEES observations into a formatted clinical report.</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers included). Help me organize these into a structured report with: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency, compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels — I will determine those.</code>
+                    </div>
+                </div>
+                <div class="template-card reveal">
+                    <span class="tag tag-medical">Medical SLP</span>
+                    <h3>Discharge Summary Draft</h3>
+                    <p>Organize treatment course and outcomes into a structured discharge narrative.</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>I am an SLP preparing a discharge summary for a patient in [acute care / inpatient rehab / SNF] (no identifying info included). Here are my notes on: admission status, treatment targets, progress observed, and current functional status. Help me organize this into a structured discharge summary with: reason for referral, treatment provided, functional outcomes, current status, and follow-up recommendations. Do not add clinical details I did not provide.</code>
+                    </div>
+                </div>
+                <div class="template-card reveal">
+                    <span class="tag tag-medical">Medical SLP</span>
+                    <h3>Prior Authorization / Medical Necessity</h3>
+                    <p>Draft medical necessity language for insurance justification.</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>I am an SLP writing a prior authorization letter to justify continued therapy services (no patient identifiers included). Here is the clinical information: [diagnosis, functional limitations, treatment goals, progress to date, and why continued services are medically necessary]. Help me organize this into a clear, evidence-referenced justification letter using medical necessity language. Include functional impact statements. Do not fabricate clinical details or cite studies I haven't provided.</code>
+                    </div>
+                </div>
             </div>
 
             <h3 style="margin-top:2.5rem; font-size:0.95rem;" class="reveal">Before &amp; After</h3>
-            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-top:0.5rem; font-family:'Poppins',sans-serif;" class="reveal">Here is what it looks like in practice. Messy session notes in, structured documentation out &mdash; with your clinical judgment doing the real work.</p>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-top:0.5rem;" class="reveal">Messy notes in, structured documentation out &mdash; with your clinical judgment doing the real work.</p>
+
+            <p style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-top:1.5rem; font-weight:600;" class="reveal"><i class="ph-duotone ph-graduation-cap" style="color:var(--primary)"></i> &nbsp;School-Based Example</p>
             <div class="before-after">
                 <div class="ba-panel before reveal">
                     <h3><i class="ph-duotone ph-pencil-simple-line" style="color:var(--accent-amber)"></i> Raw Session Notes</h3>
@@ -2269,8 +2326,29 @@
                     </div>
                 </div>
             </div>
+
+            <p style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-top:2rem; font-weight:600;" class="reveal"><i class="ph-duotone ph-hospital" style="color:var(--primary)"></i> &nbsp;Medical Example</p>
+            <div class="before-after">
+                <div class="ba-panel before reveal">
+                    <h3><i class="ph-duotone ph-pencil-simple-line" style="color:var(--accent-amber)"></i> Raw Session Notes</h3>
+                    <div class="ba-content">bedside eval today, pt alert and oriented, did trials of thin liquids and puree, coughing on thin liquids especially large bolus, no cough on puree, voice wet after thin sips cleared with cough, chin tuck helped some, recommend instrumental, family wants to know about diet changes, currently NPO pending eval</div>
+                </div>
+                <div class="ba-panel after reveal">
+                    <h3><i class="ph-duotone ph-check-circle" style="color:var(--accent-green)"></i> Structured Output</h3>
+                    <div class="ba-content">
+                        <div class="ba-field"><strong>Cognition/Alertness:</strong> Alert and oriented at time of evaluation</div>
+                        <div class="ba-field"><strong>Thin Liquids:</strong> Coughing observed, particularly with large bolus volumes. Wet vocal quality post-swallow, cleared with volitional cough.</div>
+                        <div class="ba-field"><strong>Puree:</strong> No overt signs of aspiration. Tolerated without coughing.</div>
+                        <div class="ba-field"><strong>Compensatory Strategy:</strong> Chin tuck trialed with thin liquids &mdash; partial reduction in cough response.</div>
+                        <div class="ba-field"><strong>Current Status:</strong> NPO pending instrumental evaluation.</div>
+                        <div class="ba-field"><strong>Recommendation:</strong> Instrumental assessment (MBSS/FEES) to evaluate pharyngeal physiology and guide diet recommendations.</div>
+                        <div class="ba-field"><strong>Follow-up:</strong> Family education requested regarding diet modification process.</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="callout-box reveal" style="margin-top:1.5rem;">
-                <p><strong>What the AI did:</strong> Organized, structured, and surfaced a clinical interpretation. <strong>What it didn't do:</strong> Add any details that weren't in the original notes. That's the line.</p>
+                <p><strong>What the AI did:</strong> Organized, structured, and surfaced clinical observations into readable format. <strong>What it didn't do:</strong> Recommend a diet level, interpret aspiration risk, or add findings that weren't in the original notes. Those decisions stay with you.</p>
             </div>
         </section>
 
@@ -2289,6 +2367,7 @@
                     <strong>Set your role</strong>
                     <p>Telling the model who you are gives it context for tone, vocabulary, and scope.</p>
                     <div class="pattern-example">"I am an SLP working in a school setting with students ages 5&ndash;12."</div>
+                    <div class="pattern-example" style="margin-top:4px;">"I am a medical SLP in an acute care hospital evaluating post-stroke patients."</div>
                 </div>
                 <div class="pattern-card reveal">
                     <div class="pattern-num">Pattern 02</div>
@@ -2325,14 +2404,15 @@
 
         <div class="section-divider"><hr/></div>
 
-        <!-- ── IEP Clarity Toolkit ── -->
+        <!-- ── Goal Clarity Toolkit ── -->
         <section id="iep-clarity">
             <div class="section-header reveal">
                 <div class="section-label">Practical Toolkit</div>
-                <h2>IEP Goal <span class="accent">Clarity</span></h2>
-                <p class="section-intro">Polished wording does not equal a good goal. Under IDEA, IEP goals must include measurable annual goals designed to meet the child's needs and enable progress in the general education curriculum.<a class="cite" href="#references" title="34 C.F.R. § 300.320">[5]</a> These before-and-after examples show common pitfalls and how to fix them.</p>
+                <h2>Goal <span class="accent">Clarity</span></h2>
+                <p class="section-intro">Polished wording does not equal a good goal &mdash; whether it's an IEP objective or a functional outcome in a SNF. These before-and-after examples show common pitfalls across settings and how to fix them.</p>
             </div>
             <div class="iep-examples">
+                <p style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem; font-weight:600;"><i class="ph-duotone ph-graduation-cap" style="color:var(--primary)"></i> &nbsp;School-Based IEP Goals</p>
                 <div class="iep-example-card reveal">
                     <div class="iep-label">Example 1 &mdash; Vague &rarr; Specific</div>
                     <div class="iep-before">"Student will improve articulation skills as measured by therapist observation."</div>
@@ -2357,9 +2437,22 @@
                     <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> This is what happens when you paste an AI output directly into an IEP. It sounds professional but says nothing. No observable behavior, no criteria, no conditions.</div>
                     <div class="iep-after">"During structured small-group activities with 1 verbal prompt, [Student] will initiate a topic-relevant comment or question directed at a peer in 4 out of 5 opportunities across 3 consecutive sessions as measured by SLP observation and data collection."</div>
                 </div>
+
+                <div class="iep-example-card reveal">
+                    <div class="iep-label"><i class="ph-duotone ph-hospital" style="font-size:0.8rem"></i> &nbsp;Medical Example 5 &mdash; Vague SNF Goal &rarr; Functional</div>
+                    <div class="iep-before">"Patient will improve swallowing function."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> Improve how? From what baseline? What diet level? What functional outcome? This goal cannot justify continued services to an insurance reviewer.</div>
+                    <div class="iep-after">"Patient will tolerate IDDSI Level 6 (soft &amp; bite-sized) solids with minimal cueing for safe swallowing strategies (chin tuck, controlled bolus size) with no overt signs of aspiration across 3 consecutive meal observations."</div>
+                </div>
+                <div class="iep-example-card reveal">
+                    <div class="iep-label"><i class="ph-duotone ph-hospital" style="font-size:0.8rem"></i> &nbsp;Medical Example 6 &mdash; Unmeasurable Cognitive-Linguistic Goal &rarr; Measurable</div>
+                    <div class="iep-before">"Patient will demonstrate improved cognitive-communication skills for daily living."</div>
+                    <div class="iep-annotation"><i class="ph-duotone ph-warning"></i> Which cognitive-communication skills? What does "improved" look like? What daily activities? This reads like an AI-generated placeholder, not a treatment target.</div>
+                    <div class="iep-after">"Given a structured multi-step activity (e.g., meal preparation sequence, medication management task), patient will complete 3-step written directions with no more than 1 verbal cue per step in 4 out of 5 trials across 2 consecutive sessions."</div>
+                </div>
             </div>
             <div class="callout-box reveal" style="margin-top:1.5rem;">
-                <p><strong>The pattern:</strong> Every strong goal answers four questions &mdash; Under what conditions? What observable behavior? To what measurable criteria? How will you track it? If any answer is missing, the goal is not ready for an IEP.</p>
+                <p><strong>The pattern:</strong> Across every setting &mdash; schools, hospitals, SNFs, outpatient &mdash; a strong goal answers the same four questions: Under what conditions? What observable behavior? To what measurable criteria? How will you track it? If any answer is missing, the goal is not ready for a legal document, a medical record, or an insurance submission.</p>
             </div>
         </section>
 
