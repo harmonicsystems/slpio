@@ -1,0 +1,24 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import PhiChecker from '../../components/PhiChecker.astro';
+import { getCollection, render } from 'astro:content';
+
+const entries = await getCollection('foundations');
+const entry = entries.find(e => e.id === 'phi-safety');
+const { Content } = entry ? await render(entry) : { Content: null };
+---
+
+<ContentLayout
+    title="PHI Safety"
+    description="Before you paste anything into a public AI tool, run through this quick check."
+    label="Foundations"
+    breadcrumbs={[{ label: 'Foundations', href: '/foundations/' }]}
+>
+    <h3 style="margin-top: 0;">Interactive Safety Check</h3>
+    <p>Answer all six questions to get an instant assessment of your prompt's compliance status.</p>
+    <PhiChecker />
+
+    <div style="margin-top: 3rem;">
+        {Content && <Content />}
+    </div>
+</ContentLayout>

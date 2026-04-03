@@ -1,0 +1,410 @@
+---
+/**
+ * SLP/IO Chat Widget
+ * Claude-powered clinical workflow assistant with PHI detection.
+ * Connects to Cloudflare Worker proxy or runs in demo mode.
+ */
+interface Props {
+    apiUrl?: string;
+}
+
+const { apiUrl = '' } = Astro.props;
+---
+
+<button class="chat-fab" id="chat-fab" aria-label="Open chat assistant">
+    <i class="ph-duotone ph-chat-teardrop-dots"></i>
+    <span class="chat-badge"></span>
+</button>
+
+<div class="chat-panel" id="chat-panel">
+    <div class="chat-header">
+        <div class="chat-header-icon"><i class="ph-duotone ph-stethoscope"></i></div>
+        <div class="chat-header-text">
+            <h4>SLP/IO Assistant</h4>
+            <span>Powered by Claude &middot; No PHI accepted</span>
+        </div>
+    </div>
+    <div class="chat-disclaimer">
+        <i class="ph ph-info"></i>
+        AI assistant for clinical workflow support. Never enter student names, DOBs, or identifiable information.
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg assistant">Hi! I'm the SLP/IO assistant &mdash; an opinionated AI grounded in clinical practice. I can help with goal wording, note structure, ethical reflection, and navigating LLMs responsibly. What are you working on?</div>
+    </div>
+    <div class="chat-suggestions" id="chat-suggestions">
+        <button class="chat-suggestion-btn">Help me write a measurable IEP goal</button>
+        <button class="chat-suggestion-btn">Is this a safe way to use AI?</button>
+        <button class="chat-suggestion-btn">Simplify this for a parent email</button>
+        <button class="chat-suggestion-btn">What does the research say?</button>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ask something..." />
+        <button id="chat-send"><i class="ph-bold ph-paper-plane-tilt"></i></button>
+    </div>
+</div>
+
+<script is:inline define:vars={{ apiUrl }}>
+(function() {
+    const CHAT_API_URL = apiUrl;
+
+    const SYSTEM_PROMPT = `You are the SLP/IO Field Guide Assistant — a knowledgeable, opinionated AI built for speech-language pathologists and educators.
+
+## Identity
+You are not a generic chatbot. You are a clinical thinking partner grounded in SLP practice, ASHA ethics, IDEA requirements, and evidence-based documentation standards.
+
+## Core Principles (non-negotiable)
+1. AI supports thinking; it does not replace clinical judgment.
+2. Never accept or process PHI or identifiable student data. If a user includes a student name, DOB, school name, or any identifiable detail, immediately flag it and refuse to process it.
+3. All outputs require clinician review before use in any legal or clinical document.
+4. Better documentation should still sound human.
+5. Evidence-based practice is not the same as polished wording.
+6. Precision in language is not pedantry — it protects students and their access to services.
+
+## How You Help
+- Help organize messy session notes into structured progress notes
+- Brainstorm and refine IEP goal wording (always measurable, observable, individualized)
+- Draft parent-friendly explanations of clinical information
+- Support ethical reflection without making decisions for the clinician
+- Simplify jargon for broader audiences
+- Discuss current research on LLMs in clinical documentation
+
+## How You Communicate
+- Direct, warm, and clinical without being cold
+- You use the language of the field naturally (IEP, FAPE, IDEA, ASHA, AAC, etc.)
+- You are opinionated — you have a clear stance on ethical AI use
+- Keep responses concise and actionable. Clinicians are busy.
+- When suggesting goal wording, always include: observable behavior, conditions, criteria, and supports
+
+## Boundaries
+- If someone asks you to write a complete IEP or evaluation report, explain that you can help with specific sections but the clinician must own the document
+- If someone asks for medical/diagnostic advice, redirect to appropriate professional resources
+- If someone asks about a specific student by name, refuse and explain HIPAA/FERPA`;
+
+    let chatHistory = [];
+
+    const fab = document.getElementById('chat-fab');
+    const panel = document.getElementById('chat-panel');
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('chat-send');
+    const suggestions = document.getElementById('chat-suggestions');
+    const messages = document.getElementById('chat-messages');
+
+    fab.addEventListener('click', () => {
+        panel.classList.toggle('open');
+        if (panel.classList.contains('open')) input.focus();
+    });
+
+    suggestions.querySelectorAll('.chat-suggestion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            input.value = btn.textContent;
+            suggestions.style.display = 'none';
+            sendMessage();
+        });
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+
+    sendBtn.addEventListener('click', sendMessage);
+
+    async function sendMessage() {
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        appendMessage('user', msg);
+        chatHistory.push({ role: 'user', content: msg });
+        input.value = '';
+        sendBtn.disabled = true;
+        suggestions.style.display = 'none';
+
+        // Client-side PHI check
+        const phiPatterns = /\b\d{2}\/\d{2}\/\d{4}\b|\b\d{3}-\d{2}-\d{4}\b/;
+        if (phiPatterns.test(msg)) {
+            appendMessage('assistant', '\u26a0\ufe0f It looks like you may have included identifiable information (a date of birth or ID number). Please remove any PHI before continuing. I cannot process identifiable student data.');
+            sendBtn.disabled = false;
+            return;
+        }
+
+        const typingEl = appendMessage('typing', 'Thinking...');
+
+        if (!CHAT_API_URL) {
+            typingEl.remove();
+            appendMessage('assistant', getDemoResponse(msg));
+            sendBtn.disabled = false;
+            return;
+        }
+
+        try {
+            const res = await fetch(CHAT_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    system: SYSTEM_PROMPT,
+                    messages: chatHistory.slice(-10)
+                })
+            });
+
+            const data = await res.json();
+            typingEl.remove();
+
+            if (data.content) {
+                appendMessage('assistant', data.content);
+                chatHistory.push({ role: 'assistant', content: data.content });
+            } else {
+                appendMessage('assistant', 'Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            typingEl.remove();
+            appendMessage('assistant', 'Unable to connect to the assistant. Check your API configuration.');
+        }
+
+        sendBtn.disabled = false;
+    }
+
+    function appendMessage(type, text) {
+        const el = document.createElement('div');
+        el.className = 'chat-msg ' + (type === 'typing' ? 'typing' : type);
+        el.textContent = text;
+        messages.appendChild(el);
+        messages.scrollTop = messages.scrollHeight;
+        return el;
+    }
+
+    function getDemoResponse(msg) {
+        const m = msg.toLowerCase();
+        if (m.includes('goal') || m.includes('iep')) {
+            return 'Great question. A strong IEP goal should be observable, measurable, and specific to the student. For example, instead of "improve expressive language," try: "Given a visual prompt during structured play, the student will produce 3-4 word utterances to request or comment in 4/5 opportunities across 3 sessions." Want me to help you refine a specific goal?';
+        }
+        if (m.includes('safe') || m.includes('ethical') || m.includes('should i')) {
+            return 'The key question is always: does this use preserve clinical judgment and protect student privacy? If you\'re using an LLM to structure your own thinking or draft language you\'ll review and revise \u2014 that\'s appropriate. If you\'re pasting student data into a public tool or copying outputs directly into legal documents \u2014 that crosses the line. What\'s the specific situation?';
+        }
+        if (m.includes('parent') || m.includes('simplif') || m.includes('email')) {
+            return 'When communicating with parents, the goal is clarity without loss of accuracy. Avoid clinical jargon but don\'t oversimplify in ways that change the meaning. Paste the clinical text you want to translate and I\'ll help you draft a parent-friendly version. (Remember: no student names or identifiable info.)';
+        }
+        if (m.includes('research') || m.includes('evidence')) {
+            return 'Current evidence (2025-2026) supports LLMs as documentation copilots \u2014 they improve efficiency, structure, and readability. The strongest findings are in structured note revision and bias detection. The weakest areas remain factual accuracy, hallucination risk, and contextual sensitivity. For SLP specifically, the evidence is still emerging but promising for documentation support. What aspect are you most interested in?';
+        }
+        if (m.includes('progress note') || m.includes('session note') || m.includes('document')) {
+            return 'For progress notes, I recommend this structure: (1) Target skill addressed, (2) Level of support provided, (3) Quantifiable performance data, (4) Context of the activity, (5) Clinical interpretation. Paste your raw session notes (no identifying info) and I\'ll help you organize them into this framework.';
+        }
+        return 'Good question. I\'m currently running in demo mode \u2014 once the API is connected, I\'ll be able to give you a more detailed, context-aware response. In the meantime, I can help with IEP goals, progress note structure, ethical AI use, parent communication, or research questions. What would be most useful?';
+    }
+})();
+</script>
+
+<style>
+    .chat-fab {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), #3498db);
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0,90,171,0.35);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition: all var(--transition);
+    }
+
+    .chat-fab:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 28px rgba(0,90,171,0.45);
+    }
+
+    .chat-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        width: 14px;
+        height: 14px;
+        background: var(--accent-green);
+        border-radius: 50%;
+        border: 2px solid white;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(39,174,96,0.4); }
+        50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(39,174,96,0); }
+    }
+
+    .chat-panel {
+        position: fixed;
+        bottom: 92px;
+        right: 24px;
+        width: 400px;
+        max-height: 560px;
+        background: var(--light);
+        border-radius: 16px;
+        box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        z-index: 9998;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--border);
+    }
+
+    .chat-panel.open { display: flex; }
+
+    .chat-header {
+        padding: 1rem 1.25rem;
+        background: linear-gradient(135deg, var(--primary), #3498db);
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .chat-header-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .chat-header-text h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+    .chat-header-text span { font-size: 0.68rem; opacity: 0.8; font-family: 'Poppins', sans-serif; }
+
+    .chat-disclaimer {
+        padding: 0.6rem 1rem;
+        background: #fef9e7;
+        font-size: 0.68rem;
+        color: #7d6608;
+        border-bottom: 1px solid #fce8a6;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-height: 280px;
+        max-height: 340px;
+    }
+
+    .chat-msg {
+        max-width: 85%;
+        padding: 0.65rem 0.9rem;
+        border-radius: 12px;
+        font-size: 0.82rem;
+        line-height: 1.55;
+    }
+
+    .chat-msg.assistant {
+        background: var(--secondary);
+        color: var(--dark);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+    }
+
+    .chat-msg.user {
+        background: var(--primary);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+    }
+
+    .chat-msg.typing {
+        background: var(--secondary);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .chat-suggestions {
+        padding: 0.5rem 1rem 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        border-top: 1px solid var(--border);
+    }
+
+    .chat-suggestion-btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: var(--light);
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all var(--transition);
+    }
+
+    .chat-suggestion-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: var(--primary-light);
+    }
+
+    .chat-input-area {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .chat-input-area input {
+        flex: 1;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.55rem 0.85rem;
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.82rem;
+        outline: none;
+        transition: border-color var(--transition);
+        background: var(--light);
+        color: var(--dark);
+    }
+
+    .chat-input-area input:focus { border-color: var(--primary); }
+
+    .chat-input-area button {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: none;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        transition: all var(--transition);
+        flex-shrink: 0;
+    }
+
+    .chat-input-area button:hover { background: #004a8f; }
+    .chat-input-area button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    @media (max-width: 480px) {
+        .chat-panel {
+            width: calc(100vw - 16px);
+            right: 8px;
+            bottom: 80px;
+            max-height: 70vh;
+        }
+    }
+</style>

@@ -1,4 +1,6 @@
 ---
+import ChatWidget from '../components/ChatWidget.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -71,6 +73,8 @@ const { title, description = 'A practical, clinician-first field guide for speec
             <div class="footer-version">v3.0 &middot; Field Guide Edition &middot; A Harmonic Systems project &middot; Built in Kinderhook, NY</div>
         </div>
     </footer>
+
+    <ChatWidget />
 
     <script is:inline>
         document.getElementById('hamburger')?.addEventListener('click', () => {

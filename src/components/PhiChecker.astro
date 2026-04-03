@@ -1,0 +1,179 @@
+---
+/**
+ * Interactive PHI Safety Checker
+ * A self-check tool for clinicians before pasting content into public AI tools.
+ * Pure vanilla JS — no framework dependencies, works with Astro's zero-JS default.
+ */
+---
+
+<div class="phi-checker" id="phi-checker">
+    <ul class="phi-questions">
+        <li class="phi-question">
+            <span>Does your prompt contain any student or client names?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+        <li class="phi-question">
+            <span>Does it include dates of birth, ages with other identifying info, or ID numbers?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+        <li class="phi-question">
+            <span>Does it mention a specific school, district, or facility name?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+        <li class="phi-question">
+            <span>Does it include diagnosis codes or medical details tied to an identifiable person?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+        <li class="phi-question">
+            <span>Does it contain session dates or scheduling info linked to a specific individual?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+        <li class="phi-question">
+            <span>Are you using a tool with a BAA (Business Associate Agreement) in place?</span>
+            <div class="phi-toggle">
+                <button data-answer="yes">Yes</button>
+                <button data-answer="no">No</button>
+            </div>
+        </li>
+    </ul>
+    <div class="phi-result" id="phi-result"></div>
+</div>
+
+<script is:inline>
+(function() {
+    const checker = document.getElementById('phi-checker');
+    if (!checker) return;
+
+    checker.querySelectorAll('.phi-toggle button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const toggle = this.parentElement;
+            toggle.querySelectorAll('button').forEach(b => {
+                b.classList.remove('active-yes', 'active-no');
+            });
+            this.classList.add(this.dataset.answer === 'yes' ? 'active-yes' : 'active-no');
+            updateResult();
+        });
+    });
+
+    function updateResult() {
+        const questions = checker.querySelectorAll('.phi-question');
+        const result = document.getElementById('phi-result');
+        let answered = 0;
+        let yesCount = 0;
+        let baaYes = false;
+
+        questions.forEach((q, i) => {
+            const active = q.querySelector('.phi-toggle button.active-yes, .phi-toggle button.active-no');
+            if (active) {
+                answered++;
+                if (active.classList.contains('active-yes')) {
+                    if (i === 5) { baaYes = true; } else { yesCount++; }
+                } else {
+                    if (i === 5) { baaYes = false; }
+                }
+            }
+        });
+
+        if (answered < 6) {
+            result.className = 'phi-result';
+            result.style.display = 'none';
+            return;
+        }
+
+        result.style.display = 'block';
+
+        if (yesCount === 0 && baaYes) {
+            result.className = 'phi-result safe';
+            result.innerHTML = '<strong>You\'re good.</strong> No identifiable information detected and you have a BAA in place. This prompt is safe for use with your AI tool. As always, review any output before it goes into a clinical or legal document.';
+        } else if (yesCount === 0 && !baaYes) {
+            result.className = 'phi-result caution';
+            result.innerHTML = '<strong>Proceed with caution.</strong> Your prompt appears de-identified, which is good. However, you\'re using a public tool without a BAA. This is acceptable for general-purpose tasks (brainstorming, reformatting) but not for anything tied to a specific student\'s record. Consider whether an enterprise plan would better fit your workflow.';
+        } else {
+            result.className = 'phi-result unsafe';
+            result.innerHTML = '<strong>Stop \u2014 do not send this prompt.</strong> Your prompt contains identifiable information that violates HIPAA/FERPA when entered into a public AI tool. Remove all names, dates of birth, school names, ID numbers, and identifiable details before proceeding. Replace with placeholders like [Student], [School], etc.';
+        }
+    }
+})();
+</script>
+
+<style>
+    .phi-checker {
+        margin-top: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-organic);
+        padding: 1.75rem;
+        background: var(--light);
+        box-shadow: var(--card-shadow);
+    }
+
+    .phi-questions { list-style: none; padding: 0; }
+
+    .phi-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .phi-question:last-child { border-bottom: none; }
+
+    .phi-toggle {
+        display: flex;
+        gap: 0.5rem;
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+
+    .phi-toggle button {
+        padding: 4px 14px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--light);
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        transition: all var(--transition);
+        color: var(--text-muted);
+    }
+
+    .phi-toggle button:hover { border-color: var(--primary); color: var(--primary); }
+    .phi-toggle button.active-yes { background: rgba(192,57,43,0.1); border-color: var(--accent-red); color: var(--accent-red); }
+    .phi-toggle button.active-no { background: rgba(39,174,96,0.1); border-color: var(--accent-green); color: var(--accent-green); }
+
+    .phi-result {
+        margin-top: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        display: none;
+    }
+
+    .phi-result.safe { background: rgba(39,174,96,0.08); border-left: 4px solid var(--accent-green); display: block; }
+    .phi-result.caution { background: rgba(230,126,34,0.08); border-left: 4px solid var(--accent-amber); display: block; }
+    .phi-result.unsafe { background: rgba(192,57,43,0.08); border-left: 4px solid var(--accent-red); display: block; }
+
+    @media (max-width: 768px) {
+        .phi-question { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        .phi-toggle { margin-left: 0; }
+    }
+</style>
