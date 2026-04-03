@@ -1,0 +1,21 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('resources');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="<span class='accent'>Resources</span>"
+    label="Reference"
+    description="Supporting materials — digital media literacy, full references, changelog, and more."
+>
+    {sorted.map((entry) => (
+        <a href={`/resources/${entry.id}/`} class="nav-card">
+            {entry.data.icon && <i class={entry.data.icon} style="font-size:1.3rem; color:var(--primary); margin-bottom:0.75rem; display:block;"></i>}
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+        </a>
+    ))}
+</SectionIndexLayout>

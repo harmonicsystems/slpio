@@ -1,0 +1,21 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('foundations');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="<span class='accent'>Foundations</span>"
+    label="Layer 1"
+    description="Universal knowledge every SLP should have before using language models in clinical work. Start here."
+>
+    {sorted.map((entry) => (
+        <a href={`/foundations/${entry.id}/`} class="nav-card">
+            {entry.data.icon && <i class={entry.data.icon} style="font-size:1.3rem; color:var(--primary); margin-bottom:0.75rem; display:block;"></i>}
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+        </a>
+    ))}
+</SectionIndexLayout>

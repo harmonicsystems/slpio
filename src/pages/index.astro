@@ -1,0 +1,434 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="SLP + LLM Field Guide">
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <span class="pulse-dot"></span>
+                    Actively maintained field guide
+                </div>
+                <h1>SLP + LLM<br/>Field Guide</h1>
+                <p class="tagline">A practical, clinician-first resource for speech-language pathologists navigating language models in clinical and educational settings.</p>
+                <div class="hero-principle">"AI should reduce cognitive load, not replace clinical judgment."</div>
+
+                <div class="io-explainer">
+                    <p>
+                        <strong>Why "I/O"?</strong> In computing, <em>I/O</em> means <em>input/output</em> — how a system receives and sends information. In speech-language pathology, that's what we do every day: we study how people take in language and produce it. SLP/IO sits at that intersection — where clinical communication meets the tools that process it.
+                    </p>
+                </div>
+
+                <div class="ai-disclosure">
+                    <p>
+                        <strong>Yes, this site was built with AI.</strong> That's the point. This resource was developed with language models as writing partners — for organizing, drafting, and refining. Every claim, principle, and recommendation has been reviewed and shaped through clinical judgment. We're not hiding the process; we're demonstrating what responsible use looks like in practice.
+                    </p>
+                </div>
+
+                <div style="margin-top:2rem;">
+                    <a class="btn-primary" href="/foundations/" style="margin-right:0.75rem;">Read the foundations</a>
+                    <a href="/tasks/" class="link-arrow">Jump to tasks →</a>
+                </div>
+
+                <div class="hero-meta">
+                    <span><i class="ph-duotone ph-stethoscope"></i> Built by a clinician</span>
+                    <span><i class="ph-duotone ph-scales"></i> Aligned with ASHA ethics</span>
+                    <span><i class="ph-duotone ph-waveform"></i> A Harmonic Systems project</span>
+                    <span><i class="ph-duotone ph-arrows-clockwise"></i> Last updated April 2026</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Navigate by Layer ── -->
+    <section>
+        <div class="section-header">
+            <div class="section-label">Explore</div>
+            <h2>Find What You <span class="accent">Need</span></h2>
+            <p class="section-intro">This guide is organized so you can enter from any angle — start with foundations, jump to a specific task, filter by your work setting, or go deep into a clinical domain.</p>
+        </div>
+
+        <div class="layer-grid">
+            <a href="/foundations/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-compass"></i></div>
+                <h3>Foundations</h3>
+                <p>Core principles, PHI safety, how LLMs work, prompt patterns, evidence base, and model comparison.</p>
+                <span class="layer-count">6 guides</span>
+            </a>
+
+            <a href="/tasks/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-clipboard-text"></i></div>
+                <h3>Tasks</h3>
+                <p>Goal writing, documentation, communication, compliance, clinical reasoning, and material creation.</p>
+                <span class="layer-count">6 workflows</span>
+            </a>
+
+            <a href="/settings/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-buildings"></i></div>
+                <h3>Settings</h3>
+                <p>Schools, medical/acute, SNF/rehab, early intervention, private practice, and university supervision.</p>
+                <span class="layer-count">6 settings</span>
+            </a>
+
+            <a href="/domains/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-circles-four"></i></div>
+                <h3>Domains</h3>
+                <p>Articulation, language, fluency, voice, pragmatics, cognitive-linguistic, dysphagia, AAC, literacy, and hearing.</p>
+                <span class="layer-count">10 domains</span>
+            </a>
+
+            <a href="/resources/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-book-open-text"></i></div>
+                <h3>Resources</h3>
+                <p>Digital media literacy, references, changelog, and more.</p>
+                <span class="layer-count">3 resources</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Origin ── -->
+    <section class="section-alt">
+        <div class="section-header">
+            <div class="section-label">Origin</div>
+            <h2>Why This <span class="accent">Exists</span></h2>
+            <p class="section-intro">SLP/IO started with a simple observation: clinicians are already using language models, but nobody in the field was talking about how to do it well.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="origin-card">
+                <i class="ph-duotone ph-puzzle-piece"></i>
+                <h4>The Gap</h4>
+                <p>SLPs work at the intersection of language, cognition, and communication — exactly the domains LLMs operate in. Yet the field had no framework for evaluating or integrating these tools responsibly.</p>
+            </div>
+            <div class="origin-card">
+                <i class="ph-duotone ph-code"></i>
+                <h4>The Background</h4>
+                <p>This resource is built by David Nyman, MS CCC-SLP — a school-based speech-language pathologist in New York who also writes software. That dual lens drives everything here.</p>
+            </div>
+            <div class="origin-card">
+                <i class="ph-duotone ph-warning-circle"></i>
+                <h4>The Problem</h4>
+                <p>Without guidance, clinicians either avoid AI entirely or adopt it uncritically. Both paths carry risk. One leaves efficiency on the table; the other threatens quality and compliance.</p>
+            </div>
+            <div class="origin-card">
+                <i class="ph-duotone ph-target"></i>
+                <h4>The Position</h4>
+                <p>SLP/IO isn't pro-AI or anti-AI. It's pro-clinician. The goal is to strengthen clinical thinking with better tools, not to replace it with faster ones.</p>
+            </div>
+        </div>
+
+        <div class="origin-statement">
+            <strong>Harmonic Systems</strong> is the studio behind SLP/IO — a small operation where clinical practice and software development overlap. SLP/IO is its first public resource: a living document where the rigor of speech-language pathology meets the capability of modern language models.
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── About ── -->
+    <section id="about">
+        <div class="section-header">
+            <div class="section-label">Background</div>
+            <h2>About <span class="accent">This Resource</span></h2>
+        </div>
+        <div class="about-text">
+            <p>SLP/IO is a <strong>Harmonic Systems</strong> project — built by a speech-language pathologist and software developer who has spent years working at the intersection of clinical practice, voice science, and technology.</p>
+            <p>SLP/IO exists because clinicians are already using language models informally, often without a framework for doing so safely or effectively. The goal is not to promote AI adoption. It's to define what responsible use looks like in a field where language carries legal and clinical weight.</p>
+            <p>These tools are entering clinical workflows whether we're ready or not. The question is not whether to use them, but how to use them in a way that strengthens — not weakens — clinical thinking.</p>
+        </div>
+        <div class="disclosure">
+            <strong>About the author:</strong> David Nyman, MS CCC-SLP, is a school-based speech-language pathologist in the Hudson Valley region of New York. He splits his time between clinical work and building software tools informed by that practice. SLP/IO is his attempt to bridge the gap between what clinicians need and what the technology conversation currently offers.
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Contact ── -->
+    <section class="section-alt" id="contact">
+        <div class="section-header">
+            <div class="section-label">Connect</div>
+            <h2>Get <span class="accent">Involved</span></h2>
+        </div>
+        <div class="cta-section">
+            <h3>Want to contribute, collaborate, or push back?</h3>
+            <p>This guide gets better when clinicians challenge it. If you've found a use case we missed, a principle that needs nuance, or something that's flat-out wrong — that's exactly the kind of feedback that matters.</p>
+            <a class="btn-primary" href="mailto:david@slpio.org">Send feedback</a>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* ── Hero ── */
+    .hero-wrapper {
+        background: linear-gradient(135deg, var(--light) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+        pointer-events: none;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: -10%;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 60%);
+        pointer-events: none;
+        animation: float 10s ease-in-out infinite reverse;
+    }
+
+    .hero {
+        max-width: 960px;
+        margin: auto;
+        min-height: calc(90vh - var(--header-height));
+        display: flex;
+        align-items: center;
+        padding: 4rem 2rem;
+        position: relative;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(20px, -20px); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+
+    .hero-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.25rem;
+    }
+
+    .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--accent-green);
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(39,174,96,0.4); }
+        50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(39,174,96,0); }
+    }
+
+    .tagline {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-principle {
+        font-size: 0.95rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--primary-light);
+        border-left: 4px solid var(--primary);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        font-style: italic;
+        color: var(--dark);
+    }
+
+    .io-explainer {
+        margin-bottom: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--light);
+    }
+
+    .io-explainer p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .io-explainer strong { color: var(--dark); }
+
+    .ai-disclosure {
+        margin-bottom: 2rem;
+        padding: 1rem 1.5rem;
+        border-left: 3px solid var(--accent-amber);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        background: rgba(212,120,46,0.06);
+    }
+
+    .ai-disclosure p {
+        font-size: 0.82rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .ai-disclosure strong { color: var(--dark); }
+
+    .link-arrow {
+        font-weight: 600;
+        font-size: 0.88rem;
+        color: var(--primary);
+        text-decoration: none;
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 2px;
+    }
+
+    .hero-meta {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        margin-top: 2rem;
+    }
+
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+    .hero-meta i { color: var(--primary); }
+
+    /* ── Layer Navigation Grid ── */
+    .layer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .layer-card {
+        padding: 1.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-organic);
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        position: relative;
+    }
+
+    .layer-card:nth-child(even) { border-radius: 4px 10px 4px 10px; }
+
+    .layer-card:hover {
+        border-color: var(--primary);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-4px);
+        color: inherit;
+    }
+
+    .layer-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+        color: var(--light);
+        background: linear-gradient(135deg, var(--primary), #3498db);
+    }
+
+    .layer-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+    .layer-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+
+    .layer-count {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary);
+    }
+
+    /* ── Origin Cards ── */
+    .origin-card {
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-organic);
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+    }
+
+    .origin-card:nth-child(even) { border-radius: 4px 10px 4px 10px; }
+
+    .origin-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    .origin-card i { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.75rem; display: block; }
+    .origin-card h4 { font-size: 0.92rem; margin-bottom: 0.35rem; }
+    .origin-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+    .origin-statement {
+        margin-top: 2rem;
+        padding: 1.75rem;
+        background: linear-gradient(135deg, var(--primary-light) 0%, rgba(52,152,219,0.05) 100%);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--primary);
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+    }
+
+    .origin-statement strong { color: var(--dark); }
+
+    /* ── About ── */
+    .about-text { font-size: 0.92rem; line-height: 1.85; color: var(--text-muted); }
+    .about-text p { margin-bottom: 1rem; }
+
+    .disclosure {
+        background: var(--secondary);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        border-left: 4px solid var(--text-muted);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+        text-align: center;
+        padding: 3.5rem 2rem;
+        background: linear-gradient(135deg, var(--primary-light) 0%, rgba(39,174,96,0.05) 100%);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+    }
+
+    .cta-section h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif; font-size: 0.9rem; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+        .hero-meta { flex-direction: column; gap: 0.5rem; }
+        .layer-grid { grid-template-columns: 1fr; }
+    }
+</style>

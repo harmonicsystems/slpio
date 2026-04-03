@@ -1,0 +1,21 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('settings');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SectionIndexLayout
+    title="<span class='accent'>Settings</span>"
+    label="Layer 3"
+    description="Curated guidance filtered by where you work. Each setting has its own regulatory context, red flags, workflows, and recommended templates."
+>
+    {sorted.map((entry) => (
+        <a href={`/settings/${entry.id}/`} class="nav-card">
+            {entry.data.icon && <i class={entry.data.icon} style="font-size:1.3rem; color:var(--primary); margin-bottom:0.75rem; display:block;"></i>}
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+        </a>
+    ))}
+</SectionIndexLayout>

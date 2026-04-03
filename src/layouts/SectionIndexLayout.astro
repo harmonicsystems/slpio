@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  label?: string;
+}
+
+const { title, description, label } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+    <section>
+        <div class="section-header">
+            {label && <div class="section-label">{label}</div>}
+            <h2><Fragment set:html={title} /></h2>
+            {description && <p class="section-intro">{description}</p>}
+        </div>
+
+        <div class="card-grid" style="margin-top: 2rem;">
+            <slot />
+        </div>
+    </section>
+</BaseLayout>

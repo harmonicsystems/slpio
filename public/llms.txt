@@ -1,0 +1,26 @@
+# SLP/IO
+
+> SLP/IO is a clinician-first field guide for speech-language pathologists navigating large language models in clinical and educational settings. Built by Harmonic Systems.
+
+SLP/IO provides ethical frameworks, prompt templates, evidence summaries, and practical guidance for SLPs using AI tools like ChatGPT, Claude, and Gemini for documentation, IEP goal writing, parent communication, and clinical reflection.
+
+## Core Principles
+- AI supports clinical thinking; it does not replace judgment
+- Never include PHI (protected health information) in public AI tools
+- All AI outputs require clinician review before use in legal or clinical documents
+- Better documentation should still sound human
+- Evidence-based practice is not the same as polished wording
+- Precision in language protects students and their access to services
+
+## Key Sections
+- [Home](https://www.slpio.org/): Full field guide with principles, use cases, templates, and evidence
+- [Principles](https://www.slpio.org/#principles): Six core principles for responsible AI use in SLP
+- [Use Cases](https://www.slpio.org/#use-cases): Appropriate uses and red flags for LLMs in clinical work
+- [Prompt Templates](https://www.slpio.org/#templates): Copyable prompts for progress notes, IEP goals, parent emails, ethical reflection
+- [Evidence](https://www.slpio.org/#evidence): Honest summary of LLM evidence in clinical documentation
+- [Digital Media Literacy](https://www.slpio.org/#media-literacy): How shifting media landscapes affect SLP practice
+- [About](https://www.slpio.org/#about): Background on Harmonic Systems and the clinician-developer behind the project
+
+## Contact
+- Email: david@slpio.org
+- GitHub: https://github.com/harmonicsystems
