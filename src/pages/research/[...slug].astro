@@ -1,0 +1,75 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('research');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Research Digest"
+    breadcrumbs={[{ label: 'Research', href: '/research/' }]}
+>
+    <div class="research-meta">
+        <span><strong>Authors:</strong> {entry.data.authors}</span>
+        <span><strong>Year:</strong> {entry.data.year}</span>
+        <span><strong>Journal:</strong> {entry.data.journal}</span>
+        <span><strong>Relevance:</strong> {entry.data.relevance}</span>
+        {entry.data.doi && <span><strong>DOI:</strong> <a href={`https://doi.org/${entry.data.doi}`} target="_blank" rel="noopener">{entry.data.doi}</a></span>}
+    </div>
+    <div class="research-topics">
+        {entry.data.topics.map((topic: string) => (
+            <span class="topic-pill">{topic}</span>
+        ))}
+    </div>
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .research-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .research-meta a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+
+    .research-topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .topic-pill {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-radius: 99px;
+        background: var(--primary-light);
+        color: var(--primary);
+    }
+</style>

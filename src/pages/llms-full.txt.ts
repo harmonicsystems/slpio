@@ -15,7 +15,7 @@ function stripMarkdown(text: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary] = await Promise.all([
+  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies] = await Promise.all([
     getCollection('foundations'),
     getCollection('tasks'),
     getCollection('settings'),
@@ -26,6 +26,9 @@ export const GET: APIRoute = async () => {
     getCollection('patterns'),
     getCollection('antipatterns'),
     getCollection('glossary'),
+    getCollection('casestudies'),
+    getCollection('research'),
+    getCollection('policies'),
   ]);
 
   const sections = [
@@ -38,6 +41,9 @@ export const GET: APIRoute = async () => {
     { name: 'Patterns', path: 'patterns', entries: patterns.sort((a, b) => a.data.order - b.data.order) },
     { name: 'Antipatterns', path: 'antipatterns', entries: antipatterns.sort((a, b) => a.data.order - b.data.order) },
     { name: 'Glossary', path: 'glossary', entries: glossary.sort((a, b) => a.data.order - b.data.order) },
+    { name: 'Case Studies', path: 'case-studies', entries: casestudies.sort((a, b) => a.data.order - b.data.order) },
+    { name: 'Research Digests', path: 'research', entries: research.sort((a, b) => a.data.order - b.data.order) },
+    { name: 'Policy Templates', path: 'policies', entries: policies.sort((a, b) => a.data.order - b.data.order) },
     { name: 'Resources', path: 'resources', entries: resources.sort((a, b) => a.data.order - b.data.order) },
   ];
 

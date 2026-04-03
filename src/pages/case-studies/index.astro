@@ -1,0 +1,52 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('casestudies');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const settingColors: Record<string, string> = {
+    'school': 'var(--primary)',
+    'medical': 'var(--accent-red)',
+    'snf-rehab': '#7b2d8e',
+    'early-intervention': 'var(--accent-green)',
+    'private-practice': 'var(--accent-amber)',
+    'university': 'var(--primary)',
+};
+---
+
+<SectionIndexLayout
+    title="Case <span class='accent'>Studies</span>"
+    label="Real-World Scenarios"
+    description="De-identified clinical scenarios showing how SLPs integrate LLMs into actual workflows — what worked, what didn't, and what to watch for."
+>
+    {sorted.map((entry) => (
+        <a href={`/case-studies/${entry.id}/`} class="nav-card">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                <span class="case-tag" style={`background: ${settingColors[entry.data.setting] || 'var(--primary)'}15; color: ${settingColors[entry.data.setting] || 'var(--primary)'};`}>
+                    {entry.data.setting}
+                </span>
+                <span class="case-tag" style="background: var(--secondary); color: var(--text-muted);">
+                    {entry.data.population}
+                </span>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <div style="margin-top:0.5rem; font-size:0.72rem; color:var(--text-muted); font-style:italic;">
+                {entry.data.clinician}
+            </div>
+        </a>
+    ))}
+</SectionIndexLayout>
+
+<style>
+    .case-tag {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
+    }
+</style>

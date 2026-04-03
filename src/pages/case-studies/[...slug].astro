@@ -1,0 +1,91 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('casestudies');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Case Study"
+    breadcrumbs={[{ label: 'Case Studies', href: '/case-studies/' }]}
+>
+    <div class="case-meta">
+        <span><strong>Setting:</strong> {entry.data.setting}</span>
+        <span><strong>Population:</strong> {entry.data.population}</span>
+        <span><strong>Domains:</strong> {entry.data.domains.join(', ')}</span>
+        <span><strong>Clinician:</strong> {entry.data.clinician}</span>
+    </div>
+    <div class="case-summary">
+        <div class="case-summary-item">
+            <strong>Scenario</strong>
+            <p>{entry.data.scenario}</p>
+        </div>
+        <div class="case-summary-item">
+            <strong>AI Role</strong>
+            <p>{entry.data.aiRole}</p>
+        </div>
+        <div class="case-summary-item">
+            <strong>Outcome</strong>
+            <p>{entry.data.outcome}</p>
+        </div>
+    </div>
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .case-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 1.5rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        text-transform: capitalize;
+    }
+
+    .case-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .case-summary-item {
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--light);
+    }
+
+    .case-summary-item strong {
+        display: block;
+        font-size: 0.7rem;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--primary);
+        margin-bottom: 0.35rem;
+    }
+
+    .case-summary-item p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin: 0;
+    }
+</style>

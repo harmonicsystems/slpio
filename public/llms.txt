@@ -14,7 +14,7 @@ SLP/IO provides ethical frameworks, copy-ready prompt templates, multi-step work
 5. Evidence-based practice is not the same as polished wording
 6. Precision in language protects students and their access to services
 
-## Content Architecture (10 collections)
+## Content Architecture (13 collections)
 
 ### Foundations — Core knowledge every SLP needs before using LLMs
 - [Core Principles](https://www.slpio.org/foundations/principles/): Six principles for responsible AI use
@@ -74,6 +74,27 @@ SLP/IO provides ethical frameworks, copy-ready prompt templates, multi-step work
 - [Hallucination](https://www.slpio.org/glossary/hallucination/): When AI generates plausible but incorrect information
 - [Pragmatics](https://www.slpio.org/glossary/pragmatics/): Social language rules (clinical) vs. contextual meaning (AI)
 - [Temperature](https://www.slpio.org/glossary/temperature/): AI creativity setting and its clinical implications
+
+### Case Studies — De-identified clinical scenarios with real workflows
+- [School Eval Season](https://www.slpio.org/case-studies/school-eval-season/): Managing evaluation workload with AI assistance
+- [Medical Dysphagia Documentation](https://www.slpio.org/case-studies/medical-dysphagia-documentation/): Acute care documentation workflows
+- [Bilingual Assessment Dilemma](https://www.slpio.org/case-studies/bilingual-assessment-dilemma/): Navigating cultural-linguistic considerations
+- [SNF Progress Notes](https://www.slpio.org/case-studies/snf-progress-notes/): Skilled nursing facility documentation efficiency
+- [Grad Student Supervision](https://www.slpio.org/case-studies/grad-student-supervision/): Clinical education with AI tools
+
+### Research Digests — Peer-reviewed evidence on AI in healthcare
+- [Van Veen et al. (2024)](https://www.slpio.org/research/van-veen-2024-clinical-summarization/): Clinical text summarization, Nature Medicine
+- [Thirunavukarasu et al. (2023)](https://www.slpio.org/research/thirunavukarasu-2023-llms-medicine/): LLMs in medicine, Nature Medicine
+- [Ayers et al. (2023)](https://www.slpio.org/research/ayers-2023-physician-vs-chatbot/): Physician vs. chatbot responses, JAMA Internal Medicine
+- [Korngiebel & Mooney (2021)](https://www.slpio.org/research/korngiebel-2021-ai-ethics-healthcare/): AI ethics in healthcare
+- [Miner et al. (2023)](https://www.slpio.org/research/miner-2023-ai-clinical-documentation/): AI in clinical documentation
+- [Abd-Alrazaq et al. (2023)](https://www.slpio.org/research/abd-alrazaq-2023-llms-mental-health/): LLMs in mental health
+
+### Policy Templates — Adaptable AI governance documents
+- [School District AI Policy](https://www.slpio.org/policies/school-district-ai-policy/): FERPA-compliant school district template
+- [Hospital SLP AI Policy](https://www.slpio.org/policies/hospital-slp-ai-policy/): HIPAA-aligned medical setting template
+- [Private Practice AI Guidelines](https://www.slpio.org/policies/private-practice-ai-guidelines/): Small practice governance
+- [Clinical Education AI Policy](https://www.slpio.org/policies/clinical-education-ai-policy/): University program template
 
 ### Resources
 - [Media Literacy](https://www.slpio.org/resources/media-literacy/)
