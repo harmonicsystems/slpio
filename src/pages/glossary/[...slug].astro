@@ -12,6 +12,19 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const glossaryJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": entry.data.term,
+    "description": entry.data.slpDefinition,
+    "url": new URL(`/glossary/${entry.id}/`, Astro.site).href,
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "SLP/IO Glossary",
+        "url": new URL('/glossary/', Astro.site).href,
+    },
+};
 ---
 
 <ContentLayout
@@ -19,6 +32,7 @@ const { Content } = await render(entry);
     label="Glossary"
     breadcrumbs={[{ label: 'Glossary', href: '/glossary/' }]}
 >
+    <script type="application/ld+json" set:html={JSON.stringify(glossaryJsonLd)} />
     <div class="glossary-definitions">
         <div class="glossary-def">
             <div class="glossary-def-label">Clinical Definition</div>

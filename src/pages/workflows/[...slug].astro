@@ -12,6 +12,20 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": entry.data.title,
+    "description": entry.data.description,
+    "totalTime": `PT${entry.data.estimatedTime.replace(/[^0-9]/g, '')}M`,
+    "url": new URL(`/workflows/${entry.id}/`, Astro.site).href,
+    "author": {
+        "@type": "Person",
+        "name": "David Nyman",
+        "credentials": "MS CCC-SLP",
+    },
+};
 ---
 
 <ContentLayout
@@ -20,6 +34,7 @@ const { Content } = await render(entry);
     label="Workflows"
     breadcrumbs={[{ label: 'Workflows', href: '/workflows/' }]}
 >
+    <script type="application/ld+json" set:html={JSON.stringify(howToJsonLd)} />
     <div class="workflow-meta">
         <span><i class="ph ph-steps"></i> <strong>{entry.data.stepCount} steps</strong></span>
         <span><i class="ph ph-clock"></i> {entry.data.estimatedTime}</span>

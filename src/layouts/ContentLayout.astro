@@ -10,9 +10,31 @@ interface Props {
 }
 
 const { title, description, label, breadcrumbs = [] } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description || '',
+    "url": canonicalUrl,
+    "author": {
+        "@type": "Person",
+        "name": "David Nyman",
+        "credentials": "MS CCC-SLP",
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Harmonic Systems",
+    },
+    "mainEntityOfPage": canonicalUrl,
+    "articleSection": label || '',
+    "inLanguage": "en-US",
+};
 ---
 
 <BaseLayout title={title} description={description}>
+    <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
     <section>
         {breadcrumbs.length > 0 && (
             <nav class="breadcrumb">
@@ -64,6 +86,46 @@ const { title, description, label, breadcrumbs = [] } = Astro.props;
                 });
             });
         });
+
+        // Auto-detect FAQ sections and inject FAQPage JSON-LD
+        var faqHeading = null;
+        document.querySelectorAll('.prose h2').forEach(function(h2) {
+            if (h2.textContent.trim().toLowerCase().indexOf('frequently asked questions') > -1) {
+                faqHeading = h2;
+            }
+        });
+        if (faqHeading) {
+            var faqs = [];
+            var el = faqHeading.nextElementSibling;
+            var currentQ = null;
+            while (el && el.tagName !== 'H2') {
+                if (el.tagName === 'H3') {
+                    if (currentQ) faqs.push(currentQ);
+                    currentQ = { q: el.textContent.trim(), a: '' };
+                } else if (currentQ && (el.tagName === 'P' || el.tagName === 'UL' || el.tagName === 'OL')) {
+                    currentQ.a += (currentQ.a ? ' ' : '') + el.textContent.trim();
+                }
+                el = el.nextElementSibling;
+            }
+            if (currentQ) faqs.push(currentQ);
+            if (faqs.length > 0) {
+                var faqLd = {
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": faqs.map(function(f) {
+                        return {
+                            "@type": "Question",
+                            "name": f.q,
+                            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+                        };
+                    })
+                };
+                var script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = JSON.stringify(faqLd);
+                document.head.appendChild(script);
+            }
+        }
     })();
     </script>
 </BaseLayout>

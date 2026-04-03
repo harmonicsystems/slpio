@@ -36,6 +36,31 @@ const { title, description = 'A practical, clinician-first field guide for speec
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" is:inline></script>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SLP/IO",
+        "alternateName": "SLP IO Field Guide",
+        "url": "https://www.slpio.org",
+        "description": description,
+        "author": {
+            "@type": "Person",
+            "name": "David Nyman",
+            "credentials": "MS CCC-SLP",
+            "jobTitle": "Speech-Language Pathologist",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Harmonic Systems",
+            "url": "https://github.com/harmonicsystems",
+        },
+        "inLanguage": "en-US",
+        "about": {
+            "@type": "Thing",
+            "name": "Speech-Language Pathology and Artificial Intelligence",
+        },
+    })} />
 </head>
 
 <body>
