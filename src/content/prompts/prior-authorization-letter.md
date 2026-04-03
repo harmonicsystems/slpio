@@ -4,7 +4,7 @@ description: "Draft a prior authorization letter for therapy services or instrum
 category: compliance
 settings: [medical, snf-rehab, private-practice]
 populations: [all]
-domains: [language, articulation, fluency, voice, pragmatics, cognitive-linguistic, dysphagia, aac, literacy, hearing]
+domains: [language, articulation, fluency, voice, dysphagia, cognitive-linguistic, aac]
 difficulty: advanced
 clinicalFrameworks: [medical-model]
 ashaPrinciples: [beneficence, justice]
@@ -14,29 +14,28 @@ order: 6
 ## The Prompt
 
 ```
-I am an SLP drafting a prior authorization letter for insurance. Here is the clinical context (no identifying information): the service or evaluation being requested, the patient's relevant diagnoses, current functional limitations, and what has been tried so far. Draft a prior authorization letter that includes: a statement of the specific service requested, medical necessity justification tied to functional deficits, relevant diagnosis codes (ICD-10) if I provide them, a summary of prior treatment and why continued or new services are needed, the expected functional outcomes of the requested service, and a closing request for approval. Use formal medical language. Tie every justification to functional impact — not just impairment. Do not fabricate diagnoses, history, or functional levels I have not provided.
+I am an SLP drafting a prior authorization letter to an insurance company. Here are the relevant clinical details (no identifying information). Draft a prior authorization letter that includes: the specific service or procedure being requested, a summary of the patient's diagnosis and functional limitations, the clinical rationale for medical necessity (why this service is required to restore, maintain, or prevent decline in function), prior treatment history and response, the expected goals and timeline, and references to applicable coverage criteria if I provide them. Use professional, objective language. Do not fabricate diagnoses, test results, or treatment history I did not provide. Do not guarantee outcomes.
 ```
 
 ## Why This Works
 
-- **Functional framing** — insurers approve based on functional necessity, not impairment alone; this prompt forces the justification into functional terms
-- **Medical necessity language** — the output uses the phrasing insurance reviewers expect, reducing the chance of denial for formatting reasons
-- **No fabrication guardrail** — "do not fabricate diagnoses, history, or functional levels" prevents the model from strengthening your case with invented information
-- **Structured argument** — the letter follows the logical flow reviewers look for: what is requested, why it is needed, what has been tried, what will happen if approved
-- **Diagnosis code integration** — including ICD-10 codes when provided saves a formatting step
+- **Medical necessity framing** — the prompt explicitly targets the language insurers require: restore, maintain, or prevent decline in function
+- **Functional emphasis** — payers respond to functional limitation descriptions more than diagnostic labels alone
+- **No fabrication guardrail** — "do not fabricate diagnoses, test results, or treatment history" prevents the model from strengthening the case with invented data
+- **Outcome honesty** — "do not guarantee outcomes" keeps the letter clinically defensible
 
 ## When to Use
 
-When submitting prior authorization requests for therapy services, therapy extensions, or instrumental evaluations (FEES, MBS, LSVT, AAC devices). Use after you have documented the clinical rationale but need to translate it into insurance-ready language.
+When you need to submit a prior authorization for therapy services, instrumental swallowing evaluations (FEES, MBS), AAC devices, or continuation of treatment. Particularly useful when you are writing multiple authorization letters and need to maintain consistent medical necessity language.
 
 ## When NOT to Use
 
-- Do not include patient names, insurance IDs, dates of birth, or provider NPIs in your input
-- Do not submit the letter without verifying every clinical claim against your actual records
-- Do not use this for appeals — denied claims need a different argumentative structure
+- Do not include patient names, insurance IDs, or facility-specific identifiers
+- Do not submit the letter without verifying every clinical claim against the actual medical record
+- Do not use this to misrepresent the patient's condition or inflate severity
 
 ## Pair With
 
-- [PHI Safety Checker](/foundations/phi-safety/) — critical before pasting any clinical context
-- [Medical setting guide](/settings/medical/) — insurance and compliance context
-- [Ethical Reflection Prompt](/prompts/ethical-reflection-prompt/) — reflect on AI use in compliance documents
+- [PHI Safety Checker](/foundations/phi-safety/) — de-identify all clinical details before pasting
+- [Documentation workflows](/tasks/documentation/) — broader documentation strategies
+- [Compliance task guide](/tasks/compliance/) — regulatory and payer requirements

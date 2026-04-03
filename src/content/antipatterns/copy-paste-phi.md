@@ -1,6 +1,6 @@
 ---
 title: "Copy-Paste PHI"
-description: "When a clinician pastes real patient or student names, dates of birth, and diagnoses directly into a public LLM, creating an instant HIPAA or FERPA violation."
+description: "When a clinician pastes real patient or student names, dates of birth, and diagnoses directly into a public LLM."
 category: phi-violation
 severity: critical
 settings: [school, medical, snf-rehab, early-intervention, private-practice]
