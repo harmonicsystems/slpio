@@ -1,0 +1,202 @@
+---
+/**
+ * Inline citation system with popover footnotes.
+ *
+ * Usage in markdown:
+ *   <cite data-ref="van-veen-2024"></cite>
+ *
+ * Renders as a superscript [12] that shows a popover with the full
+ * reference on hover/click. All references are defined in src/data/references.json.
+ */
+---
+
+<script is:inline>
+(function() {
+    var refs = null;
+
+    function loadRefs() {
+        if (refs) return Promise.resolve(refs);
+        return fetch('/references.json').then(function(r) { return r.json(); }).then(function(data) {
+            refs = data;
+            return data;
+        });
+    }
+
+    function createPopover(cite, ref) {
+        var pop = document.createElement('div');
+        pop.className = 'cite-popover';
+        var text = ref.full;
+        if (ref.url) {
+            pop.innerHTML = '<span class="cite-popover-text">' + text + '</span>' +
+                '<a class="cite-popover-link" href="' + ref.url + '" target="_blank" rel="noopener">View source <i class="ph ph-arrow-square-out"></i></a>';
+        } else {
+            pop.innerHTML = '<span class="cite-popover-text">' + text + '</span>';
+        }
+        return pop;
+    }
+
+    function positionPopover(pop, anchor) {
+        document.body.appendChild(pop);
+        var rect = anchor.getBoundingClientRect();
+        var popRect = pop.getBoundingClientRect();
+        var top = rect.top - popRect.height - 8 + window.scrollY;
+        var left = rect.left + (rect.width / 2) - (popRect.width / 2) + window.scrollX;
+
+        // Keep within viewport
+        if (left < 8) left = 8;
+        if (left + popRect.width > window.innerWidth - 8) left = window.innerWidth - 8 - popRect.width;
+        if (top < window.scrollY + 8) {
+            top = rect.bottom + 8 + window.scrollY; // flip below
+        }
+
+        pop.style.top = top + 'px';
+        pop.style.left = left + 'px';
+        pop.style.opacity = '1';
+        pop.style.transform = 'translateY(0)';
+    }
+
+    var activePop = null;
+    var hideTimeout = null;
+
+    function showPopover(cite, ref) {
+        hideAllPopovers();
+        var pop = createPopover(cite, ref);
+        activePop = pop;
+        positionPopover(pop, cite);
+
+        pop.addEventListener('mouseenter', function() { clearTimeout(hideTimeout); });
+        pop.addEventListener('mouseleave', function() { scheduleHide(); });
+    }
+
+    function scheduleHide() {
+        hideTimeout = setTimeout(hideAllPopovers, 200);
+    }
+
+    function hideAllPopovers() {
+        clearTimeout(hideTimeout);
+        document.querySelectorAll('.cite-popover').forEach(function(p) { p.remove(); });
+        activePop = null;
+    }
+
+    function initCitations() {
+        var cites = document.querySelectorAll('cite[data-ref]');
+        if (cites.length === 0) return;
+
+        loadRefs().then(function(data) {
+            cites.forEach(function(cite) {
+                var key = cite.getAttribute('data-ref');
+                var ref = data[key];
+                if (!ref) {
+                    cite.innerHTML = '<sup class="cite-ref cite-ref-missing">[?]</sup>';
+                    cite.title = 'Unknown reference: ' + key;
+                    return;
+                }
+
+                cite.innerHTML = '<sup class="cite-ref">[' + ref.num + ']</sup>';
+                cite.style.cursor = 'pointer';
+
+                cite.addEventListener('mouseenter', function() {
+                    clearTimeout(hideTimeout);
+                    showPopover(cite, ref);
+                });
+                cite.addEventListener('mouseleave', function() { scheduleHide(); });
+                cite.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (activePop) {
+                        hideAllPopovers();
+                    } else {
+                        showPopover(cite, ref);
+                    }
+                });
+            });
+        });
+    }
+
+    // Close on click outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('cite[data-ref]') && !e.target.closest('.cite-popover')) {
+            hideAllPopovers();
+        }
+    });
+
+    // Init on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCitations);
+    } else {
+        initCitations();
+    }
+})();
+</script>
+
+<style is:global>
+    cite[data-ref] {
+        font-style: normal;
+        display: inline;
+    }
+
+    .cite-ref {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65em;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--transition);
+        vertical-align: super;
+        line-height: 1;
+        padding: 0 1px;
+    }
+
+    .cite-ref:hover {
+        color: var(--accent-amber);
+    }
+
+    .cite-ref-missing {
+        color: var(--accent-red);
+    }
+
+    .cite-popover {
+        position: absolute;
+        z-index: 10001;
+        max-width: 380px;
+        padding: 0.85rem 1rem;
+        background: var(--light);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+        font-family: 'Poppins', sans-serif;
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .cite-popover-text {
+        display: block;
+        font-size: 0.78rem;
+        line-height: 1.6;
+        color: var(--dark);
+    }
+
+    .cite-popover-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        transition: color var(--transition);
+    }
+
+    .cite-popover-link:hover { color: var(--accent-amber); }
+    .cite-popover-link i { font-size: 0.75rem; }
+
+    @media (max-width: 480px) {
+        .cite-popover {
+            max-width: calc(100vw - 24px);
+            left: 12px !important;
+            right: 12px;
+        }
+    }
+</style>

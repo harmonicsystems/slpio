@@ -5,7 +5,7 @@ icon: ph-duotone ph-shield-check
 order: 2
 ---
 
-Before you paste anything into a public AI tool, run through this quick check. The standards here are drawn directly from HIPAA and FERPA requirements.
+Before you paste anything into a public AI tool, run through this quick check. The standards here are drawn directly from HIPAA <cite data-ref="hipaa"></cite> and FERPA <cite data-ref="ferpa"></cite> requirements.
 
 ## The PHI Checklist
 

@@ -43,6 +43,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="section-divider"><hr/></div>
 
+    <!-- ── Quick Start ── -->
+    <section>
+        <div class="section-header">
+            <div class="section-label">New to AI in SLP?</div>
+            <h2>Start <span class="accent">Here</span></h2>
+            <p class="section-intro">Three steps to using language models responsibly in your clinical practice — whether you've never touched an LLM or you're already experimenting.</p>
+        </div>
+
+        <div class="quickstart-steps">
+            <a href="/foundations/phi-safety/" class="quickstart-step">
+                <div class="quickstart-number">1</div>
+                <div class="quickstart-content">
+                    <h4>Protect Patient Data</h4>
+                    <p>Learn what can and cannot go into an LLM. Use the PHI safety checker to build good habits from day one.</p>
+                </div>
+                <i class="ph ph-arrow-right quickstart-arrow"></i>
+            </a>
+            <a href="/foundations/prompt-patterns/" class="quickstart-step">
+                <div class="quickstart-number">2</div>
+                <div class="quickstart-content">
+                    <h4>Learn the Prompt Patterns</h4>
+                    <p>Master the core patterns that turn vague AI output into clinically useful documentation, goals, and materials.</p>
+                </div>
+                <i class="ph ph-arrow-right quickstart-arrow"></i>
+            </a>
+            <a href="/tasks/writing-goals/" class="quickstart-step">
+                <div class="quickstart-number">3</div>
+                <div class="quickstart-content">
+                    <h4>Write Your First Goal</h4>
+                    <p>Try a real workflow — use a prompt template to transform weak goals into measurable, defensible objectives.</p>
+                </div>
+                <i class="ph ph-arrow-right quickstart-arrow"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
     <!-- ── Navigate by Layer ── -->
     <section>
         <div class="section-header">
@@ -426,9 +464,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .cta-section h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
     .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif; font-size: 0.9rem; }
 
+    /* ── Quick Start ── */
+    .quickstart-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .quickstart-step {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 1.5rem 1.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        text-decoration: none;
+        color: inherit;
+        transition: all var(--transition);
+        box-shadow: var(--card-shadow);
+    }
+
+    .quickstart-step:hover {
+        border-color: var(--primary);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateX(4px);
+        color: inherit;
+    }
+
+    .quickstart-number {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), #3498db);
+        color: white;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quickstart-content { flex: 1; }
+    .quickstart-content h4 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .quickstart-content p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    .quickstart-arrow {
+        flex-shrink: 0;
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        transition: all var(--transition);
+    }
+
+    .quickstart-step:hover .quickstart-arrow {
+        color: var(--primary);
+        transform: translateX(4px);
+    }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
         .hero-meta { flex-direction: column; gap: 0.5rem; }
         .layer-grid { grid-template-columns: 1fr; }
+        .quickstart-step { padding: 1.25rem; gap: 1rem; }
     }
 </style>

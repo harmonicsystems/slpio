@@ -101,7 +101,7 @@ I am an SLP preparing a discharge summary for a patient with dysphagia (no ident
 
 ## IDDSI Reference
 
-When writing about diet levels, use the IDDSI framework consistently. The model can help structure your documentation around these levels, but the determination of which level is appropriate is always yours:
+When writing about diet levels, use the IDDSI framework consistently <cite data-ref="iddsi"></cite>. The model can help structure your documentation around these levels, but the determination of which level is appropriate is always yours:
 
 - **Level 0:** Thin liquids
 - **Level 1:** Slightly thick
