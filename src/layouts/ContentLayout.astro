@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  label?: string;
+  breadcrumbs?: Array<{ label: string; href: string }>;
+}
+
+const { title, description, label, breadcrumbs = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+    <section>
+        {breadcrumbs.length > 0 && (
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                {breadcrumbs.map((crumb) => (
+                    <><span>/</span><a href={crumb.href}>{crumb.label}</a></>
+                ))}
+                <span>/</span>{title}
+            </nav>
+        )}
+
+        <div class="section-header">
+            {label && <div class="section-label">{label}</div>}
+            <h2><Fragment set:html={title} /></h2>
+            {description && <p class="section-intro">{description}</p>}
+        </div>
+
+        <div class="prose">
+            <slot />
+        </div>
+    </section>
+</BaseLayout>
