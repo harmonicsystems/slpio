@@ -1,0 +1,122 @@
+{
+  "articulation": {
+    "topic": "Articulation and Phonology",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/articulation-and-phonology/",
+    "subtopics": ["Assessment", "Treatment", "Cultural & Linguistic Considerations"]
+  },
+  "language": {
+    "topic": "Spoken Language Disorders",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/spoken-language-disorders/",
+    "subtopics": ["Assessment", "Treatment", "Language in Adolescents"]
+  },
+  "written-language": {
+    "topic": "Written Language Disorders",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/written-language-disorders/",
+    "subtopics": ["Reading", "Writing", "Assessment", "Intervention"]
+  },
+  "fluency": {
+    "topic": "Fluency Disorders",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/",
+    "subtopics": ["Stuttering", "Cluttering", "Assessment", "Treatment"]
+  },
+  "voice": {
+    "topic": "Voice Disorders",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/voice-disorders/",
+    "subtopics": ["Assessment", "Treatment", "Pediatric Voice", "Professional Voice"]
+  },
+  "pragmatics": {
+    "topic": "Social Communication Disorder",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/social-communication-disorder/",
+    "subtopics": ["Assessment", "Intervention", "Autism Spectrum Disorder"]
+  },
+  "aac": {
+    "topic": "Augmentative and Alternative Communication (AAC)",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/augmentative-and-alternative-communication/",
+    "subtopics": ["Assessment", "Implementation", "Funding"]
+  },
+  "dysphagia": {
+    "topic": "Adult Dysphagia",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/adult-dysphagia/",
+    "subtopics": ["Assessment", "Treatment", "MBSS", "FEES"]
+  },
+  "pediatric-dysphagia": {
+    "topic": "Pediatric Feeding and Swallowing",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/pediatric-feeding-and-swallowing/",
+    "subtopics": ["Assessment", "Treatment"]
+  },
+  "cognitive-linguistic": {
+    "topic": "Traumatic Brain Injury in Adults",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/traumatic-brain-injury-in-adults/",
+    "subtopics": ["Assessment", "Treatment", "Cognitive-Communication"]
+  },
+  "dementia": {
+    "topic": "Dementia",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/dementia/",
+    "subtopics": ["Assessment", "Intervention", "Caregiver Training"]
+  },
+  "hearing": {
+    "topic": "Hearing Loss in Children",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/hearing-loss-in-children/",
+    "subtopics": ["Screening", "Assessment", "Intervention"]
+  },
+  "apd": {
+    "topic": "Central Auditory Processing Disorder",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/central-auditory-processing-disorder/",
+    "subtopics": ["Assessment", "Intervention"]
+  },
+  "autism": {
+    "topic": "Autism",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/autism/",
+    "subtopics": ["Assessment", "Intervention", "Social Communication"]
+  },
+  "late-language-emergence": {
+    "topic": "Late Language Emergence",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/late-language-emergence/",
+    "subtopics": ["Identification", "Assessment", "Intervention"]
+  },
+  "cleft-lip-palate": {
+    "topic": "Cleft Lip and Palate",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/cleft-lip-and-palate/",
+    "subtopics": ["Assessment", "Intervention", "Velopharyngeal Dysfunction"]
+  },
+  "telepractice": {
+    "topic": "Telepractice",
+    "url": "https://www.asha.org/practice-portal/professional-issues/telepractice/",
+    "subtopics": ["Service Delivery", "Documentation", "Reimbursement"]
+  },
+  "documentation": {
+    "topic": "Documentation in Health Care",
+    "url": "https://www.asha.org/practice-portal/professional-issues/documentation-in-health-care/",
+    "subtopics": ["Clinical Documentation", "Medical Records", "Coding"]
+  },
+  "ebp": {
+    "topic": "Evidence-Based Practice",
+    "url": "https://www.asha.org/practice-portal/professional-issues/evidence-based-practice/",
+    "subtopics": ["Clinical Decision Making", "Research Appraisal"]
+  },
+  "early-intervention": {
+    "topic": "Early Intervention",
+    "url": "https://www.asha.org/practice-portal/professional-issues/early-intervention/",
+    "subtopics": ["Part C", "Family-Centered", "IFSP"]
+  },
+  "bilingual": {
+    "topic": "Bilingual Service Delivery",
+    "url": "https://www.asha.org/practice-portal/professional-issues/bilingual-service-delivery/",
+    "subtopics": ["Assessment", "Intervention", "Interpreters"]
+  },
+  "ethics": {
+    "topic": "Ethics",
+    "url": "https://www.asha.org/practice-portal/professional-issues/ethics/",
+    "subtopics": ["Code of Ethics", "Scope of Practice", "Professional Conduct"]
+  },
+  "supervision": {
+    "topic": "Clinical Education and Supervision",
+    "url": "https://www.asha.org/practice-portal/professional-issues/clinical-education-and-supervision/",
+    "subtopics": ["Supervisor Qualifications", "Student Training"]
+  },
+  "literacy": {
+    "topic": "Literacy",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/written-language-disorders/",
+    "subtopics": ["Phonological Awareness", "Reading Comprehension", "Written Expression"]
+  }
+}

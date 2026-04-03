@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description = 'A practical, clinician-first field guide for speech-language pathologists using language models responsibly in clinical and educational settings.' } = Astro.props;
+const plainTitle = title.replace(/<[^>]+>/g, '');
 ---
 
 <!DOCTYPE html>
@@ -15,14 +16,14 @@ const { title, description = 'A practical, clinician-first field guide for speec
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | SLP/IO</title>
+    <title>{plainTitle} | SLP/IO</title>
     <meta name="description" content={description} />
     <meta name="author" content="David Nyman, MS CCC-SLP" />
     <meta name="keywords" content="SLP, speech-language pathology, LLM, AI, field guide, IEP, clinical documentation, ASHA, language models, generative AI, speech therapy, AAC" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} | SLP/IO`} />
+    <meta property="og:title" content={`${plainTitle} | SLP/IO`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
     <meta property="og:site_name" content="SLP/IO" />
@@ -30,7 +31,7 @@ const { title, description = 'A practical, clinician-first field guide for speec
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | SLP/IO`} />
+    <meta name="twitter:title" content={`${plainTitle} | SLP/IO`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL('/og-image.svg', Astro.site).href} />
 

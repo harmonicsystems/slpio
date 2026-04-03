@@ -1,5 +1,6 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import AshaAlignment from '../../components/AshaAlignment.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,21 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+// Map domain IDs to ASHA Practice Portal topics
+const ashaTopicMap: Record<string, string[]> = {
+    'articulation': ['articulation'],
+    'language': ['language', 'late-language-emergence'],
+    'fluency': ['fluency'],
+    'voice': ['voice'],
+    'pragmatics': ['pragmatics', 'autism'],
+    'cognitive-linguistic': ['cognitive-linguistic', 'dementia'],
+    'dysphagia': ['dysphagia', 'pediatric-dysphagia'],
+    'aac': ['aac'],
+    'literacy': ['literacy', 'written-language'],
+    'hearing': ['hearing', 'apd'],
+};
+const ashaTopics = ashaTopicMap[entry.id] || [];
 ---
 
 <ContentLayout
@@ -21,4 +37,5 @@ const { Content } = await render(entry);
     breadcrumbs={[{ label: 'Domains', href: '/domains/' }]}
 >
     <Content />
+    <AshaAlignment topics={ashaTopics} />
 </ContentLayout>

@@ -10,12 +10,13 @@ interface Props {
 }
 
 const { title, description, label, breadcrumbs = [] } = Astro.props;
+const plainTitle = title.replace(/<[^>]+>/g, '');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 
 const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": title,
+    "headline": plainTitle,
     "description": description || '',
     "url": canonicalUrl,
     "author": {
