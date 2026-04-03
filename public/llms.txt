@@ -1,26 +1,100 @@
-# SLP/IO
+# SLP/IO — slpio.org
 
-> SLP/IO is a clinician-first field guide for speech-language pathologists navigating large language models in clinical and educational settings. Built by Harmonic Systems.
+> SLP/IO is a clinician-first field guide for speech-language pathologists using large language models responsibly in clinical and educational settings. Built by David Nyman, MS CCC-SLP, and published by Harmonic Systems.
 
-SLP/IO provides ethical frameworks, prompt templates, evidence summaries, and practical guidance for SLPs using AI tools like ChatGPT, Claude, and Gemini for documentation, IEP goal writing, parent communication, and clinical reflection.
+## What This Site Is
+
+SLP/IO provides ethical frameworks, copy-ready prompt templates, multi-step workflows, clinical philosophy patterns, common mistakes (antipatterns), and a bridging glossary for SLPs using AI tools like ChatGPT, Claude, and Gemini. It covers goal writing, documentation, parent communication, compliance, clinical reasoning, and material creation across the full SLP scope of practice.
 
 ## Core Principles
-- AI supports clinical thinking; it does not replace judgment
-- Never include PHI (protected health information) in public AI tools
-- All AI outputs require clinician review before use in legal or clinical documents
-- Better documentation should still sound human
-- Evidence-based practice is not the same as polished wording
-- Precision in language protects students and their access to services
+1. AI supports clinical thinking; it does not replace judgment
+2. Never include PHI (protected health information) in public AI tools
+3. All AI outputs require clinician review before use in legal or clinical documents
+4. Better documentation should still sound human
+5. Evidence-based practice is not the same as polished wording
+6. Precision in language protects students and their access to services
 
-## Key Sections
-- [Home](https://www.slpio.org/): Full field guide with principles, use cases, templates, and evidence
-- [Principles](https://www.slpio.org/#principles): Six core principles for responsible AI use in SLP
-- [Use Cases](https://www.slpio.org/#use-cases): Appropriate uses and red flags for LLMs in clinical work
-- [Prompt Templates](https://www.slpio.org/#templates): Copyable prompts for progress notes, IEP goals, parent emails, ethical reflection
-- [Evidence](https://www.slpio.org/#evidence): Honest summary of LLM evidence in clinical documentation
-- [Digital Media Literacy](https://www.slpio.org/#media-literacy): How shifting media landscapes affect SLP practice
-- [About](https://www.slpio.org/#about): Background on Harmonic Systems and the clinician-developer behind the project
+## Content Architecture (10 collections)
+
+### Foundations — Core knowledge every SLP needs before using LLMs
+- [Core Principles](https://www.slpio.org/foundations/principles/): Six principles for responsible AI use
+- [PHI Safety](https://www.slpio.org/foundations/phi-safety/): HIPAA/FERPA compliance checker and de-identification patterns
+- [How LLMs Work](https://www.slpio.org/foundations/how-llms-work/): Non-technical explanation of language models
+- [Model Reference](https://www.slpio.org/foundations/model-reference/): Comparison of ChatGPT, Claude, Gemini, and others
+- [Evidence Base](https://www.slpio.org/foundations/evidence-base/): What research supports (and doesn't) about LLMs in clinical work
+- [Prompt Patterns](https://www.slpio.org/foundations/prompt-patterns/): Core prompt engineering patterns for clinical use
+
+### Tasks — Workflows organized by what you're trying to do
+- [Writing Goals](https://www.slpio.org/tasks/writing-goals/): IEP and treatment goal templates
+- [Documentation](https://www.slpio.org/tasks/documentation/): Progress notes, eval reports, discharge summaries
+- [Communication](https://www.slpio.org/tasks/communication/): Parent emails, team updates, referral letters
+- [Compliance](https://www.slpio.org/tasks/compliance/): Prior authorization, Medicaid documentation, IDEA compliance
+- [Clinical Reasoning](https://www.slpio.org/tasks/clinical-reasoning/): Differential diagnosis support, treatment planning
+- [Materials](https://www.slpio.org/tasks/materials/): Therapy activities, visual supports, handouts
+
+### Settings — Context-specific guidance by work environment
+- [Schools](https://www.slpio.org/settings/schools/): IEPs, IDEA, FERPA, school-based documentation
+- [Medical & Acute Care](https://www.slpio.org/settings/medical-acute/): Hospital documentation, HIPAA, medical terminology
+- [SNF & Rehab](https://www.slpio.org/settings/snf-rehab/): Functional outcomes, MDS, discharge planning
+- [Early Intervention](https://www.slpio.org/settings/early-intervention/): Part C, family-centered, IFSP
+- [Private Practice](https://www.slpio.org/settings/private-practice/): Insurance documentation, marketing, telepractice
+- [University Supervision](https://www.slpio.org/settings/university-supervision/): Student training, clinical education
+
+### Domains — Deep dives by clinical specialty area
+- [Articulation & Phonology](https://www.slpio.org/domains/articulation/)
+- [Language](https://www.slpio.org/domains/language/)
+- [Fluency](https://www.slpio.org/domains/fluency/)
+- [Voice](https://www.slpio.org/domains/voice/)
+- [Pragmatics / Social Communication](https://www.slpio.org/domains/pragmatics/)
+- [Cognitive-Linguistic](https://www.slpio.org/domains/cognitive-linguistic/)
+- [Dysphagia](https://www.slpio.org/domains/dysphagia/)
+- [AAC](https://www.slpio.org/domains/aac/)
+- [Literacy](https://www.slpio.org/domains/literacy/)
+- [Hearing & Auditory Processing](https://www.slpio.org/domains/hearing/)
+
+### Prompts — Copy-ready prompt templates with explanations
+- [Progress Note Organizer](https://www.slpio.org/prompts/progress-note-organizer-school/): Structured progress notes for school-based SLPs
+- [IEP Goal Strengthener](https://www.slpio.org/prompts/iep-goal-strengthener/): Transform vague goals into measurable objectives
+- [Parent-Friendly Summary](https://www.slpio.org/prompts/parent-friendly-summary/): Convert clinical findings to plain language
+
+### Workflows — Multi-step guides with clinical decision points
+- [IEP Meeting Prep](https://www.slpio.org/workflows/iep-meeting-prep/): 5-step sequence from data compilation to meeting readiness
+- [Eval Report Writing](https://www.slpio.org/workflows/eval-report-writing/): 4-step process for structuring evaluation reports
+
+### Patterns — Clinical philosophy mapped to LLM interaction strategies
+- [Family-Centered Prompting](https://www.slpio.org/patterns/family-centered-prompting/): Naturalistic, coaching-model approach
+- [Discrete Trial Documentation](https://www.slpio.org/patterns/discrete-trial-documentation/): Structured, data-driven approach
+
+### Antipatterns — Common mistakes with before/after examples
+- [The Polished but Unmeasurable Goal](https://www.slpio.org/antipatterns/polished-unmeasurable-goal/): Sounds professional, can't be measured
+- [Generic AI Voice](https://www.slpio.org/antipatterns/generic-ai-voice/): Specific observations replaced with interchangeable text
+- [The Clinic-Only Goal](https://www.slpio.org/antipatterns/clinic-only-goal/): Measures therapy performance, not real-world communication
+
+### Glossary — Terms defined from both clinical and technical perspectives
+- [Hallucination](https://www.slpio.org/glossary/hallucination/): When AI generates plausible but incorrect information
+- [Pragmatics](https://www.slpio.org/glossary/pragmatics/): Social language rules (clinical) vs. contextual meaning (AI)
+- [Temperature](https://www.slpio.org/glossary/temperature/): AI creativity setting and its clinical implications
+
+### Resources
+- [Media Literacy](https://www.slpio.org/resources/media-literacy/)
+- [References](https://www.slpio.org/resources/references/)
+- [Changelog](https://www.slpio.org/resources/changelog/)
+
+## Authoritative Sources Cited
+- ASHA Code of Ethics (2023)
+- HIPAA (45 C.F.R. Parts 160, 164)
+- FERPA (20 U.S.C. § 1232g)
+- IDEA (20 U.S.C. § 1400 et seq.)
+- Thirunavukarasu et al. (2023), Nature Medicine
+- Van Veen et al. (2024), Nature Medicine
+- Ayers et al. (2023), JAMA Internal Medicine
+- IDDSI Framework (2019)
 
 ## Contact
+- Author: David Nyman, MS CCC-SLP
 - Email: david@slpio.org
 - GitHub: https://github.com/harmonicsystems
+- Website: https://www.slpio.org
+
+## Optional: llms-full.txt
+For a comprehensive version with full content summaries per page, see: https://www.slpio.org/llms-full.txt

@@ -1,0 +1,123 @@
+---
+/**
+ * ASHA Practice Portal alignment callout.
+ * Displays relevant ASHA Practice Portal topics for a given page,
+ * showing that content aligns with ASHA's clinical guidance.
+ *
+ * Usage: <AshaAlignment topics={['articulation', 'language']} />
+ */
+import ashaPortal from '../data/asha-portal.json';
+
+interface Props {
+    topics: string[];
+}
+
+const { topics } = Astro.props;
+const matched = topics
+    .map((key) => (ashaPortal as Record<string, any>)[key])
+    .filter(Boolean);
+---
+
+{matched.length > 0 && (
+    <div class="asha-alignment">
+        <div class="asha-alignment-header">
+            <i class="ph-duotone ph-seal-check"></i>
+            <span>ASHA Practice Portal Alignment</span>
+        </div>
+        <p class="asha-alignment-intro">
+            This content aligns with guidance from the following ASHA Practice Portal topics. Always consult the portal for the most current clinical standards.
+        </p>
+        <div class="asha-topics">
+            {matched.map((topic) => (
+                <a href={topic.url} target="_blank" rel="noopener" class="asha-topic">
+                    <strong>{topic.topic}</strong>
+                    <span class="asha-subtopics">{topic.subtopics.join(' · ')}</span>
+                    <i class="ph ph-arrow-square-out asha-external"></i>
+                </a>
+            ))}
+        </div>
+    </div>
+)}
+
+<style>
+    .asha-alignment {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent-green);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        background: rgba(42, 157, 92, 0.04);
+    }
+
+    .asha-alignment-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--accent-green);
+        margin-bottom: 0.5rem;
+    }
+
+    .asha-alignment-header i { font-size: 1.1rem; }
+
+    .asha-alignment-intro {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .asha-topics {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .asha-topic {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.65rem 0.85rem;
+        background: var(--light);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all var(--transition);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .asha-topic:hover {
+        border-color: var(--accent-green);
+        box-shadow: 0 2px 8px rgba(42, 157, 92, 0.1);
+        color: inherit;
+    }
+
+    .asha-topic strong {
+        font-size: 0.82rem;
+        color: var(--dark);
+    }
+
+    .asha-subtopics {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        flex: 1;
+    }
+
+    .asha-external {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        flex-shrink: 0;
+    }
+
+    .asha-topic:hover .asha-external { color: var(--accent-green); }
+
+    @media (max-width: 480px) {
+        .asha-topic { flex-wrap: wrap; }
+        .asha-subtopics { width: 100%; }
+    }
+</style>

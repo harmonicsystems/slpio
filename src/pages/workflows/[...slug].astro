@@ -1,0 +1,62 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('workflows');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": entry.data.title,
+    "description": entry.data.description,
+    "totalTime": `PT${entry.data.estimatedTime.replace(/[^0-9]/g, '')}M`,
+    "url": new URL(`/workflows/${entry.id}/`, Astro.site).href,
+    "author": {
+        "@type": "Person",
+        "name": "David Nyman",
+        "credentials": "MS CCC-SLP",
+    },
+};
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Workflows"
+    breadcrumbs={[{ label: 'Workflows', href: '/workflows/' }]}
+>
+    <script type="application/ld+json" set:html={JSON.stringify(howToJsonLd)} />
+    <div class="workflow-meta">
+        <span><i class="ph ph-steps"></i> <strong>{entry.data.stepCount} steps</strong></span>
+        <span><i class="ph ph-clock"></i> {entry.data.estimatedTime}</span>
+        <span style="text-transform:capitalize;"><i class="ph ph-gauge"></i> {entry.data.difficulty}</span>
+        <span><i class="ph ph-buildings"></i> {entry.data.settings.join(', ')}</span>
+    </div>
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .workflow-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 2rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        text-transform: capitalize;
+    }
+    .workflow-meta i { margin-right: 4px; }
+</style>

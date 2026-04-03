@@ -1,0 +1,52 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('antipatterns');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const severityColors: Record<string, string> = {
+    'critical': 'var(--accent-red)',
+    'major': 'var(--accent-amber)',
+    'minor': 'var(--text-muted)',
+};
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Antipatterns"
+    breadcrumbs={[{ label: 'Antipatterns', href: '/antipatterns/' }]}
+>
+    <div class="antipattern-meta">
+        <span style={`color: ${severityColors[entry.data.severity]};`}>
+            <strong>Severity:</strong> {entry.data.severity}
+        </span>
+        <span><strong>Category:</strong> {entry.data.category.replace(/-/g, ' ')}</span>
+    </div>
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .antipattern-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 2rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        text-transform: capitalize;
+    }
+</style>

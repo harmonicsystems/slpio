@@ -36,3 +36,20 @@ When preparing prompts, replace identifiable information with consistent placeho
 ```
 
 > The goal is simple: no prompt you send to a public AI tool should allow anyone — including the AI company — to identify a specific student, patient, or client.
+
+## Frequently Asked Questions
+
+### Can I use ChatGPT to write IEP goals?
+Yes — if you de-identify all information first. Remove student names, school names, DOBs, and ID numbers. Use placeholders like [Student] and [School]. The AI tool should never receive information that could identify a specific child.
+
+### Is it a HIPAA violation to paste clinical notes into ChatGPT?
+If the notes contain protected health information (PHI) — names, dates of birth, diagnosis codes tied to an individual — and you're using a public tool without a Business Associate Agreement (BAA), yes, this is a HIPAA violation <cite data-ref="hipaa"></cite>. De-identify first, or use an enterprise tool with a BAA in place.
+
+### What's the difference between a BAA tool and a public tool?
+A BAA (Business Associate Agreement) is a legal contract between your organization and the AI provider that requires the provider to protect PHI <cite data-ref="hipaa-baa"></cite>. Public tools like free ChatGPT have no such agreement — anything you type may be used for training or stored indefinitely. Enterprise versions (ChatGPT Enterprise, Azure OpenAI) can have BAAs.
+
+### Can I use AI for FERPA-protected student records?
+Only with proper de-identification or through a tool that has appropriate data use agreements with your school district <cite data-ref="ferpa"></cite>. When in doubt, strip all identifying information before using any AI tool.
+
+### What counts as "de-identified" data?
+Data is considered de-identified when all 18 HIPAA identifiers are removed, including: names, geographic data smaller than a state, dates (except year), phone numbers, email addresses, Social Security numbers, medical record numbers, and biometric identifiers. For school settings, also remove student ID numbers, school names, and teacher names.

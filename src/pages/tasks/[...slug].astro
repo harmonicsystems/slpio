@@ -1,5 +1,6 @@
 ---
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import AshaAlignment from '../../components/AshaAlignment.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +13,16 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const ashaTopicMap: Record<string, string[]> = {
+    'writing-goals': ['ebp', 'ethics'],
+    'documentation': ['documentation', 'ebp'],
+    'communication': ['ethics', 'bilingual'],
+    'compliance': ['documentation', 'ethics'],
+    'clinical-reasoning': ['ebp', 'ethics'],
+    'materials': ['ebp'],
+};
+const ashaTopics = ashaTopicMap[entry.id] || [];
 ---
 
 <ContentLayout
@@ -21,4 +32,5 @@ const { Content } = await render(entry);
     breadcrumbs={[{ label: 'Tasks', href: '/tasks/' }]}
 >
     <Content />
+    <AshaAlignment topics={ashaTopics} />
 </ContentLayout>

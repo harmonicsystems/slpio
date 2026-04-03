@@ -47,4 +47,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.slpio.org/sitemap.xml
+Sitemap: https://www.slpio.org/sitemap-index.xml

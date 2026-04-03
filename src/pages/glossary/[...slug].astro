@@ -1,0 +1,96 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('glossary');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const glossaryJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": entry.data.term,
+    "description": entry.data.slpDefinition,
+    "url": new URL(`/glossary/${entry.id}/`, Astro.site).href,
+    "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "SLP/IO Glossary",
+        "url": new URL('/glossary/', Astro.site).href,
+    },
+};
+---
+
+<ContentLayout
+    title={entry.data.term}
+    label="Glossary"
+    breadcrumbs={[{ label: 'Glossary', href: '/glossary/' }]}
+>
+    <script type="application/ld+json" set:html={JSON.stringify(glossaryJsonLd)} />
+    <div class="glossary-definitions">
+        <div class="glossary-def">
+            <div class="glossary-def-label">Clinical Definition</div>
+            <p>{entry.data.slpDefinition}</p>
+        </div>
+        <div class="glossary-def">
+            <div class="glossary-def-label">Technical Definition</div>
+            <p>{entry.data.techDefinition}</p>
+        </div>
+    </div>
+    {entry.data.aliases && entry.data.aliases.length > 0 && (
+        <div class="glossary-aliases">
+            <strong>Also known as:</strong> {entry.data.aliases.join(', ')}
+        </div>
+    )}
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .glossary-definitions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 600px) {
+        .glossary-definitions { grid-template-columns: 1fr; }
+    }
+
+    .glossary-def {
+        padding: 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--secondary);
+    }
+
+    .glossary-def-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .glossary-def p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    .glossary-aliases {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+</style>

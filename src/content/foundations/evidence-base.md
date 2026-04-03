@@ -31,6 +31,20 @@ Current evidence (2025–2026) supports LLMs as documentation copilots that impr
 
 The research base for LLMs in SLP-specific workflows remains limited. Claims in this guide about SLP applications are informed by cross-disciplinary evidence from medicine, nursing, and occupational therapy, combined with clinical judgment. Where evidence is strongest (structured note revision, bias detection) we say so; where it is extrapolated, we flag it. Readers are encouraged to consult current systematic reviews as this field evolves rapidly.
 
+## Frequently Asked Questions
+
+### Is there evidence that AI improves clinical documentation?
+Yes. Van Veen et al. (2024) found that adapted LLMs can outperform medical experts in clinical text summarization <cite data-ref="van-veen-2024"></cite>. Thirunavukarasu et al. (2023) found that outputs tend to be more organized and readable <cite data-ref="thirunavukarasu-2023"></cite>. The strongest evidence supports LLMs as a "second pass" tool for revising and restructuring existing notes — not for generating notes from scratch.
+
+### Can AI write my progress notes for me?
+The evidence does not support using AI as an independent note writer. LLMs can organize and structure your raw observations, but every output requires clinician review. The risk of hallucination (the model adding details you didn't provide) makes unsupervised documentation generation unsafe for clinical or legal records.
+
+### Is there research on AI specifically for speech-language pathology?
+The SLP-specific evidence base remains limited as of 2026. Most research comes from medicine, nursing, and occupational therapy. This guide extrapolates from cross-disciplinary evidence and clearly flags where that extrapolation occurs. The core finding — that LLMs work best as documentation copilots, not independent authors — is consistent across disciplines.
+
+### Does ASHA have a position on using AI in clinical practice?
+ASHA has not issued a specific position statement on LLM use as of 2026. However, the ASHA Code of Ethics <cite data-ref="asha-ethics-2023"></cite> provides the framework: clinicians must maintain responsibility for clinical decisions, protect client confidentiality, and ensure documentation accuracy — all of which apply directly to AI-assisted workflows.
+
 ## References
 
 1. ASHA. (2023). *Code of ethics*. [asha.org/policy/et2016-00342](https://www.asha.org/policy/et2016-00342/)

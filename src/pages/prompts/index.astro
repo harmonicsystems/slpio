@@ -1,0 +1,54 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('prompts');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const categoryColors: Record<string, string> = {
+    'documentation': 'var(--primary)',
+    'goal-writing': 'var(--accent-green)',
+    'parent-communication': 'var(--accent-amber)',
+    'eval-reports': '#7b2d8e',
+    'clinical-reasoning': 'var(--primary)',
+    'materials': 'var(--accent-amber)',
+    'compliance': 'var(--accent-green)',
+    'ethical-reflection': '#7b2d8e',
+};
+---
+
+<SectionIndexLayout
+    title="Prompt <span class='accent'>Library</span>"
+    label="Prompts"
+    description="Copy-ready prompts for real SLP workflows. Each prompt includes the template, an explanation of why it works, and guidance on when to use it — and when not to."
+>
+    {sorted.map((entry) => (
+        <a href={`/prompts/${entry.id}/`} class="nav-card">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                <span class="prompt-tag" style={`background: ${categoryColors[entry.data.category] || 'var(--primary)'}15; color: ${categoryColors[entry.data.category] || 'var(--primary)'};`}>
+                    {entry.data.category.replace('-', ' ')}
+                </span>
+                <span class="prompt-tag" style="background: var(--secondary); color: var(--text-muted);">
+                    {entry.data.difficulty}
+                </span>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <div style="margin-top:0.5rem; font-size:0.7rem; color:var(--text-muted);">
+                {entry.data.settings.join(' · ')}
+            </div>
+        </a>
+    ))}
+</SectionIndexLayout>
+
+<style>
+    .prompt-tag {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
+    }
+</style>
