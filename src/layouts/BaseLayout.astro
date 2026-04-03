@@ -1,5 +1,6 @@
 ---
 import ChatWidget from '../components/ChatWidget.astro';
+import Search from '../components/Search.astro';
 
 interface Props {
   title: string;
@@ -48,6 +49,7 @@ const { title, description = 'A practical, clinician-first field guide for speec
                 <a href="/domains/">Domains</a>
                 <a href="/resources/">Resources</a>
                 <a href="/about/">About</a>
+                <Search />
             </div>
         </nav>
     </header>
