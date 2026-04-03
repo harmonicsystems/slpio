@@ -81,14 +81,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="section-divider"><hr/></div>
 
-    <!-- ── Navigate by Layer ── -->
+    <!-- ── Explore the Guide ── -->
     <section>
         <div class="section-header">
             <div class="section-label">Explore</div>
             <h2>Find What You <span class="accent">Need</span></h2>
-            <p class="section-intro">This guide is organized so you can enter from any angle — start with foundations, jump to a specific task, filter by your work setting, or go deep into a clinical domain.</p>
+            <p class="section-intro">Enter from any angle. The guide is organized around four questions: What do I need to know? What am I trying to do? Where do I work? Did I do it right?</p>
         </div>
 
+        <!-- LEARN -->
+        <div class="group-label"><i class="ph-duotone ph-book-open"></i> Learn</div>
         <div class="layer-grid">
             <a href="/foundations/" class="layer-card">
                 <div class="layer-icon"><i class="ph-duotone ph-compass"></i></div>
@@ -97,13 +99,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <span class="layer-count">6 guides</span>
             </a>
 
+            <a href="/glossary/" class="layer-card">
+                <div class="layer-icon" style="background: linear-gradient(135deg, var(--accent-amber), #e67e22);"><i class="ph-duotone ph-translate"></i></div>
+                <h3>Glossary</h3>
+                <p>Every term defined from both sides — clinical and technical. SLPs and developers finally speaking the same language.</p>
+                <span class="layer-count">25 terms</span>
+            </a>
+        </div>
+
+        <!-- DO -->
+        <div class="group-label"><i class="ph-duotone ph-hammer"></i> Do</div>
+        <div class="layer-grid">
+            <a href="/prompts/" class="layer-card">
+                <div class="layer-icon" style="background: linear-gradient(135deg, var(--accent-green), #2ecc71);"><i class="ph-duotone ph-terminal-window"></i></div>
+                <h3>Prompt Library</h3>
+                <p>Copy-ready prompts organized by task, setting, and population. Each includes a "why this works" explanation.</p>
+                <span class="layer-count">3 prompts</span>
+            </a>
+
+            <a href="/workflows/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-flow-arrow"></i></div>
+                <h3>Workflows</h3>
+                <p>Multi-step guides with decision points where clinical judgment overrides the tool. Not just prompts — sequences.</p>
+                <span class="layer-count">2 workflows</span>
+            </a>
+
             <a href="/tasks/" class="layer-card">
                 <div class="layer-icon"><i class="ph-duotone ph-clipboard-text"></i></div>
                 <h3>Tasks</h3>
                 <p>Goal writing, documentation, communication, compliance, clinical reasoning, and material creation.</p>
-                <span class="layer-count">6 workflows</span>
+                <span class="layer-count">6 task guides</span>
             </a>
+        </div>
 
+        <!-- ADAPT -->
+        <div class="group-label"><i class="ph-duotone ph-sliders-horizontal"></i> Adapt</div>
+        <div class="layer-grid">
             <a href="/settings/" class="layer-card">
                 <div class="layer-icon"><i class="ph-duotone ph-buildings"></i></div>
                 <h3>Settings</h3>
@@ -118,54 +149,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <span class="layer-count">10 domains</span>
             </a>
 
-            <a href="/resources/" class="layer-card">
-                <div class="layer-icon"><i class="ph-duotone ph-book-open-text"></i></div>
-                <h3>Resources</h3>
-                <p>Digital media literacy, references, changelog, and more.</p>
-                <span class="layer-count">3 resources</span>
-            </a>
-        </div>
-
-        <div class="section-header" style="margin-top:3rem;">
-            <div class="section-label">New</div>
-            <h2>Deep <span class="accent">Tools</span></h2>
-            <p class="section-intro">Expanded collections for clinicians who want to go deeper — searchable prompts, multi-step workflows, clinical philosophy patterns, common mistakes, and a bridging glossary.</p>
-        </div>
-
-        <div class="layer-grid">
-            <a href="/prompts/" class="layer-card">
-                <div class="layer-icon" style="background: linear-gradient(135deg, var(--accent-green), #2ecc71);"><i class="ph-duotone ph-terminal-window"></i></div>
-                <h3>Prompt Library</h3>
-                <p>Copy-ready prompts organized by task, setting, population, and clinical framework. Each includes a "why this works" explanation.</p>
-                <span class="layer-count">3 prompts</span>
-            </a>
-
-            <a href="/workflows/" class="layer-card">
-                <div class="layer-icon"><i class="ph-duotone ph-flow-arrow"></i></div>
-                <h3>Workflows</h3>
-                <p>Multi-step guides with decision points where clinical judgment overrides the tool. Not just prompts — sequences.</p>
-                <span class="layer-count">2 workflows</span>
-            </a>
-
             <a href="/patterns/" class="layer-card">
                 <div class="layer-icon" style="background: linear-gradient(135deg, #7b2d8e, #9b59b6);"><i class="ph-duotone ph-tree-structure"></i></div>
                 <h3>Clinical Patterns</h3>
-                <p>Map your clinical philosophy to LLM interaction strategies. Naturalistic, discrete trial, family-centered — each needs a different approach.</p>
+                <p>Map your clinical philosophy to LLM interaction strategies. Naturalistic, discrete trial, family-centered — each approach is different.</p>
                 <span class="layer-count">2 patterns</span>
             </a>
+        </div>
 
+        <!-- VERIFY -->
+        <div class="group-label"><i class="ph-duotone ph-check-square"></i> Verify</div>
+        <div class="layer-grid">
             <a href="/antipatterns/" class="layer-card">
                 <div class="layer-icon" style="background: linear-gradient(135deg, var(--accent-red), #e74c3c);"><i class="ph-duotone ph-warning"></i></div>
                 <h3>Antipatterns</h3>
-                <p>Before-and-after examples of bad LLM use. Concrete, contrastive, and the fastest way to calibrate your expectations.</p>
+                <p>Before-and-after examples of bad LLM use. Concrete, contrastive, and the fastest way to calibrate your quality bar.</p>
                 <span class="layer-count">3 antipatterns</span>
             </a>
 
-            <a href="/glossary/" class="layer-card">
-                <div class="layer-icon" style="background: linear-gradient(135deg, var(--accent-amber), #e67e22);"><i class="ph-duotone ph-translate"></i></div>
-                <h3>Glossary</h3>
-                <p>Every term defined from both sides — clinical and technical. SLPs and developers finally speaking the same language.</p>
-                <span class="layer-count">3 terms</span>
+            <a href="/resources/" class="layer-card">
+                <div class="layer-icon"><i class="ph-duotone ph-book-open-text"></i></div>
+                <h3>Resources</h3>
+                <p>Digital media literacy, full references, changelog, and supporting materials.</p>
+                <span class="layer-count">3 resources</span>
             </a>
         </div>
     </section>
@@ -391,6 +397,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .hero-meta span { display: flex; align-items: center; gap: 6px; }
     .hero-meta i { color: var(--primary); }
+
+    /* ── Group Labels ── */
+    .group-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--primary);
+        margin-top: 2.5rem;
+        margin-bottom: 0.25rem;
+        padding-left: 2px;
+    }
+
+    .group-label i { font-size: 1rem; }
 
     /* ── Layer Navigation Grid ── */
     .layer-grid {
