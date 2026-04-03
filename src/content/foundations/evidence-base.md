@@ -9,10 +9,10 @@ Current evidence (2025–2026) supports LLMs as documentation copilots that impr
 
 ## Supported by Evidence
 
-- LLMs improve documentation efficiency and reduce time spent writing notes (Van Veen et al., 2024)
-- Outputs tend to be more organized, structured, and readable (Thirunavukarasu et al., 2023)
-- Strongest results when used as a "second pass" tool: revising, summarizing, restructuring (Van Veen et al., 2024)
-- Emerging evidence for detecting biased or stigmatizing language in clinical notes (Ayers et al., 2023)
+- LLMs improve documentation efficiency and reduce time spent writing notes <cite data-ref="van-veen-2024"></cite>
+- Outputs tend to be more organized, structured, and readable <cite data-ref="thirunavukarasu-2023"></cite>
+- Strongest results when used as a "second pass" tool: revising, summarizing, restructuring <cite data-ref="van-veen-2024"></cite>
+- Emerging evidence for detecting biased or stigmatizing language in clinical notes <cite data-ref="ayers-2023"></cite>
 - Cross-disciplinary consistency in medicine, OT, and emerging SLP applications
 
 ## Not Supported by Evidence

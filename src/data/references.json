@@ -1,0 +1,86 @@
+{
+  "asha-ethics-2023": {
+    "num": 1,
+    "short": "ASHA, 2023",
+    "full": "ASHA. (2023). Code of ethics. American Speech-Language-Hearing Association.",
+    "url": "https://www.asha.org/policy/et2016-00342/"
+  },
+  "hipaa": {
+    "num": 2,
+    "short": "HIPAA",
+    "full": "Health Insurance Portability and Accountability Act. 45 C.F.R. Parts 160, 164.",
+    "url": null
+  },
+  "ferpa": {
+    "num": 3,
+    "short": "FERPA, 1974",
+    "full": "Family Educational Rights and Privacy Act. 20 U.S.C. § 1232g; 34 C.F.R. Part 99 (1974).",
+    "url": null
+  },
+  "idea-2004": {
+    "num": 4,
+    "short": "IDEA, 2004",
+    "full": "Individuals with Disabilities Education Act. 20 U.S.C. § 1400 et seq. (2004).",
+    "url": null
+  },
+  "iep-requirements": {
+    "num": 5,
+    "short": "34 C.F.R. § 300.320",
+    "full": "34 C.F.R. § 300.320 — IEP content requirements.",
+    "url": null
+  },
+  "asha-ebp-2005": {
+    "num": 6,
+    "short": "ASHA, 2005",
+    "full": "ASHA. (2005). Evidence-based practice in communication disorders. American Speech-Language-Hearing Association.",
+    "url": "https://www.asha.org/policy/ps2005-00221/"
+  },
+  "asha-practice-portal": {
+    "num": 7,
+    "short": "ASHA Practice Portal",
+    "full": "ASHA. (n.d.). Documentation. Practice Portal. American Speech-Language-Hearing Association.",
+    "url": "https://www.asha.org/practice-portal/"
+  },
+  "hipaa-baa": {
+    "num": 8,
+    "short": "45 C.F.R. § 164.502(e)",
+    "full": "45 C.F.R. § 164.502(e) — Business associate contracts under HIPAA.",
+    "url": null
+  },
+  "ed-ai-2023": {
+    "num": 9,
+    "short": "U.S. Dept. of Education, 2023",
+    "full": "U.S. Department of Education. (2023). AI and the future of teaching and learning: Insights and recommendations.",
+    "url": "https://tech.ed.gov/ai-future-of-teaching-and-learning/"
+  },
+  "thirunavukarasu-2023": {
+    "num": 10,
+    "short": "Thirunavukarasu et al., 2023",
+    "full": "Thirunavukarasu, A. J., et al. (2023). Large language models in medicine. Nature Medicine, 29, 1930\u20131940.",
+    "url": "https://doi.org/10.1038/s41591-023-02448-8"
+  },
+  "ayers-2023": {
+    "num": 11,
+    "short": "Ayers et al., 2023",
+    "full": "Ayers, J. W., et al. (2023). Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum. JAMA Internal Medicine, 183(6), 589\u2013596.",
+    "url": "https://doi.org/10.1001/jamainternmed.2023.1838"
+  },
+  "van-veen-2024": {
+    "num": 12,
+    "short": "Van Veen et al., 2024",
+    "full": "Van Veen, D., et al. (2024). Adapted large language models can outperform medical experts in clinical text summarization. Nature Medicine, 30, 1134\u20131142.",
+    "url": "https://doi.org/10.1038/s41591-024-02855-5"
+  },
+  "asha-aac": {
+    "num": 13,
+    "short": "ASHA AAC Practice Portal",
+    "full": "ASHA. (n.d.). Augmentative and Alternative Communication (AAC). Practice Portal. American Speech-Language-Hearing Association.",
+    "url": "https://www.asha.org/practice-portal/clinical-topics/augmentative-and-alternative-communication/"
+  },
+  "iddsi": {
+    "num": 14,
+    "short": "IDDSI Framework",
+    "full": "International Dysphagia Diet Standardisation Initiative. (2019). IDDSI Framework and detailed definitions.",
+    "url": "https://iddsi.org/framework/"
+  }
+}

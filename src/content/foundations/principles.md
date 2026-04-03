@@ -9,11 +9,11 @@ SLP/IO defines six core principles for responsible use of language models in spe
 
 ## 01 — AI supports thinking; it does not replace judgment
 
-Language models can help organize, structure, and refine clinical writing. The clinician remains responsible for meaning, accuracy, and individualization. [ASHA Code of Ethics, 2023]
+Language models can help organize, structure, and refine clinical writing. The clinician remains responsible for meaning, accuracy, and individualization. <cite data-ref="asha-ethics-2023"></cite>
 
 ## 02 — Never include PHI in public tools
 
-Compliance with HIPAA and FERPA is non-negotiable. No student names, DOBs, school names, or identifiable details in any public LLM.
+Compliance with HIPAA <cite data-ref="hipaa"></cite> and FERPA <cite data-ref="ferpa"></cite> is non-negotiable. No student names, DOBs, school names, or identifiable details in any public LLM.
 
 ## 03 — Outputs must always be reviewed
 
