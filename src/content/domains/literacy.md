@@ -97,8 +97,8 @@ This is critical to document clearly, especially in IEP teams where roles can ov
   - Onset-rime blending without picture support: 5/10 (50%)
   - Initial sound isolation: 7/10 (70%)
   - CVC segmentation: Attempted, not yet emerging; student unable to segment beyond onset-rime level
-- **Rhyming:** Engaged and accurate during rhyming judgment tasks (informal — not targeted this session)
-- **Clinical Interpretation:** Student demonstrates emerging onset-rime awareness with visual support. Removal of picture support significantly reduces accuracy, suggesting the skill is not yet internalized. Initial sound isolation is stronger. CVC phoneme segmentation is premature — continue building onset-rime fluency first.
+- **Rhyming:** Engaged and accurate during rhyming judgment tasks (informal, not targeted this session)
+- **Clinical Interpretation:** Student demonstrates emerging onset-rime awareness with visual support. Removal of picture support significantly reduces accuracy, suggesting the skill is not yet internalized. Initial sound isolation is stronger. CVC phoneme segmentation is premature; continue building onset-rime fluency first.
 - **Plan:** Continue onset-rime blending with gradual fading of picture support. Maintain initial sound isolation practice. Reintroduce phoneme segmentation when onset-rime blending reaches 80% without visual support.
 
 ## Related Pages

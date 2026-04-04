@@ -1,8 +1,8 @@
 ---
 term: "Measurability"
 aliases: ["measurable goals", "operationalized objectives", "data-driven goals"]
-slpDefinition: "Whether a goal can actually be tracked with data. This is the make-or-break quality of any IEP or treatment goal. A measurable goal specifies what the client will do, under what conditions, and to what criterion — and a clinician can reliably collect data on it during a session. LLMs produce goals that sound measurable but often are not. The words are right, but the data collection is impossible or impractical."
-techDefinition: "The operationalizability of a stated objective — whether it can be converted into a concrete, observable, and quantifiable metric. Language models generate text that mimics the surface structure of measurable objectives (percentages, trial counts, accuracy criteria) without verifying that the described measurement is feasible, reliable, or clinically valid."
+slpDefinition: "Whether a goal can actually be tracked with data. This is the make-or-break quality of any IEP or treatment goal. A measurable goal specifies what the client will do, under what conditions, and to what criterion, and a clinician can reliably collect data on it during a session. LLMs produce goals that sound measurable but often are not. The words are right, but the data collection is impossible or impractical."
+techDefinition: "The operationalizability of a stated objective: whether it can be converted into a concrete, observable, and quantifiable metric. Language models generate text that mimics the surface structure of measurable objectives (percentages, trial counts, accuracy criteria) without verifying that the described measurement is feasible, reliable, or clinically valid."
 order: 21
 ---
 
@@ -26,5 +26,5 @@ AI-generated goals are one of the most common LLM use cases in SLP, and measurab
 
 ## Related Terms
 
-- **Hallucination** — a model may generate measurement criteria that sound precise but are fabricated (e.g., referencing a scoring rubric that doesn't exist)
-- **Functional Communication** — the best measurable goals track functional outcomes, not just impairment-level accuracy
+- **Hallucination**: a model may generate measurement criteria that sound precise but are fabricated (e.g., referencing a scoring rubric that doesn't exist)
+- **Functional Communication**: the best measurable goals track functional outcomes, not just impairment-level accuracy
