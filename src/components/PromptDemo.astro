@@ -1,0 +1,492 @@
+---
+/**
+ * Interactive prompt demo — shows pre-generated SLP prompt/response examples
+ * with a typewriter animation. Zero API calls; pure CSS + vanilla JS.
+ */
+
+const demos = [
+    {
+        label: 'IEP Goal Writing',
+        prompt: 'I have a 2nd grade student who omits /s/ clusters in all positions. She can produce /s/ in isolation. Write a measurable IEP goal.',
+        response: `By the end of the IEP period, [Student] will produce /s/ clusters (e.g., /st/, /sp/, /sn/, /sl/) in the initial position of words with 80% accuracy across 3 consecutive data collection sessions, as measured by clinician observation during structured therapy activities.
+
+**Short-term objectives:**
+1. Produce /s/ clusters in the initial position of single words with 60% accuracy given visual/verbal cues
+2. Produce /s/ clusters in initial position of phrases (3-5 words) with 70% accuracy given verbal cues only
+3. Produce /s/ clusters in initial position during sentence-level tasks with 80% accuracy independently
+
+**Why this works:** The goal builds from her current ability (/s/ in isolation) with a logical progression. It specifies position, accuracy criterion, and measurement method — all required for IDEA compliance.`,
+    },
+    {
+        label: 'Progress Note',
+        prompt: 'Write a SOAP note for a 78-year-old patient with moderate cognitive-linguistic impairment following a left CVA. Session focused on functional memory strategies.',
+        response: `**S:** Patient reports difficulty remembering morning medication routine. States "I keep forgetting if I took my pills." Caregiver confirms missed doses 3x this week.
+
+**O:** Patient participated in 45-min individual session targeting external memory strategy use. Trained use of daily checklist for medication management. Patient completed checklist with 70% accuracy given moderate verbal cues (4/6 trials). Recalled 2/5 items from a categorized grocery list using semantic cueing with min assist. Required max cues for self-initiated strategy use.
+
+**A:** Patient demonstrates emerging ability to use external memory aids with cueing support. Functional carryover remains limited — dependent on caregiver prompts. Cueing hierarchy shows progress from max → mod assist over past 2 weeks. Current performance supports continued skilled intervention.
+
+**P:** Continue 3x/week. Train caregiver in checklist prompting strategy. Introduce visual schedule for ADL sequencing next session.`,
+    },
+    {
+        label: 'Parent Email',
+        prompt: 'Draft a parent-friendly email explaining that their child qualified for speech services after a language evaluation. The child is 4 years old with receptive and expressive delays.',
+        response: `Subject: Speech-Language Evaluation Results for [Child\'s Name]
+
+Dear [Parent],
+
+Thank you for bringing [Child] in for a speech-language evaluation. I wanted to share the results with you and talk about next steps.
+
+After testing, we found that [Child] is having some difficulty in two areas:
+- **Understanding language** (following directions, understanding questions, and learning new vocabulary)
+- **Using language** (putting words together in sentences, telling about experiences, and using grammar)
+
+These skills are developing a bit more slowly than we\'d expect for a child [their] age. The good news is that [Child] showed great strengths in social engagement and was very motivated during testing — both of which are really positive signs for progress.
+
+Based on these results, [Child] qualifies for speech-language therapy. I\'d recommend starting with twice-weekly sessions focused on building vocabulary and sentence skills through play-based activities.
+
+I\'d love to schedule a time to talk through the full report together and answer any questions. What works best for your schedule?
+
+Warm regards,
+[Your name], MS CCC-SLP`,
+    },
+    {
+        label: 'Therapy Materials',
+        prompt: 'Create 5 minimal pair cards for a child working on /k/ vs /t/ contrast in initial position. Make them kid-friendly with simple words.',
+        response: `**Minimal Pair Cards: /k/ vs /t/ (Initial Position)**
+
+| /k/ word | /t/ word | Visual Cue Idea |
+|----------|----------|-----------------|
+| **cap**  | **tap**  | baseball cap → water faucet |
+| **key**  | **tea**  | gold key → teacup |
+| **corn** | **torn** | ear of corn → ripped paper |
+| **came** | **tame** | person arriving → gentle kitten |
+| **coat** | **tote** | winter coat → tote bag |
+
+**How to use these:**
+1. Lay both cards face-up. Say one word — child points to the correct picture
+2. Child says the word — you point to which one you heard (gives natural feedback)
+3. If they say "tap" but mean "cap," pick up the faucet card — shows why the difference matters
+
+**Tip:** Start with the pairs where the pictures are most visually distinct (key/tea, corn/torn) before moving to harder contrasts.`,
+    },
+];
+---
+
+<div class="demo-section">
+    <div class="section-header">
+        <div class="section-label">See It In Action</div>
+        <h2>Interactive <span class="accent">Demo</span></h2>
+        <p class="section-intro">Watch how a well-crafted prompt produces clinically useful output. These are pre-generated examples — no API calls, no data sent anywhere.</p>
+    </div>
+
+    <div class="demo-container" id="prompt-demo">
+        <div class="demo-tabs" id="demo-tabs">
+            {demos.map((d, i) => (
+                <button class={`demo-tab ${i === 0 ? 'active' : ''}`} data-index={i}>
+                    {d.label}
+                </button>
+            ))}
+        </div>
+
+        <div class="demo-window">
+            <div class="demo-toolbar">
+                <div class="demo-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="demo-toolbar-title">SLP/IO Prompt Demo</div>
+                <div class="demo-toolbar-spacer"></div>
+            </div>
+
+            <div class="demo-body">
+                <div class="demo-prompt-section">
+                    <div class="demo-role"><i class="ph ph-user"></i> Clinician</div>
+                    <div class="demo-prompt-text" id="demo-prompt"></div>
+                </div>
+
+                <div class="demo-divider">
+                    <span class="demo-divider-dot"></span>
+                    <span class="demo-divider-dot"></span>
+                    <span class="demo-divider-dot"></span>
+                </div>
+
+                <div class="demo-response-section">
+                    <div class="demo-role ai"><i class="ph ph-robot"></i> AI Response <span class="demo-badge">requires clinical review</span></div>
+                    <div class="demo-response-text" id="demo-response"></div>
+                    <div class="demo-cursor" id="demo-cursor"></div>
+                </div>
+            </div>
+
+            <div class="demo-footer-bar">
+                <button class="demo-replay-btn" id="demo-replay">
+                    <i class="ph ph-play"></i> Replay
+                </button>
+                <div class="demo-disclaimer">Pre-generated example — not live AI output</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline define:vars={{ demos }}>
+(function() {
+    let currentIndex = 0;
+    let animationId = null;
+    let promptTimeout = null;
+
+    const promptEl = document.getElementById('demo-prompt');
+    const responseEl = document.getElementById('demo-response');
+    const cursorEl = document.getElementById('demo-cursor');
+    const tabs = document.querySelectorAll('.demo-tab');
+    const replayBtn = document.getElementById('demo-replay');
+
+    function clearAnimation() {
+        if (animationId) cancelAnimationFrame(animationId);
+        if (promptTimeout) clearTimeout(promptTimeout);
+        animationId = null;
+        promptTimeout = null;
+    }
+
+    function typeText(element, text, speed, callback) {
+        let i = 0;
+        element.innerHTML = '';
+        cursorEl.style.display = 'inline-block';
+
+        function tick() {
+            if (i < text.length) {
+                // Handle markdown bold
+                let char = text[i];
+
+                // Build innerHTML progressively with markdown
+                i++;
+                element.innerHTML = formatMarkdown(text.slice(0, i));
+
+                // Scroll to bottom of demo body
+                element.closest('.demo-body').scrollTop = element.closest('.demo-body').scrollHeight;
+
+                // Variable speed: pause longer on newlines and punctuation
+                let delay = speed;
+                if (char === '\n') delay = speed * 3;
+                else if (char === '.' || char === '!' || char === '?') delay = speed * 2;
+                else if (char === ',') delay = speed * 1.5;
+                else if (char === '*') delay = speed * 0.3;
+
+                promptTimeout = setTimeout(() => {
+                    animationId = requestAnimationFrame(tick);
+                }, delay);
+            } else {
+                cursorEl.style.display = 'none';
+                if (callback) callback();
+            }
+        }
+        tick();
+    }
+
+    function formatMarkdown(text) {
+        return text
+            // Bold
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            // Tables
+            .replace(/\|(.+)\|/g, function(match) {
+                if (match.match(/^\|\s*[-:]+/)) return '<div class="md-table-sep"></div>';
+                const cells = match.split('|').filter(c => c.trim()).map(c => '<span class="md-cell">' + c.trim() + '</span>');
+                return '<div class="md-table-row">' + cells.join('') + '</div>';
+            })
+            // Numbered lists
+            .replace(/^(\d+)\.\s(.+)$/gm, '<div class="md-li"><span class="md-num">$1.</span> $2</div>')
+            // Newlines
+            .replace(/\n/g, '<br/>');
+    }
+
+    function runDemo(index) {
+        clearAnimation();
+        currentIndex = index;
+        const demo = demos[index];
+
+        tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+
+        // Show prompt instantly
+        promptEl.textContent = demo.prompt;
+
+        // Animate response with typewriter
+        responseEl.innerHTML = '';
+        cursorEl.style.display = 'inline-block';
+
+        promptTimeout = setTimeout(() => {
+            typeText(responseEl, demo.response, 8, null);
+        }, 600);
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            runDemo(parseInt(tab.dataset.index));
+        });
+    });
+
+    replayBtn.addEventListener('click', () => {
+        runDemo(currentIndex);
+    });
+
+    // Start first demo when visible
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            runDemo(0);
+            observer.disconnect();
+        }
+    }, { threshold: 0.3 });
+
+    observer.observe(document.getElementById('prompt-demo'));
+})();
+</script>
+
+<style>
+    .demo-section {
+        padding: 5rem 2rem;
+        max-width: 960px;
+        margin: auto;
+    }
+
+    .demo-container {
+        margin-top: 2rem;
+    }
+
+    /* ── Tabs ── */
+    .demo-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: -1px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    .demo-tab {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border);
+        border-bottom: none;
+        border-radius: 8px 8px 0 0;
+        background: var(--secondary);
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all var(--transition);
+        white-space: nowrap;
+    }
+
+    .demo-tab:hover { color: var(--primary); }
+
+    .demo-tab.active {
+        background: var(--code-bg);
+        color: var(--code-fg);
+        border-color: var(--code-bg);
+    }
+
+    /* ── Window ── */
+    .demo-window {
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 0 12px 12px 12px;
+        overflow: hidden;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .demo-toolbar {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        background: #1e2430;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .demo-dots {
+        display: flex;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .dot.red { background: #ff5f57; }
+    .dot.yellow { background: #febc2e; }
+    .dot.green { background: #28c840; }
+
+    .demo-toolbar-title {
+        flex: 1;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.68rem;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.5px;
+    }
+
+    .demo-toolbar-spacer { width: 50px; }
+
+    /* ── Body ── */
+    .demo-body {
+        background: var(--code-bg);
+        padding: 1.5rem;
+        max-height: 480px;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    .demo-role {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #5ba3e0;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .demo-role.ai { color: #43c47a; }
+
+    .demo-badge {
+        font-size: 0.55rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 6px;
+        border-radius: 3px;
+        background: rgba(218,86,80,0.15);
+        color: #da5650;
+        margin-left: 4px;
+    }
+
+    .demo-prompt-text {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.82rem;
+        line-height: 1.7;
+        color: #e2e4e8;
+        padding: 0.75rem 1rem;
+        background: rgba(255,255,255,0.04);
+        border-radius: 6px;
+        border-left: 3px solid #5ba3e0;
+    }
+
+    .demo-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 1.25rem 0;
+    }
+
+    .demo-divider-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+    }
+
+    .demo-response-text {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.78rem;
+        line-height: 1.8;
+        color: #c8cdd5;
+        padding: 0.75rem 1rem;
+        background: rgba(255,255,255,0.02);
+        border-radius: 6px;
+        border-left: 3px solid #43c47a;
+        min-height: 60px;
+    }
+
+    .demo-response-text :global(strong) {
+        color: #e89040;
+        font-weight: 700;
+    }
+
+    .demo-response-text :global(.md-table-row) {
+        display: flex;
+        gap: 0.5rem;
+        padding: 2px 0;
+    }
+
+    .demo-response-text :global(.md-cell) {
+        min-width: 80px;
+        flex: 1;
+    }
+
+    .demo-response-text :global(.md-table-sep) {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin: 2px 0;
+    }
+
+    .demo-response-text :global(.md-li) {
+        padding: 1px 0;
+    }
+
+    .demo-response-text :global(.md-num) {
+        color: #5ba3e0;
+        font-weight: 600;
+    }
+
+    .demo-cursor {
+        display: none;
+        width: 2px;
+        height: 1em;
+        background: #43c47a;
+        animation: blink 0.8s step-end infinite;
+        vertical-align: text-bottom;
+        margin-left: 1px;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+    /* ── Footer Bar ── */
+    .demo-footer-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 1rem;
+        background: #1e2430;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .demo-replay-btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #43c47a;
+        background: rgba(67,196,122,0.1);
+        border: 1px solid rgba(67,196,122,0.2);
+        border-radius: 6px;
+        padding: 4px 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: all var(--transition);
+    }
+
+    .demo-replay-btn:hover {
+        background: rgba(67,196,122,0.2);
+        border-color: rgba(67,196,122,0.4);
+    }
+
+    .demo-disclaimer {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        color: rgba(255,255,255,0.25);
+        letter-spacing: 0.3px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+        .demo-section { padding: 3rem 1.25rem; }
+        .demo-body { max-height: 400px; padding: 1rem; }
+        .demo-prompt-text, .demo-response-text { font-size: 0.72rem; }
+        .demo-tabs { gap: 0.25rem; }
+        .demo-tab { font-size: 0.65rem; padding: 0.4rem 0.7rem; }
+    }
+</style>
