@@ -36,6 +36,8 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
     <meta name="twitter:image" content={new URL('/og-image.svg', Astro.site).href} />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script async src="https://plausible.io/js/pa-PTbvzPJNbkpKPC0Lyr8w0.js" is:inline></script>
+    <script is:inline>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init();</script>
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" is:inline></script>
 
     <script type="application/ld+json" set:html={JSON.stringify({
