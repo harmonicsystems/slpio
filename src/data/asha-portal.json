@@ -91,7 +91,7 @@
   },
   "ebp": {
     "topic": "Evidence-Based Practice",
-    "url": "https://www.asha.org/practice-portal/professional-issues/evidence-based-practice/",
+    "url": "https://www.asha.org/research/ebp/",
     "subtopics": ["Clinical Decision Making", "Research Appraisal"]
   },
   "early-intervention": {
@@ -100,13 +100,13 @@
     "subtopics": ["Part C", "Family-Centered", "IFSP"]
   },
   "bilingual": {
-    "topic": "Bilingual Service Delivery",
-    "url": "https://www.asha.org/practice-portal/professional-issues/bilingual-service-delivery/",
+    "topic": "Multilingual Service Delivery",
+    "url": "https://www.asha.org/practice-portal/professional-issues/multilingual-service-delivery/",
     "subtopics": ["Assessment", "Intervention", "Interpreters"]
   },
   "ethics": {
     "topic": "Ethics",
-    "url": "https://www.asha.org/practice-portal/professional-issues/ethics/",
+    "url": "https://www.asha.org/practice/ethics/",
     "subtopics": ["Code of Ethics", "Scope of Practice", "Professional Conduct"]
   },
   "supervision": {
