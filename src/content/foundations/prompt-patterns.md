@@ -1,11 +1,11 @@
 ---
 title: Prompt Patterns
-description: Templates give you a starting point. Patterns teach you why they work — so you can write better prompts on your own.
+description: Templates give you a starting point. Patterns teach you why they work, so you can write better prompts on your own.
 icon: ph-duotone ph-puzzle-piece
 order: 6
 ---
 
-Templates give you a starting point. Patterns teach you why they work — so you can write better prompts on your own, for any situation.
+Templates give you a starting point. Patterns teach you why they work, so you can write better prompts on your own, for any situation.
 
 ## Pattern 01 — Set your role
 

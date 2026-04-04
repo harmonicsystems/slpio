@@ -17,12 +17,12 @@ Consider two clinicians writing a treatment recommendation. One works entirely f
 ## Practical Guide
 
 - **When a tool says "upload your documents"**, it's likely using RAG — your files become the retrieval database
-- **RAG doesn't guarantee accuracy** — the model can still misinterpret, selectively quote, or blend retrieved content with generated content
-- **Quality depends on the documents** — RAG over outdated or low-quality sources produces grounded but still unreliable output
-- **Ask what's being retrieved** — good RAG implementations show you which documents informed the response so you can verify
+- **RAG doesn't guarantee accuracy.** The model can still misinterpret, selectively quote, or blend retrieved content with generated content
+- **Quality depends on the documents.** RAG over outdated or low-quality sources produces grounded but still unreliable output
+- **Ask what's being retrieved.** Good RAG implementations show you which documents informed the response so you can verify
 
 ## Related Terms
 
-- **Grounding** — the broader concept that RAG implements technically
-- **Hallucination** — what RAG reduces but does not eliminate
-- **Model** — RAG augments the model's capabilities without changing the model itself
+- **Grounding**: the broader concept that RAG implements technically
+- **Hallucination**: what RAG reduces but does not eliminate
+- **Model**: RAG augments the model's capabilities without changing the model itself

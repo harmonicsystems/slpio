@@ -45,7 +45,7 @@ The supervisor revised her approach across three iterations.
 >
 > During the October 14 session with Client B (adult articulation), the student selected a word-list drill targeting /r/ in the initial position but did not adjust the task when the client achieved 90% accuracy within the first five minutes. The remaining session time was spent on a task that was no longer at an appropriate challenge level. In the post-session debrief, the student noted she had not prepared a higher-complexity activity as a contingency.
 >
-> **Intervention Planning — Recommended Strategy**
+> **Intervention Planning – Recommended Strategy**
 >
 > For each session, prepare a primary activity and at least one step-up and one step-down variation. Before the session, identify a performance threshold (e.g., 80% accuracy over 10 trials) that will trigger a shift to the next complexity level. This approach ensures real-time responsiveness to client performance without requiring in-session improvisation.
 
@@ -53,7 +53,7 @@ The supervisor revised her approach across three iterations.
 
 The structured prompt produced feedback that was markedly more useful than the initial attempt. The supervisor made modifications in three areas.
 
-First, she adjusted tone. The AI drafts were precise but read as detached — appropriate for a journal article but not for a formative conversation with a developing clinician. She added language acknowledging growth trajectories: "This is a common challenge at this stage of clinical development" and "Your awareness of this pattern during our debrief suggests readiness to implement this strategy." The supervisory relationship depends on trust, and feedback must be honest without being discouraging.
+First, she adjusted tone. The AI drafts were precise but read as detached, appropriate for a journal article but not for a formative conversation with a developing clinician. She added language acknowledging growth trajectories: "This is a common challenge at this stage of clinical development" and "Your awareness of this pattern during our debrief suggests readiness to implement this strategy." The supervisory relationship depends on trust, and feedback must be honest without being discouraging.
 
 Second, she corrected instances where the AI extrapolated beyond her notes. For one student, the model generated feedback about "inconsistent data collection" based on a single session note in which the supervisor had written "data sheet not completed during session." In context, the student had been managing a behavioral escalation and appropriately prioritized the client. The supervisor revised this to reflect the full picture and reframed it as a discussion point about balancing data collection with clinical responsiveness.
 
@@ -67,7 +67,7 @@ The supervisor's program director reviewed the feedback documents as part of a r
 
 ## Reflection
 
-The supervisor observed that the AI was most valuable as a sorting and structuring tool — it took disorganized observation notes and arranged them into a logical framework aligned with competency categories. This organizational step was where most of her writing time had historically been spent. The clinical substance of the feedback, however, still came from her notes and from her professional judgment about what each student needed to hear and when.
+The supervisor observed that the AI was most valuable as a sorting and structuring tool: it took disorganized observation notes and arranged them into a logical framework aligned with competency categories. This organizational step was where most of her writing time had historically been spent. The clinical substance of the feedback, however, still came from her notes and from her professional judgment about what each student needed to hear and when.
 
 She noted that the AI's tendency toward detached, evaluative language was a meaningful limitation in a supervisory context. Effective clinical supervision requires not just identifying what happened but framing it in a way that supports the student's development. That framing is inherently relational and cannot be fully delegated.
 
@@ -78,4 +78,4 @@ She planned to continue using the approach for end-of-semester summative evaluat
 - AI drafts of supervisory feedback default to generic, supportive language unless the prompt explicitly demands specific behavioral examples with dates and context.
 - Structured observation notes are the prerequisite for useful AI output; the model cannot generate specificity from vague input.
 - Clinical supervision requires relational tone calibration that AI cannot replicate; the supervisor must adjust feedback framing based on knowledge of each student's developmental trajectory and emotional readiness.
-- AI is most efficient at the organizational layer of feedback preparation — sorting observations into competency categories — while the clinical mentoring layer remains a human function.
+- AI is most efficient at the organizational layer of feedback preparation (sorting observations into competency categories), while the clinical mentoring layer remains a human function.

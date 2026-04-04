@@ -21,7 +21,7 @@ She began experimenting with an LLM to convert her shorthand procedural notes in
 
 ## The Challenge
 
-During her first week of using the AI tool, the clinician identified a significant problem. When provided with findings such as "thin liquid — penetration to level of vocal folds, no clearance on cue," the model consistently generated diet-level recommendations in its output. Phrases such as "nectar-thick liquids are recommended" and "the patient should be advanced to an IDDSI Level 4 diet" appeared in drafts despite no such instruction in the prompt.
+During her first week of using the AI tool, the clinician identified a significant problem. When provided with findings such as "thin liquid, penetration to level of vocal folds, no clearance on cue," the model consistently generated diet-level recommendations in its output. Phrases such as "nectar-thick liquids are recommended" and "the patient should be advanced to an IDDSI Level 4 diet" appeared in drafts despite no such instruction in the prompt.
 
 Diet-level recommendations are clinical decisions that require integration of the instrumental findings with the patient's medical status, respiratory function, cognitive profile, and goals of care. An AI tool generating these recommendations from swallow-study data alone posed a patient safety risk if a draft were inadvertently signed without thorough review. The model was performing clinical reasoning it was not qualified to perform.
 
@@ -31,13 +31,13 @@ Compounding the issue, the recommendations the model generated were often plausi
 
 The clinician developed a constrained workflow over several iterations.
 
-**Step 1: Structured input.** She created a shorthand notation system for her procedural notes — bolus type, volume, PAS score, residue location and severity, and observed compensatory strategies. She entered these as a bulleted list.
+**Step 1: Structured input.** She created a shorthand notation system for her procedural notes (bolus type, volume, PAS score, residue location and severity, and observed compensatory strategies). She entered these as a bulleted list.
 
 **Step 2: Bounded prompt.** The revised prompt included explicit restrictions: "Draft the findings section of an MBSS report based on the following observations. Describe what was observed for each bolus trial. Do NOT include diet recommendations, clinical impressions, or management suggestions. Report only what was seen during the study. Use Penetration-Aspiration Scale scores as provided. Do not interpret them as safe or unsafe."
 
 **Step 3: Separation of sections.** She prompted the AI to produce only the findings section, then wrote the clinical impressions and recommendations herself. This hard boundary ensured that all clinical judgment remained in her own writing.
 
-**Step 4: Verification pass.** Before finalizing each report, she searched the AI-generated text for directive language — "recommend," "should," "appropriate," "suggest" — as a quality check.
+**Step 4: Verification pass.** Before finalizing each report, she searched the AI-generated text for directive language ("recommend," "should," "appropriate," "suggest") as a quality check.
 
 ## What the AI Produced
 
@@ -51,7 +51,7 @@ The clinician developed a constrained workflow over several iterations.
 
 The constrained prompt significantly reduced but did not eliminate clinical overreach. In approximately one out of every five reports, the clinician found residual evaluative language. Common examples included "the patient demonstrated difficulty with" (implying a deficit rather than describing an observation) and "thin liquids posed a challenge" (attributing causality). She systematically replaced these with observational equivalents: "aspiration was observed on thin liquid trials" and "PAS scores of 5-8 were recorded across thin liquid boluses."
 
-The clinician also found that the AI occasionally reordered bolus trials in a way that implied a progression narrative — presenting thicker consistencies first, thinner last — even when the study protocol had followed a different sequence. She added a line to her prompt: "Present trials in the order listed below. Do not reorder."
+The clinician also found that the AI occasionally reordered bolus trials in a way that implied a progression narrative, presenting thicker consistencies first and thinner last, even when the study protocol had followed a different sequence. She added a line to her prompt: "Present trials in the order listed below. Do not reorder."
 
 The most critical modification remained the complete separation of findings from recommendations. The clinician wrote all clinical impressions, diet recommendations, and compensatory strategy suggestions herself, drawing on the full clinical picture including chart review, bedside evaluation findings, respiratory status, and interdisciplinary input.
 
@@ -65,11 +65,11 @@ She also developed a brief onboarding document for new staff explaining the work
 
 ## Reflection
 
-The clinician observed that the AI's tendency to recommend diet levels likely reflected its training data, in which MBSS findings and diet recommendations frequently co-occur. This made the model's behavior predictable but also insidious — the recommendations it generated were often plausible, making them easy to overlook during cursory review. She emphasized that the verification pass for directive language was not optional but essential.
+The clinician observed that the AI's tendency to recommend diet levels likely reflected its training data, in which MBSS findings and diet recommendations frequently co-occur. This made the model's behavior predictable but also insidious: the recommendations it generated were often plausible, making them easy to overlook during cursory review. She emphasized that the verification pass for directive language was not optional but essential.
 
-She also noted that the AI performed best with the most structured input. Free-text clinical notes produced inconsistent output; the shorthand notation system she developed gave her the most reliable results. She considered this shorthand system a clinical tool in its own right — it forced her to standardize her own observational language during the study, which improved her procedural note-taking independent of the AI.
+She also noted that the AI performed best with the most structured input. Free-text clinical notes produced inconsistent output; the shorthand notation system she developed gave her the most reliable results. She considered this shorthand system a clinical tool in its own right, since it forced her to standardize her own observational language during the study, which improved her procedural note-taking independent of the AI.
 
-Looking back, she identified one risk she had not anticipated: the potential for anchoring bias. Because the AI draft was well-organized and fluently written, she found herself initially inclined to accept its framing and make only minor edits. She countered this by reviewing her own raw notes before reading the AI draft, forming her clinical interpretation first and then using the draft as a formatting tool rather than a reasoning aid. She recommended this sequence — interpret first, format second — to the colleagues who adopted her workflow.
+Looking back, she identified one risk she had not anticipated: the potential for anchoring bias. Because the AI draft was well-organized and fluently written, she found herself initially inclined to accept its framing and make only minor edits. She countered this by reviewing her own raw notes before reading the AI draft, forming her clinical interpretation first and then using the draft as a formatting tool rather than a reasoning aid. She recommended this sequence (interpret first, format second) to the colleagues who adopted her workflow.
 
 ## Key Takeaways
 

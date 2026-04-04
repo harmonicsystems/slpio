@@ -19,10 +19,10 @@ I am an SLP who just completed an evaluation. Here are my clinical findings (no 
 
 ## Why This Works
 
-- **Strengths-first framing** — parents retain information better and engage more constructively when strengths are acknowledged before concerns
-- **Concrete observables** — "your child may struggle to follow two-step directions at home" is more useful than "receptive language deficit in the moderate range"
-- **Tone guardrails** — "warm, respectful, and direct" prevents both clinical coldness and condescending over-simplification
-- **No scope creep** — "do not add recommendations I haven't made" ensures the summary matches the actual evaluation, not the model's assumptions
+- **Strengths-first framing.** Parents retain information better and engage more constructively when strengths are acknowledged before concerns.
+- **Concrete observables.** "Your child may struggle to follow two-step directions at home" is more useful than "receptive language deficit in the moderate range."
+- **Tone guardrails.** "Warm, respectful, and direct" prevents both clinical coldness and condescending over-simplification.
+- **No scope creep.** "Do not add recommendations I haven't made" ensures the summary matches the actual evaluation, not the model's assumptions.
 
 ## When to Use
 
@@ -31,11 +31,11 @@ After completing a speech-language evaluation and before the parent conference o
 ## When NOT to Use
 
 - Never paste evaluation reports that contain the child's name, school, or other identifiers
-- Don't use the output as a replacement for the clinical report — it supplements, not replaces
-- Don't skip reviewing for accuracy — models can misrepresent severity levels
+- Don't use the output as a replacement for the clinical report; it supplements, not replaces
+- Don't skip reviewing for accuracy, as models can misrepresent severity levels
 
 ## Pair With
 
-- [Communication tasks](/tasks/communication/) — broader parent communication strategies
-- [Early Intervention setting](/settings/early-intervention/) — family-centered context
-- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) — the philosophy behind this approach
+- [Communication tasks](/tasks/communication/) – broader parent communication strategies
+- [Early Intervention setting](/settings/early-intervention/) – family-centered context
+- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) – the philosophy behind this approach

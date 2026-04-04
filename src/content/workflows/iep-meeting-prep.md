@@ -1,6 +1,6 @@
 ---
 title: "IEP Meeting Preparation Workflow"
-description: "A step-by-step sequence for using an LLM to prepare organized, thorough IEP meeting materials — from data compilation to parent-ready summaries."
+description: "A step-by-step sequence for using an LLM to prepare organized, thorough IEP meeting materials, from data compilation to parent-ready summaries."
 settings: [school]
 populations: [pediatric]
 stepCount: 5
@@ -9,7 +9,7 @@ difficulty: intermediate
 order: 1
 ---
 
-This isn't a single prompt — it's a sequence. Each step builds on the previous one, with decision points where your clinical judgment overrides the tool.
+This isn't a single prompt. It's a sequence. Each step builds on the previous one, with decision points where your clinical judgment overrides the tool.
 
 ## Step 1: Compile and Organize Raw Data
 

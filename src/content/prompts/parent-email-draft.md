@@ -33,10 +33,10 @@ When you need to communicate with families about progress updates, schedule chan
 
 - Do not include the child's name, school name, or other identifiers in your input
 - Do not use this for sensitive communications that require a phone call or in-person meeting
-- Do not send without reviewing — the model may misrepresent urgency or tone
+- Do not send without reviewing, as the model may misrepresent urgency or tone
 
 ## Pair With
 
-- [Parent-Friendly Evaluation Summary](/prompts/parent-friendly-summary/) — for translating clinical findings
-- [Early Intervention setting guide](/settings/early-intervention/) — family-centered communication norms
-- [Communication tasks](/tasks/communication/) — broader strategies for family engagement
+- [Parent-Friendly Evaluation Summary](/prompts/parent-friendly-summary/) – for translating clinical findings
+- [Early Intervention setting guide](/settings/early-intervention/) – family-centered communication norms
+- [Communication tasks](/tasks/communication/) – broader strategies for family engagement
