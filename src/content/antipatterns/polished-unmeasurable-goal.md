@@ -7,7 +7,7 @@ settings: [school]
 order: 1
 ---
 
-This is the most common antipattern when SLPs use LLMs for goal writing. The output reads well — complete sentences, professional vocabulary, appropriate-sounding structure — but it fails the fundamental question: **How would you take data on this?**
+This is the most common antipattern when SLPs use LLMs for goal writing. The output reads well (complete sentences, professional vocabulary, appropriate-sounding structure) but it fails the fundamental question: **How would you take data on this?**
 
 ## The Bad Example
 
@@ -15,7 +15,7 @@ This is the most common antipattern when SLPs use LLMs for goal writing. The out
 
 This goal sounds great. A parent reading it would think, "That seems thorough." An administrator might approve it without question.
 
-**But try to take data on it.** What counts as "improved"? What's "more appropriate"? What does "various school settings" mean: two? Five? The cafeteria and the playground? "As observed by the SLP" — during what? A 30-minute session? A full school day?
+**But try to take data on it.** What counts as "improved"? What's "more appropriate"? What does "various school settings" mean: two? Five? The cafeteria and the playground? "As observed by the SLP"... during what? A 30-minute session? A full school day?
 
 ## Why LLMs Produce This
 

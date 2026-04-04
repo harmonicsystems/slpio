@@ -14,7 +14,7 @@ order: 2
 ## The Prompt
 
 ```
-I am a school-based SLP writing IEP goals. Here is a draft goal that needs to be stronger. Rewrite it to be specific, measurable, achievable, relevant, and time-bound. Include: the specific behavior being measured, the condition under which it will be measured, the criterion for success (percentage, frequency, or number of opportunities), and the level of support (independent, with visual cues, with verbal prompts, etc.). Preserve the original clinical intent — do not change what skill is being targeted. Give me 2-3 variations at different support levels so I can choose the best fit for this student.
+I am a school-based SLP writing IEP goals. Here is a draft goal that needs to be stronger. Rewrite it to be specific, measurable, achievable, relevant, and time-bound. Include: the specific behavior being measured, the condition under which it will be measured, the criterion for success (percentage, frequency, or number of opportunities), and the level of support (independent, with visual cues, with verbal prompts, etc.). Preserve the original clinical intent. Do not change what skill is being targeted. Give me 2-3 variations at different support levels so I can choose the best fit for this student.
 ```
 
 ## Why This Works

@@ -40,10 +40,10 @@ Work through these decision points in order:
 ## Common Gray Areas
 
 ### "Can I use AI to brainstorm therapy activities?"
-Yes. This is one of the safest uses. You are not entering client data — you are asking for ideas. Just make sure the activities you select are clinically appropriate for your client's goals and abilities.
+Yes. This is one of the safest uses. You are not entering client data; you are asking for ideas. Just make sure the activities you select are clinically appropriate for your client's goals and abilities.
 
 ### "Can I paste my raw session notes into ChatGPT?"
-Not into a public tool. Raw session notes almost always contain PHI — client names, session dates, specific behaviors tied to an identifiable person. If you want AI help structuring your notes, de-identify first or use a tool with a BAA in place <cite data-ref="hipaa"></cite>.
+Not into a public tool. Raw session notes almost always contain PHI: client names, session dates, specific behaviors tied to an identifiable person. If you want AI help structuring your notes, de-identify first or use a tool with a BAA in place <cite data-ref="hipaa"></cite>.
 
 ### "Do I need to tell parents I used AI to write their child's IEP goals?"
 There is no universal legal requirement yet, but transparency is the safer path. If your district has a disclosure policy, follow it. If not, consider: would a parent feel misled if they learned AI was involved? Disclosure builds trust. Secrecy erodes it.
@@ -51,30 +51,30 @@ There is no universal legal requirement yet, but transparency is the safer path.
 ### "Can a grad student use AI to draft their clinical reports?"
 This depends on the program's academic integrity policy and the clinical supervisor's expectations. If AI is permitted, the student must still demonstrate they understand the clinical reasoning behind every sentence. A draft is a starting point, not a final product.
 
-### "My district bought an AI tool — does that make it safe?"
-Not automatically. A purchased tool is only as safe as its implementation. Ask: Is there a BAA? What data does it collect? Where is it stored? Who has access? "District-approved" means someone vetted it — but verify that vetting included privacy review.
+### "My district bought an AI tool. Does that make it safe?"
+Not automatically. A purchased tool is only as safe as its implementation. Ask: Is there a BAA? What data does it collect? Where is it stored? Who has access? "District-approved" means someone vetted it, but verify that vetting included privacy review.
 
 ### "Can I use AI to write a letter of medical necessity?"
-You can use AI to help structure and draft the letter, but the clinical rationale must come from you. The letter is a professional assertion that a service is medically necessary — that assertion carries your name, your license, and your liability.
+You can use AI to help structure and draft the letter, but the clinical rationale must come from you. The letter is a professional assertion that a service is medically necessary, and that assertion carries your name, your license, and your liability.
 
 ### "Is it ethical to use AI if it means I see more patients?"
-Efficiency is not inherently unethical. But if AI-assisted documentation leads to less individualized care, that is a problem. The question is not whether you see more patients — it is whether each patient still gets your full clinical attention.
+Efficiency is not inherently unethical. But if AI-assisted documentation leads to less individualized care, that is a problem. The question is not whether you see more patients, but whether each patient still gets your full clinical attention.
 
 ### "What if the AI-generated note is better than what I would have written?"
-"Better" is doing a lot of work in that sentence. If the note is more polished but less specific to the client, it is not better. If it is more organized and equally accurate, that is a genuine improvement. Your job is to evaluate which one it is — every time.
+"Better" is doing a lot of work in that sentence. If the note is more polished but less specific to the client, it is not better. If it is more organized and equally accurate, that is a genuine improvement. Your job is to evaluate which one it is, every time.
 
 ## The Bright Lines
 
 Some things are never acceptable, regardless of context, tool, or time pressure:
 
 - **Never enter identifiable PHI into a tool without a BAA.** No names, no DOBs, no school names, no student IDs. No exceptions <cite data-ref="hipaa"></cite> <cite data-ref="ferpa"></cite>.
-- **Never let AI make a clinical determination.** Diagnosis, eligibility decisions, and treatment recommendations require professional judgment. AI can inform — it cannot decide.
+- **Never let AI make a clinical determination.** Diagnosis, eligibility decisions, and treatment recommendations require professional judgment. AI can inform, but it cannot decide.
 - **Never submit AI output without reviewing it.** If your name is on the document, you are responsible for every word in it.
 - **Never misrepresent AI-generated work as solely your own** when disclosure is required by your employer, program, or licensing board.
 - **Never use AI to fabricate data**, invent session details, or document services that did not occur.
 
 ## Pair With
 
-- [PHI Safety](/foundations/phi-safety) — for the de-identification checklist referenced in the decision tree
-- [Core Principles](/foundations/principles) — for the ethical framework underlying these decisions
-- [Model & Tool Comparison](/foundations/comparison-matrix) — for BAA availability by provider
+- [PHI Safety](/foundations/phi-safety), for the de-identification checklist referenced in the decision tree
+- [Core Principles](/foundations/principles), for the ethical framework underlying these decisions
+- [Model & Tool Comparison](/foundations/comparison-matrix), for BAA availability by provider

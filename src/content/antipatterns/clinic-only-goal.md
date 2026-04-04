@@ -7,7 +7,7 @@ settings: [school, early-intervention, private-practice]
 order: 3
 ---
 
-This antipattern is subtle because the goal *is* measurable — it just measures the wrong thing.
+This antipattern is subtle because the goal *is* measurable. It just measures the wrong thing.
 
 ## The Bad Example
 

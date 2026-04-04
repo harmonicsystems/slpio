@@ -1,7 +1,7 @@
 ---
 term: "Token"
 aliases: ["subword", "tokenization", "token limit"]
-slpDefinition: "The smallest unit of text that an LLM processes. Tokens are like morphemes — the smallest meaningful pieces the model works with. The word 'unhappiness' might become three tokens ('un,' 'happi,' 'ness'), just as a morphologist would break it into three morphemes. Understanding tokens matters because AI tools charge by the token and limit how many tokens you can use in a single conversation."
+slpDefinition: "The smallest unit of text that an LLM processes. Tokens are like morphemes, the smallest meaningful pieces the model works with. The word 'unhappiness' might become three tokens ('un,' 'happi,' 'ness'), just as a morphologist would break it into three morphemes. Understanding tokens matters because AI tools charge by the token and limit how many tokens you can use in a single conversation."
 techDefinition: "A subword unit produced by a tokenization algorithm (such as BPE or SentencePiece) that splits text into a vocabulary of common character sequences. Models process and generate text token-by-token, not word-by-word. Token counts determine both cost and context window consumption."
 order: 5
 ---

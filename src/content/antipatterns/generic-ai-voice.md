@@ -21,7 +21,7 @@ Everything specific (the red car, "my turn" as a new utterance, the thrown car, 
 
 ## Why This Happens
 
-LLMs are trained on vast amounts of professional writing. When you give them clinical notes, they pattern-match to the most common documentation style in their training data: **generic, hedge-heavy, professional-sounding text**. The model doesn't know that "my turn" appearing for the first time is clinically significant. It just sees two words and maps them to "two-word combinations."
+LLMs are trained on vast amounts of professional writing. When you give them clinical notes, they pattern-match to the most common documentation style in their training data: **generic, hedge-heavy, professional-sounding text**. The model doesn't know that "my turn" appearing for the first time is clinically significant; it just sees two words and maps them to "two-word combinations."
 
 ## The Fix
 
@@ -33,16 +33,16 @@ Preserve the specific details from my notes — exact utterances, specific mater
 
 ## The Fixed Version
 
-> "Student demonstrated increased engagement during a play-based activity with a red car. Produced novel two-word combination 'my turn' — first documented use of possessive + noun for turn-taking. Also produced 'more car' (recurrence + object). Difficulty with activity transition observed: threw car once. Recovered independently after SLP modeled deep breathing strategy. Co-regulation strategy effective within 30 seconds."
+> "Student demonstrated increased engagement during a play-based activity with a red car. Produced novel two-word combination 'my turn' (first documented use of possessive + noun for turn-taking). Also produced 'more car' (recurrence + object). Difficulty with activity transition observed: threw car once. Recovered independently after SLP modeled deep breathing strategy. Co-regulation strategy effective within 30 seconds."
 
-Every detail from the original notes is preserved. The note is still organized and professional — but it's **this child's** note, not anyone else's.
+Every detail from the original notes is preserved. The note is still organized and professional, but it's **this child's** note, not anyone else's.
 
 ## The Takeaway
 
-> If you can swap a client's name into the note and it still makes sense, the note has lost its clinical value. Specificity is not just good writing — it's the evidence that you were actually in the room.
+> If you can swap a client's name into the note and it still makes sense, the note has lost its clinical value. Specificity is not just good writing. It's the evidence that you were actually in the room.
 
 ## Pair With
 
-- [Documentation tasks](/tasks/documentation/) — how to preserve voice in structured notes
-- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) — a philosophy that naturally produces specific notes
-- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) — the goal-writing version of the same problem
+- [Documentation tasks](/tasks/documentation/) – how to preserve voice in structured notes
+- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) – a philosophy that naturally produces specific notes
+- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) – the goal-writing version of the same problem

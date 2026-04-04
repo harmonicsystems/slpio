@@ -21,7 +21,7 @@ Discharge documentation carries weight beyond the chart. It determines what happ
 I am an SLP in a [medical / SNF-rehab] setting preparing discharge documentation. Here is de-identified data from the full episode of care: admission assessment results, treatment targets and approaches used, progress data by session or week, and discharge assessment results. Organize this into: (1) a clinical summary listing each area addressed with the approach used and frequency, (2) a comparison of admission and discharge performance levels for each area, (3) functional status at discharge including diet level, communication status, and cognitive-linguistic function as applicable, and (4) any complicating factors I noted that affected the treatment course. Do not assign prognosis ratings or make discharge recommendations; I will do that.
 ```
 
-**Decision point:** Does the organized summary accurately represent the trajectory of care? A patient who plateaued early and maintained is clinically different from one who made late gains. The model shows you endpoints — you know the arc. Check that the summary does not make a flat trajectory look like meaningful progress just because the admission and discharge numbers differ slightly.
+**Decision point:** Does the organized summary accurately represent the trajectory of care? A patient who plateaued early and maintained is clinically different from one who made late gains. The model shows you endpoints; you know the arc. Check that the summary does not make a flat trajectory look like meaningful progress just because the admission and discharge numbers differ slightly.
 
 ## Step 2: Draft Discharge Summary and Recommendations
 
@@ -33,7 +33,7 @@ I am an SLP in a [medical / SNF-rehab] setting preparing discharge documentation
 Using the clinical summary above, draft a discharge summary that includes: reason for referral, brief treatment course with frequency and duration, outcomes by area with specific data, current functional status, and discharge recommendations. Use these specific recommendations (I am providing them; do not generate your own): [insert your recommendations regarding outpatient therapy, home health, caregiver training, follow-up, diet level, or discontinuation of services]. Use professional medical documentation style appropriate for the medical record. Do not include prognosis language. I will write that section myself and add it.
 ```
 
-**Decision point:** Prognosis is yours. The model cannot weigh the patient's motivation, family support system, medical complexity, cognitive status, or insurance reality. A patient with "good potential for further gains" on paper might have no access to outpatient services or a family that cannot manage the home program. A patient whose data looks flat might thrive with a different approach in a different setting. Write the prognosis yourself, every time. Then check that your recommendations are internally consistent — do not recommend outpatient therapy three times per week if you rated the prognosis as poor for further functional change.
+**Decision point:** Prognosis is yours. The model cannot weigh the patient's motivation, family support system, medical complexity, cognitive status, or insurance reality. A patient with "good potential for further gains" on paper might have no access to outpatient services or a family that cannot manage the home program. A patient whose data looks flat might thrive with a different approach in a different setting. Write the prognosis yourself, every time. Then check that your recommendations are internally consistent: do not recommend outpatient therapy three times per week if you rated the prognosis as poor for further functional change.
 
 ## Step 3: Create Patient and Family Education Materials
 
@@ -57,7 +57,7 @@ Based on the discharge recommendations above, create patient and family educatio
 Draft a referral letter to [outpatient SLP / home health agency / receiving SNF — specify] that includes: current functional status in all relevant domains, treatment provided and the patient's response to each approach, outstanding goals with current performance levels, specific recommendations for continued treatment focus and approach, diet level and any precautions, and caregiver training completed and still needed. Use professional clinical language appropriate for an SLP audience. Include enough detail that the receiving clinician could begin the first session with a clear plan. Do not minimize remaining deficits or overstate progress.
 ```
 
-**Decision point:** Is the referral letter honest about where the patient is? There is pressure — sometimes subtle, sometimes not — to paint a rosier picture at discharge than the data supports. The receiving clinician needs the truth. If the patient is at 60% accuracy on modified diet management with maximal cues, say that. If the family has been inconsistent with strategy use, note it. The next clinician's treatment plan depends on the accuracy of what you hand them.
+**Decision point:** Is the referral letter honest about where the patient is? There is pressure, sometimes subtle, sometimes not, to paint a rosier picture at discharge than the data supports. The receiving clinician needs the truth. If the patient is at 60% accuracy on modified diet management with maximal cues, say that. If the family has been inconsistent with strategy use, note it. The next clinician's treatment plan depends on the accuracy of what you hand them.
 
 ## What the LLM Did vs. What You Did
 
@@ -71,6 +71,6 @@ Draft a referral letter to [outpatient SLP / home health agency / receiving SNF 
 
 ## Pair With
 
-- [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) — similar documentation rigor in a different context
-- [Medical setting guide](/settings/medical-acute/) — medical documentation standards and payer considerations
-- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — critical in medical documentation where errors carry patient safety risk
+- [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) – similar documentation rigor in a different context
+- [Medical setting guide](/settings/medical-acute/) – medical documentation standards and payer considerations
+- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) – critical in medical documentation where errors carry patient safety risk

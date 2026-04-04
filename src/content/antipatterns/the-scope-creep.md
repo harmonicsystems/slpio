@@ -7,7 +7,7 @@ settings: [school, medical, snf-rehab, private-practice]
 order: 8
 ---
 
-This antipattern is dangerous because it sounds helpful. The model generates a thorough, confident recommendation section — and buried in it is a suggestion that no SLP should be making in a clinical document.
+This antipattern is dangerous because it sounds helpful. The model generates a thorough, confident recommendation section, and buried in it is a suggestion that no SLP should be making in a clinical document.
 
 ## The Bad Example
 
@@ -21,7 +21,7 @@ Recommendation 1 is appropriate. Recommendation 2 implies a diagnosis. Recommend
 
 ## Why LLMs Produce This
 
-The model does not understand professional scope of practice. It has been trained on text from physicians, psychologists, educators, OTs, and SLPs without any boundary between them. When it generates "recommendations," it draws from all of those professions simultaneously. A thorough recommendation section, to the model, means covering all possible angles — regardless of who is qualified to make each recommendation.
+The model does not understand professional scope of practice. It has been trained on text from physicians, psychologists, educators, OTs, and SLPs without any boundary between them. When it generates "recommendations," it draws from all of those professions simultaneously. A thorough recommendation section, to the model, means covering all possible angles, regardless of who is qualified to make each recommendation.
 
 ## The Fix
 
@@ -47,10 +47,10 @@ The clinical observations are still documented. Every concern is still raised. B
 
 ## The Takeaway
 
-> An LLM will cross every professional boundary you do not draw. If your prompt does not define scope, the output will not respect it. You are the clinician who signs the report — make sure every recommendation in it is one you are qualified to make.
+> An LLM will cross every professional boundary you do not draw. If your prompt does not define scope, the output will not respect it. You are the clinician who signs the report. Make sure every recommendation in it is one you are qualified to make.
 
 ## Pair With
 
-- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — another case where the model adds authoritative-sounding content you did not provide
-- [Clinical reasoning tasks](/tasks/clinical-reasoning/) — structuring eval prompts with scope guardrails
-- [Medical setting guide](/settings/medical-acute/) — scope of practice considerations in healthcare settings
+- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) – another case where the model adds authoritative-sounding content you did not provide
+- [Clinical reasoning tasks](/tasks/clinical-reasoning/) – structuring eval prompts with scope guardrails
+- [Medical setting guide](/settings/medical-acute/) – scope of practice considerations in healthcare settings

@@ -99,7 +99,7 @@ A typical articulation goal should progress through these levels, and each level
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Full goal clarity toolkit with before/after examples
-- [Documentation](/tasks/documentation/) — Progress note templates
-- [Materials & Activities](/tasks/materials/) — Word lists, home programs
-- [Schools & Early Intervention](/settings/schools/) — IEP-specific guidance
+- [Writing Goals](/tasks/writing-goals/): Full goal clarity toolkit with before/after examples
+- [Documentation](/tasks/documentation/): Progress note templates
+- [Materials & Activities](/tasks/materials/): Word lists, home programs
+- [Schools & Early Intervention](/settings/schools/): IEP-specific guidance

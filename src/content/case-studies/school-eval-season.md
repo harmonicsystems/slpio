@@ -13,11 +13,11 @@ order: 1
 
 ## Clinical Context
 
-A school-based speech-language pathologist in a suburban K-5 elementary school carried a caseload of 65 students receiving services across language and articulation domains. In early October, the district's child study teams referred eight students for initial evaluations within a three-week window — a volume that coincided with annual IEP reviews for twelve existing students.
+A school-based speech-language pathologist in a suburban K-5 elementary school carried a caseload of 65 students receiving services across language and articulation domains. In early October, the district's child study teams referred eight students for initial evaluations within a three-week window, a volume that coincided with annual IEP reviews for twelve existing students.
 
 The referrals included five students suspected of language disorders (ages 5-9), two students with articulation concerns, and one student presenting with both. Assessments administered included the CELF-5, GFTA-3, TOLD-P:5, language samples, classroom observations, and teacher/parent questionnaires. Each evaluation required a comprehensive written report with present levels of performance, interpretation of standardized scores, and recommendations.
 
-The clinician had historically spent 90-120 minutes drafting each evaluation report. At that rate, the eight new reports alone would consume 12-16 hours of non-clinical time — time she did not have given her existing documentation load.
+The clinician had historically spent 90-120 minutes drafting each evaluation report. At that rate, the eight new reports alone would consume 12-16 hours of non-clinical time, time she did not have given her existing documentation load.
 
 ## The Challenge
 
@@ -63,11 +63,11 @@ No parent or team member raised concerns about report quality. In one case, a pa
 
 ## Reflection
 
-The clinician noted that the AI was most useful as an organizational tool — it excelled at converting raw data into a logical narrative structure. Its weakest area was individualization. Every first draft read like a competent report about a hypothetical child rather than the specific child she had evaluated. She learned to front-load her prompts with more observational detail, which improved the drafts but never eliminated the need for manual revision.
+The clinician noted that the AI was most useful as an organizational tool: it excelled at converting raw data into a logical narrative structure. Its weakest area was individualization. Every first draft read like a competent report about a hypothetical child rather than the specific child she had evaluated. She learned to front-load her prompts with more observational detail, which improved the drafts but never eliminated the need for manual revision.
 
 She also noted that the time savings were not evenly distributed. Reports involving straightforward articulation-only evaluations benefited most; complex language profiles with discrepant subtest scores required more substantial revision. For one student with a significant discrepancy between receptive and expressive language scores, the AI draft failed to address the clinical significance of the gap, and the clinician rewrote that section entirely.
 
-If she were to repeat the process, she would build a library of her own observational phrases — specific descriptions of classroom behaviors, error patterns, and compensatory strategies — that she could insert into prompts alongside the quantitative data. The AI drafts improved markedly when given richer qualitative input, and systematizing that input would further reduce editing time.
+If she were to repeat the process, she would build a library of her own observational phrases (specific descriptions of classroom behaviors, error patterns, and compensatory strategies) that she could insert into prompts alongside the quantitative data. The AI drafts improved markedly when given richer qualitative input, and systematizing that input would further reduce editing time.
 
 She also reflected on the ethical dimension of efficiency. Faster report writing was valuable only if it translated into more time for direct services and clinical thinking, not simply more administrative throughput. She made a deliberate choice to reinvest the saved hours into extended classroom observations for two students whose profiles warranted additional data.
 
@@ -77,4 +77,4 @@ She also reflected on the ethical dimension of efficiency. Faster report writing
 - Prompts should explicitly instruct the model not to make eligibility determinations, and output should be checked for implicit eligibility language.
 - The greatest efficiency gains come from cases with straightforward profiles; complex cases still demand substantial clinician revision.
 - Structured data entry (consistent format across students) improves the consistency and quality of AI output.
-- Time savings from AI-assisted drafting should be reinvested in clinical activities — extended observations, parent conferences, or direct services — not simply absorbed into administrative throughput.
+- Time savings from AI-assisted drafting should be reinvested in clinical activities (extended observations, parent conferences, or direct services), not simply absorbed into administrative throughput.

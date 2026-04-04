@@ -17,11 +17,11 @@ The LLM returns:
 
 > "Standardized assessment results are as follows: Clinical Evaluation of Language Fundamentals, Fifth Edition (CELF-5): Receptive Language Index: 78 (7th percentile, below average range). Expressive Language Index: 72 (3rd percentile, below average range). Core Language Score: 74 (4th percentile). Peabody Picture Vocabulary Test, Fifth Edition (PPVT-5): Standard Score: 81 (10th percentile). These results indicate significant receptive and expressive language delays relative to same-age peers."
 
-You never administered the CELF-5. You never entered any scores. The model fabricated every number in that paragraph — and every number is plausible enough to look real.
+You never administered the CELF-5. You never entered any scores. The model fabricated every number in that paragraph, and every number is plausible enough to look real.
 
 ## Why LLMs Produce This
 
-Language models generate text by predicting what comes next. In evaluation reports, what comes next after "CELF-5 Receptive Language Index:" is a number. The model has seen thousands of reports and knows what scores *typically* look like for a child described as having language concerns. It is not reporting data. It is generating statistically plausible fiction. The model does not distinguish between "data the clinician provided" and "data I should invent to complete the pattern."
+Language models generate text by predicting what comes next. In evaluation reports, what comes next after "CELF-5 Receptive Language Index:" is a number. The model has seen thousands of reports and knows what scores *typically* look like for a child described as having language concerns. It is not reporting data; it is generating statistically plausible fiction. The model does not distinguish between "data the clinician provided" and "data I should invent to complete the pattern."
 
 ## The Fix
 
@@ -43,10 +43,10 @@ The placeholders are obvious. Nothing can slip through as real data.
 
 ## The Takeaway
 
-> An LLM will never tell you it made up a test score. It will present fabricated data with the same confidence as text you actually provided. Every number in an AI-generated evaluation must be verified against your actual results — not skimmed, verified.
+> An LLM will never tell you it made up a test score. It will present fabricated data with the same confidence as text you actually provided. Every number in an AI-generated evaluation must be verified against your actual results. Not skimmed. Verified.
 
 ## Pair With
 
-- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) — another case where surface quality hides a critical problem
-- [Clinical reasoning tasks](/tasks/clinical-reasoning/) — how to structure prompts for eval reports safely
-- [Core principles](/foundations/principles/) — why verification steps are non-negotiable
+- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) – another case where surface quality hides a critical problem
+- [Clinical reasoning tasks](/tasks/clinical-reasoning/) – how to structure prompts for eval reports safely
+- [Core principles](/foundations/principles/) – why verification steps are non-negotiable

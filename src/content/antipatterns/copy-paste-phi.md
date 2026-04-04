@@ -11,9 +11,9 @@ This is the single most dangerous mistake an SLP can make with AI tools. It happ
 
 ## The Bad Example
 
-> "Write a SOAP note for my session today. Here are my notes: Marcus Williams, DOB 3/14/2018, Sunshine Elementary, Mrs. Patterson's 2nd grade class. Dx: mixed receptive-expressive language disorder, ASD Level 1. Today we worked on following 2-step directions with temporal concepts. Marcus needed moderate cues for 'before/after' sequences. He eloped from the table twice. Mom reported he's been refusing to eat breakfast — possible sensory issues. Medicaid ID #4477821."
+> "Write a SOAP note for my session today. Here are my notes: Marcus Williams, DOB 3/14/2018, Sunshine Elementary, Mrs. Patterson's 2nd grade class. Dx: mixed receptive-expressive language disorder, ASD Level 1. Today we worked on following 2-step directions with temporal concepts. Marcus needed moderate cues for 'before/after' sequences. He eloped from the table twice. Mom reported he's been refusing to eat breakfast, possible sensory issues. Medicaid ID #4477821."
 
-That entire block — name, date of birth, school, teacher, diagnosis, Medicaid number — is now in a third-party system you do not control. You just shared protected health information with an entity that is not a covered business associate. Under HIPAA, that is a reportable breach. Under FERPA, that is an unauthorized disclosure of education records.
+That entire block (name, date of birth, school, teacher, diagnosis, Medicaid number) is now in a third-party system you do not control. You just shared protected health information with an entity that is not a covered business associate. Under HIPAA, that is a reportable breach. Under FERPA, that is an unauthorized disclosure of education records.
 
 ## Why LLMs Produce This
 
@@ -35,7 +35,7 @@ This takes 30 seconds. A HIPAA breach investigation takes months.
 
 ## The Fixed Version
 
-> "Write a SOAP note for my session today. Here are my notes: [Student], age 7, 2nd grade. Dx: mixed receptive-expressive language disorder, ASD Level 1. Today we worked on following 2-step directions with temporal concepts. [Student] needed moderate cues for 'before/after' sequences. Eloped from table twice. Parent reported refusal to eat breakfast — possible sensory issues."
+> "Write a SOAP note for my session today. Here are my notes: [Student], age 7, 2nd grade. Dx: mixed receptive-expressive language disorder, ASD Level 1. Today we worked on following 2-step directions with temporal concepts. [Student] needed moderate cues for 'before/after' sequences. Eloped from table twice. Parent reported refusal to eat breakfast, possible sensory issues."
 
 Same clinical content. Same quality output. Zero compliance risk.
 
@@ -45,6 +45,6 @@ Same clinical content. Same quality output. Zero compliance risk.
 
 ## Pair With
 
-- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) — de-identification does not mean losing clinical detail
-- [Documentation tasks](/tasks/documentation/) — building de-identification into your documentation workflow
-- [Medical setting guide](/settings/medical-acute/) — HIPAA-specific considerations for AI use
+- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) – de-identification does not mean losing clinical detail
+- [Documentation tasks](/tasks/documentation/) – building de-identification into your documentation workflow
+- [Medical setting guide](/settings/medical-acute/) – HIPAA-specific considerations for AI use
