@@ -95,6 +95,33 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                 </div>
                 <Search />
             </div>
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="mobile-nav-group">
+                    <div class="mobile-nav-label">Learn</div>
+                    <a href="/foundations/">Foundations</a>
+                    <a href="/glossary/">Glossary</a>
+                    <a href="/research/">Research</a>
+                </div>
+                <div class="mobile-nav-group">
+                    <div class="mobile-nav-label">Do</div>
+                    <a href="/prompts/">Prompts</a>
+                    <a href="/workflows/">Workflows</a>
+                    <a href="/tasks/">Tasks</a>
+                </div>
+                <div class="mobile-nav-group">
+                    <div class="mobile-nav-label">Adapt</div>
+                    <a href="/domains/">Domains</a>
+                    <a href="/settings/">Settings</a>
+                    <a href="/patterns/">Patterns</a>
+                </div>
+                <div class="mobile-nav-group">
+                    <div class="mobile-nav-label">Verify</div>
+                    <a href="/antipatterns/">Antipatterns</a>
+                    <a href="/case-studies/">Case Studies</a>
+                    <a href="/policies/">Policies</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -147,19 +174,19 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
         (function() {
             var hamburger = document.getElementById('hamburger');
             var navLinks = document.getElementById('nav-links');
+            var mobileNav = document.getElementById('mobile-nav');
             var navMore = document.getElementById('nav-more');
             var navMoreBtn = document.getElementById('nav-more-btn');
 
-            if (hamburger && navLinks) {
+            if (hamburger && mobileNav) {
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('open');
-                    navLinks.classList.toggle('open');
+                    mobileNav.classList.toggle('open');
                 });
-                navLinks.querySelectorAll('a').forEach(function(link) {
+                mobileNav.querySelectorAll('a').forEach(function(link) {
                     link.addEventListener('click', function() {
                         hamburger.classList.remove('open');
-                        navLinks.classList.remove('open');
-                        if (navMore) navMore.classList.remove('open');
+                        mobileNav.classList.remove('open');
                     });
                 });
             }
@@ -412,48 +439,70 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
 
     .footer-bottom strong { color: rgba(255,255,255,0.4); }
 
-    /* ── Mobile ── */
+    /* ── Mobile Nav ── */
+    .mobile-nav {
+        display: none;
+    }
+
     @media (max-width: 768px) {
-        .nav-links { display: none; }
+        .nav-links { display: none !important; }
         .hamburger { display: flex; }
-        .nav-links.open {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
+
+        .mobile-nav.open {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            position: fixed;
             top: var(--header-height);
             left: 0;
-            width: 100%;
-            background: color-mix(in srgb, var(--light) 97%, transparent);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            padding: 1.25rem 2rem 1.5rem;
-            gap: 0.25rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            right: 0;
+            bottom: 0;
+            background: var(--light);
+            padding: 1.5rem 1.5rem 2rem;
             z-index: 999;
+            overflow-y: auto;
+            animation: navSlideIn 0.2s ease;
         }
-        .nav-links.open a {
-            padding: 0.65rem 0.5rem;
-            font-size: 0.92rem;
+
+        @keyframes navSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .mobile-nav-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            padding: 0 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 0.55rem 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
             border-radius: 6px;
             transition: background var(--transition);
         }
-        .nav-links.open a:hover { background: var(--primary-light); }
-        .nav-links.open a::after { display: none; }
-        .nav-more { width: 100%; }
-        .nav-more-btn { padding: 0.65rem 0.5rem; font-size: 0.92rem; width: 100%; }
-        .nav-dropdown {
-            position: static;
-            box-shadow: none;
-            border: none;
-            background: transparent;
-            backdrop-filter: none;
-            padding: 0 0 0 1rem;
-            min-width: auto;
+
+        .mobile-nav a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
         }
-        .nav-more .nav-dropdown { display: none; }
-        .nav-more.open .nav-dropdown { display: block; }
-        .nav-dropdown a { font-size: 0.88rem; }
+
         .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
         .footer-bottom { flex-direction: column; gap: 0.25rem; }
         .footer-dot { display: none; }
