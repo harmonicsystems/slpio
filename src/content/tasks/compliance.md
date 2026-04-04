@@ -6,7 +6,7 @@ order: 4
 category: compliance
 ---
 
-Compliance documentation is high-stakes — insurance denials, due process hearings, and regulatory audits all hinge on precision. LLMs can help structure these documents, but the clinical content must be yours.
+Compliance documentation is high-stakes. Insurance denials, due process hearings, and regulatory audits all hinge on precision. LLMs can help structure these documents, but the clinical content must be yours.
 
 ## Prior Authorization / Medical Necessity
 
@@ -18,7 +18,7 @@ I am an SLP writing a prior authorization letter to justify continued therapy se
 
 ## Ethical Reflection
 
-Sometimes you need to think through a situation more clearly — not get an answer, but sharpen your reasoning.
+Sometimes you need to think through a situation more clearly, not get an answer, but sharpen your reasoning.
 
 ### Prompt Template
 
@@ -28,7 +28,7 @@ I am an SLP working in a school setting. I am dealing with a situation involving
 
 ## IEP Compliance Checks
 
-IDEA requires that IEP goals are measurable, address the child's disability-related needs, and enable progress in the general education curriculum. The model can review goal language against these requirements — but cannot assess whether the goal is clinically appropriate for the individual child.
+IDEA requires that IEP goals are measurable, address the child's disability-related needs, and enable progress in the general education curriculum. The model can review goal language against these requirements, but it cannot assess whether the goal is clinically appropriate for the individual child.
 
 ## Medicaid Billing Documentation
 

@@ -1,7 +1,7 @@
 ---
 term: "Temperature"
 aliases: ["creativity setting", "randomness parameter"]
-slpDefinition: "A setting in AI tools that controls how predictable or creative the output is. Lower temperature (0.0–0.3) produces more consistent, focused output — better for clinical documentation. Higher temperature (0.7–1.0) produces more varied, creative output — potentially useful for brainstorming therapy materials, but riskier for accuracy."
+slpDefinition: "A setting in AI tools that controls how predictable or creative the output is. Lower temperature (0.0-0.3) produces more consistent, focused output, better for clinical documentation. Higher temperature (0.7-1.0) produces more varied, creative output, potentially useful for brainstorming therapy materials, but riskier for accuracy."
 techDefinition: "A parameter in language model inference that scales the probability distribution over the vocabulary before sampling. Temperature = 0 selects the highest-probability token (greedy decoding); higher values flatten the distribution, increasing randomness and diversity in output."
 order: 3
 ---
@@ -20,7 +20,7 @@ If you're using a tool like ChatGPT, Claude, or Gemini, temperature may be adjus
 
 ## The Clinical Analogy
 
-Think of temperature like the difference between a structured assessment and a dynamic assessment. Low temperature is the standardized test — predictable, reliable, narrow. High temperature is the dynamic assessment — flexible, exploratory, but harder to replicate. You wouldn't use a dynamic assessment format for an eligibility report, and you shouldn't use high temperature for clinical documentation.
+Think of temperature like the difference between a structured assessment and a dynamic assessment. Low temperature is the standardized test: predictable, reliable, narrow. High temperature is the dynamic assessment: flexible, exploratory, but harder to replicate. You wouldn't use a dynamic assessment format for an eligibility report, and you shouldn't use high temperature for clinical documentation.
 
 ## Related Terms
 

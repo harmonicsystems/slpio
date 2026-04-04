@@ -2,13 +2,13 @@
 term: "Scope of Practice"
 aliases: ["SOP", "professional scope", "ASHA scope of practice"]
 slpDefinition: "The ASHA-defined boundaries of what speech-language pathologists are qualified and authorized to do, including assessment, diagnosis, treatment, and counseling for communication and swallowing disorders. AI tools do not expand, reduce, or modify your scope of practice. You are responsible for every clinical decision, whether you used an LLM to help draft it or not."
-techDefinition: "Professional domain constraints that define the boundaries within which AI tools should operate when used by a specific profession. In system design terms, scope of practice functions as a hard constraint — AI outputs that recommend actions outside a user's professional scope represent a failure mode that must be actively mitigated through prompt design, fine-tuning, or guardrails."
+techDefinition: "Professional domain constraints that define the boundaries within which AI tools should operate when used by a specific profession. In system design terms, scope of practice functions as a hard constraint. AI outputs that recommend actions outside a user's professional scope represent a failure mode that must be actively mitigated through prompt design, fine-tuning, or guardrails."
 order: 10
 ---
 
 ## Why SLPs Need to Know This
 
-AI tools don't know what your scope of practice is. An LLM will happily generate a medical diagnosis, recommend a medication, or suggest a psychological intervention if you ask it to — none of which are within SLP scope. The model isn't being malicious; it simply doesn't have professional boundaries. That responsibility stays with you.
+AI tools don't know what your scope of practice is. An LLM will happily generate a medical diagnosis, recommend a medication, or suggest a psychological intervention if you ask it to, none of which are within SLP scope. The model isn't being malicious; it simply doesn't have professional boundaries. That responsibility stays with you.
 
 ## Clinical Impact
 

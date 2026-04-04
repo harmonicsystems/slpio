@@ -86,7 +86,7 @@ I am an SLP referring a patient to ENT for laryngeal evaluation (no patient iden
 
 ## Related Pages
 
-- [Documentation](/tasks/documentation/) — Note and report templates
-- [Communication](/tasks/communication/) — Patient education drafting
-- [Medical & Acute Care](/settings/medical-acute/) — Medical documentation context
-- [Private Practice](/settings/private-practice/) — Insurance documentation for voice therapy
+- [Documentation](/tasks/documentation/): Note and report templates
+- [Communication](/tasks/communication/): Patient education drafting
+- [Medical & Acute Care](/settings/medical-acute/): Medical documentation context
+- [Private Practice](/settings/private-practice/): Insurance documentation for voice therapy

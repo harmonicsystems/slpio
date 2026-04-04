@@ -1,12 +1,12 @@
 ---
 title: Materials & Activities
-description: Generate therapy materials, visual supports, and home programs — customized to your students.
+description: Generate therapy materials, visual supports, and home programs, customized to your students.
 icon: ph-duotone ph-paint-brush
 order: 6
 category: materials
 ---
 
-Material creation is one of the most time-consuming parts of SLP work. LLMs can generate stimulus items, activity hierarchies, and home programs — saving you hours while keeping content individualized.
+Material creation is one of the most time-consuming parts of SLP work. LLMs can generate stimulus items, activity hierarchies, and home programs, saving you hours while keeping content individualized.
 
 ## Therapy Activities
 

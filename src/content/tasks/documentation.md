@@ -1,6 +1,6 @@
 ---
 title: Documentation
-description: Turn messy session notes into structured clinical documentation — with your judgment doing the real work.
+description: Turn messy session notes into structured clinical documentation, with your judgment doing the real work.
 icon: ph-duotone ph-note-pencil
 order: 2
 category: documentation
