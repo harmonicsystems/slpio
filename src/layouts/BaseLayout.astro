@@ -95,35 +95,37 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                 </div>
                 <Search />
             </div>
-            <div class="mobile-nav" id="mobile-nav">
-                <div class="mobile-nav-group">
-                    <div class="mobile-nav-label">Learn</div>
-                    <a href="/foundations/">Foundations</a>
-                    <a href="/glossary/">Glossary</a>
-                    <a href="/research/">Research</a>
-                </div>
-                <div class="mobile-nav-group">
-                    <div class="mobile-nav-label">Do</div>
-                    <a href="/prompts/">Prompts</a>
-                    <a href="/workflows/">Workflows</a>
-                    <a href="/tasks/">Tasks</a>
-                </div>
-                <div class="mobile-nav-group">
-                    <div class="mobile-nav-label">Adapt</div>
-                    <a href="/domains/">Domains</a>
-                    <a href="/settings/">Settings</a>
-                    <a href="/patterns/">Patterns</a>
-                </div>
-                <div class="mobile-nav-group">
-                    <div class="mobile-nav-label">Verify</div>
-                    <a href="/antipatterns/">Antipatterns</a>
-                    <a href="/case-studies/">Case Studies</a>
-                    <a href="/policies/">Policies</a>
-                    <a href="/resources/">Resources</a>
-                </div>
-            </div>
         </nav>
     </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-group">
+            <div class="mobile-nav-label">Learn</div>
+            <a href="/">Home</a>
+            <a href="/foundations/">Foundations</a>
+            <a href="/glossary/">Glossary</a>
+            <a href="/research/">Research</a>
+        </div>
+        <div class="mobile-nav-group">
+            <div class="mobile-nav-label">Do</div>
+            <a href="/prompts/">Prompts</a>
+            <a href="/workflows/">Workflows</a>
+            <a href="/tasks/">Tasks</a>
+        </div>
+        <div class="mobile-nav-group">
+            <div class="mobile-nav-label">Adapt</div>
+            <a href="/domains/">Domains</a>
+            <a href="/settings/">Settings</a>
+            <a href="/patterns/">Patterns</a>
+        </div>
+        <div class="mobile-nav-group">
+            <div class="mobile-nav-label">Verify</div>
+            <a href="/antipatterns/">Antipatterns</a>
+            <a href="/case-studies/">Case Studies</a>
+            <a href="/policies/">Policies</a>
+            <a href="/resources/">Resources</a>
+        </div>
+    </div>
 
     <main>
         <slot />
@@ -459,9 +461,10 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
             bottom: 0;
             background: var(--light);
             padding: 1.5rem 1.5rem 2rem;
-            z-index: 999;
+            z-index: 1001;
             overflow-y: auto;
             animation: navSlideIn 0.2s ease;
+            align-content: start;
         }
 
         @keyframes navSlideIn {
