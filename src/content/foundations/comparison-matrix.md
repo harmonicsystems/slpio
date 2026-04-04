@@ -5,16 +5,16 @@ icon: ph-duotone ph-table
 order: 8
 ---
 
-This page compares the major AI models and tool categories relevant to SLP practice. The goal is honest, practical guidance — not product endorsement.
+This page compares the major AI models and tool categories relevant to SLP practice. The goal is honest, practical guidance, not product endorsement.
 
 ## AI Models Compared
 
 | Model | Provider | BAA Available? | Best For | Limitations | Cost Tier | Clinical Notes |
 |-------|----------|---------------|----------|-------------|-----------|----------------|
 | GPT-4o / GPT-4 | OpenAI | Yes (Enterprise/API) | Documentation drafting, goal writing, general clinical text | Can sound confident while being wrong; free tier has no BAA | Free–$$$ | Most widely used; strongest ecosystem of integrations |
-| Claude | Anthropic | Yes (API/Enterprise) | Longer documents, nuanced writing, following detailed instructions | Smaller integration ecosystem than OpenAI | $$–$$$ | Tends toward careful, hedged output — useful for clinical writing |
+| Claude | Anthropic | Yes (API/Enterprise) | Longer documents, nuanced writing, following detailed instructions | Smaller integration ecosystem than OpenAI | $$–$$$ | Tends toward careful, hedged output, useful for clinical writing |
 | Gemini | Google | Yes (Workspace/API) | Integration with Google ecosystem, multimodal tasks | Privacy controls can be confusing across tiers; BAA scope varies | Free–$$$ | Google Workspace integration may appeal to school-based SLPs |
-| Llama / Open-source | Meta / Community | N/A (self-hosted) | Full data control when self-hosted; research use | Requires technical setup; no vendor support; quality varies by model size | Free (compute costs apply) | Only truly "private" if you host it yourself — most people cannot |
+| Llama / Open-source | Meta / Community | N/A (self-hosted) | Full data control when self-hosted; research use | Requires technical setup; no vendor support; quality varies by model size | Free (compute costs apply) | Only truly "private" if you host it yourself; most people cannot |
 
 ## Tool Categories for SLPs
 

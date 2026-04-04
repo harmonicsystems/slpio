@@ -1,7 +1,7 @@
 ---
 term: "De-identification"
 aliases: ["de-id", "anonymization", "data scrubbing", "PHI removal"]
-slpDefinition: "Removing all identifying information from clinical data before it enters any AI tool. This is not optional. Under HIPAA, 18 categories of identifiers must be stripped — names, dates, locations, medical record numbers, and more. If you paste a client's eval into ChatGPT with their name attached, you have created a reportable breach."
+slpDefinition: "Removing all identifying information from clinical data before it enters any AI tool. This is not optional. Under HIPAA, 18 categories of identifiers must be stripped: names, dates, locations, medical record numbers, and more. If you paste a client's eval into ChatGPT with their name attached, you have created a reportable breach."
 techDefinition: "The process of removing or transforming personally identifiable information (PII) and protected health information (PHI) from datasets, typically following the HIPAA Safe Harbor method (removal of 18 identifier types) or Expert Determination method. Automated de-identification tools use NER (named entity recognition) models to detect and redact identifying elements."
 order: 13
 ---

@@ -81,11 +81,11 @@ I am an SLP documenting a pragmatic language group session with 3 students (no i
 
 ## Neurodiversity-Affirming Practice
 
-This is critical for social communication goals. The model won't do this for you — you have to guide it.
+This is critical for social communication goals. The model won't do this for you. You have to guide it.
 
 ### What to specify in your prompts:
 
-- "Use neurodiversity-affirming language — do not frame autistic communication styles as deficits"
+- "Use neurodiversity-affirming language. Do not frame autistic communication styles as deficits"
 - "Focus on communication effectiveness, not social conformity"
 - "The goal should support the student's ability to participate, not mask their natural communication style"
 - "Include the student's perspective and preferences in goal-setting"
@@ -112,8 +112,8 @@ This is critical for social communication goals. The model won't do this for you
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Goal clarity with before/after examples
-- [Documentation](/tasks/documentation/) — Session note templates
-- [Materials & Activities](/tasks/materials/) — Social stories, visual supports
-- [Fluency](/domains/fluency/) — Overlapping social concerns
-- [AAC](/domains/aac/) — Social communication across modalities
+- [Writing Goals](/tasks/writing-goals/): Goal clarity with before/after examples
+- [Documentation](/tasks/documentation/): Session note templates
+- [Materials & Activities](/tasks/materials/): Social stories, visual supports
+- [Fluency](/domains/fluency/): Overlapping social concerns
+- [AAC](/domains/aac/): Social communication across modalities

@@ -20,13 +20,13 @@ Every time you consider using an AI tool for clinical work, the first question i
 
 ## Practical Guide for SLPs
 
-1. **When in doubt, de-identify** — remove all 18 identifiers before using any AI tool that lacks a BAA
-2. **Don't just remove the name** — a combination of age + diagnosis + school + session frequency can be identifying in small communities
-3. **Understand that "de-identified for brainstorming" and "clinical documentation" are different use cases** — you can use a generic AI tool for de-identified brainstorming, but clinical documentation with PHI requires a HIPAA-compliant platform
-4. **Remember that what you type into an AI tool may be stored** — even temporarily, input data on non-compliant platforms may be logged, cached, or used for training
+1. **When in doubt, de-identify.** Remove all 18 identifiers before using any AI tool that lacks a BAA
+2. **Don't just remove the name.** A combination of age + diagnosis + school + session frequency can be identifying in small communities
+3. **Understand that "de-identified for brainstorming" and "clinical documentation" are different use cases.** You can use a generic AI tool for de-identified brainstorming, but clinical documentation with PHI requires a HIPAA-compliant platform
+4. **Remember that what you type into an AI tool may be stored.** Even temporarily, input data on non-compliant platforms may be logged, cached, or used for training
 
 ## Related Terms
 
-- **BAA (Business Associate Agreement)** — the legal contract required before an AI vendor can handle your PHI
-- **Fine-Tuning** — models fine-tuned on real clinical data raise questions about whether PHI was used in training
-- **Hallucination** — a model that fabricates PHI-like details (inventing a patient name or score) creates its own compliance risks
+- **BAA (Business Associate Agreement)**: the legal contract required before an AI vendor can handle your PHI
+- **Fine-Tuning**: models fine-tuned on real clinical data raise questions about whether PHI was used in training
+- **Hallucination**: a model that fabricates PHI-like details (inventing a patient name or score) creates its own compliance risks

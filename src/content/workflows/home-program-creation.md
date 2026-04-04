@@ -9,11 +9,11 @@ difficulty: beginner
 order: 6
 ---
 
-A home program only works if the family actually does it. That means the activities need to fit into routines they already have, use materials they already own, and be explained in language that makes sense without a degree in communication sciences. This workflow helps you build home programs that are clinically targeted and practically usable — not the idealized version that assumes unlimited time and a perfectly quiet house, but the real one.
+A home program only works if the family actually does it. That means the activities need to fit into routines they already have, use materials they already own, and be explained in language that makes sense without a degree in communication sciences. This workflow helps you build home programs that are clinically targeted and practically usable, not the idealized version that assumes unlimited time and a perfectly quiet house, but the real one.
 
 ## Step 1: Identify Target Skills and Family Context
 
-**What you do:** Select 2-4 target skills based on current therapy goals. Then write down what you know about this family's daily routines, available time, other children in the home, languages spoken, caregiver comfort level, and any barriers they have mentioned. This context shapes everything that follows — skip it and you will produce a beautiful program that lives in a drawer.
+**What you do:** Select 2-4 target skills based on current therapy goals. Then write down what you know about this family's daily routines, available time, other children in the home, languages spoken, caregiver comfort level, and any barriers they have mentioned. This context shapes everything that follows. Skip it and you will produce a beautiful program that lives in a drawer.
 
 **Prompt:**
 

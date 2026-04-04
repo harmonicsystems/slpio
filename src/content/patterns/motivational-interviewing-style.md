@@ -8,7 +8,7 @@ populations: [adult, geriatric]
 order: 6
 ---
 
-Adult clients in medical and rehab settings often have complicated relationships with therapy. They may not have chosen to be there. They may disagree with your recommendations. Default LLM output tends toward directive, compliance-focused language — "patient was educated on the importance of..." and "patient should adhere to..." — which undermines the therapeutic alliance you're trying to build. Motivational interviewing principles belong in your documentation, not just your sessions.
+Adult clients in medical and rehab settings often have complicated relationships with therapy. They may not have chosen to be there. They may disagree with your recommendations. Default LLM output tends toward directive, compliance-focused language ("patient was educated on the importance of..." and "patient should adhere to...") which undermines the therapeutic alliance you're trying to build. Motivational interviewing principles belong in your documentation, not just your sessions.
 
 ## The Core Pattern
 
@@ -28,13 +28,13 @@ This shifts the model from writing about what you told the patient to writing ab
 
 > "Patient reports his primary goal is returning to eating meals with his family at the dinner table. He noted that the exercise program feels overwhelming alongside his other medical appointments. Discussed options for simplifying the home program to 2 key exercises that most directly support his goal of safe oral intake during family meals. Patient selected the Mendelsohn maneuver and effortful swallow as his preferred exercises. He expressed confidence in completing these twice daily. Plan adjusted to align with patient's stated priorities and current capacity."
 
-The second version documents the same clinical reality — a patient not doing his exercises — but frames it in a way that preserves dignity, captures clinical reasoning, and is more likely to produce actual behavior change.
+The second version documents the same clinical reality (a patient not doing his exercises) but frames it in a way that preserves dignity, captures clinical reasoning, and is more likely to produce actual behavior change.
 
 ## Prompt Modifiers for Motivational Interviewing Style
 
-- **"Document the client's stated goals in their own words"** — centers the person, not the clinician's agenda
-- **"Frame recommendations as choices, not instructions"** — respects autonomy
-- **"Replace 'non-compliant' with a description of barriers"** — removes judgment, adds clinical utility
+- **"Document the client's stated goals in their own words"** – centers the person, not the clinician's agenda
+- **"Frame recommendations as choices, not instructions"** – respects autonomy
+- **"Replace 'non-compliant' with a description of barriers"** – removes judgment, adds clinical utility
 - **"Include the client's confidence or readiness level"** — captures where they are in the change process
 - **"Describe how the treatment plan connects to what the client values"** — makes the rationale transparent
 - **"Use 'declined' rather than 'refused' for client decisions"** — small language shift, large respect difference
