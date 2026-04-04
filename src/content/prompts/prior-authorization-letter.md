@@ -19,10 +19,10 @@ I am an SLP drafting a prior authorization letter to an insurance company. Here 
 
 ## Why This Works
 
-- **Medical necessity framing** — the prompt explicitly targets the language insurers require: restore, maintain, or prevent decline in function
-- **Functional emphasis** — payers respond to functional limitation descriptions more than diagnostic labels alone
-- **No fabrication guardrail** — "do not fabricate diagnoses, test results, or treatment history" prevents the model from strengthening the case with invented data
-- **Outcome honesty** — "do not guarantee outcomes" keeps the letter clinically defensible
+- **Medical necessity framing.** The prompt explicitly targets the language insurers require: restore, maintain, or prevent decline in function.
+- **Functional emphasis.** Payers respond to functional limitation descriptions more than diagnostic labels alone.
+- **No fabrication guardrail.** "Do not fabricate diagnoses, test results, or treatment history" prevents the model from strengthening the case with invented data.
+- **Outcome honesty.** "Do not guarantee outcomes" keeps the letter clinically defensible.
 
 ## When to Use
 
@@ -36,6 +36,6 @@ When you need to submit a prior authorization for therapy services, instrumental
 
 ## Pair With
 
-- [PHI Safety Checker](/foundations/phi-safety/) — de-identify all clinical details before pasting
-- [Documentation workflows](/tasks/documentation/) — broader documentation strategies
-- [Compliance task guide](/tasks/compliance/) — regulatory and payer requirements
+- [PHI Safety Checker](/foundations/phi-safety/) – de-identify all clinical details before pasting
+- [Documentation workflows](/tasks/documentation/) – broader documentation strategies
+- [Compliance task guide](/tasks/compliance/) – regulatory and payer requirements

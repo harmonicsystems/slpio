@@ -7,7 +7,7 @@ order: 6
 
 Templates give you a starting point. Patterns teach you why they work, so you can write better prompts on your own, for any situation.
 
-## Pattern 01 — Set your role
+## Pattern 01. Set your role
 
 Telling the model who you are gives it context for tone, vocabulary, and scope.
 
@@ -19,7 +19,7 @@ Telling the model who you are gives it context for tone, vocabulary, and scope.
 "I am a medical SLP in an acute care hospital evaluating post-stroke patients."
 ```
 
-## Pattern 02 — Constrain the output
+## Pattern 02. Constrain the output
 
 Preventing hallucination starts with telling the model not to invent details.
 
@@ -27,7 +27,7 @@ Preventing hallucination starts with telling the model not to invent details.
 "Do not add details I did not provide. Only organize what I give you."
 ```
 
-## Pattern 03 — Define the format
+## Pattern 03. Define the format
 
 Structured requests get structured responses. Tell it exactly what you want back.
 

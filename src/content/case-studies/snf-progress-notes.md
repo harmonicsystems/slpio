@@ -15,7 +15,7 @@ order: 4
 
 A speech-language pathologist at a 120-bed skilled nursing and rehabilitation facility carried a caseload of 28 patients across cognitive-linguistic and dysphagia domains. The caseload included post-stroke patients in short-term rehabilitation, residents with progressive dementia receiving maintenance therapy, and patients recovering from surgical procedures affecting swallowing. Each patient required weekly progress notes that documented treatment activities, patient response, functional progress, and justification for continued skilled services.
 
-The clinician's weekly documentation cycle consumed approximately six hours, typically completed in the evenings and on weekends. Each note required not only a summary of what occurred in therapy but also a clear articulation of why the services required the skills of a licensed speech-language pathologist — a Medicare requirement that distinguished reimbursable skilled therapy from activities that could be performed by non-professional staff.
+The clinician's weekly documentation cycle consumed approximately six hours, typically completed in the evenings and on weekends. Each note required not only a summary of what occurred in therapy but also a clear articulation of why the services required the skills of a licensed speech-language pathologist, a Medicare requirement that distinguished reimbursable skilled therapy from activities that could be performed by non-professional staff.
 
 She began using an LLM to draft notes from her session data, entering treatment targets, patient performance data, cueing levels, and functional observations for each patient.
 
@@ -23,7 +23,7 @@ She began using an LLM to draft notes from her session data, entering treatment 
 
 The initial AI-generated notes were clinically accurate but documentarily insufficient. They read like session summaries rather than skilled-service justifications. A typical draft might state: "Patient participated in word-finding activities and was able to name 7 out of 10 items with moderate cueing." While factually correct, this language did not meet Medicare's documentation threshold. It failed to explain why the activity required a licensed SLP, how performance related to functional goals, or what clinical reasoning guided the session.
 
-Medicare auditors and reviewers look for documentation that demonstrates medical necessity and skilled intervention. Notes lacking this language risk claim denials, recoupment, and — in pattern cases — suspension of billing privileges. The stakes were not academic.
+Medicare auditors and reviewers look for documentation that demonstrates medical necessity and skilled intervention. Notes lacking this language risk claim denials, recoupment, and, in pattern cases, suspension of billing privileges. The stakes were not academic.
 
 ## AI-Assisted Approach
 
@@ -31,7 +31,7 @@ The clinician spent two weeks iterating on her prompt before arriving at a relia
 
 **Step 1: Data format.** She created a standardized input format for each patient: diagnosis, therapy focus, specific activity, performance data (accuracy, cueing level, trials), comparison to prior session, functional relevance, and discharge goal.
 
-**Step 2: First prompt attempt.** Her initial prompt — "Write a progress note for a patient in skilled nursing" — produced the generic summaries described above.
+**Step 2: First prompt attempt.** Her initial prompt ("Write a progress note for a patient in skilled nursing") produced the generic summaries described above.
 
 **Step 3: Skilled-service prompt template.** After reviewing Medicare documentation guidelines, she revised the prompt: "Draft a weekly skilled therapy progress note for an SNF patient. For each treatment activity, explain (1) the specific skilled technique used and why it requires a licensed SLP, (2) the patient's measurable performance compared to prior session, (3) how performance relates to a functional goal, and (4) why continued skilled services are medically necessary. Use objective data. Do not use subjective language like 'patient enjoyed' or 'patient was pleasant.' Frame all interventions in terms of skilled clinical reasoning."
 
@@ -39,7 +39,7 @@ The clinician spent two weeks iterating on her prompt before arriving at a relia
 
 ## What the AI Produced
 
-> **Cognitive-Linguistic Treatment — Skilled Progress Note**
+> **Cognitive-Linguistic Treatment – Skilled Progress Note**
 >
 > Patient continues to receive skilled speech-language pathology services targeting functional expressive language for basic needs communication. Today's session utilized a semantic feature analysis approach to address word retrieval deficits secondary to left CVA. This technique requires the clinical expertise of a licensed SLP to select appropriate semantic cues, grade task complexity based on real-time error analysis, and modify cueing hierarchies in response to patient performance.
 >
@@ -53,13 +53,13 @@ The skilled-service prompt template produced substantially better drafts than th
 
 First, the AI tended to overstate progress. Phrases like "demonstrates steady improvement" appeared even when data showed plateau or minimal change. The clinician replaced these with precise language: "Performance was unchanged from the prior session at 6/10 with moderate cueing" or "Accuracy decreased from 80% to 65%, attributed to increased fatigue during the afternoon session." Accurate representation of plateau was particularly important for patients on maintenance therapy, where justification centered on preventing decline rather than documenting gains.
 
-Second, the AI's skilled-service justification, while structurally correct, sometimes sounded formulaic across patients. The clinician individualized these sections by adding patient-specific clinical reasoning — for example, noting that a particular patient's apraxia of speech required real-time articulatory placement cueing that could not be performed by a restorative nursing aide.
+Second, the AI's skilled-service justification, while structurally correct, sometimes sounded formulaic across patients. The clinician individualized these sections by adding patient-specific clinical reasoning; for example, noting that a particular patient's apraxia of speech required real-time articulatory placement cueing that could not be performed by a restorative nursing aide.
 
 Third, she removed instances where the AI fabricated plausible-sounding functional context. In one draft, the model stated a patient "used the target vocabulary during a mealtime interaction," an event the clinician had not reported in her data. She flagged this as a hallucination risk and added a note to her template: "Only reference events and contexts I have included in the data. Do not infer or generate functional scenarios."
 
 ## Outcome
 
-After implementing the revised template, the clinician reduced her weekly documentation time from approximately six hours to three hours and forty-five minutes. Over the following quarter, none of her progress notes were flagged during the facility's internal Medicare compliance audit — a first in her tenure. Her director of rehabilitation requested a copy of her prompt template to share with the occupational and physical therapy staff as a model for skilled-service documentation language.
+After implementing the revised template, the clinician reduced her weekly documentation time from approximately six hours to three hours and forty-five minutes. Over the following quarter, none of her progress notes were flagged during the facility's internal Medicare compliance audit, a first in her tenure. Her director of rehabilitation requested a copy of her prompt template to share with the occupational and physical therapy staff as a model for skilled-service documentation language.
 
 The clinician also reported an unexpected benefit: the process of designing the prompt template required her to articulate Medicare's documentation logic more explicitly than she ever had. This exercise improved her own understanding of what auditors look for and made her more efficient even when writing notes manually on days when she chose not to use the AI tool.
 

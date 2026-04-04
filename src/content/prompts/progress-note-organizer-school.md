@@ -14,7 +14,7 @@ order: 1
 ## The Prompt
 
 ```
-I am a school-based SLP. Here are my raw session notes for a student (no identifying information included). Organize these into a structured progress note with: date of service, IEP goal addressed, activity/materials used, student response data (accuracy percentage, level of cueing), clinical observations, and plan for next session. Do not add observations I didn't make. Do not change my accuracy data. Keep my clinical voice — do not over-polish.
+I am a school-based SLP. Here are my raw session notes for a student (no identifying information included). Organize these into a structured progress note with: date of service, IEP goal addressed, activity/materials used, student response data (accuracy percentage, level of cueing), clinical observations, and plan for next session. Do not add observations I didn't make. Do not change my accuracy data. Keep my clinical voice. Do not over-polish.
 ```
 
 ## Why This Works

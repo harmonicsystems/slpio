@@ -1,8 +1,8 @@
 ---
 term: "Pragmatics"
 aliases: ["social communication", "social language", "pragmatic language"]
-slpDefinition: "The rules governing how language is used in social contexts — turn-taking, topic maintenance, inferencing, understanding nonliteral language (sarcasm, idioms), adjusting communication style for different listeners, and reading social cues. A core domain of SLP practice."
-techDefinition: "In AI/NLP, pragmatics relates to how context influences meaning beyond the literal words — understanding implication, speaker intent, and conversational norms. LLMs have limited pragmatic understanding; they process text patterns rather than genuine social reasoning."
+slpDefinition: "The rules governing how language is used in social contexts: turn-taking, topic maintenance, inferencing, understanding nonliteral language (sarcasm, idioms), adjusting communication style for different listeners, and reading social cues. A core domain of SLP practice."
+techDefinition: "In AI/NLP, pragmatics relates to how context influences meaning beyond the literal words, including understanding implication, speaker intent, and conversational norms. LLMs have limited pragmatic understanding; they process text patterns rather than genuine social reasoning."
 order: 2
 ---
 

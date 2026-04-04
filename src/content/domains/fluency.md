@@ -106,7 +106,7 @@ LLMs are even less reliable for cluttering-related content. If your student pres
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Goal clarity toolkit
-- [Documentation](/tasks/documentation/) — Session note templates
-- [Schools & Early Intervention](/settings/schools/) — IEP context
-- [Pragmatics & Social Communication](/domains/pragmatics-social/) — Overlapping social concerns
+- [Writing Goals](/tasks/writing-goals/): Goal clarity toolkit
+- [Documentation](/tasks/documentation/): Session note templates
+- [Schools & Early Intervention](/settings/schools/): IEP context
+- [Pragmatics & Social Communication](/domains/pragmatics-social/): Overlapping social concerns

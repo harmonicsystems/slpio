@@ -5,7 +5,7 @@ icon: ph-duotone ph-brain
 order: 6
 ---
 
-Cognitive-linguistic intervention spans attention, memory, executive function, problem-solving, and social cognition. These are complex, multi-dimensional targets that require careful goal writing — and where LLMs are most helpful for structuring documentation rather than generating clinical content.
+Cognitive-linguistic intervention spans attention, memory, executive function, problem-solving, and social cognition. These are complex, multi-dimensional targets that require careful goal writing, and LLMs are most helpful here for structuring documentation rather than generating clinical content.
 
 ## LLM Strengths in This Domain
 
