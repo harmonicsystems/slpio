@@ -119,6 +119,51 @@ a {
 
 a:hover { color: var(--accent-amber); }
 
+/* ── Tables ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+th, td {
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+td {
+    color: var(--text-muted);
+}
+
+tr:hover td {
+    background: rgba(52, 152, 219, 0.03);
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.78rem;
+    }
+
+    th, td {
+        padding: 0.5rem 0.65rem;
+        white-space: nowrap;
+    }
+}
+
 /* ── Layout ── */
 main {
     padding-top: var(--header-height);

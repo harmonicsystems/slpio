@@ -117,10 +117,16 @@ Warm regards,
                     <div class="demo-response-text" id="demo-response"></div>
                     <div class="demo-cursor" id="demo-cursor"></div>
                 </div>
+
+                <div class="demo-start-overlay" id="demo-start-overlay">
+                    <button class="demo-start-btn" id="demo-start-btn">
+                        <i class="ph ph-play-circle"></i> Run this prompt
+                    </button>
+                </div>
             </div>
 
             <div class="demo-footer-bar">
-                <button class="demo-replay-btn" id="demo-replay">
+                <button class="demo-replay-btn" id="demo-replay" disabled>
                     <i class="ph ph-play"></i> Replay
                 </button>
                 <div class="demo-disclaimer">Pre-generated example, not live AI output</div>
@@ -134,12 +140,15 @@ Warm regards,
     let currentIndex = 0;
     let animationId = null;
     let promptTimeout = null;
+    let hasStarted = false;
 
     const promptEl = document.getElementById('demo-prompt');
     const responseEl = document.getElementById('demo-response');
     const cursorEl = document.getElementById('demo-cursor');
     const tabs = document.querySelectorAll('.demo-tab');
     const replayBtn = document.getElementById('demo-replay');
+    const startOverlay = document.getElementById('demo-start-overlay');
+    const startBtn = document.getElementById('demo-start-btn');
 
     function clearAnimation() {
         if (animationId) cancelAnimationFrame(animationId);
@@ -155,22 +164,16 @@ Warm regards,
 
         function tick() {
             if (i < text.length) {
-                // Handle markdown bold
                 let char = text[i];
-
-                // Build innerHTML progressively with markdown
                 i++;
                 element.innerHTML = formatMarkdown(text.slice(0, i));
-
-                // Scroll to bottom of demo body
                 element.closest('.demo-body').scrollTop = element.closest('.demo-body').scrollHeight;
 
-                // Variable speed: pause longer on newlines and punctuation
                 let delay = speed;
-                if (char === '\n') delay = speed * 3;
-                else if (char === '.' || char === '!' || char === '?') delay = speed * 2;
-                else if (char === ',') delay = speed * 1.5;
-                else if (char === '*') delay = speed * 0.3;
+                if (char === '\n') delay = speed * 2;
+                else if (char === '.' || char === '!' || char === '?') delay = speed * 1.5;
+                else if (char === ',') delay = speed * 1.2;
+                else if (char === '*') delay = 0;
 
                 promptTimeout = setTimeout(() => {
                     animationId = requestAnimationFrame(tick);
@@ -185,58 +188,69 @@ Warm regards,
 
     function formatMarkdown(text) {
         return text
-            // Bold
             .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            // Tables
             .replace(/\|(.+)\|/g, function(match) {
                 if (match.match(/^\|\s*[-:]+/)) return '<div class="md-table-sep"></div>';
                 const cells = match.split('|').filter(c => c.trim()).map(c => '<span class="md-cell">' + c.trim() + '</span>');
                 return '<div class="md-table-row">' + cells.join('') + '</div>';
             })
-            // Numbered lists
             .replace(/^(\d+)\.\s(.+)$/gm, '<div class="md-li"><span class="md-num">$1.</span> $2</div>')
-            // Newlines
             .replace(/\n/g, '<br/>');
+    }
+
+    function showPrompt(index) {
+        currentIndex = index;
+        const demo = demos[index];
+        tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+        promptEl.textContent = demo.prompt;
+        responseEl.innerHTML = '';
+        cursorEl.style.display = 'none';
+
+        if (!hasStarted) {
+            startOverlay.style.display = 'flex';
+            replayBtn.disabled = true;
+        }
     }
 
     function runDemo(index) {
         clearAnimation();
+        hasStarted = true;
         currentIndex = index;
         const demo = demos[index];
 
         tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+        startOverlay.style.display = 'none';
+        replayBtn.disabled = false;
 
-        // Show prompt instantly
         promptEl.textContent = demo.prompt;
-
-        // Animate response with typewriter
         responseEl.innerHTML = '';
         cursorEl.style.display = 'inline-block';
 
         promptTimeout = setTimeout(() => {
-            typeText(responseEl, demo.response, 8, null);
-        }, 600);
+            typeText(responseEl, demo.response, 3, null);
+        }, 400);
     }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            runDemo(parseInt(tab.dataset.index));
+            if (hasStarted) {
+                runDemo(parseInt(tab.dataset.index));
+            } else {
+                showPrompt(parseInt(tab.dataset.index));
+            }
         });
+    });
+
+    startBtn.addEventListener('click', () => {
+        runDemo(currentIndex);
     });
 
     replayBtn.addEventListener('click', () => {
         runDemo(currentIndex);
     });
 
-    // Start first demo when visible
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            runDemo(0);
-            observer.disconnect();
-        }
-    }, { threshold: 0.3 });
-
-    observer.observe(document.getElementById('prompt-demo'));
+    // Show first prompt (but don't animate) on load
+    showPrompt(0);
 })();
 </script>
 
@@ -427,6 +441,44 @@ Warm regards,
     .demo-response-text :global(.md-num) {
         color: #5ba3e0;
         font-weight: 600;
+    }
+
+    .demo-start-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0 1rem;
+    }
+
+    .demo-start-btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #43c47a;
+        background: rgba(67, 196, 122, 0.1);
+        border: 1px solid rgba(67, 196, 122, 0.3);
+        border-radius: 8px;
+        padding: 0.65rem 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all var(--transition);
+    }
+
+    .demo-start-btn:hover {
+        background: rgba(67, 196, 122, 0.2);
+        border-color: rgba(67, 196, 122, 0.5);
+        transform: scale(1.02);
+    }
+
+    .demo-start-btn i {
+        font-size: 1.2rem;
+    }
+
+    .demo-replay-btn:disabled {
+        opacity: 0.3;
+        cursor: default;
     }
 
     .demo-cursor {
