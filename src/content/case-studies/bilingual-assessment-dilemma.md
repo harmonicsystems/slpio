@@ -17,7 +17,7 @@ A speech-language pathologist in a dual-language elementary school received a re
 
 The clinician administered the Bilingual English-Spanish Assessment (BESA), the CELF-5 (English), selected subtests of the CELF-5 in Spanish, and collected language samples in both languages during structured narrative retell tasks. She also completed a parent interview conducted in Spanish through a bilingual liaison and gathered teacher input from both the English and Spanish instructors.
 
-The resulting dataset was complex. D.R.'s English-only scores fell in the below-average range on several subtests, but his conceptual vocabulary — scored across both languages — fell within normal limits. His Spanish narratives demonstrated age-appropriate story grammar, while his English narratives were shorter and less syntactically complex. He code-switched fluidly between languages in conversational contexts, a pattern his parents confirmed was typical at home and in community settings.
+The resulting dataset was complex. D.R.'s English-only scores fell in the below-average range on several subtests, but his conceptual vocabulary, scored across both languages, fell within normal limits. His Spanish narratives demonstrated age-appropriate story grammar, while his English narratives were shorter and less syntactically complex. He code-switched fluidly between languages in conversational contexts, a pattern his parents confirmed was typical at home and in community settings.
 
 ## The Challenge
 
@@ -25,7 +25,7 @@ The clinician had a substantial volume of bilingual data to synthesize into a co
 
 First, the model anchored its interpretive language to the English-only CELF-5 scores, describing D.R.'s language as "below average" and "delayed" without contextualizing these scores against monolingual norming samples. Second, the model characterized D.R.'s code-switching as "frequent language mixing suggestive of word-finding difficulties," pathologizing a typical and well-documented feature of bilingual development. Third, the model's functional impact statement focused exclusively on English classroom performance, omitting his demonstrated competence in Spanish-language instruction.
 
-Left unrevised, this draft would have supported an eligibility determination for a language disorder that the full clinical picture did not warrant. The clinician recognized that a less experienced SLP — or one without bilingual assessment training — might not have identified these errors, particularly because the AI output was fluently written and used appropriate clinical terminology. The draft was wrong in substance but polished in form, which made it more dangerous than a poorly written report that would have prompted closer scrutiny.
+Left unrevised, this draft would have supported an eligibility determination for a language disorder that the full clinical picture did not warrant. The clinician recognized that a less experienced SLP, or one without bilingual assessment training, might not have identified these errors, particularly because the AI output was fluently written and used appropriate clinical terminology. The draft was wrong in substance but polished in form, which made it more dangerous than a poorly written report that would have prompted closer scrutiny.
 
 ## AI-Assisted Approach
 
@@ -49,11 +49,11 @@ The clinician recognized the problem and revised her approach using a bilingual-
 
 ## Clinical Review & Modifications
 
-The revised output was substantially more accurate, but the clinician made several modifications. She added specific examples from the language samples — D.R.'s use of complex subordinate clauses in Spanish ("cuando el perro se escapo, el nino fue a buscarlo") contrasted with his reliance on simple SVO structures in English. She included the parent report that D.R. told elaborate stories at home in Spanish with age-appropriate vocabulary, contextualizing the school-based English-only concerns.
+The revised output was substantially more accurate, but the clinician made several modifications. She added specific examples from the language samples: D.R.'s use of complex subordinate clauses in Spanish ("cuando el perro se escapo, el nino fue a buscarlo") contrasted with his reliance on simple SVO structures in English. She included the parent report that D.R. told elaborate stories at home in Spanish with age-appropriate vocabulary, contextualizing the school-based English-only concerns.
 
 The clinician removed a sentence in which the AI stated D.R.'s English skills were "emerging," a characterization she felt minimized his functional English ability in the classroom. She replaced it with specific data: D.R. followed multi-step English instructions with 80% accuracy in small-group settings and participated verbally in English during structured activities.
 
-She also strengthened the distinction between difference and disorder by adding a paragraph explaining that D.R.'s language profile — stronger performance in the home language, typical bilingual features, and age-appropriate conceptual vocabulary — was consistent with typical bilingual development and did not meet criteria for a language disorder.
+She also strengthened the distinction between difference and disorder by adding a paragraph explaining that D.R.'s language profile (stronger performance in the home language, typical bilingual features, and age-appropriate conceptual vocabulary) was consistent with typical bilingual development and did not meet criteria for a language disorder.
 
 ## Outcome
 
@@ -67,7 +67,7 @@ The clinician noted that the AI's initial output was not malicious but reflected
 
 She observed that the corrected prompt produced a significantly better draft but still required clinical judgment to contextualize scores, add specific examples, and draw the diagnostic conclusion. The AI could organize the data; it could not determine whether a child had a disorder.
 
-The clinician also reflected on the systemic implications. If an SLP without bilingual assessment training used an LLM for report drafting without recognizing the monolingual bias in its output, the result could be a disproportionate identification of bilingual children as language-disordered — a pattern already well-documented in the special education literature. The AI tool did not create this risk, but it could amplify it by lending a veneer of clinical authority to linguistically biased interpretations.
+The clinician also reflected on the systemic implications. If an SLP without bilingual assessment training used an LLM for report drafting without recognizing the monolingual bias in its output, the result could be a disproportionate identification of bilingual children as language-disordered, a pattern already well-documented in the special education literature. The AI tool did not create this risk, but it could amplify it by lending a veneer of clinical authority to linguistically biased interpretations.
 
 She planned to share the bilingual-culturally-responsive prompt framing with her district's SLP team and to include it as a standing item in her department's professional development materials for any clinician using AI-assisted documentation with multilingual students.
 
@@ -75,6 +75,6 @@ She planned to share the bilingual-culturally-responsive prompt framing with her
 
 - LLMs default to monolingual English norms when interpreting assessment data; bilingual-culturally-responsive framing must be explicitly included in the prompt.
 - Code-switching is a predictable area of mischaracterization; prompts should proactively instruct the model to treat it as a typical bilingual feature.
-- Presenting data from both languages side by side — rather than leading with English — produces more balanced AI output.
+- Presenting data from both languages side by side, rather than leading with English, produces more balanced AI output.
 - AI can organize complex bilingual data, but the clinical distinction between language difference and language disorder remains a human judgment that no prompt engineering can replace.
 - The risk of AI-amplified monolingual bias is highest when the clinician lacks bilingual assessment training; professional development on culturally responsive evaluation is a prerequisite for responsible AI use with multilingual populations.

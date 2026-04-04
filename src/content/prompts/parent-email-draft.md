@@ -14,16 +14,16 @@ order: 10
 ## The Prompt
 
 ```
-I am an SLP drafting an email to a parent or caregiver. Here is the topic and key points I want to communicate (no identifying information). Draft a professional, warm email that: opens with a positive or neutral statement, clearly states the purpose of the email, uses plain language without clinical jargon, includes any specific action items or next steps, and closes with an invitation to ask questions or schedule a conversation. Match the tone to the topic — encouraging for progress updates, straightforward for scheduling, supportive for concerns. Do not add clinical details I did not provide. Keep it concise — no more than 3 short paragraphs.
+I am an SLP drafting an email to a parent or caregiver. Here is the topic and key points I want to communicate (no identifying information). Draft a professional, warm email that: opens with a positive or neutral statement, clearly states the purpose of the email, uses plain language without clinical jargon, includes any specific action items or next steps, and closes with an invitation to ask questions or schedule a conversation. Match the tone to the topic: encouraging for progress updates, straightforward for scheduling, supportive for concerns. Do not add clinical details I did not provide. Keep it concise, no more than 3 short paragraphs.
 ```
 
 ## Why This Works
 
-- **Tone matching** — the prompt adjusts tone based on content type, preventing a scheduling email from reading like a progress report
-- **Jargon-free language** — families engage more effectively when communication is clear and accessible
-- **Positive opening** — starting with a strength or neutral statement builds rapport before delivering any information
-- **Conciseness constraint** — three paragraphs forces clarity and respects families' time
-- **No scope creep** — "do not add clinical details I did not provide" prevents the model from inserting observations or recommendations you did not intend to share
+- **Tone matching.** The prompt adjusts tone based on content type, preventing a scheduling email from reading like a progress report.
+- **Jargon-free language.** Families engage more effectively when communication is clear and accessible.
+- **Positive opening.** Starting with a strength or neutral statement builds rapport before delivering any information.
+- **Conciseness constraint.** Three paragraphs forces clarity and respects families' time.
+- **No scope creep.** "Do not add clinical details I did not provide" prevents the model from inserting observations or recommendations you did not intend to share.
 
 ## When to Use
 

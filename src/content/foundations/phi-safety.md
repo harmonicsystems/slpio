@@ -11,7 +11,7 @@ Before you paste anything into a public AI tool, run through this quick check. T
 
 Ask yourself these questions before submitting any prompt:
 
-1. **Does your prompt contain any student or client names?** If yes — stop. Remove them.
+1. **Does your prompt contain any student or client names?** If yes, stop. Remove them.
 2. **Does it include dates of birth, ages with other identifying info, or ID numbers?** Replace with generic placeholders.
 3. **Does it mention a specific school, district, or facility name?** Use [School] or [Facility] instead.
 4. **Does it include diagnosis codes or medical details tied to an identifiable person?** De-identify first.
@@ -29,13 +29,13 @@ Ask yourself these questions before submitting any prompt:
 When preparing prompts, replace identifiable information with consistent placeholders:
 
 ```
-[Student] or [Client]    — instead of names
-[School] or [Facility]   — instead of institutions
-[Age] years old           — instead of DOB
-[Grade]                   — instead of specific grade + school combo
+[Student] or [Client]    (instead of names)
+[School] or [Facility]   (instead of institutions)
+[Age] years old           (instead of DOB)
+[Grade]                   (instead of specific grade + school combo)
 ```
 
-> The goal is simple: no prompt you send to a public AI tool should allow anyone — including the AI company — to identify a specific student, patient, or client.
+> The goal is simple: no prompt you send to a public AI tool should allow anyone (including the AI company) to identify a specific student, patient, or client.
 
 ## Frequently Asked Questions
 

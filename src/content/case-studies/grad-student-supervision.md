@@ -15,7 +15,7 @@ order: 5
 
 A clinical supervisor at a university speech-language pathology program oversaw four second-year graduate students completing their on-campus clinical practicum. Each student carried a small caseload of 3-4 clients spanning pediatric language intervention, adult articulation therapy, and school-age fluency management. At mid-semester, the supervisor was required to provide each student with a written formative evaluation covering clinical skills, professional behavior, and areas for growth, aligned with the program's competency rubric based on ASHA's KASA standards.
 
-The supervisor had accumulated extensive observation notes across approximately 40 supervised sessions — handwritten annotations on session plans, timestamped notes from live observations, and post-session debriefing summaries. Synthesizing these into four individualized feedback documents typically required an entire weekend of writing, roughly 2-3 hours per student.
+The supervisor had accumulated extensive observation notes across approximately 40 supervised sessions: handwritten annotations on session plans, timestamped notes from live observations, and post-session debriefing summaries. Synthesizing these into four individualized feedback documents typically required an entire weekend of writing, roughly 2-3 hours per student.
 
 She decided to use an LLM to help convert her raw observation notes into structured feedback drafts, hoping to reduce preparation time while maintaining the specificity her students needed to develop their clinical skills.
 
@@ -37,11 +37,11 @@ The supervisor revised her approach across three iterations.
 
 ## What the AI Produced
 
-> **Intervention Planning — Strengths**
+> **Intervention Planning – Strengths**
 >
 > During the October 7 session with Client A (school-age language), the student selected a narrative retell activity that was well-matched to the client's current goal of producing complete episodes in story grammar. The activity materials were age-appropriate, and the student prepared a visual support (story map) that scaffolded the task effectively. The client's engagement was sustained throughout the 15-minute activity, and the student collected data on story grammar elements produced, demonstrating session-level planning that connected activity design to measurable goal targets.
 >
-> **Intervention Planning — Area for Growth**
+> **Intervention Planning – Area for Growth**
 >
 > During the October 14 session with Client B (adult articulation), the student selected a word-list drill targeting /r/ in the initial position but did not adjust the task when the client achieved 90% accuracy within the first five minutes. The remaining session time was spent on a task that was no longer at an appropriate challenge level. In the post-session debrief, the student noted she had not prepared a higher-complexity activity as a contingency.
 >

@@ -12,18 +12,18 @@ Tokens affect two things you care about: cost and capacity. Every word you send 
 
 ## Clinical Impact
 
-- Long eval reports consume more tokens — you may need to break them into sections rather than pasting entire reports
+- Long eval reports consume more tokens, so you may need to break them into sections rather than pasting entire reports
 - Specialized clinical vocabulary sometimes tokenizes inefficiently ("velopharyngeal" may become 4-5 tokens), meaning clinical text uses more capacity than everyday language
 - Billing codes, standardized test names, and technical terminology all consume tokens, so be strategic about what you include in a prompt
 
 ## Practical Guide for SLPs
 
-1. **Be concise in prompts** — include necessary clinical detail, but cut unnecessary filler
-2. **Break long tasks into parts** — instead of pasting an entire eval and asking for a summary, process sections individually
-3. **Know your tool's limits** — free tiers typically have lower token limits; if output cuts off mid-sentence, you've likely hit a token ceiling
-4. **Reuse effective prompts** — save prompts that work well so you don't spend tokens iterating every time
+1. **Be concise in prompts.** Include necessary clinical detail, but cut unnecessary filler
+2. **Break long tasks into parts.** Instead of pasting an entire eval and asking for a summary, process sections individually
+3. **Know your tool's limits.** Free tiers typically have lower token limits; if output cuts off mid-sentence, you've likely hit a token ceiling
+4. **Reuse effective prompts.** Save prompts that work well so you don't spend tokens iterating every time
 
 ## Related Terms
 
-- **Context Window** — the total number of tokens the model can hold at once, including both your input and its output
-- **Prompt** — your prompt is converted to tokens before the model processes it
+- **Context Window**: the total number of tokens the model can hold at once, including both your input and its output
+- **Prompt**: your prompt is converted to tokens before the model processes it

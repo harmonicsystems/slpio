@@ -19,10 +19,10 @@ I am a school-based SLP writing IEP goals. Here is a draft goal that needs to be
 
 ## Why This Works
 
-- **Targets the real problem** — most weak goals fail on measurability, not intent. This prompt fixes the measurement without changing the clinical direction
-- **Requests variations** — giving 2-3 options at different support levels lets you match the goal to the student's current functioning
-- **Preserves clinical intent** — "do not change what skill is being targeted" prevents the model from substituting a different, easier-to-measure skill
-- **Includes all legal components** — behavior, condition, criterion, and support level are the four elements that make a goal legally defensible under IDEA <cite data-ref="idea-2004"></cite>
+- **Targets the real problem.** Most weak goals fail on measurability, not intent. This prompt fixes the measurement without changing the clinical direction.
+- **Requests variations.** Giving 2-3 options at different support levels lets you match the goal to the student's current functioning.
+- **Preserves clinical intent.** "Do not change what skill is being targeted" prevents the model from substituting a different, easier-to-measure skill.
+- **Includes all legal components.** Behavior, condition, criterion, and support level are the four elements that make a goal legally defensible under IDEA. <cite data-ref="idea-2004"></cite>
 
 ## Example Input
 
@@ -38,6 +38,6 @@ I am a school-based SLP writing IEP goals. Here is a draft goal that needs to be
 
 ## Pair With
 
-- [Writing Goals](/tasks/writing-goals/) — the full goal-writing workflow
-- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) — what to watch out for
-- [Schools setting guide](/settings/schools/) — IEP documentation requirements
+- [Writing Goals](/tasks/writing-goals/) – the full goal-writing workflow
+- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) – what to watch out for
+- [Schools setting guide](/settings/schools/) – IEP documentation requirements
