@@ -5,7 +5,7 @@ icon: ph-duotone ph-tree-structure
 order: 7
 ---
 
-Not every AI question has a clear answer. But most of them can be worked through systematically. This guide gives you a structured way to think through the gray areas — so you spend less time wondering and more time making defensible decisions.
+Not every AI question has a clear answer. But most of them can be worked through systematically. This guide gives you a structured way to think through the gray areas, so you spend less time wondering and more time making defensible decisions.
 
 Use the pre-flight checklist first, then walk through the decision tree for any task you're unsure about. The gray areas section covers the questions we hear most often.
 
@@ -13,7 +13,7 @@ Use the pre-flight checklist first, then walk through the decision tree for any 
 
 Before using any AI tool for a clinical task, run through these five questions:
 
-1. **Do I understand what this tool does with my input?** If you don't know whether your text is stored, used for training, or accessible to the provider — stop and find out.
+1. **Do I understand what this tool does with my input?** If you don't know whether your text is stored, used for training, or accessible to the provider, stop and find out.
 2. **Is there a BAA in place between my organization and this provider?** If no, treat the tool as public. No PHI, no exceptions.
 3. **Am I using this to replace my clinical judgment, or to support it?** If you plan to copy-paste output into a document without reviewing it, you are not using AI responsibly.
 4. **Would I be comfortable explaining this use to a parent, supervisor, or auditor?** If the answer is "I'd rather they didn't know," reconsider.

@@ -29,7 +29,7 @@ const { apiUrl = '' } = Astro.props;
         AI assistant for clinical workflow support. Never enter student names, DOBs, or identifiable information.
     </div>
     <div class="chat-messages" id="chat-messages">
-        <div class="chat-msg assistant">Hi! I'm the SLP/IO assistant &mdash; an opinionated AI grounded in clinical practice. I can help with goal wording, note structure, ethical reflection, and navigating LLMs responsibly. What are you working on?</div>
+        <div class="chat-msg assistant">Hi! I'm the SLP/IO assistant, an opinionated AI grounded in clinical practice. I can help with goal wording, note structure, ethical reflection, and navigating LLMs responsibly. What are you working on?</div>
     </div>
     <div class="chat-suggestions" id="chat-suggestions">
         <button class="chat-suggestion-btn">Help me write a measurable IEP goal</button>
@@ -47,7 +47,7 @@ const { apiUrl = '' } = Astro.props;
 (function() {
     const CHAT_API_URL = apiUrl;
 
-    const SYSTEM_PROMPT = `You are the SLP/IO Field Guide Assistant — a knowledgeable, opinionated AI built for speech-language pathologists and educators.
+    const SYSTEM_PROMPT = `You are the SLP/IO Field Guide Assistant, a knowledgeable, opinionated AI built for speech-language pathologists and educators.
 
 ## Identity
 You are not a generic chatbot. You are a clinical thinking partner grounded in SLP practice, ASHA ethics, IDEA requirements, and evidence-based documentation standards.
@@ -58,7 +58,7 @@ You are not a generic chatbot. You are a clinical thinking partner grounded in S
 3. All outputs require clinician review before use in any legal or clinical document.
 4. Better documentation should still sound human.
 5. Evidence-based practice is not the same as polished wording.
-6. Precision in language is not pedantry — it protects students and their access to services.
+6. Precision in language is not pedantry; it protects students and their access to services.
 
 ## How You Help
 - Help organize messy session notes into structured progress notes
@@ -71,7 +71,7 @@ You are not a generic chatbot. You are a clinical thinking partner grounded in S
 ## How You Communicate
 - Direct, warm, and clinical without being cold
 - You use the language of the field naturally (IEP, FAPE, IDEA, ASHA, AAC, etc.)
-- You are opinionated — you have a clear stance on ethical AI use
+- You are opinionated and you have a clear stance on ethical AI use
 - Keep responses concise and actionable. Clinicians are busy.
 - When suggesting goal wording, always include: observable behavior, conditions, criteria, and supports
 
@@ -177,18 +177,18 @@ You are not a generic chatbot. You are a clinical thinking partner grounded in S
             return 'Great question. A strong IEP goal should be observable, measurable, and specific to the student. For example, instead of "improve expressive language," try: "Given a visual prompt during structured play, the student will produce 3-4 word utterances to request or comment in 4/5 opportunities across 3 sessions." Want me to help you refine a specific goal?';
         }
         if (m.includes('safe') || m.includes('ethical') || m.includes('should i')) {
-            return 'The key question is always: does this use preserve clinical judgment and protect student privacy? If you\'re using an LLM to structure your own thinking or draft language you\'ll review and revise \u2014 that\'s appropriate. If you\'re pasting student data into a public tool or copying outputs directly into legal documents \u2014 that crosses the line. What\'s the specific situation?';
+            return 'The key question is always: does this use preserve clinical judgment and protect student privacy? If you\'re using an LLM to structure your own thinking or draft language you\'ll review and revise, that\'s appropriate. If you\'re pasting student data into a public tool or copying outputs directly into legal documents, that crosses the line. What\'s the specific situation?';
         }
         if (m.includes('parent') || m.includes('simplif') || m.includes('email')) {
             return 'When communicating with parents, the goal is clarity without loss of accuracy. Avoid clinical jargon but don\'t oversimplify in ways that change the meaning. Paste the clinical text you want to translate and I\'ll help you draft a parent-friendly version. (Remember: no student names or identifiable info.)';
         }
         if (m.includes('research') || m.includes('evidence')) {
-            return 'Current evidence (2025-2026) supports LLMs as documentation copilots \u2014 they improve efficiency, structure, and readability. The strongest findings are in structured note revision and bias detection. The weakest areas remain factual accuracy, hallucination risk, and contextual sensitivity. For SLP specifically, the evidence is still emerging but promising for documentation support. What aspect are you most interested in?';
+            return 'Current evidence (2025-2026) supports LLMs as documentation copilots. They improve efficiency, structure, and readability. The strongest findings are in structured note revision and bias detection. The weakest areas remain factual accuracy, hallucination risk, and contextual sensitivity. For SLP specifically, the evidence is still emerging but promising for documentation support. What aspect are you most interested in?';
         }
         if (m.includes('progress note') || m.includes('session note') || m.includes('document')) {
             return 'For progress notes, I recommend this structure: (1) Target skill addressed, (2) Level of support provided, (3) Quantifiable performance data, (4) Context of the activity, (5) Clinical interpretation. Paste your raw session notes (no identifying info) and I\'ll help you organize them into this framework.';
         }
-        return 'Good question. I\'m currently running in demo mode \u2014 once the API is connected, I\'ll be able to give you a more detailed, context-aware response. In the meantime, I can help with IEP goals, progress note structure, ethical AI use, parent communication, or research questions. What would be most useful?';
+        return 'Good question. I\'m currently running in demo mode. Once the API is connected, I\'ll be able to give you a more detailed, context-aware response. In the meantime, I can help with IEP goals, progress note structure, ethical AI use, parent communication, or research questions. What would be most useful?';
     }
 })();
 </script>

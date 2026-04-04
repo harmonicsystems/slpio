@@ -14,15 +14,15 @@ order: 8
 ## The Prompt
 
 ```
-I am an SLP writing a discharge summary. Here is my treatment data (no identifying information). Organize this into a discharge summary with the following sections: Admission Status (baseline functional levels at start of care), Treatment Provided (frequency, duration, and types of intervention), Progress Toward Goals (compare admission and discharge performance for each goal), Discharge Status (current functional levels), Reason for Discharge, and Recommendations (placeholder for me to complete — include home exercise program, follow-up, or referral sections as applicable). Do not interpret my data beyond what I have stated. Do not assign functional levels I did not report. Preserve my terminology and data exactly.
+I am an SLP writing a discharge summary. Here is my treatment data (no identifying information). Organize this into a discharge summary with the following sections: Admission Status (baseline functional levels at start of care), Treatment Provided (frequency, duration, and types of intervention), Progress Toward Goals (compare admission and discharge performance for each goal), Discharge Status (current functional levels), Reason for Discharge, and Recommendations (placeholder for me to complete; include home exercise program, follow-up, or referral sections as applicable). Do not interpret my data beyond what I have stated. Do not assign functional levels I did not report. Preserve my terminology and data exactly.
 ```
 
 ## Why This Works
 
-- **Admission-to-discharge arc** — structuring around functional change over time tells the clinical story payers and referral sources need
-- **Goal-by-goal progress** — comparing baseline to discharge for each goal provides clear, defensible outcome documentation
-- **Recommendations as placeholder** — discharge recommendations involve clinical judgment about continued need and should come from the clinician
-- **Data preservation** — "do not assign functional levels I did not report" prevents the model from generating FIM scores or severity ratings you did not assess
+- **Admission-to-discharge arc.** Structuring around functional change over time tells the clinical story payers and referral sources need.
+- **Goal-by-goal progress.** Comparing baseline to discharge for each goal provides clear, defensible outcome documentation.
+- **Recommendations as placeholder.** Discharge recommendations involve clinical judgment about continued need and should come from the clinician.
+- **Data preservation.** "Do not assign functional levels I did not report" prevents the model from generating FIM scores or severity ratings you did not assess.
 
 ## When to Use
 
@@ -36,6 +36,6 @@ At the point of discharge from skilled therapy services, when you have accumulat
 
 ## Pair With
 
-- [SOAP Note Formatter](/prompts/soap-note-formatter/) — for individual session documentation during the treatment course
-- [PHI Safety Checker](/foundations/phi-safety/) — de-identify before pasting
-- [SNF/Rehab setting guide](/settings/snf-rehab/) — discharge planning context
+- [SOAP Note Formatter](/prompts/soap-note-formatter/) – for individual session documentation during the treatment course
+- [PHI Safety Checker](/foundations/phi-safety/) – de-identify before pasting
+- [SNF/Rehab setting guide](/settings/snf-rehab/) – discharge planning context

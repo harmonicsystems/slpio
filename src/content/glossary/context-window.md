@@ -1,7 +1,7 @@
 ---
 term: "Context Window"
 aliases: ["context length", "context limit", "memory", "token limit"]
-slpDefinition: "The model's working memory — the total amount of text it can 'hold in mind' during a conversation. Think of it like auditory memory span: just as a patient with reduced working memory loses the beginning of a long instruction, an LLM loses access to earlier parts of a conversation when the context window fills up. Once information falls outside the window, the model doesn't remember it."
+slpDefinition: "The model's working memory: the total amount of text it can 'hold in mind' during a conversation. Think of it like auditory memory span: just as a patient with reduced working memory loses the beginning of a long instruction, an LLM loses access to earlier parts of a conversation when the context window fills up. Once information falls outside the window, the model doesn't remember it."
 techDefinition: "The fixed-length sequence of tokens that a transformer model can attend to during inference. All input tokens (system prompt, conversation history, user message) and output tokens must fit within this window. Information beyond the window boundary is not accessible to the model's attention mechanism."
 order: 6
 ---

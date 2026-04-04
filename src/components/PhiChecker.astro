@@ -2,7 +2,7 @@
 /**
  * Interactive PHI Safety Checker
  * A self-check tool for clinicians before pasting content into public AI tools.
- * Pure vanilla JS — no framework dependencies, works with Astro's zero-JS default.
+ * Pure vanilla JS, no framework dependencies. Works with Astro's zero-JS default.
  */
 ---
 
@@ -105,7 +105,7 @@
             result.innerHTML = '<strong>Proceed with caution.</strong> Your prompt appears de-identified, which is good. However, you\'re using a public tool without a BAA. This is acceptable for general-purpose tasks (brainstorming, reformatting) but not for anything tied to a specific student\'s record. Consider whether an enterprise plan would better fit your workflow.';
         } else {
             result.className = 'phi-result unsafe';
-            result.innerHTML = '<strong>Stop \u2014 do not send this prompt.</strong> Your prompt contains identifiable information that violates HIPAA/FERPA when entered into a public AI tool. Remove all names, dates of birth, school names, ID numbers, and identifiable details before proceeding. Replace with placeholders like [Student], [School], etc.';
+            result.innerHTML = '<strong>Stop. Do not send this prompt.</strong> Your prompt contains identifiable information that violates HIPAA/FERPA when entered into a public AI tool. Remove all names, dates of birth, school names, ID numbers, and identifiable details before proceeding. Replace with placeholders like [Student], [School], etc.';
         }
     }
 })();

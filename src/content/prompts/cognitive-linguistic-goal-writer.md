@@ -19,11 +19,11 @@ I am an SLP writing cognitive-linguistic therapy goals for an adult patient. Her
 
 ## Why This Works
 
-- **Functional anchoring** — tying goals to real-world tasks (medication management, scheduling) produces goals that are meaningful to the patient and defensible to payers
-- **Diagnosis-specific guardrail** — "do not assume a diagnosis I did not provide" prevents the model from generating goals based on a condition you did not assess
-- **Measurability built in** — requiring criterion, condition, and timeframe ensures goals meet documentation standards across medical and rehab settings
-- **Independence over drill performance** — prioritizing functional independence aligns with best practices in cognitive rehabilitation and avoids goals that measure task accuracy without clinical relevance
-- **Multiple goal options** — providing 3-4 goals lets the clinician select and adapt based on the patient's priorities and prognosis
+- **Functional anchoring.** Tying goals to real-world tasks (medication management, scheduling) produces goals that are meaningful to the patient and defensible to payers.
+- **Diagnosis-specific guardrail.** "Do not assume a diagnosis I did not provide" prevents the model from generating goals based on a condition you did not assess.
+- **Measurability built in.** Requiring criterion, condition, and timeframe ensures goals meet documentation standards across medical and rehab settings.
+- **Independence over drill performance.** Prioritizing functional independence aligns with best practices in cognitive rehabilitation and avoids goals that measure task accuracy without clinical relevance.
+- **Multiple goal options.** Providing 3-4 goals lets the clinician select and adapt based on the patient's priorities and prognosis.
 
 ## When to Use
 
@@ -32,11 +32,11 @@ When writing or updating therapy goals for adults with traumatic brain injury, s
 ## When NOT to Use
 
 - Do not include patient names, medical record numbers, or facility identifiers
-- Do not use for pediatric populations — cognitive-linguistic development differs significantly
+- Do not use for pediatric populations; cognitive-linguistic development differs significantly
 - Do not accept goals without verifying they match the patient's assessed impairments and stated priorities
 
 ## Pair With
 
-- [Discharge Summary Organizer](/prompts/discharge-summary/) — document progress toward these goals at end of care
-- [SOAP Note Formatter](/prompts/soap-note-formatter/) — track session-level progress on cognitive-linguistic goals
-- [SNF/Rehab setting guide](/settings/snf-rehab/) — documentation standards for rehabilitation settings
+- [Discharge Summary Organizer](/prompts/discharge-summary/) – document progress toward these goals at end of care
+- [SOAP Note Formatter](/prompts/soap-note-formatter/) – track session-level progress on cognitive-linguistic goals
+- [SNF/Rehab setting guide](/settings/snf-rehab/) – documentation standards for rehabilitation settings

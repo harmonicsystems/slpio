@@ -9,28 +9,28 @@ difficulty: advanced
 order: 5
 ---
 
-Discharge documentation carries weight beyond the chart. It determines what happens to the patient after they leave your care — whether they get outpatient services, whether the family understands the home diet recommendations, whether the next provider has enough information to pick up where you left off. This workflow sequences those documents so each step feeds the next, while keeping your clinical judgment at the center of every prognosis and level-of-care decision.
+Discharge documentation carries weight beyond the chart. It determines what happens to the patient after they leave your care: whether they get outpatient services, whether the family understands the home diet recommendations, whether the next provider has enough information to pick up where you left off. This workflow sequences those documents so each step feeds the next, while keeping your clinical judgment at the center of every prognosis and level-of-care decision.
 
 ## Step 1: Compile Treatment Course and Outcomes
 
-**What you do:** Gather your treatment logs, standardized assessment results (admission and discharge), functional outcome measures, and clinical observations across the episode of care. Include any relevant medical events that affected treatment — medication changes, surgical complications, changes in alertness or participation. De-identify all patient information.
+**What you do:** Gather your treatment logs, standardized assessment results (admission and discharge), functional outcome measures, and clinical observations across the episode of care. Include any relevant medical events that affected treatment (medication changes, surgical complications, changes in alertness or participation). De-identify all patient information.
 
 **Prompt:**
 
 ```
-I am an SLP in a [medical / SNF-rehab] setting preparing discharge documentation. Here is de-identified data from the full episode of care: admission assessment results, treatment targets and approaches used, progress data by session or week, and discharge assessment results. Organize this into: (1) a clinical summary listing each area addressed with the approach used and frequency, (2) a comparison of admission and discharge performance levels for each area, (3) functional status at discharge including diet level, communication status, and cognitive-linguistic function as applicable, and (4) any complicating factors I noted that affected the treatment course. Do not assign prognosis ratings or make discharge recommendations — I will do that.
+I am an SLP in a [medical / SNF-rehab] setting preparing discharge documentation. Here is de-identified data from the full episode of care: admission assessment results, treatment targets and approaches used, progress data by session or week, and discharge assessment results. Organize this into: (1) a clinical summary listing each area addressed with the approach used and frequency, (2) a comparison of admission and discharge performance levels for each area, (3) functional status at discharge including diet level, communication status, and cognitive-linguistic function as applicable, and (4) any complicating factors I noted that affected the treatment course. Do not assign prognosis ratings or make discharge recommendations; I will do that.
 ```
 
 **Decision point:** Does the organized summary accurately represent the trajectory of care? A patient who plateaued early and maintained is clinically different from one who made late gains. The model shows you endpoints — you know the arc. Check that the summary does not make a flat trajectory look like meaningful progress just because the admission and discharge numbers differ slightly.
 
 ## Step 2: Draft Discharge Summary and Recommendations
 
-**What you do:** Write the formal discharge summary, including your prognosis and level-of-care recommendations. Start the prognosis yourself before involving the model — this is the most consequential clinical judgment in the workflow.
+**What you do:** Write the formal discharge summary, including your prognosis and level-of-care recommendations. Start the prognosis yourself before involving the model. This is the most consequential clinical judgment in the workflow.
 
 **Prompt:**
 
 ```
-Using the clinical summary above, draft a discharge summary that includes: reason for referral, brief treatment course with frequency and duration, outcomes by area with specific data, current functional status, and discharge recommendations. Use these specific recommendations (I am providing them — do not generate your own): [insert your recommendations regarding outpatient therapy, home health, caregiver training, follow-up, diet level, or discontinuation of services]. Use professional medical documentation style appropriate for the medical record. Do not include prognosis language — I will write that section myself and add it.
+Using the clinical summary above, draft a discharge summary that includes: reason for referral, brief treatment course with frequency and duration, outcomes by area with specific data, current functional status, and discharge recommendations. Use these specific recommendations (I am providing them; do not generate your own): [insert your recommendations regarding outpatient therapy, home health, caregiver training, follow-up, diet level, or discontinuation of services]. Use professional medical documentation style appropriate for the medical record. Do not include prognosis language. I will write that section myself and add it.
 ```
 
 **Decision point:** Prognosis is yours. The model cannot weigh the patient's motivation, family support system, medical complexity, cognitive status, or insurance reality. A patient with "good potential for further gains" on paper might have no access to outpatient services or a family that cannot manage the home program. A patient whose data looks flat might thrive with a different approach in a different setting. Write the prognosis yourself, every time. Then check that your recommendations are internally consistent — do not recommend outpatient therapy three times per week if you rated the prognosis as poor for further functional change.

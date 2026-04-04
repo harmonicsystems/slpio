@@ -9,7 +9,7 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
 <SectionIndexLayout
     title="Multi-Step <span class='accent'>Workflows</span>"
     label="Workflows"
-    description="Not every clinical task is a single prompt. These workflows walk you through multi-step sequences — with decision points where your clinical judgment overrides the tool."
+    description="Not every clinical task is a single prompt. These workflows walk you through multi-step sequences, with decision points where your clinical judgment overrides the tool."
 >
     {sorted.map((entry) => (
         <a href={`/workflows/${entry.id}/`} class="nav-card">

@@ -26,7 +26,7 @@ A Pre-K student, a second grader, and a fourth grader all received the same goal
 
 ## Why LLMs Produce This
 
-The model generates output proportional to the specificity of the input. If you prompt "Write a language goal for a 5-year-old," the model has nothing to work with except its statistical average of language goals for young children. It will produce the most common, most generic version of that goal every time. The model is not lazy — it is responding accurately to a vague request. Identical inputs produce identical outputs.
+The model generates output proportional to the specificity of the input. If you prompt "Write a language goal for a 5-year-old," the model has nothing to work with except its statistical average of language goals for young children. It will produce the most common, most generic version of that goal every time. The model is not lazy; it is responding accurately to a vague request. Identical inputs produce identical outputs.
 
 ## The Fix
 
@@ -63,6 +63,6 @@ Same accuracy criterion. Completely different goals. Because the prompts contain
 
 ## Pair With
 
-- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) — generic goals often have measurability problems too
-- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) — forces student-specific input
-- [Antipattern: The Clinic-Only Goal](/antipatterns/clinic-only-goal/) — another way goals lose individual context
+- [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) – generic goals often have measurability problems too
+- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) – forces student-specific input
+- [Antipattern: The Clinic-Only Goal](/antipatterns/clinic-only-goal/) – another way goals lose individual context

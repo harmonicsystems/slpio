@@ -15,11 +15,11 @@ This is the most common antipattern when SLPs use LLMs for goal writing. The out
 
 This goal sounds great. A parent reading it would think, "That seems thorough." An administrator might approve it without question.
 
-**But try to take data on it.** What counts as "improved"? What's "more appropriate"? What does "various school settings" mean — two? Five? The cafeteria and the playground? "As observed by the SLP" — during what? A 30-minute session? A full school day?
+**But try to take data on it.** What counts as "improved"? What's "more appropriate"? What does "various school settings" mean: two? Five? The cafeteria and the playground? "As observed by the SLP" — during what? A 30-minute session? A full school day?
 
 ## Why LLMs Produce This
 
-Language models optimize for **fluent, professional-sounding text**. Measurability is not a property the model evaluates — it has no concept of "can a clinician actually track this?" It generates language that *looks* like a good goal because it matches the surface pattern of goals in its training data.
+Language models optimize for **fluent, professional-sounding text**. Measurability is not a property the model evaluates. It has no concept of "can a clinician actually track this?" It generates language that *looks* like a good goal because it matches the surface pattern of goals in its training data.
 
 ## The Fix
 
@@ -41,6 +41,6 @@ Now you know: **what** (topic-relevant conversational turn), **how much** (4/5 o
 
 ## Pair With
 
-- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) — the prompt that fixes this
-- [Writing Goals tasks](/tasks/writing-goals/) — the full goal-writing framework
-- [Schools setting guide](/settings/schools/) — why measurability is legally required under IDEA <cite data-ref="idea-2004"></cite>
+- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) – the prompt that fixes this
+- [Writing Goals tasks](/tasks/writing-goals/) – the full goal-writing framework
+- [Schools setting guide](/settings/schools/) – why measurability is legally required under IDEA <cite data-ref="idea-2004"></cite>

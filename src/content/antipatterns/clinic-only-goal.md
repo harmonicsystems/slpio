@@ -13,11 +13,11 @@ This antipattern is subtle because the goal *is* measurable — it just measures
 
 > "Student will produce /s/ blends in initial position of words with 80% accuracy during structured therapy activities."
 
-This is technically measurable. You can take data on it. But it answers only one question: "Can this child say /s/ blends in my therapy room?" It says nothing about the cafeteria, the classroom, the playground, or home — the places where intelligibility actually matters.
+This is technically measurable. You can take data on it. But it answers only one question: "Can this child say /s/ blends in my therapy room?" It says nothing about the cafeteria, the classroom, the playground, or home, the places where intelligibility actually matters.
 
 ## Why LLMs Produce This
 
-Models default to the **easiest measurement context**: structured therapy. It's the most common goal format in training data and it's the simplest to write. Generalizing to natural contexts requires clinical reasoning about the child's environment — something the model has no access to.
+Models default to the **easiest measurement context**: structured therapy. It's the most common goal format in training data and it's the simplest to write. Generalizing to natural contexts requires clinical reasoning about the child's environment, something the model has no access to.
 
 ## The Fix
 
@@ -39,6 +39,6 @@ Now the goal lives where the child lives.
 
 ## Pair With
 
-- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) — naturally targets real-world contexts
-- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) — builds in context and generalization
-- [Articulation domain](/domains/articulation-phonology/) — where clinic-only goals are most common
+- [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) – naturally targets real-world contexts
+- [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) – builds in context and generalization
+- [Articulation domain](/domains/articulation-phonology/) – where clinic-only goals are most common

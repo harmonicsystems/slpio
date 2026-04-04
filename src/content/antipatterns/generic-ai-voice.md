@@ -12,12 +12,12 @@ You'll recognize this instantly: the LLM takes your specific, idiosyncratic sess
 ## The Bad Example
 
 **Your raw notes:**
-> kid was really engaged today, kept requesting the red car during play, used 2-word combos like "more car" and "my turn" — hasn't done "my turn" before! got frustrated when I changed the activity and threw the car once but recovered with a deep breath after I modeled it
+> kid was really engaged today, kept requesting the red car during play, used 2-word combos like "more car" and "my turn" (hasn't done "my turn" before!) got frustrated when I changed the activity and threw the car once but recovered with a deep breath after I modeled it
 
 **The LLM output:**
 > "The client demonstrated increased engagement during the session. Expressive language skills were observed, including two-word combinations. The client exhibited some difficulty with transitions, which was addressed through co-regulation strategies. Overall, the session reflected positive progress toward communication goals."
 
-Everything specific — the red car, "my turn" as a new utterance, the thrown car, the modeled deep breath — is gone. What's left is a progress note that could be copy-pasted into any chart.
+Everything specific (the red car, "my turn" as a new utterance, the thrown car, the modeled deep breath) is gone. What's left is a progress note that could be copy-pasted into any chart.
 
 ## Why This Happens
 

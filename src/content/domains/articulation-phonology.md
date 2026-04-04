@@ -5,7 +5,7 @@ icon: ph-duotone ph-waveform
 order: 1
 ---
 
-Articulation and phonology are among the most common SLP caseload areas. LLMs can help with goal wording, session note organization, and material generation — but the speech-specific knowledge must come from you.
+Articulation and phonology are among the most common SLP caseload areas. LLMs can help with goal wording, session note organization, and material generation, but the speech-specific knowledge must come from you.
 
 ## LLM Strengths in This Domain
 
@@ -63,7 +63,7 @@ I am an SLP. Here are my raw session notes for an articulation therapy session (
 
 ### Progression Hierarchy
 
-A typical articulation goal should progress through these levels — and each level needs its own measurable goal:
+A typical articulation goal should progress through these levels, and each level needs its own measurable goal:
 
 1. **Isolation** → single sound production
 2. **Syllables** → CV, VC, CVC combinations
@@ -81,7 +81,7 @@ A typical articulation goal should progress through these levels — and each le
 > did /s/ blends again, tried sn- and sp- words, she got most of the sp- ones right but sn- was harder, maybe 50% on sn- and 80% on sp-, used picture cards, gave her a verbal model when she got stuck, she was really engaged today, wants stickers
 
 ### Structured Output
-- **Target:** /s/ blends — /sp-/ and /sn-/ in initial position of words
+- **Target:** /s/ blends (/sp-/ and /sn-/) in initial position of words
 - **Activity:** Picture card naming with verbal models as needed
 - **Performance:**
   - /sp-/ blends: ~80% accuracy with verbal model on errors
@@ -92,10 +92,10 @@ A typical articulation goal should progress through these levels — and each le
 
 ## Common Mistakes When Using LLMs
 
-1. **Accepting generic word lists** — Always check that words are age-appropriate, culturally relevant, and phonetically accurate for your target
-2. **Missing phonetic context** — A word like "sun" targets /s/ in initial position, not an /s/ blend. The model doesn't always distinguish this
-3. **Confusing articulation and phonology** — If you're treating a phonological process, your goals and activities should reflect that (minimal pairs, pattern-based) rather than traditional articulation drill
-4. **Overly complex goals** — LLMs tend to make goals wordier than necessary. Simpler is better if it's still specific
+1. **Accepting generic word lists.** Always check that words are age-appropriate, culturally relevant, and phonetically accurate for your target.
+2. **Missing phonetic context.** A word like "sun" targets /s/ in initial position, not an /s/ blend. The model doesn't always distinguish this.
+3. **Confusing articulation and phonology.** If you're treating a phonological process, your goals and activities should reflect that (minimal pairs, pattern-based) rather than traditional articulation drill.
+4. **Overly complex goals.** LLMs tend to make goals wordier than necessary. Simpler is better if it's still specific.
 
 ## Related Pages
 
