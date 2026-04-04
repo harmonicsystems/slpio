@@ -1,0 +1,49 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('policies');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const settingColors: Record<string, string> = {
+    'school': 'var(--primary)',
+    'medical': 'var(--accent-red)',
+    'snf-rehab': '#7b2d8e',
+    'early-intervention': 'var(--accent-green)',
+    'private-practice': 'var(--accent-amber)',
+    'university': 'var(--primary)',
+};
+---
+
+<SectionIndexLayout
+    title="Policy <span class='accent'>Templates</span>"
+    label="Governance & Compliance"
+    description="Adaptable AI use policy templates for different clinical settings. Each template addresses documentation standards, PHI protections, training requirements, and accountability structures."
+>
+    {sorted.map((entry) => (
+        <a href={`/policies/${entry.id}/`} class="nav-card">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                <span class="policy-tag" style={`background: ${settingColors[entry.data.setting] || 'var(--primary)'}15; color: ${settingColors[entry.data.setting] || 'var(--primary)'};`}>
+                    {entry.data.setting}
+                </span>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <div style="margin-top:0.5rem; font-size:0.72rem; color:var(--text-muted);">
+                Audience: {entry.data.audience}
+            </div>
+        </a>
+    ))}
+</SectionIndexLayout>
+
+<style>
+    .policy-tag {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
+    }
+</style>

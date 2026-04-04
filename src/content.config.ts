@@ -136,6 +136,48 @@ const glossary = defineCollection({
   }),
 });
 
+const casestudies = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/case-studies' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    setting: settingEnum,
+    population: populationEnum,
+    domains: z.array(z.string()),
+    clinician: z.string(),
+    scenario: z.string(),
+    aiRole: z.string(),
+    outcome: z.string(),
+    order: z.number(),
+  }),
+});
+
+const research = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/research' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    authors: z.string(),
+    year: z.number(),
+    journal: z.string(),
+    doi: z.string().optional(),
+    relevance: z.enum(['direct', 'cross-disciplinary', 'foundational']),
+    topics: z.array(z.string()),
+    order: z.number(),
+  }),
+});
+
+const policies = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/policies' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    setting: settingEnum,
+    audience: z.string(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   foundations,
   tasks,
@@ -147,4 +189,7 @@ export const collections = {
   patterns,
   antipatterns,
   glossary,
+  casestudies,
+  research,
+  policies,
 };

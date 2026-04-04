@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary] = await Promise.all([
+  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies] = await Promise.all([
     getCollection('foundations'),
     getCollection('tasks'),
     getCollection('settings'),
@@ -13,6 +13,9 @@ export const GET: APIRoute = async () => {
     getCollection('patterns'),
     getCollection('antipatterns'),
     getCollection('glossary'),
+    getCollection('casestudies'),
+    getCollection('research'),
+    getCollection('policies'),
   ]);
 
   const index = [
@@ -95,6 +98,30 @@ export const GET: APIRoute = async () => {
       layer: 'Glossary',
       icon: '',
       body: (e.data.techDefinition + ' ' + (e.body || '')),
+    })),
+    ...casestudies.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/case-studies/${e.id}/`,
+      layer: 'Case Studies',
+      icon: '',
+      body: (e.data.scenario + ' ' + e.data.aiRole + ' ' + e.data.outcome + ' ' + (e.body || '')),
+    })),
+    ...research.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/research/${e.id}/`,
+      layer: 'Research',
+      icon: '',
+      body: (e.data.authors + ' ' + e.data.journal + ' ' + (e.body || '')),
+    })),
+    ...policies.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/policies/${e.id}/`,
+      layer: 'Policies',
+      icon: '',
+      body: (e.data.audience + ' ' + (e.body || '')),
     })),
   ];
 

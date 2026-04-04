@@ -1,0 +1,44 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('policies');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Policy Template"
+    breadcrumbs={[{ label: 'Policies', href: '/policies/' }]}
+>
+    <div class="policy-meta">
+        <span><strong>Setting:</strong> {entry.data.setting}</span>
+        <span><strong>Audience:</strong> {entry.data.audience}</span>
+    </div>
+    <Content />
+</ContentLayout>
+
+<style is:global>
+    .policy-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 2rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        text-transform: capitalize;
+    }
+</style>
