@@ -5,7 +5,7 @@ icon: ph-duotone ph-microphone
 order: 4
 ---
 
-Voice therapy involves acoustic, physiological, and behavioral dimensions. LLMs can help with documentation and patient education — but interpreting acoustic data, laryngoscopic findings, or vocal quality remains clinician territory.
+Voice therapy involves acoustic, physiological, and behavioral dimensions. LLMs can help with documentation and patient education, but interpreting acoustic data, laryngoscopic findings, or vocal quality remains clinician territory.
 
 ## LLM Strengths in This Domain
 
@@ -36,7 +36,7 @@ I am an SLP providing voice therapy. Here are my raw session notes (no patient i
 ### Vocal Hygiene Handout
 
 ```
-Create a vocal hygiene handout for a middle school teacher diagnosed with vocal nodules. Include: what vocal hygiene means, 8-10 specific recommendations (hydration, voice rest, amplification, reduce throat clearing, etc.), and 3-4 things to avoid. Keep the tone warm and practical — this is not a lecture, it's a support document. Avoid excessive medical terminology.
+Create a vocal hygiene handout for a middle school teacher diagnosed with vocal nodules. Include: what vocal hygiene means, 8-10 specific recommendations (hydration, voice rest, amplification, reduce throat clearing, etc.), and 3-4 things to avoid. Keep the tone warm and practical. This is not a lecture; it's a support document. Avoid excessive medical terminology.
 ```
 
 ### ENT Referral Letter Structure
@@ -78,7 +78,7 @@ I am an SLP referring a patient to ENT for laryngeal evaluation (no patient iden
 
 ### Structured Output
 - **Target:** Forward resonant voice placement; carry-over from structured tasks to conversation
-- **Techniques:** Resonant voice therapy progression — humming → single words → phrases
+- **Techniques:** Resonant voice therapy progression: humming → single words → phrases
 - **Performance:** Maintained resonant placement during humming and word-level production. Partial loss of placement at conversational level.
 - **Voice Quality:** CAPE-V roughness: ~20/100 (compared to evaluation baseline: 35/100). Perceptual improvement noted during structured tasks.
 - **Vocal Hygiene Compliance:** Increased water intake reported. Continued loud voice use during unstructured school activities (recess). Voice rest during lunch not yet consistent.

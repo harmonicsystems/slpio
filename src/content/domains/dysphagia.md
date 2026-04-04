@@ -5,7 +5,7 @@ icon: ph-duotone ph-drop
 order: 7
 ---
 
-Dysphagia management carries the highest clinical stakes in SLP practice. Errors in documentation can lead to unsafe diet recommendations, aspiration events, or inadequate follow-up. LLMs can help with documentation structure — **never with clinical decision-making**.
+Dysphagia management carries the highest clinical stakes in SLP practice. Errors in documentation can lead to unsafe diet recommendations, aspiration events, or inadequate follow-up. LLMs can help with documentation structure, but **never with clinical decision-making**.
 
 ## LLM Strengths in This Domain
 
@@ -16,9 +16,9 @@ Dysphagia management carries the highest clinical stakes in SLP practice. Errors
 - Summarizing treatment course for discharge documentation
 - Organizing compensatory strategy trial outcomes into chart-ready format
 
-## LLM Limitations — Critical
+## LLM Limitations (Critical)
 
-These are not just limitations — they are **hard boundaries**:
+These are not just limitations. They are **hard boundaries**:
 
 - **Cannot interpret MBSS or FEES findings**
 - **Cannot recommend diet levels or consistencies**
@@ -36,19 +36,19 @@ These are not just limitations — they are **hard boundaries**:
 ### Bedside Swallow Evaluation Note
 
 ```
-I am a medical SLP. Here are my raw observations from a bedside swallowing evaluation (no patient identifiers). Organize into: reason for referral, patient alertness and orientation, oral mechanism findings, trial consistencies and volumes, observations per consistency (including any overt signs of aspiration), compensatory strategies trialed and their effects, current diet status, and recommendations. Do not add observations I did not make. Do not recommend specific diet levels — I will determine those.
+I am a medical SLP. Here are my raw observations from a bedside swallowing evaluation (no patient identifiers). Organize into: reason for referral, patient alertness and orientation, oral mechanism findings, trial consistencies and volumes, observations per consistency (including any overt signs of aspiration), compensatory strategies trialed and their effects, current diet status, and recommendations. Do not add observations I did not make. Do not recommend specific diet levels; I will determine those.
 ```
 
 ### Instrumental Report Organizer (MBSS/FEES)
 
 ```
-I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers). Organize into: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency (only the ratings I provide), compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels — I will determine those.
+I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers). Organize into: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency (only the ratings I provide), compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels; I will determine those.
 ```
 
 ### Patient/Family Diet Education Handout
 
 ```
-I need to create a patient education handout about IDDSI Level 5 (minced and moist) diet for a patient's family. Include: what this diet level means in practical terms, examples of foods that ARE and ARE NOT appropriate, preparation tips, safety precautions during meals (upright positioning, small bites, no rushing), and when to contact the SLP or nurse. Use plain language — this is for family members, not clinicians. Do not include clinical rationale for the diet level.
+I need to create a patient education handout about IDDSI Level 5 (minced and moist) diet for a patient's family. Include: what this diet level means in practical terms, examples of foods that ARE and ARE NOT appropriate, preparation tips, safety precautions during meals (upright positioning, small bites, no rushing), and when to contact the SLP or nurse. Use plain language, as this is for family members, not clinicians. Do not include clinical rationale for the diet level.
 ```
 
 ### Dysphagia Discharge Summary
@@ -92,7 +92,7 @@ I am an SLP preparing a discharge summary for a patient with dysphagia (no ident
 - **Cognition/Alertness:** Alert and oriented at time of evaluation
 - **Thin Liquids:** Coughing observed, particularly with large bolus volumes. Wet vocal quality post-swallow, cleared with volitional cough.
 - **Puree:** No overt signs of aspiration. Tolerated without coughing.
-- **Compensatory Strategy:** Chin tuck trialed with thin liquids — partial reduction in cough response.
+- **Compensatory Strategy:** Chin tuck trialed with thin liquids, with partial reduction in cough response.
 - **Current Status:** NPO pending instrumental evaluation.
 - **Recommendation:** Instrumental assessment (MBSS/FEES) to evaluate pharyngeal physiology and guide diet recommendations.
 - **Follow-up:** Family education requested regarding diet modification process.
@@ -114,7 +114,7 @@ When writing about diet levels, use the IDDSI framework consistently <cite data-
 
 ## Related Pages
 
-- [Documentation](/tasks/documentation/) — Report templates including instrumental reports
-- [Compliance](/tasks/compliance/) — Prior authorization for instrumental evals
-- [Medical & Acute Care](/settings/medical-acute/) — Hospital documentation context
-- [SNF & Rehab](/settings/snf-rehab/) — Functional outcomes and discharge planning
+- [Documentation](/tasks/documentation/): Report templates including instrumental reports
+- [Compliance](/tasks/compliance/): Prior authorization for instrumental evals
+- [Medical & Acute Care](/settings/medical-acute/): Hospital documentation context
+- [SNF & Rehab](/settings/snf-rehab/): Functional outcomes and discharge planning

@@ -35,9 +35,9 @@ The second version documents the same clinical reality (a patient not doing his 
 - **"Document the client's stated goals in their own words"** – centers the person, not the clinician's agenda
 - **"Frame recommendations as choices, not instructions"** – respects autonomy
 - **"Replace 'non-compliant' with a description of barriers"** – removes judgment, adds clinical utility
-- **"Include the client's confidence or readiness level"** — captures where they are in the change process
-- **"Describe how the treatment plan connects to what the client values"** — makes the rationale transparent
-- **"Use 'declined' rather than 'refused' for client decisions"** — small language shift, large respect difference
+- **"Include the client's confidence or readiness level"** – captures where they are in the change process
+- **"Describe how the treatment plan connects to what the client values"** – makes the rationale transparent
+- **"Use 'declined' rather than 'refused' for client decisions"** – small language shift, large respect difference
 
 ## When to Use
 
@@ -48,10 +48,10 @@ The second version documents the same clinical reality (a patient not doing his 
 
 ## When This Pattern Doesn't Fit
 
-In acute care with patients who cannot participate in shared decision-making — reduced consciousness, severe cognitive impairment, emergent medical situations — directive documentation is appropriate. You document what was done and why. Motivational framing assumes a client who can engage in the conversation.
+In acute care with patients who cannot participate in shared decision-making (reduced consciousness, severe cognitive impairment, emergent medical situations), directive documentation is appropriate. You document what was done and why. Motivational framing assumes a client who can engage in the conversation.
 
 ## Pair With
 
-- [Medical Model Precision Pattern](/patterns/medical-model-precision/) — you can be both precise and person-centered in the same note
-- [SNF-Rehab setting](/settings/snf-rehab/) — where patient motivation directly affects functional outcomes and discharge planning
-- [Private Practice setting](/settings/private-practice/) — where the therapeutic relationship is the foundation
+- [Medical Model Precision Pattern](/patterns/medical-model-precision/) – you can be both precise and person-centered in the same note
+- [SNF-Rehab setting](/settings/snf-rehab/) – where patient motivation directly affects functional outcomes and discharge planning
+- [Private Practice setting](/settings/private-practice/) – where the therapeutic relationship is the foundation

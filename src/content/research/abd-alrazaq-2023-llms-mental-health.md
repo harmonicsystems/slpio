@@ -19,7 +19,7 @@ Abd-Alrazaq and colleagues reviewed the emerging role of large language models i
 - LLMs showed genuine utility for generating realistic clinical case scenarios that students could use for practice and self-assessment.
 - The models could provide immediate, detailed feedback on student responses, offering explanations that help learners understand not just what is correct but why.
 - Students reported that LLM-based study tools were helpful for consolidating knowledge and preparing for examinations.
-- Significant concerns emerged around accuracy — models sometimes provided plausible but incorrect clinical information that students might not have the expertise to identify.
+- Significant concerns emerged around accuracy: models sometimes provided plausible but incorrect clinical information that students might not have the expertise to identify.
 - The authors identified a risk of over-reliance, where students might substitute AI interaction for the mentored clinical reasoning that develops through human supervision.
 
 ## Methodology
@@ -29,14 +29,14 @@ This was a review and analysis of early evidence on LLM use in medical education
 ## What This Means for SLPs
 
 - This is directly relevant to Clinical Fellowship Year (CFY) supervision and graduate student clinical education in speech-language pathology.
-- LLMs could supplement supervision by generating practice cases in areas where a clinical site has limited caseload diversity — for example, creating fluency or voice disorder scenarios at a pediatric language site.
+- LLMs could supplement supervision by generating practice cases in areas where a clinical site has limited caseload diversity (for example, creating fluency or voice disorder scenarios at a pediatric language site).
 - AI-generated feedback on student clinical writing (SOAP notes, evaluation reports) could give students additional practice opportunities between supervisor review sessions.
 - The accuracy concern is critical for SLP education: a student practicing with an AI tool that provides incorrect information about, say, swallowing physiology or phonological development could develop fundamental misconceptions.
-- The ideal model is AI as a supplement to supervision, not a replacement — giving students more repetitions while the supervisor provides the clinical judgment and mentorship that AI cannot.
+- The ideal model is AI as a supplement to supervision, not a replacement, giving students more repetitions while the supervisor provides the clinical judgment and mentorship that AI cannot.
 
 ## Limitations to Keep in Mind
 
-- The evidence base was drawn entirely from medical education — no studies have specifically evaluated LLM use in speech-language pathology or communication sciences education programs.
+- The evidence base was drawn entirely from medical education; no studies have specifically evaluated LLM use in speech-language pathology or communication sciences education programs.
 - Most of the reviewed evidence was preliminary, involving small samples and limited outcome measurement.
 - The rapid pace of AI development means both the capabilities and risks described may have shifted since publication.
 

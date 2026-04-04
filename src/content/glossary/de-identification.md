@@ -35,12 +35,12 @@ Strip all of these before entering data into any AI system:
 
 ## Practical Guide
 
-- **Replace, don't just delete** — use placeholders like [CLIENT] or [DOB] so the text remains usable
-- **Watch for indirect identifiers** — a rare diagnosis plus an age plus a school district can identify a child even without a name
-- **Automate where possible** — manual de-identification is error-prone under time pressure
-- **Check your output too** — if the model generates a response that somehow includes identifying information you provided, that output is also a risk
+- **Replace, don't just delete.** Use placeholders like [CLIENT] or [DOB] so the text remains usable
+- **Watch for indirect identifiers.** A rare diagnosis plus an age plus a school district can identify a child even without a name
+- **Automate where possible.** Manual de-identification is error-prone under time pressure
+- **Check your output too.** If the model generates a response that somehow includes identifying information you provided, that output is also a risk
 
 ## Related Terms
 
-- **Guardrails** — safety constraints that may include automatic PHI detection
-- **HIPAA** — the federal law governing health information privacy
+- **Guardrails**: safety constraints that may include automatic PHI detection
+- **HIPAA**: the federal law governing health information privacy

@@ -16,10 +16,10 @@ Miner and colleagues examined whether AI systems could generate clinical documen
 
 ## What They Found
 
-- AI-generated notes captured the core clinical information accurately in most cases — diagnoses, key findings, and treatment plans were generally correct.
+- AI-generated notes captured the core clinical information accurately in most cases: diagnoses, key findings, and treatment plans were generally correct.
 - However, the AI-generated notes lacked the individualized clinical reasoning and patient-specific nuance that characterized human-written documentation.
 - Templated and formulaic language was a consistent pattern in AI outputs, making notes feel generic even when factually correct.
-- The notes sometimes missed contextual details that a clinician would naturally include — social determinants, patient preferences, or clinical judgment calls that inform the plan of care.
+- The notes sometimes missed contextual details that a clinician would naturally include, such as social determinants, patient preferences, or clinical judgment calls that inform the plan of care.
 - Clinician review and editing of AI-generated drafts produced notes that were both efficient and appropriately individualized.
 
 ## Methodology
@@ -29,7 +29,7 @@ The study evaluated AI-generated notes across clinical encounter types, with phy
 ## What This Means for SLPs
 
 - This directly validates the "copilot not autopilot" approach: let AI create the structured draft, then add your clinical voice and patient-specific details.
-- SLP documentation is particularly nuanced — describing communication behaviors, family dynamics, and functional outcomes requires the kind of individualization AI currently lacks.
+- SLP documentation is particularly nuanced. Describing communication behaviors, family dynamics, and functional outcomes requires the kind of individualization AI currently lacks.
 - The finding about generic language is especially relevant: SLP notes that read as templated may not meet payer requirements for medical necessity or individualized treatment planning.
 - A practical workflow emerges: use AI to handle the repetitive structural elements (session format, standardized descriptions, billing language) while the clinician focuses on what makes this patient's story unique.
 - This supports investing time in learning to edit AI drafts effectively rather than trying to get AI to produce final-quality notes independently.
@@ -38,7 +38,7 @@ The study evaluated AI-generated notes across clinical encounter types, with phy
 
 - The study evaluated general medical documentation, not rehabilitation or communication disorder notes, which have distinct documentation requirements and conventions.
 - The comparison focused on note quality at a single point in time, not on how AI-assisted documentation affects longitudinal care or clinical decision-making.
-- How clinicians interact with AI drafts in real-time workflow — including the risk of automation bias where clinicians accept AI text without adequate review — was not directly studied.
+- How clinicians interact with AI drafts in real-time workflow, including the risk of automation bias where clinicians accept AI text without adequate review, was not directly studied.
 
 ## The Bottom Line
 
