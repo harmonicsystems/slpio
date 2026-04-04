@@ -36,6 +36,6 @@ During supervision sessions, professional development activities, annual self-as
 
 ## Pair With
 
-- [Ethics foundations](/foundations/ethics/) — ASHA Code of Ethics in the context of AI
+- [Ethical decision tree](/foundations/ethical-decision-tree/) — ASHA Code of Ethics in the context of AI
 - [PHI Safety Checker](/foundations/phi-safety/) — a concrete safeguard for one ethical dimension
-- [Human-in-the-Loop principles](/foundations/human-in-the-loop/) — maintaining clinical judgment
+- [Core principles](/foundations/principles/) — maintaining clinical judgment

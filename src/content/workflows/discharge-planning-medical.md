@@ -72,5 +72,5 @@ Draft a referral letter to [outpatient SLP / home health agency / receiving SNF 
 ## Pair With
 
 - [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) — similar documentation rigor in a different context
-- [Medical setting guide](/settings/medical/) — medical documentation standards and payer considerations
-- [Antipattern: Over-Trusting Output](/antipatterns/over-trusting-output/) — critical in medical documentation where errors carry patient safety risk
+- [Medical setting guide](/settings/medical-acute/) — medical documentation standards and payer considerations
+- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — critical in medical documentation where errors carry patient safety risk

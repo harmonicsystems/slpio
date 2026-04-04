@@ -52,5 +52,5 @@ The clinical observations are still documented. Every concern is still raised. B
 ## Pair With
 
 - [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — another case where the model adds authoritative-sounding content you did not provide
-- [Evaluation tasks](/tasks/evaluation/) — structuring eval prompts with scope guardrails
-- [Medical setting guide](/settings/medical/) — scope of practice considerations in healthcare settings
+- [Clinical reasoning tasks](/tasks/clinical-reasoning/) — structuring eval prompts with scope guardrails
+- [Medical setting guide](/settings/medical-acute/) — scope of practice considerations in healthcare settings

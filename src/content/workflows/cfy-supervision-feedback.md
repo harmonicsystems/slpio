@@ -61,4 +61,4 @@ Based on the feedback above, draft a short professional development plan with 2-
 
 - [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) — similar structure of organizing observations into professional documents
 - [Clinical Reasoning tasks](/tasks/clinical-reasoning/) — for supervisees developing diagnostic thinking
-- [Antipattern: Over-Trusting Output](/antipatterns/over-trusting-output/) — relevant when supervisees use LLMs in their own clinical work
+- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — relevant when supervisees use LLMs in their own clinical work

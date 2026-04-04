@@ -53,4 +53,4 @@ One pass. Professional structure. Every clinical detail preserved.
 
 - [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) — the single-pass version of the same drift
 - [Documentation tasks](/tasks/documentation/) — how to structure revision prompts that preserve detail
-- [Pattern: Human-in-the-Loop](/patterns/human-in-the-loop/) — why your clinical eye is the final authority
+- [Core principles](/foundations/principles/) — why your clinical eye is the final authority

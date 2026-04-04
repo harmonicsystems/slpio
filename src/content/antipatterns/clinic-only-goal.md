@@ -41,4 +41,4 @@ Now the goal lives where the child lives.
 
 - [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) — naturally targets real-world contexts
 - [IEP Goal Strengthener prompt](/prompts/iep-goal-strengthener/) — builds in context and generalization
-- [Articulation domain](/domains/articulation/) — where clinic-only goals are most common
+- [Articulation domain](/domains/articulation-phonology/) — where clinic-only goals are most common
