@@ -48,5 +48,5 @@ The placeholders are obvious. Nothing can slip through as real data.
 ## Pair With
 
 - [Antipattern: The Polished but Unmeasurable Goal](/antipatterns/polished-unmeasurable-goal/) — another case where surface quality hides a critical problem
-- [Evaluation tasks](/tasks/evaluation/) — how to structure prompts for eval reports safely
-- [Pattern: Human-in-the-Loop](/patterns/human-in-the-loop/) — why verification steps are non-negotiable
+- [Clinical reasoning tasks](/tasks/clinical-reasoning/) — how to structure prompts for eval reports safely
+- [Core principles](/foundations/principles/) — why verification steps are non-negotiable

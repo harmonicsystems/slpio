@@ -54,4 +54,4 @@ If the client is a monolingual English speaker, this framing adds unnecessary co
 
 - [Neurodiversity-Affirming Pattern](/patterns/neurodiversity-affirming/) — both patterns push back against deficit-default language
 - [Family-Centered Prompting](/patterns/family-centered-prompting/) — family input is essential for understanding language use across contexts
-- [School setting](/settings/school/) — where bilingual students are most often misidentified
+- [School setting](/settings/schools/) — where bilingual students are most often misidentified

@@ -39,4 +39,4 @@ After completing a bedside swallowing evaluation when you have raw notes, observ
 
 - [PHI Safety Checker](/foundations/phi-safety/) — de-identify before pasting
 - [Discharge Summary Organizer](/prompts/discharge-summary/) — for documenting the full treatment course
-- [Medical setting guide](/settings/medical/) — acute care documentation context
+- [Medical setting guide](/settings/medical-acute/) — acute care documentation context

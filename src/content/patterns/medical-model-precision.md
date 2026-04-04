@@ -54,5 +54,5 @@ Patient-facing materials, family counseling notes, and educational team reports 
 ## Pair With
 
 - [Discrete Trial Documentation Pattern](/patterns/discrete-trial-documentation/) — shares the emphasis on quantitative precision
-- [Medical setting](/settings/medical/) — the regulatory and documentation context
+- [Medical setting](/settings/medical-acute/) — the regulatory and documentation context
 - [SNF-Rehab setting](/settings/snf-rehab/) — where medical precision meets productivity demands

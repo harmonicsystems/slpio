@@ -39,4 +39,4 @@ Use when you have completed an evaluation and have raw data — test scores, obs
 
 - [PHI Safety Checker](/foundations/phi-safety/) — de-identify before pasting
 - [Parent-Friendly Evaluation Summary](/prompts/parent-friendly-summary/) — translate the finished report for families
-- [Eval reports task guide](/tasks/eval-reports/) — full evaluation workflow
+- [Documentation task guide](/tasks/documentation/) — full evaluation workflow

@@ -38,4 +38,4 @@ After any therapy session where you have quick notes, data sheets, or observatio
 
 - [Discharge Summary Organizer](/prompts/discharge-summary/) — for end-of-care documentation
 - [PHI Safety Checker](/foundations/phi-safety/) — de-identify before pasting
-- [Medical setting guide](/settings/medical/) — SOAP documentation conventions
+- [Medical setting guide](/settings/medical-acute/) — SOAP documentation conventions

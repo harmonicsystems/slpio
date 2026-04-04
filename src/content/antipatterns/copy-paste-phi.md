@@ -47,4 +47,4 @@ Same clinical content. Same quality output. Zero compliance risk.
 
 - [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) — de-identification does not mean losing clinical detail
 - [Documentation tasks](/tasks/documentation/) — building de-identification into your documentation workflow
-- [Medical setting guide](/settings/medical/) — HIPAA-specific considerations for AI use
+- [Medical setting guide](/settings/medical-acute/) — HIPAA-specific considerations for AI use

@@ -39,5 +39,5 @@ The second version gives you data you can chart, compare, and defend.
 ## Pair With
 
 - [Progress Note Organizer prompt](/prompts/progress-note-organizer-school/) — for session-to-note workflow
-- [Articulation domain](/domains/articulation/) — where discrete trial is most common
+- [Articulation domain](/domains/articulation-phonology/) — where discrete trial is most common
 - [Pattern: Family-Centered Prompting](/patterns/family-centered-prompting/) — the contrasting approach
