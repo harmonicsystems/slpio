@@ -5,14 +5,14 @@ icon: ph-duotone ph-hospital
 order: 2
 ---
 
-Medical SLPs operate in high-stakes, fast-paced environments where documentation accuracy carries immediate clinical consequences. LLMs can help with structure and organization — but clinical judgment is non-negotiable here.
+Medical SLPs operate in high-stakes, fast-paced environments where documentation accuracy carries immediate clinical consequences. LLMs can help with structure and organization, but clinical judgment is non-negotiable here.
 
 ## Regulatory Context
 
-- **HIPAA** governs all patient information — no PHI in public tools
+- **HIPAA** governs all patient information; no PHI in public tools
 - **BAA** (Business Associate Agreement) required for any tool handling patient data
 - Documentation supports medical decision-making, billing, and continuity of care
-- Instrumental findings (MBSS, FEES) require clinician interpretation — never AI
+- Instrumental findings (MBSS, FEES) require clinician interpretation, never AI
 
 ## Appropriate Uses
 

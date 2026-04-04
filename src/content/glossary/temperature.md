@@ -24,5 +24,5 @@ Think of temperature like the difference between a structured assessment and a d
 
 ## Related Terms
 
-- **Hallucination** — high temperature increases hallucination risk because the model is more likely to select low-probability tokens
-- **Top-p / Nucleus Sampling** — another parameter that controls output diversity, often used alongside temperature
+- **Hallucination**: high temperature increases hallucination risk because the model is more likely to select low-probability tokens
+- **Top-p / Nucleus Sampling**: another parameter that controls output diversity, often used alongside temperature

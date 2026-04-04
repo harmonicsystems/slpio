@@ -9,7 +9,7 @@ difficulty: intermediate
 order: 2
 ---
 
-Evaluation reports carry clinical and legal weight. This workflow uses an LLM as a structural assistant — organizing your findings into a professional format — while keeping all clinical interpretation, diagnosis, and recommendations firmly in your hands.
+Evaluation reports carry clinical and legal weight. This workflow uses an LLM as a structural assistant, organizing your findings into a professional format, while keeping all clinical interpretation, diagnosis, and recommendations firmly in your hands.
 
 ## Step 1: Organize Test Results and Observations
 
@@ -18,10 +18,10 @@ Evaluation reports carry clinical and legal weight. This workflow uses an LLM as
 **Prompt:**
 
 ```
-I am an SLP writing an evaluation report. Here are my test results and clinical observations (no identifying information). Organize these into sections: referral reason, relevant history, assessment procedures used, results by area (receptive language, expressive language, articulation/phonology, fluency, voice, pragmatics — only the areas I've included), clinical observations during testing, and a placeholder for my clinical impressions. Do not interpret scores or assign severity ratings — I will do that.
+I am an SLP writing an evaluation report. Here are my test results and clinical observations (no identifying information). Organize these into sections: referral reason, relevant history, assessment procedures used, results by area (receptive language, expressive language, articulation/phonology, fluency, voice, pragmatics, only the areas I've included), clinical observations during testing, and a placeholder for my clinical impressions. Do not interpret scores or assign severity ratings. I will do that.
 ```
 
-**Decision point:** Check that the model hasn't slipped in interpretive language. Phrases like "suggesting a deficit in..." or "indicative of..." are clinical judgments — they come from you.
+**Decision point:** Check that the model hasn't slipped in interpretive language. Phrases like "suggesting a deficit in..." or "indicative of..." are clinical judgments. They come from you.
 
 ## Step 2: Write Clinical Impressions
 
@@ -33,7 +33,7 @@ I am an SLP writing an evaluation report. Here are my test results and clinical 
 Here is my draft clinical impressions section. Review it for: internal consistency with the test data above, clarity of language, and completeness (does it address each area assessed?). Flag anything that seems inconsistent but do not rewrite my clinical judgments. Suggest where I might need to add supporting data for a conclusion I've drawn.
 ```
 
-**Decision point:** The model is acting as a consistency checker here, not a co-author. If it flags something, investigate — but the clinical conclusions are yours.
+**Decision point:** The model is acting as a consistency checker here, not a co-author. If it flags something, investigate, but the clinical conclusions are yours.
 
 ## Step 3: Draft Recommendations
 
@@ -61,6 +61,6 @@ Here is my complete evaluation report (de-identified). Review for: consistent us
 
 ## Pair With
 
-- [Documentation tasks](/tasks/documentation/) — broader documentation strategies
-- [Clinical Reasoning tasks](/tasks/clinical-reasoning/) — for the interpretive steps
-- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) — what to catch in the final review
+- [Documentation tasks](/tasks/documentation/) – broader documentation strategies
+- [Clinical Reasoning tasks](/tasks/clinical-reasoning/) – for the interpretive steps
+- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) – what to catch in the final review

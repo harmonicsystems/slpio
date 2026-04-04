@@ -1,11 +1,11 @@
 ---
 title: Language
-description: Receptive and expressive language — goals, documentation, and LLM-assisted workflows.
+description: Receptive and expressive language goals, documentation, and LLM-assisted workflows.
 icon: ph-duotone ph-chat-dots
 order: 2
 ---
 
-Language disorders span receptive, expressive, vocabulary, morphosyntax, narrative, and more — making this one of the broadest domains for LLM application. The model can help organize complex assessment findings and structure nuanced goals, but the clinical reasoning behind language intervention is yours.
+Language disorders span receptive, expressive, vocabulary, morphosyntax, narrative, and more, making this one of the broadest domains for LLM application. The model can help organize complex assessment findings and structure nuanced goals, but the clinical reasoning behind language intervention is yours.
 
 ## LLM Strengths in This Domain
 
@@ -104,8 +104,8 @@ When using LLMs for students who speak languages other than English:
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Full goal clarity toolkit
-- [Documentation](/tasks/documentation/) — Progress note and eval report templates
-- [Materials & Activities](/tasks/materials/) — Vocabulary activities, narrative supports
-- [Literacy](/domains/literacy/) — Language-literacy connection
-- [Schools & Early Intervention](/settings/schools/) — IEP-specific guidance
+- [Writing Goals](/tasks/writing-goals/): Full goal clarity toolkit
+- [Documentation](/tasks/documentation/): Progress note and eval report templates
+- [Materials & Activities](/tasks/materials/): Vocabulary activities, narrative supports
+- [Literacy](/domains/literacy/): Language-literacy connection
+- [Schools & Early Intervention](/settings/schools/): IEP-specific guidance

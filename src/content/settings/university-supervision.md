@@ -12,7 +12,7 @@ Clinical supervisors, CF mentors, and university clinic directors face a unique 
 - Students may over-rely on LLMs before developing foundational clinical reasoning
 - The line between "AI-assisted" and "AI-dependent" is critical during training
 - Academic integrity policies may or may not address AI use in clinical documentation
-- CFs need to develop their own clinical voice — not an AI-polished version of one
+- CFs need to develop their own clinical voice, not an AI-polished version of one
 
 ## Red Flags Specific to This Setting
 

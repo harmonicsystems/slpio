@@ -15,13 +15,13 @@ This field guide draws on federal law, professional standards, and emerging peer
 
 4. Individuals with Disabilities Education Improvement Act of 2004 (IDEA), 20 U.S.C. § 1400 et seq. Governs special education services, evaluation procedures, and IEP requirements.
 
-5. 34 C.F.R. § 300.320 — Definition of individualized education program. Specifies that IEPs must include measurable annual goals.
+5. 34 C.F.R. § 300.320 – Definition of individualized education program. Specifies that IEPs must include measurable annual goals.
 
 6. American Speech-Language-Hearing Association. (2005). *Evidence-based practice in communication disorders* [Position statement]. [asha.org/policy/ps2005-00221](https://www.asha.org/policy/ps2005-00221/)
 
 7. American Speech-Language-Hearing Association. (n.d.). Documentation in school-based and health care settings. *ASHA Practice Portal*. [asha.org/practice-portal](https://www.asha.org/practice-portal/)
 
-8. 45 C.F.R. § 164.502(e) — Uses and disclosures of protected health information: Business associate contracts.
+8. 45 C.F.R. § 164.502(e) – Uses and disclosures of protected health information: Business associate contracts.
 
 9. U.S. Department of Education, Office of Educational Technology. (2023). *Artificial intelligence and the future of teaching and learning*. [tech.ed.gov/ai-future-of-teaching-and-learning](https://tech.ed.gov/ai-future-of-teaching-and-learning/)
 

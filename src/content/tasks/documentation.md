@@ -6,7 +6,7 @@ order: 2
 category: documentation
 ---
 
-Documentation is where LLMs shine brightest as clinical tools — not writing for you, but organizing *with* you. The model structures; you verify.
+Documentation is where LLMs shine brightest as clinical tools, not writing for you, but organizing *with* you. The model structures; you verify.
 
 ## Progress Notes
 
@@ -20,7 +20,7 @@ Documentation is where LLMs shine brightest as clinical tools — not writing fo
 - **Activity:** Minimal pair contrasts
 - **Performance:** 60% accuracy with verbal cueing
 - **Clinical Note:** Student demonstrated frustration toward end of session, suggesting possible fatigue or task difficulty. Consider adjusting session pacing or task complexity.
-- **Follow-up:** Mother inquired about home practice opportunities — send suggested activities.
+- **Follow-up:** Mother inquired about home practice opportunities. Send suggested activities.
 
 ### Medical Example
 
@@ -31,7 +31,7 @@ Documentation is where LLMs shine brightest as clinical tools — not writing fo
 - **Cognition/Alertness:** Alert and oriented at time of evaluation
 - **Thin Liquids:** Coughing observed, particularly with large bolus volumes. Wet vocal quality post-swallow, cleared with volitional cough.
 - **Puree:** No overt signs of aspiration. Tolerated without coughing.
-- **Compensatory Strategy:** Chin tuck trialed with thin liquids — partial reduction in cough response.
+- **Compensatory Strategy:** Chin tuck trialed with thin liquids; partial reduction in cough response.
 - **Current Status:** NPO pending instrumental evaluation.
 - **Recommendation:** Instrumental assessment (MBSS/FEES) to evaluate pharyngeal physiology and guide diet recommendations.
 - **Follow-up:** Family education requested regarding diet modification process.
@@ -55,5 +55,5 @@ I am an SLP preparing a discharge summary for a patient in [acute care / inpatie
 ### Instrumental Report Organizer
 
 ```
-I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers included). Help me organize these into a structured report with: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency, compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels — I will determine those.
+I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers included). Help me organize these into a structured report with: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency, compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels. I will determine those.
 ```

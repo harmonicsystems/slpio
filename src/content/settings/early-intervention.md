@@ -5,13 +5,13 @@ icon: ph-duotone ph-baby
 order: 4
 ---
 
-Early intervention (birth-to-3) operates under Part C of IDEA with a family-centered coaching model. The documentation is different — IFSPs instead of IEPs, outcomes instead of goals, and family routines as the primary context.
+Early intervention (birth-to-3) operates under Part C of IDEA with a family-centered coaching model. The documentation is different: IFSPs instead of IEPs, outcomes instead of goals, and family routines as the primary context.
 
 ## Key Considerations
 
 - IFSPs focus on **family outcomes**, not just child performance
 - The coaching model emphasizes caregiver capacity, not just direct skill training
-- Developmental norms vary widely at this age — avoid over-pathologizing
+- Developmental norms vary widely at this age; avoid over-pathologizing
 - Documentation should reflect the family's priorities and routines
 
 ## Red Flags Specific to This Setting

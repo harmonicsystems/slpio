@@ -5,7 +5,7 @@ icon: ph-duotone ph-heart-half
 order: 3
 ---
 
-SNF and rehab SLPs balance functional outcomes, insurance justification, and productivity requirements. LLMs can help with the documentation burden — but beware of padding notes with impressive-sounding language that doesn't reflect actual clinical work.
+SNF and rehab SLPs balance functional outcomes, insurance justification, and productivity requirements. LLMs can help with the documentation burden, but beware of padding notes with impressive-sounding language that doesn't reflect actual clinical work.
 
 ## Key Considerations
 
@@ -26,4 +26,4 @@ SNF and rehab SLPs balance functional outcomes, insurance justification, and pro
 
 - [Discharge Summary Draft](/tasks/documentation/)
 - [Prior Authorization / Medical Necessity](/tasks/compliance/)
-- [Goal Writing — Medical Examples](/tasks/writing-goals/)
+- [Goal Writing – Medical Examples](/tasks/writing-goals/)

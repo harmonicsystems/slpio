@@ -9,7 +9,7 @@ difficulty: intermediate
 order: 4
 ---
 
-Giving honest clinical feedback is one of the hardest things supervisors do. Too gentle and the clinician does not grow. Too blunt and they shut down. After a full day of your own caseload plus observation sessions, your notes are often scattered across sticky notes, margins, and mental impressions. This workflow helps you organize those raw observations into structured feedback that is both direct and developmental — without outsourcing the relationship part to a language model.
+Giving honest clinical feedback is one of the hardest things supervisors do. Too gentle and the clinician does not grow. Too blunt and they shut down. After a full day of your own caseload plus observation sessions, your notes are often scattered across sticky notes, margins, and mental impressions. This workflow helps you organize those raw observations into structured feedback that is both direct and developmental, without outsourcing the relationship part to a language model.
 
 ## Step 1: Organize Observation Notes
 
@@ -18,19 +18,19 @@ Giving honest clinical feedback is one of the hardest things supervisors do. Too
 **Prompt:**
 
 ```
-I am a clinical supervisor in speech-language pathology preparing feedback for a supervisee (CF or graduate student clinician). Here are my raw observation notes from recent sessions (all client information removed). Organize these into categories: (1) clinical skill areas (assessment, treatment implementation, data collection, clinical writing), (2) interpersonal skills (rapport with clients, communication with families, collaboration with team members), (3) professional behaviors (time management, preparation, self-reflection, documentation timeliness), and (4) clinical reasoning (in-session decision-making, adjusting to client responses, knowing when to scaffold vs. when to wait). Under each category, list the specific behaviors I observed with any direct quotes or examples I noted. Do not evaluate or rate them — just organize.
+I am a clinical supervisor in speech-language pathology preparing feedback for a supervisee (CF or graduate student clinician). Here are my raw observation notes from recent sessions (all client information removed). Organize these into categories: (1) clinical skill areas (assessment, treatment implementation, data collection, clinical writing), (2) interpersonal skills (rapport with clients, communication with families, collaboration with team members), (3) professional behaviors (time management, preparation, self-reflection, documentation timeliness), and (4) clinical reasoning (in-session decision-making, adjusting to client responses, knowing when to scaffold vs. when to wait). Under each category, list the specific behaviors I observed with any direct quotes or examples I noted. Do not evaluate or rate them. Just organize.
 ```
 
-**Decision point:** Does the organized list reflect what you actually saw, or did the model over-sort a nuanced observation into a neat box? A clinician who "moved to a new activity when the client became frustrated" could be filed under flexibility or avoidance — and that distinction matters enormously. If you wrote it down because it concerned you, do not let the model reframe it as a strength. Your notes had a reason for the phrasing they used.
+**Decision point:** Does the organized list reflect what you actually saw, or did the model over-sort a nuanced observation into a neat box? A clinician who "moved to a new activity when the client became frustrated" could be filed under flexibility or avoidance, and that distinction matters enormously. If you wrote it down because it concerned you, do not let the model reframe it as a strength. Your notes had a reason for the phrasing they used.
 
 ## Step 2: Draft Strengths-and-Growth Feedback
 
-**What you do:** Use the organized observations to draft feedback that names specific strengths before addressing growth areas. Be concrete in both directions — vague praise is as unhelpful as vague criticism.
+**What you do:** Use the organized observations to draft feedback that names specific strengths before addressing growth areas. Be concrete in both directions. Vague praise is as unhelpful as vague criticism.
 
 **Prompt:**
 
 ```
-Using the organized observations above, draft structured feedback with two sections: Strengths and Growth Areas. For each strength, cite a specific observed behavior and explain why it matters clinically — not "great rapport" but what the clinician specifically did that built rapport. For each growth area, describe: what was observed, why it matters for client outcomes, and a concrete next step the clinician can take in their next session. Use direct but respectful professional language appropriate for a developing clinician. Do not soften growth areas to the point of vagueness, and do not inflate strengths beyond what the observations support.
+Using the organized observations above, draft structured feedback with two sections: Strengths and Growth Areas. For each strength, cite a specific observed behavior and explain why it matters clinically (not "great rapport" but what the clinician specifically did that built rapport. For each growth area, describe: what was observed, why it matters for client outcomes, and a concrete next step the clinician can take in their next session. Use direct but respectful professional language appropriate for a developing clinician. Do not soften growth areas to the point of vagueness, and do not inflate strengths beyond what the observations support.
 ```
 
 **Decision point:** Read the growth areas carefully and ask yourself two questions. First: is this specific enough that the clinician will know exactly what to do differently? "Work on your questioning strategies" is useless. "When you asked three yes/no questions in a row, try replacing the second and third with open-ended probes" is actionable. Second: is this deliverable in a real conversation? If it reads like a performance improvement plan when the person is a second-semester student still finding their footing, adjust the framing. You know where this clinician is emotionally. The model does not.

@@ -1,6 +1,6 @@
 ---
 title: Writing Goals
-description: LLMs can help brainstorm and refine goal wording — but the clinical reasoning must be yours.
+description: LLMs can help brainstorm and refine goal wording, but the clinical reasoning must be yours.
 icon: ph-duotone ph-target
 order: 1
 category: writing-goals

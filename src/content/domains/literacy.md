@@ -5,7 +5,7 @@ icon: ph-duotone ph-book-open-text
 order: 9
 ---
 
-SLPs play a critical role in literacy — from phonological awareness in early grades to reading comprehension in older students. LLMs can support material generation and documentation, but literacy assessment and intervention planning require specialized clinical knowledge.
+SLPs play a critical role in literacy, from phonological awareness in early grades to reading comprehension in older students. LLMs can support material generation and documentation, but literacy assessment and intervention planning require specialized clinical knowledge.
 
 ## LLM Strengths in This Domain
 
@@ -74,7 +74,7 @@ I am an SLP designing a morphological awareness lesson for a 4th grader (no iden
 
 ## The SLP's Distinct Role
 
-This is critical to document clearly — especially in IEP teams where roles can overlap:
+This is critical to document clearly, especially in IEP teams where roles can overlap:
 
 | SLP Role | Reading Specialist Role |
 |---|---|
@@ -83,7 +83,7 @@ This is critical to document clearly — especially in IEP teams where roles can
 | Morphological awareness as language skill | Vocabulary instruction within reading curriculum |
 | Narrative language supporting written expression | Writing conventions and mechanics |
 
-> When using LLMs to draft documentation or goals, always frame the SLP's contribution in terms of the **language-literacy connection** — not reading instruction per se.
+> When using LLMs to draft documentation or goals, always frame the SLP's contribution in terms of the **language-literacy connection**, not reading instruction per se.
 
 ## Before & After: Session Documentation
 
@@ -91,12 +91,12 @@ This is critical to document clearly — especially in IEP teams where roles can
 > PA session today, worked on blending onset-rime, she got 8/10 on single syllable words with picture support, struggled more without pictures maybe 5/10, tried segmenting CVC and she's not ready for that yet, could do initial sound isolation pretty well 7/10, spent some time on rhyming too she loves rhyming games
 
 ### Structured Output
-- **Target Area:** Phonological awareness — onset-rime blending; initial sound isolation
+- **Target Area:** Phonological awareness, onset-rime blending; initial sound isolation
 - **Performance:**
   - Onset-rime blending with picture support: 8/10 (80%)
   - Onset-rime blending without picture support: 5/10 (50%)
   - Initial sound isolation: 7/10 (70%)
-  - CVC segmentation: Attempted — not yet emerging; student unable to segment beyond onset-rime level
+  - CVC segmentation: Attempted, not yet emerging; student unable to segment beyond onset-rime level
 - **Rhyming:** Engaged and accurate during rhyming judgment tasks (informal — not targeted this session)
 - **Clinical Interpretation:** Student demonstrates emerging onset-rime awareness with visual support. Removal of picture support significantly reduces accuracy, suggesting the skill is not yet internalized. Initial sound isolation is stronger. CVC phoneme segmentation is premature — continue building onset-rime fluency first.
 - **Plan:** Continue onset-rime blending with gradual fading of picture support. Maintain initial sound isolation practice. Reintroduce phoneme segmentation when onset-rime blending reaches 80% without visual support.

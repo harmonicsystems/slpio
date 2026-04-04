@@ -42,10 +42,10 @@ For each of the following home activities, write caregiver instructions that inc
 **Prompt:**
 
 ```
-Create a simple weekly checklist for a home practice program with these activities: [list final activities]. Format it as a Monday-through-Friday grid with one activity per day (not all activities every day; rotate them so no single day is overwhelming). Include a checkbox for each day, a one-line reminder of the activity, and a small notes space where the caregiver can jot anything they noticed. Keep the whole thing to one page. Add a brief header that says something encouraging and low-pressure, like: "These are short activities to practice during your regular routines. Do what you can — any practice helps. Skip a day if you need to."
+Create a simple weekly checklist for a home practice program with these activities: [list final activities]. Format it as a Monday-through-Friday grid with one activity per day (not all activities every day; rotate them so no single day is overwhelming). Include a checkbox for each day, a one-line reminder of the activity, and a small notes space where the caregiver can jot anything they noticed. Keep the whole thing to one page. Add a brief header that says something encouraging and low-pressure, like: "These are short activities to practice during your regular routines. Do what you can. Any practice helps. Skip a day if you need to."
 ```
 
-**Decision point:** Does the schedule match what the family told you they can manage? Five days a week might be right for one family and overwhelming for another. Some families need three days. Some need "whenever you can." Adjust the frequency before you hand it over. Also consider the delivery format — some families want a printed page, others want a photo they can save on their phone, others want you to text them a reminder each week. The model gives you the content. You deliver it in the way this specific family will actually use. And revisit the program regularly — a home program that never gets updated becomes wallpaper.
+**Decision point:** Does the schedule match what the family told you they can manage? Five days a week might be right for one family and overwhelming for another. Some families need three days. Some need "whenever you can." Adjust the frequency before you hand it over. Also consider the delivery format: some families want a printed page, others want a photo they can save on their phone, others want you to text them a reminder each week. The model gives you the content. You deliver it in the way this specific family will actually use. And revisit the program regularly. A home program that never gets updated becomes wallpaper.
 
 ## What the LLM Did vs. What You Did
 
@@ -59,6 +59,6 @@ Create a simple weekly checklist for a home practice program with these activiti
 
 ## Pair With
 
-- [IEP Meeting Preparation Workflow](/workflows/iep-meeting-prep/) — home programs often come up at IEP meetings
-- [Early Intervention setting guide](/settings/early-intervention/) — family-centered practice principles
-- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) — home programs must sound human, not clinical
+- [IEP Meeting Preparation Workflow](/workflows/iep-meeting-prep/) – home programs often come up at IEP meetings
+- [Early Intervention setting guide](/settings/early-intervention/) – family-centered practice principles
+- [Antipattern: Generic AI Voice](/antipatterns/generic-ai-voice/) – home programs must sound human, not clinical

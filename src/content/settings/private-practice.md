@@ -5,7 +5,7 @@ icon: ph-duotone ph-buildings
 order: 5
 ---
 
-Private practice SLPs manage their own documentation, insurance relationships, and clinical workflows. The flexibility is appealing — but without institutional guardrails, responsible AI use requires extra self-discipline.
+Private practice SLPs manage their own documentation, insurance relationships, and clinical workflows. The flexibility is appealing, but without institutional guardrails, responsible AI use requires extra self-discipline.
 
 ## Key Considerations
 
@@ -19,7 +19,7 @@ Private practice SLPs manage their own documentation, insurance relationships, a
 
 - Using public AI tools without understanding your data obligations
 - Marketing your practice with AI-generated claims about outcomes
-- Scope creep — using AI to venture into areas outside your competence
+- Scope creep: using AI to venture into areas outside your competence
 - Relying on AI for insurance appeal language without clinical backing
 
 ## Where LLMs Can Help

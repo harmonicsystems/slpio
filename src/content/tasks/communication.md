@@ -1,12 +1,12 @@
 ---
 title: Communication
-description: Translate clinical information for parents, teams, and stakeholders — clearly and accurately.
+description: Translate clinical information for parents, teams, and stakeholders, clearly and accurately.
 icon: ph-duotone ph-chat-circle-text
 order: 3
 category: communication
 ---
 
-Communicating clinical information to non-clinicians is a core SLP skill. LLMs can help translate jargon without losing accuracy — but you need to review for oversimplification.
+Communicating clinical information to non-clinicians is a core SLP skill. LLMs can help translate jargon without losing accuracy, but you need to review for oversimplification.
 
 ## Parent Email Drafts
 
@@ -20,7 +20,7 @@ I need to communicate the following clinical information to a parent in clear, s
 
 ## Jargon Simplifier
 
-Useful for any audience — parents, teachers, administrators, or patients' families.
+Useful for any audience: parents, teachers, administrators, or patients' families.
 
 ### Prompt Template
 

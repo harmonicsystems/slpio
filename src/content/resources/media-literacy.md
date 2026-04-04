@@ -5,23 +5,23 @@ icon: ph-duotone ph-monitor-play
 order: 1
 ---
 
-The concept of "media" has changed faster than most professional frameworks can track. For SLPs, this isn't an abstract concern — it directly affects how our students communicate, how we assess communication, and what "literate" even means.
+The concept of "media" has changed faster than most professional frameworks can track. For SLPs, this isn't an abstract concern. It directly affects how our students communicate, how we assess communication, and what "literate" even means.
 
 ## How the Medium Has Shifted
 
-### Pre-2010 — Media = broadcast, print, static
+### Pre-2010 – Media = broadcast, print, static
 Communication was largely one-directional. Literacy meant reading, writing, and understanding published content. Media was something you consumed.
 
-### 2010–2018 — Media = social, participatory, multimodal
+### 2010–2018 – Media = social, participatory, multimodal
 Everyone became a publisher. Communication shifted to short-form, image-heavy, and conversational. Students began learning pragmatics partly through screens.
 
-### 2018–2023 — Media = algorithmic, curated, ambient
+### 2018–2023 – Media = algorithmic, curated, ambient
 Feeds became personalized. Voice assistants normalized human-machine dialogue. AAC technology started converging with mainstream tools. The line between "assistive" and "everyday" tech blurred.
 
-### 2023–Present — Media = generative, synthetic, co-authored
+### 2023–Present – Media = generative, synthetic, co-authored
 Language models produce fluent text on demand. AI-generated images and speech are indistinguishable from human-created content. The question shifts from "who wrote this" to "what process produced this."
 
-### Emerging — Media = embodied, adaptive, voice-native
+### Emerging – Media = embodied, adaptive, voice-native
 Real-time voice interfaces, ambient computing, and adaptive systems are reshaping how humans interact with information. Communication is becoming continuous, multimodal, and deeply personal.
 
 ## Why This Matters for SLPs
@@ -40,4 +40,4 @@ Clinical documentation now exists alongside AI-generated content, auto-summaries
 
 ---
 
-> **The SLP position:** We are not just consumers of media or users of technology. We are professionals trained in the mechanics of human communication. As the medium shifts, our expertise becomes more relevant, not less. Digital media literacy isn't a side topic for our field — it's an extension of what we've always done: helping people communicate clearly, honestly, and effectively in whatever environment they inhabit.
+> **The SLP position:** We are not just consumers of media or users of technology. We are professionals trained in the mechanics of human communication. As the medium shifts, our expertise becomes more relevant, not less. Digital media literacy isn't a side topic for our field. It's an extension of what we've always done: helping people communicate clearly, honestly, and effectively in whatever environment they inhabit.

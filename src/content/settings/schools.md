@@ -5,14 +5,14 @@ icon: ph-duotone ph-graduation-cap
 order: 1
 ---
 
-School-based SLPs face unique documentation demands — IEPs that carry legal weight, progress monitoring cycles, eval seasons, and parent communication. LLMs can reduce the friction of these workflows without compromising quality.
+School-based SLPs face unique documentation demands: IEPs that carry legal weight, progress monitoring cycles, eval seasons, and parent communication. LLMs can reduce the friction of these workflows without compromising quality.
 
 ## Regulatory Context
 
 - **IDEA** <cite data-ref="idea-2004"></cite> governs special education services, evaluation procedures, and IEP requirements
-- **FERPA** <cite data-ref="ferpa"></cite> protects student education records — no student data in public AI tools
+- **FERPA** <cite data-ref="ferpa"></cite> protects student education records; no student data in public AI tools
 - **FAPE** (Free Appropriate Public Education) means goals must be individualized and meaningful
-- IEP goals are **legal documents** — precision matters
+- IEP goals are **legal documents**; precision matters
 
 ## Appropriate Uses
 

@@ -8,7 +8,7 @@ order: 23
 
 ## Why SLPs Need to Know This
 
-SLPs serve some of the most diverse populations in healthcare and education. Your clients span every language, culture, ability level, and communication modality. LLMs were trained predominantly on English-language internet text, medical literature, and educational content — sources that systematically underrepresent the people you serve. When you use AI to draft documentation, the model's defaults may pathologize difference, erase multilingualism, or frame disability in ways that contradict your clinical values.
+SLPs serve some of the most diverse populations in healthcare and education. Your clients span every language, culture, ability level, and communication modality. LLMs were trained predominantly on English-language internet text, medical literature, and educational content, all sources that systematically underrepresent the people you serve. When you use AI to draft documentation, the model's defaults may pathologize difference, erase multilingualism, or frame disability in ways that contradict your clinical values.
 
 ## Clinical Impact
 
@@ -20,13 +20,13 @@ SLPs serve some of the most diverse populations in healthcare and education. You
 
 ## Practical Guide
 
-1. **Check framing, not just facts** — bias lives in word choice and perspective, not just in incorrect statements
-2. **Specify the framing you want** — "Use strengths-based language" or "This client's family prefers identity-first language" in your prompt
-3. **Be especially careful with cultural and linguistic descriptions** — review any AI-generated language about a client's background
-4. **Watch for false neutrality** — the model's default voice is not neutral; it reflects the dominant perspectives in its training data
+1. **Check framing, not just facts.** Bias lives in word choice and perspective, not just in incorrect statements
+2. **Specify the framing you want.** "Use strengths-based language" or "This client's family prefers identity-first language" in your prompt
+3. **Be especially careful with cultural and linguistic descriptions.** Review any AI-generated language about a client's background
+4. **Watch for false neutrality.** The model's default voice is not neutral; it reflects the dominant perspectives in its training data
 
 ## Related Terms
 
-- **Clinical Voice** — your voice can counteract bias if you actively revise AI output to match your clinical values
-- **Hallucination** — bias and hallucination can compound: a model may confidently state a biased claim as fact
-- **Informed Consent** — clients deserve to know that AI tools may carry biases that affect their documentation
+- **Clinical Voice**: your voice can counteract bias if you actively revise AI output to match your clinical values
+- **Hallucination**: bias and hallucination can compound; a model may confidently state a biased claim as fact
+- **Informed Consent**: clients deserve to know that AI tools may carry biases that affect their documentation
