@@ -113,7 +113,7 @@ SLP/IO provides ethical frameworks, copy-ready prompt templates, multi-step work
 
 ## Contact
 - Author: David Nyman, MS CCC-SLP
-- Email: david@slpio.org
+- Email: harmonicsystems.io@gmail.com
 - GitHub: https://github.com/harmonicsystems
 - Website: https://www.slpio.org
 

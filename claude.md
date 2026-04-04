@@ -129,7 +129,7 @@ SLP/IO provides ethical frameworks, prompt templates, evidence summaries, and pr
 - [About](https://www.slpio.org/#about): Background on Harmonic Systems and the clinician-developer behind the project
 
 ## Contact
-- Email: david@slpio.org
+- Email: harmonicsystems.io@gmail.com
 - GitHub: https://github.com/harmonicsystems
 ```
 
