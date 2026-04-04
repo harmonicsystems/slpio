@@ -26,18 +26,18 @@ This framing prevents the model from falling into the medical-deficit language b
 
 ### With the pattern:
 
-> "Client communicates using a combination of verbal language and gestural supports. He shows deep knowledge of train systems, which serves as a strong context for building conversational skills. He prefers parallel play and is beginning to show interest in shared activities when they align with his interests. Eye contact is not a reliable indicator of his attention — he demonstrates listening through verbal responses and body orientation. Support areas include expanding the range of contexts in which he initiates interaction with peers."
+> "Client communicates using a combination of verbal language and gestural supports. He shows deep knowledge of train systems, which serves as a strong context for building conversational skills. He prefers parallel play and is beginning to show interest in shared activities when they align with his interests. Eye contact is not a reliable indicator of his attention; he demonstrates listening through verbal responses and body orientation. Support areas include expanding the range of contexts in which he initiates interaction with peers."
 
-The second version describes the same child — but with accuracy, dignity, and more clinically useful detail.
+The second version describes the same child, but with accuracy, dignity, and more clinically useful detail.
 
 ## Prompt Modifiers for Neurodiversity-Affirming Work
 
-- **"Describe what the client does, not what they fail to do"** — reframes observation from absence to presence
-- **"Include the client's strengths and interests as clinical assets"** — prevents strengths from being buried under concerns
-- **"Avoid functioning labels (high/low functioning)"** — these labels are clinically imprecise and harmful
-- **"Frame support needs as contextual, not fixed"** — recognizes that support needs vary across environments
-- **"Use 'differences' rather than 'deficits' for neurodevelopmental variation"** — aligns language with affirming practice
-- **"Describe sensory preferences rather than sensory problems"** — reframes sensory processing accurately
+- **"Describe what the client does, not what they fail to do"** – reframes observation from absence to presence
+- **"Include the client's strengths and interests as clinical assets"** – prevents strengths from being buried under concerns
+- **"Avoid functioning labels (high/low functioning)"** – these labels are clinically imprecise and harmful
+- **"Frame support needs as contextual, not fixed"** – recognizes that support needs vary across environments
+- **"Use 'differences' rather than 'deficits' for neurodevelopmental variation"** – aligns language with affirming practice
+- **"Describe sensory preferences rather than sensory problems"** – reframes sensory processing accurately
 
 ## When to Use
 
@@ -48,10 +48,10 @@ The second version describes the same child — but with accuracy, dignity, and 
 
 ## When This Pattern Doesn't Fit
 
-When you need to establish medical necessity for insurance authorization, you may need diagnostic language that references standardized norms. You can still be affirming in how you frame it — but the documentation purpose may require terms like "below age expectations." Know the difference between your clinical voice and the payer's requirements.
+When you need to establish medical necessity for insurance authorization, you may need diagnostic language that references standardized norms. You can still be affirming in how you frame it, but the documentation purpose may require terms like "below age expectations." Know the difference between your clinical voice and the payer's requirements.
 
 ## Pair With
 
-- [Family-Centered Prompting](/patterns/family-centered-prompting/) — affirming language pairs naturally with family-centered philosophy
-- [Early Intervention setting](/settings/early-intervention/) — where strengths-based framing is both ethical and expected
-- [Parent-Friendly Summary prompt](/prompts/parent-friendly-summary/) — families deserve affirming language most of all
+- [Family-Centered Prompting](/patterns/family-centered-prompting/) – affirming language pairs naturally with family-centered philosophy
+- [Early Intervention setting](/settings/early-intervention/) – where strengths-based framing is both ethical and expected
+- [Parent-Friendly Summary prompt](/prompts/parent-friendly-summary/) – families deserve affirming language most of all

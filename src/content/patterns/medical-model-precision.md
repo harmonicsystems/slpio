@@ -1,6 +1,6 @@
 ---
 title: "Medical Model Precision Pattern"
-description: "How to prompt LLMs for maximum clinical precision in medical documentation — instrumental reports, diagnostic statements, and acute care notes."
+description: "How to prompt LLMs for maximum clinical precision in medical documentation: instrumental reports, diagnostic statements, and acute care notes."
 clinicalOrientation: "Medical model / diagnostic precision"
 contrasts: "Functional, strengths-based approaches"
 settings: [medical, snf-rehab]
@@ -32,12 +32,12 @@ The second version is defensible, specific, and useful to every member of the ca
 
 ## Prompt Modifiers for Medical Precision
 
-- **"Include standardized scale scores (PAS, FOIS, ASHA NOMS)"** — anchors findings to validated measures
-- **"Reference specific anatomical structures"** — eliminates ambiguity in what was observed
-- **"Use IDDSI terminology for diet recommendations"** — ensures consistency with international standards
-- **"State objective measurements before clinical interpretation"** — separates data from judgment
-- **"Include severity descriptors (mild, moderate, severe) tied to observable criteria"** — makes severity ratings transparent
-- **"Document what was trialed and the outcome of each trial"** — captures clinical reasoning
+- **"Include standardized scale scores (PAS, FOIS, ASHA NOMS)"** – anchors findings to validated measures
+- **"Reference specific anatomical structures"** – eliminates ambiguity in what was observed
+- **"Use IDDSI terminology for diet recommendations"** – ensures consistency with international standards
+- **"State objective measurements before clinical interpretation"** – separates data from judgment
+- **"Include severity descriptors (mild, moderate, severe) tied to observable criteria"** – makes severity ratings transparent
+- **"Document what was trialed and the outcome of each trial"** – captures clinical reasoning
 
 ## When to Use
 

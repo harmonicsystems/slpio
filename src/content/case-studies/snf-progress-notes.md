@@ -65,7 +65,7 @@ The clinician also reported an unexpected benefit: the process of designing the 
 
 ## Reflection
 
-The clinician observed that the core challenge was not generating text but generating the right kind of text. Generic clinical notes and Medicare-compliant progress notes are different documents with different rhetorical purposes, and the AI needed explicit instruction to produce the latter. She noted that the prompt template essentially encoded Medicare's documentation logic — what reviewers look for, how skilled service is defined, what triggers a denial — in a form the model could follow.
+The clinician observed that the core challenge was not generating text but generating the right kind of text. Generic clinical notes and Medicare-compliant progress notes are different documents with different rhetorical purposes, and the AI needed explicit instruction to produce the latter. She noted that the prompt template essentially encoded Medicare's documentation logic (what reviewers look for, how skilled service is defined, what triggers a denial) in a form the model could follow.
 
 She cautioned that the time savings could create a false sense of security. A note that reads well is not necessarily a note that is accurate. She maintained a policy of never signing a note without verifying every data point against her session records, particularly after the hallucinated mealtime interaction incident.
 

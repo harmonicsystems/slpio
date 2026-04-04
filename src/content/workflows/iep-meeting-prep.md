@@ -18,7 +18,7 @@ This isn't a single prompt. It's a sequence. Each step builds on the previous on
 **Prompt:**
 
 ```
-I am a school-based SLP preparing for an IEP meeting. Here is my raw progress data and session notes for the current reporting period (no identifying information). Organize this into: (1) a summary of each goal with current data level, (2) a trend analysis (improving, plateauing, declining), and (3) any patterns you notice in the data. Do not interpret the data — just organize and summarize what I've provided.
+I am a school-based SLP preparing for an IEP meeting. Here is my raw progress data and session notes for the current reporting period (no identifying information). Organize this into: (1) a summary of each goal with current data level, (2) a trend analysis (improving, plateauing, declining), and (3) any patterns you notice in the data. Do not interpret the data. Just organize and summarize what I've provided.
 ```
 
 **Decision point:** Review the organized data. Does the trend analysis match your clinical impression? If the model says "improving" but you know the gains aren't functional, override it. You know this student.
@@ -30,7 +30,7 @@ I am a school-based SLP preparing for an IEP meeting. Here is my raw progress da
 **Prompt:**
 
 ```
-Using the organized data above, draft a present levels statement that includes: current performance on each goal with specific data points, how the disability affects involvement in the general curriculum, comparison to same-age peers where relevant, and strengths the student demonstrates. Use educational language appropriate for an IEP. Do not use deficit-only framing — include what the student CAN do.
+Using the organized data above, draft a present levels statement that includes: current performance on each goal with specific data points, how the disability affects involvement in the general curriculum, comparison to same-age peers where relevant, and strengths the student demonstrates. Use educational language appropriate for an IEP. Do not use deficit-only framing. Include what the student CAN do.
 ```
 
 **Decision point:** Is the present levels statement individualized? If it could describe any student with a similar profile, it's too generic. Add the specific observations only you have.
@@ -80,6 +80,6 @@ I am preparing for an IEP meeting. Based on the present levels and goal updates 
 
 ## Pair With
 
-- [Writing Goals](/tasks/writing-goals/) — for the goal revision step
-- [IEP Goal Strengthener](/prompts/iep-goal-strengthener/) — for individual goal rewrites
-- [Schools setting guide](/settings/schools/) — IDEA and IEP documentation context
+- [Writing Goals](/tasks/writing-goals/) – for the goal revision step
+- [IEP Goal Strengthener](/prompts/iep-goal-strengthener/) – for individual goal rewrites
+- [Schools setting guide](/settings/schools/) – IDEA and IEP documentation context

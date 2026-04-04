@@ -79,7 +79,7 @@ I need to create a handout for a family member explaining cognitive-communicatio
 ### Structured Output
 - **Orientation:** Oriented x3 (person, place, time)
 - **Target Areas:** Sequential task completion; written vs. verbal direction following
-- **Activity:** Functional sequencing task — sandwich preparation with written and verbal directions
+- **Activity:** Functional sequencing task (sandwich preparation) with written and verbal directions
 - **Performance:**
   - Written directions: Completed all steps in correct order with 2 verbal cues to reference checklist
   - Verbal directions: Omitted step 3 of 5-step sequence; did not self-correct without written support
@@ -90,7 +90,7 @@ I need to create a handout for a family member explaining cognitive-communicatio
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Goal clarity with medical examples
-- [Documentation](/tasks/documentation/) — Discharge summaries, eval reports
-- [Medical & Acute Care](/settings/medical-acute/) — Hospital documentation context
-- [SNF & Rehab](/settings/snf-rehab/) — Functional outcomes and insurance justification
+- [Writing Goals](/tasks/writing-goals/): Goal clarity with medical examples
+- [Documentation](/tasks/documentation/): Discharge summaries, eval reports
+- [Medical & Acute Care](/settings/medical-acute/): Hospital documentation context
+- [SNF & Rehab](/settings/snf-rehab/): Functional outcomes and insurance justification

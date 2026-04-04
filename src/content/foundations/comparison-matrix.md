@@ -1,6 +1,6 @@
 ---
 title: "Model & Tool Comparison"
-description: "Side-by-side comparison of AI models, tools, and platforms relevant to SLP practice — including BAA availability, strengths, and limitations."
+description: "Side-by-side comparison of AI models, tools, and platforms relevant to SLP practice, including BAA availability, strengths, and limitations."
 icon: ph-duotone ph-table
 order: 8
 ---

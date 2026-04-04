@@ -1,11 +1,11 @@
 ---
 title: AAC
-description: Augmentative and alternative communication — device trials, access, and the convergence of AAC with mainstream tech.
+description: Augmentative and alternative communication, device trials, access, and the convergence of AAC with mainstream tech.
 icon: ph-duotone ph-hand-pointing
 order: 8
 ---
 
-AAC sits at a unique intersection — the technology SLPs have championed for decades is converging with mainstream tools (voice assistants, speech-to-text, predictive text). LLMs can help with documentation and goal writing, but AAC assessment and device selection require specialized clinical judgment.
+AAC sits at a unique intersection: the technology SLPs have championed for decades is converging with mainstream tools (voice assistants, speech-to-text, predictive text). LLMs can help with documentation and goal writing, but AAC assessment and device selection require specialized clinical judgment.
 
 ## LLM Strengths in This Domain
 
@@ -32,7 +32,7 @@ AAC sits at a unique intersection — the technology SLPs have championed for de
 ### AAC Evaluation Report Organizer
 
 ```
-I am an SLP writing an AAC evaluation report (no client identifiers). Here are my findings from the evaluation including: communication history, current communication methods, feature-matching results, device trials conducted, access method assessment, and recommendations. Organize into a structured narrative appropriate for funding justification. Include sections for: reason for referral, current communication profile, device trial results, recommended system and rationale, and implementation plan. Do not recommend specific devices — I will specify those.
+I am an SLP writing an AAC evaluation report (no client identifiers). Here are my findings from the evaluation including: communication history, current communication methods, feature-matching results, device trials conducted, access method assessment, and recommendations. Organize into a structured narrative appropriate for funding justification. Include sections for: reason for referral, current communication profile, device trial results, recommended system and rationale, and implementation plan. Do not recommend specific devices; I will specify those.
 ```
 
 ### AAC Funding Justification Letter
@@ -75,7 +75,7 @@ I am an SLP programming core vocabulary for a beginning AAC user, age 4. The foc
 
 **Before:** "Staff will learn to use the student's device."
 
-*This is a training objective, not a student goal — but it's equally important. Make it measurable.*
+*This is a training objective, not a student goal, but it's equally important. Make it measurable.*
 
 **After:** "Communication partners (teacher, paraprofessional) will provide aided language stimulation by modeling at least 5 core vocabulary words on the student's SGD per 30-minute observation period, as documented by SLP fidelity checklist across 3 consecutive observations."
 
@@ -83,10 +83,10 @@ I am an SLP programming core vocabulary for a beginning AAC user, age 4. The foc
 
 AAC, screen readers, captioning, and voice interfaces are merging with mainstream technology. The tools our clients depend on are becoming the tools everyone uses. This has profound implications:
 
-- **Voice assistants** normalize spoken interaction with technology — AAC users have always done this
+- **Voice assistants** normalize spoken interaction with technology; AAC users have always done this
 - **Predictive text** on every phone is a form of language generation support
-- **Speech-to-text** is standard accessibility — blurring the line between "assistive" and "mainstream"
-- **LLMs themselves** are language generation tools — the same capability AAC systems provide
+- **Speech-to-text** is standard accessibility, blurring the line between "assistive" and "mainstream"
+- **LLMs themselves** are language generation tools, the same capability AAC systems provide
 
 > SLPs are uniquely positioned to guide this convergence. We understand both the clinical needs of individuals with complex communication needs AND the capabilities of the technology. That expertise matters more now than ever.
 
@@ -97,19 +97,19 @@ AAC, screen readers, captioning, and voice interfaces are merging with mainstrea
 
 ### Structured Output
 - **Target Words:** MORE, STOP, HELP (core vocabulary)
-- **Activity:** Sensory play — bubbles, playdoh
+- **Activity:** Sensory play (bubbles, playdoh)
 - **Performance:**
-  - MORE: 3 independent activations during bubbles (no prompting) — consistent with emerging mastery
-  - STOP: 1 independent activation to request break from playdoh — communicative intent clear
-  - HELP: 2 activations with hand-over-hand support — not yet independent
+  - MORE: 3 independent activations during bubbles (no prompting), consistent with emerging mastery
+  - STOP: 1 independent activation to request break from playdoh; communicative intent clear
+  - HELP: 2 activations with hand-over-hand support, not yet independent
 - **Communication Functions Observed:** Requesting (MORE), rejecting/regulating (STOP), not yet requesting assistance independently (HELP)
 - **Partner Training:** Mother observed session and practiced aided language modeling during bubbles activity. Provided appropriate wait time and responded to all device activations.
 - **Plan:** Continue MORE and STOP in varied activities to build generalization. Increase exposure to HELP with time delay prompting. Provide mother with home modeling guide for target words in daily routines.
 
 ## Related Pages
 
-- [Writing Goals](/tasks/writing-goals/) — Goal clarity toolkit
-- [Documentation](/tasks/documentation/) — Eval reports and session notes
-- [Compliance](/tasks/compliance/) — Funding justification letters
-- [Schools & Early Intervention](/settings/schools/) — IEP context for AAC
-- [Pragmatics & Social Communication](/domains/pragmatics-social/) — Communication functions across modalities
+- [Writing Goals](/tasks/writing-goals/): Goal clarity toolkit
+- [Documentation](/tasks/documentation/): Eval reports and session notes
+- [Compliance](/tasks/compliance/): Funding justification letters
+- [Schools & Early Intervention](/settings/schools/): IEP context for AAC
+- [Pragmatics & Social Communication](/domains/pragmatics-social/): Communication functions across modalities

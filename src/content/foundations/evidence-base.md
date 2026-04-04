@@ -34,16 +34,16 @@ The research base for LLMs in SLP-specific workflows remains limited. Claims in 
 ## Frequently Asked Questions
 
 ### Is there evidence that AI improves clinical documentation?
-Yes. Van Veen et al. (2024) found that adapted LLMs can outperform medical experts in clinical text summarization <cite data-ref="van-veen-2024"></cite>. Thirunavukarasu et al. (2023) found that outputs tend to be more organized and readable <cite data-ref="thirunavukarasu-2023"></cite>. The strongest evidence supports LLMs as a "second pass" tool for revising and restructuring existing notes — not for generating notes from scratch.
+Yes. Van Veen et al. (2024) found that adapted LLMs can outperform medical experts in clinical text summarization <cite data-ref="van-veen-2024"></cite>. Thirunavukarasu et al. (2023) found that outputs tend to be more organized and readable <cite data-ref="thirunavukarasu-2023"></cite>. The strongest evidence supports LLMs as a "second pass" tool for revising and restructuring existing notes, not for generating notes from scratch.
 
 ### Can AI write my progress notes for me?
 The evidence does not support using AI as an independent note writer. LLMs can organize and structure your raw observations, but every output requires clinician review. The risk of hallucination (the model adding details you didn't provide) makes unsupervised documentation generation unsafe for clinical or legal records.
 
 ### Is there research on AI specifically for speech-language pathology?
-The SLP-specific evidence base remains limited as of 2026. Most research comes from medicine, nursing, and occupational therapy. This guide extrapolates from cross-disciplinary evidence and clearly flags where that extrapolation occurs. The core finding — that LLMs work best as documentation copilots, not independent authors — is consistent across disciplines.
+The SLP-specific evidence base remains limited as of 2026. Most research comes from medicine, nursing, and occupational therapy. This guide extrapolates from cross-disciplinary evidence and clearly flags where that extrapolation occurs. The core finding (that LLMs work best as documentation copilots, not independent authors) is consistent across disciplines.
 
 ### Does ASHA have a position on using AI in clinical practice?
-ASHA has not issued a specific position statement on LLM use as of 2026. However, the ASHA Code of Ethics <cite data-ref="asha-ethics-2023"></cite> provides the framework: clinicians must maintain responsibility for clinical decisions, protect client confidentiality, and ensure documentation accuracy — all of which apply directly to AI-assisted workflows.
+ASHA has not issued a specific position statement on LLM use as of 2026. However, the ASHA Code of Ethics <cite data-ref="asha-ethics-2023"></cite> provides the framework: clinicians must maintain responsibility for clinical decisions, protect client confidentiality, and ensure documentation accuracy, all of which apply directly to AI-assisted workflows.
 
 ## References
 
@@ -51,10 +51,10 @@ ASHA has not issued a specific position statement on LLM use as of 2026. However
 2. HIPAA, 45 C.F.R. Parts 160, 164.
 3. FERPA, 20 U.S.C. § 1232g; 34 C.F.R. Part 99 (1974).
 4. IDEA, 20 U.S.C. § 1400 et seq. (2004).
-5. 34 C.F.R. § 300.320 — IEP content requirements.
+5. 34 C.F.R. § 300.320, IEP content requirements.
 6. ASHA. (2005). *Evidence-based practice in communication disorders*. [asha.org/policy/ps2005-00221](https://www.asha.org/policy/ps2005-00221/)
 7. ASHA. (n.d.). Documentation. *Practice Portal*. [asha.org/practice-portal](https://www.asha.org/practice-portal/)
-8. 45 C.F.R. § 164.502(e) — Business associate contracts.
+8. 45 C.F.R. § 164.502(e), Business associate contracts.
 9. U.S. Dept. of Education. (2023). *AI and the future of teaching and learning*. [tech.ed.gov/ai-future-of-teaching-and-learning](https://tech.ed.gov/ai-future-of-teaching-and-learning/)
 10. Thirunavukarasu, A. J., et al. (2023). Large language models in medicine. *Nature Medicine, 29*, 1930–1940.
 11. Ayers, J. W., et al. (2023). Comparing physician and AI chatbot responses. *JAMA Internal Medicine, 183*(6), 589–596.

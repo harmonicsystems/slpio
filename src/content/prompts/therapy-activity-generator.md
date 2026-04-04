@@ -14,16 +14,16 @@ order: 7
 ## The Prompt
 
 ```
-I am an SLP planning therapy activities. Generate 3-5 therapy activities for the following: Target skill: [specify], Age range: [specify], Setting: [school / clinic / home-based]. For each activity, include: a short title, materials needed, step-by-step procedure (3-5 steps), how to take data during the activity, and one way to make it easier and one way to make it harder. Activities should be functional and engaging — not worksheet-based. Use materials that are commonly available. Do not recommend specific commercial products by name.
+I am an SLP planning therapy activities. Generate 3-5 therapy activities for the following: Target skill: [specify], Age range: [specify], Setting: [school / clinic / home-based]. For each activity, include: a short title, materials needed, step-by-step procedure (3-5 steps), how to take data during the activity, and one way to make it easier and one way to make it harder. Activities should be functional and engaging, not worksheet-based. Use materials that are commonly available. Do not recommend specific commercial products by name.
 ```
 
 ## Why This Works
 
-- **Structured parameters** — requiring target skill, age, and setting produces activities that are immediately usable rather than generic
-- **Built-in scaffolding** — the easier/harder modifications let you adjust within a session without switching activities
-- **Data collection embedded** — each activity includes a data measurement strategy, reinforcing evidence-based practice
-- **No commercial bias** — avoiding brand names keeps activities accessible and prevents the model from recommending products it cannot verify exist
-- **Anti-worksheet stance** — steering toward functional, engaging tasks aligns with naturalistic and curriculum-based frameworks
+- **Structured parameters.** Requiring target skill, age, and setting produces activities that are immediately usable rather than generic.
+- **Built-in scaffolding.** The easier/harder modifications let you adjust within a session without switching activities.
+- **Data collection embedded.** Each activity includes a data measurement strategy, reinforcing evidence-based practice.
+- **No commercial bias.** Avoiding brand names keeps activities accessible and prevents the model from recommending products it cannot verify exist.
+- **Anti-worksheet stance.** Steering toward functional, engaging tasks aligns with naturalistic and curriculum-based frameworks.
 
 ## When to Use
 
@@ -37,6 +37,6 @@ During therapy planning when you need fresh activity ideas for a specific skill 
 
 ## Pair With
 
-- [IEP Goal Strengthener](/prompts/iep-goal-strengthener/) — align activities to strong, measurable goals
-- [Materials task guide](/tasks/materials/) — broader materials development workflow
-- [Schools setting guide](/settings/schools/) — curriculum-aligned therapy context
+- [IEP Goal Strengthener](/prompts/iep-goal-strengthener/) – align activities to strong, measurable goals
+- [Materials task guide](/tasks/materials/) – broader materials development workflow
+- [Schools setting guide](/settings/schools/) – curriculum-aligned therapy context

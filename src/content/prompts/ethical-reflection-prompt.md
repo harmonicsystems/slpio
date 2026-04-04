@@ -14,7 +14,7 @@ order: 11
 ## The Prompt
 
 ```
-I am an SLP reflecting on my use of AI tools in clinical practice. I want to evaluate whether my current practices align with ASHA's Code of Ethics. Walk me through a structured self-reflection covering these questions: (1) Autonomy: Am I maintaining my independent professional judgment, or am I deferring to AI output without critical review? (2) Beneficence: Is my AI use improving the quality or efficiency of services for my clients? (3) Nonmaleficence: Could my AI use cause harm through errors, bias, or privacy violations? What safeguards do I have? (4) Justice: Is my AI use equitable across my caseload, or does it create disparities? For each area, prompt me to describe my current practice and then identify one concrete step I could take to strengthen my ethical alignment. Do not tell me what my answers should be — ask me questions and let me reflect.
+I am an SLP reflecting on my use of AI tools in clinical practice. I want to evaluate whether my current practices align with ASHA's Code of Ethics. Walk me through a structured self-reflection covering these questions: (1) Autonomy: Am I maintaining my independent professional judgment, or am I deferring to AI output without critical review? (2) Beneficence: Is my AI use improving the quality or efficiency of services for my clients? (3) Nonmaleficence: Could my AI use cause harm through errors, bias, or privacy violations? What safeguards do I have? (4) Justice: Is my AI use equitable across my caseload, or does it create disparities? For each area, prompt me to describe my current practice and then identify one concrete step I could take to strengthen my ethical alignment. Do not tell me what my answers should be. Ask me questions and let me reflect.
 ```
 
 ## Why This Works
@@ -31,7 +31,7 @@ During supervision sessions, professional development activities, annual self-as
 ## When NOT to Use
 
 - Do not use this to generate documentation or clinical content
-- Do not paste client-specific information — this is about your practice patterns, not individual cases
+- Do not paste client-specific information; this is about your practice patterns, not individual cases
 - Do not treat the output as a compliance checklist; genuine reflection requires honest self-assessment
 
 ## Pair With

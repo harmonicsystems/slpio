@@ -35,7 +35,7 @@ Structured requests get structured responses. Tell it exactly what you want back
 "Return this as: Target, Level of Support, Performance Data, Clinical Interpretation."
 ```
 
-## Pattern 04 — Strip identity first
+## Pattern 04. Strip identity first
 
 De-identify before you paste. Replace names with [Student], schools with [School], etc.
 
@@ -43,7 +43,7 @@ De-identify before you paste. Replace names with [Student], schools with [School
 "[Student] is a 7-year-old in [School] receiving services for articulation."
 ```
 
-## Pattern 05 — Ask for reflection, not answers
+## Pattern 05. Ask for reflection, not answers
 
 Use the model as a thinking partner, not an authority. The clinical decision stays with you.
 
@@ -51,7 +51,7 @@ Use the model as a thinking partner, not an authority. The clinical decision sta
 "Help me think through the ethical considerations. Do not give me a definitive answer."
 ```
 
-## Pattern 06 — Specify what "good" looks like
+## Pattern 06. Specify what "good" looks like
 
 Give the model your quality criteria so it can check its own output.
 

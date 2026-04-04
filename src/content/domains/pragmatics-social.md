@@ -5,7 +5,7 @@ icon: ph-duotone ph-users
 order: 5
 ---
 
-Social communication is one of the hardest areas to write measurable, individualized goals for — and one of the areas where AI-generated gloss is most dangerous. A goal that sounds professional but describes no observable behavior is worse than useless.
+Social communication is one of the hardest areas to write measurable, individualized goals for, and one of the areas where AI-generated gloss is most dangerous. A goal that sounds professional but describes no observable behavior is worse than useless.
 
 ## LLM Strengths in This Domain
 

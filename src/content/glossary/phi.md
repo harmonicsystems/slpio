@@ -8,7 +8,7 @@ order: 8
 
 ## Why SLPs Need to Know This
 
-Every time you consider using an AI tool for clinical work, the first question is: does this involve PHI? If it does, the tool must be HIPAA-compliant and covered by a Business Associate Agreement. Pasting a child's eval results — even with the name removed — into a consumer AI tool may still constitute a PHI violation if remaining details could identify the individual.
+Every time you consider using an AI tool for clinical work, the first question is: does this involve PHI? If it does, the tool must be HIPAA-compliant and covered by a Business Associate Agreement. Pasting a child's eval results, even with the name removed, into a consumer AI tool may still constitute a PHI violation if remaining details could identify the individual.
 
 ## The 18 HIPAA Identifiers SLPs Should Know
 
@@ -16,7 +16,7 @@ Every time you consider using an AI tool for clinical work, the first question i
 - Social Security numbers, medical record numbers, health plan numbers, account numbers
 - Vehicle and device identifiers, URLs, IP addresses, biometric identifiers
 - Full-face photographs, any other unique identifying number or code
-- **Geographic data smaller than a state** — yes, including school district names
+- **Geographic data smaller than a state** (yes, including school district names)
 
 ## Practical Guide for SLPs
 
