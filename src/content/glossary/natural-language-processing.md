@@ -1,7 +1,7 @@
 ---
 term: "Natural Language Processing"
 aliases: ["NLP", "computational linguistics", "language AI"]
-slpDefinition: "The technology underlying every AI tool SLPs encounter — and the irony is thick. SLPs are the clinical experts in human language: its development, its disorders, its social use, its breakdowns. NLP is the field of computer science that tries to do computationally what SLPs understand clinically. These systems can parse syntax and generate fluent text, but they do not understand language the way you do."
+slpDefinition: "The technology underlying every AI tool SLPs encounter, and the irony is thick. SLPs are the clinical experts in human language: its development, its disorders, its social use, its breakdowns. NLP is the field of computer science that tries to do computationally what SLPs understand clinically. These systems can parse syntax and generate fluent text, but they do not understand language the way you do."
 techDefinition: "The subfield of artificial intelligence and computer science focused on enabling computers to process, analyze, and generate human language. NLP encompasses tasks from basic text classification and named entity recognition to complex language generation and dialogue systems. Modern NLP is dominated by large language models built on transformer architectures, which learn statistical patterns in text rather than explicit linguistic rules."
 order: 25
 ---

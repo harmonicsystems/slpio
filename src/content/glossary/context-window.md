@@ -14,7 +14,7 @@ If you've ever had a long conversation with ChatGPT or Claude and noticed the mo
 
 - Pasting an entire lengthy eval report may consume most of the context window, leaving little room for the model's response
 - In long back-and-forth conversations, the model may forget instructions you gave at the beginning, including safety instructions like "do not add information I didn't provide"
-- Multi-session work doesn't carry over — each new conversation starts with an empty context window unless you manually provide the information again
+- Multi-session work doesn't carry over; each new conversation starts with an empty context window unless you manually provide the information again
 
 ## Practical Guide for SLPs
 

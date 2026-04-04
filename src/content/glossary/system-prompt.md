@@ -16,7 +16,7 @@ The system prompt is the IEP behind the session. The student never reads it, but
 
 ## Practical Guide
 
-- **When using ChatGPT or Claude directly**, you can write your own system prompt (or "custom instructions") — this is one of your strongest tools for getting reliable output
+- **When using ChatGPT or Claude directly**, you can write your own system prompt (or "custom instructions"), and this is one of your strongest tools for getting reliable output
 - **Good system prompts for clinical work include**: "Do not add information I did not provide," "Use professional clinical language," "If you are unsure, say so"
 - **When evaluating vendor tools**, ask what instructions the system prompt includes. This tells you more about the tool than the marketing does
 - **System prompts are not foolproof.** A user can sometimes override them, and the model can drift from them in long conversations

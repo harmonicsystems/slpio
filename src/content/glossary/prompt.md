@@ -2,7 +2,7 @@
 term: "Prompt"
 aliases: ["input", "query", "instruction", "prompt engineering"]
 slpDefinition: "The text you type into an AI tool to tell it what you want. Think of it like a referral question: the more specific and well-structured your question, the more useful the response. A vague prompt ('write me a goal') gets a vague answer. A detailed prompt ('write an expressive language goal for a 4-year-old with CAS targeting two-word combinations at 80% accuracy') gets something you can actually use."
-techDefinition: "The input text sequence that conditions a language model's output distribution. The prompt provides the context from which the model predicts the most probable next tokens. Prompt engineering — the practice of crafting effective prompts — is how users steer model behavior without modifying the model itself."
+techDefinition: "The input text sequence that conditions a language model's output distribution. The prompt provides the context from which the model predicts the most probable next tokens. Prompt engineering (the practice of crafting effective prompts) is how users steer model behavior without modifying the model itself."
 order: 4
 ---
 

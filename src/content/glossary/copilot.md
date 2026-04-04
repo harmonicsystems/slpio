@@ -1,7 +1,7 @@
 ---
 term: "Copilot"
 aliases: ["AI assistant", "human-in-the-loop", "AI copilot", "augmented intelligence"]
-slpDefinition: "The recommended mental model for using LLMs in clinical work — the AI organizes, structures, and drafts, but you make every clinical decision. Think of it like a well-prepared student clinician. They can pull together background information, format a note, and suggest phrasing, but they don't determine the diagnosis, set the goals, or sign the report. You review everything. You change what needs changing. Your name is on it."
+slpDefinition: "The recommended mental model for using LLMs in clinical work: the AI organizes, structures, and drafts, but you make every clinical decision. Think of it like a well-prepared student clinician. They can pull together background information, format a note, and suggest phrasing, but they don't determine the diagnosis, set the goals, or sign the report. You review everything. You change what needs changing. Your name is on it."
 techDefinition: "A human-in-the-loop AI assistance paradigm where the model's role is constrained to support tasks while a human retains decision authority. In copilot architectures, the AI generates suggestions or drafts that require explicit human review and approval before taking effect. This contrasts with autonomous agent architectures where the model acts independently."
 order: 22
 ---

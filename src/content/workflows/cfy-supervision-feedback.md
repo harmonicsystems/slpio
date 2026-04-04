@@ -30,7 +30,7 @@ I am a clinical supervisor in speech-language pathology preparing feedback for a
 **Prompt:**
 
 ```
-Using the organized observations above, draft structured feedback with two sections: Strengths and Growth Areas. For each strength, cite a specific observed behavior and explain why it matters clinically (not "great rapport" but what the clinician specifically did that built rapport. For each growth area, describe: what was observed, why it matters for client outcomes, and a concrete next step the clinician can take in their next session. Use direct but respectful professional language appropriate for a developing clinician. Do not soften growth areas to the point of vagueness, and do not inflate strengths beyond what the observations support.
+Using the organized observations above, draft structured feedback with two sections: Strengths and Growth Areas. For each strength, cite a specific observed behavior and explain why it matters clinically (not "great rapport" but what the clinician specifically did that built rapport). For each growth area, describe: what was observed, why it matters for client outcomes, and a concrete next step the clinician can take in their next session. Use direct but respectful professional language appropriate for a developing clinician. Do not soften growth areas to the point of vagueness, and do not inflate strengths beyond what the observations support.
 ```
 
 **Decision point:** Read the growth areas carefully and ask yourself two questions. First: is this specific enough that the clinician will know exactly what to do differently? "Work on your questioning strategies" is useless. "When you asked three yes/no questions in a row, try replacing the second and third with open-ended probes" is actionable. Second: is this deliverable in a real conversation? If it reads like a performance improvement plan when the person is a second-semester student still finding their footing, adjust the framing. You know where this clinician is emotionally. The model does not.
@@ -42,10 +42,10 @@ Using the organized observations above, draft structured feedback with two secti
 **Prompt:**
 
 ```
-Based on the feedback above, draft a short professional development plan with 2-3 priority goals for the next supervision period. For each goal, include: (1) the specific skill or behavior to develop, (2) one concrete action step the clinician can take independently (e.g., self-video review of a session, practicing a specific technique with a peer, reading a targeted article), (3) how I as supervisor will support them (modeling, co-treatment, live coaching, resource sharing), and (4) what observable change would indicate progress. Keep it realistic for a [CF / graduate student — specify which] who also has a full clinical and academic schedule. Do not include more than 3 goals — focus matters more than comprehensiveness.
+Based on the feedback above, draft a short professional development plan with 2-3 priority goals for the next supervision period. For each goal, include: (1) the specific skill or behavior to develop, (2) one concrete action step the clinician can take independently (e.g., self-video review of a session, practicing a specific technique with a peer, reading a targeted article), (3) how I as supervisor will support them (modeling, co-treatment, live coaching, resource sharing), and (4) what observable change would indicate progress. Keep it realistic for a [CF / graduate student; specify which] who also has a full clinical and academic schedule. Do not include more than 3 goals. Focus matters more than comprehensiveness.
 ```
 
-**Decision point:** Is this plan achievable? A graduate student in their first clinical placement and a CF nine months into their fellowship year need fundamentally different things. The model does not know where this clinician is emotionally — whether they are confident and ready for a push, or overwhelmed and needing scaffolding before stretch goals. Match the plan to the person, not just the skill gaps. And check: does this plan reflect what the supervisee identified as their own priorities? Supervision works best when it is collaborative, not top-down.
+**Decision point:** Is this plan achievable? A graduate student in their first clinical placement and a CF nine months into their fellowship year need fundamentally different things. The model does not know where this clinician is emotionally, whether they are confident and ready for a push, or overwhelmed and needing scaffolding before stretch goals. Match the plan to the person, not just the skill gaps. And check: does this plan reflect what the supervisee identified as their own priorities? Supervision works best when it is collaborative, not top-down.
 
 ## What the LLM Did vs. What You Did
 
@@ -59,6 +59,6 @@ Based on the feedback above, draft a short professional development plan with 2-
 
 ## Pair With
 
-- [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) — similar structure of organizing observations into professional documents
-- [Clinical Reasoning tasks](/tasks/clinical-reasoning/) — for supervisees developing diagnostic thinking
-- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) — relevant when supervisees use LLMs in their own clinical work
+- [Evaluation Report Writing Workflow](/workflows/eval-report-writing/) – similar structure of organizing observations into professional documents
+- [Clinical Reasoning tasks](/tasks/clinical-reasoning/) – for supervisees developing diagnostic thinking
+- [Antipattern: Hallucinated Test Scores](/antipatterns/hallucinated-test-scores/) – relevant when supervisees use LLMs in their own clinical work

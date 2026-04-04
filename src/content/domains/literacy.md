@@ -103,7 +103,7 @@ This is critical to document clearly, especially in IEP teams where roles can ov
 
 ## Related Pages
 
-- [Language](/domains/language/) — Language-literacy connection
-- [Writing Goals](/tasks/writing-goals/) — Goal clarity toolkit
-- [Materials & Activities](/tasks/materials/) — Activity generation
-- [Schools & Early Intervention](/settings/schools/) — IEP and curriculum context
+- [Language](/domains/language/): Language-literacy connection
+- [Writing Goals](/tasks/writing-goals/): Goal clarity toolkit
+- [Materials & Activities](/tasks/materials/): Activity generation
+- [Schools & Early Intervention](/settings/schools/): IEP and curriculum context
