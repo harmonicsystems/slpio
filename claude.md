@@ -2,7 +2,7 @@
 
 ## Context
 
-slpio.org is a multi-page Astro site for SLP/IO — a clinician-first field guide for speech-language pathologists navigating LLMs in clinical practice. It's a Harmonic Systems project built by David Nyman, an SLP and software developer in Kinderhook, NY.
+slpio.org is a multi-page Astro site for SLP/IO — a clinician-first field guide for speech-language pathologists navigating LLMs in clinical practice. It's a Harmonic Systems project built by an SLP and software developer in the Hudson Valley, NY.
 
 **Deployed on Cloudflare Pages** via `wrangler.toml`. The `index.html` at the root is the OLD single-page site — do not edit it. All development happens in the Astro codebase under `src/`.
 

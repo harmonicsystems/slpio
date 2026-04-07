@@ -1,6 +1,6 @@
 # SLP/IO — slpio.org
 
-> SLP/IO is a clinician-first field guide for speech-language pathologists using large language models responsibly in clinical and educational settings. Built by David Nyman, MS CCC-SLP, and published by Harmonic Systems.
+> SLP/IO is a clinician-first field guide for speech-language pathologists using large language models responsibly in clinical and educational settings. A Harmonic Systems project.
 
 ## What This Site Is
 
@@ -112,7 +112,7 @@ SLP/IO provides ethical frameworks, copy-ready prompt templates, multi-step work
 - IDDSI Framework (2019)
 
 ## Contact
-- Author: David Nyman, MS CCC-SLP
+- Publisher: Harmonic Systems
 - Email: harmonicsystems.io@gmail.com
 - GitHub: https://github.com/harmonicsystems
 - Website: https://www.slpio.org

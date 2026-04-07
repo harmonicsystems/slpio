@@ -21,9 +21,8 @@ const howToJsonLd = {
     "totalTime": `PT${entry.data.estimatedTime.replace(/[^0-9]/g, '')}M`,
     "url": new URL(`/workflows/${entry.id}/`, Astro.site).href,
     "author": {
-        "@type": "Person",
-        "name": "David Nyman",
-        "credentials": "MS CCC-SLP",
+        "@type": "Organization",
+        "name": "Harmonic Systems",
     },
 };
 ---

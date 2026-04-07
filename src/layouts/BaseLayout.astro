@@ -18,7 +18,7 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{plainTitle} | SLP/IO</title>
     <meta name="description" content={description} />
-    <meta name="author" content="David Nyman, MS CCC-SLP" />
+    <meta name="author" content="Harmonic Systems" />
     <meta name="keywords" content="SLP, speech-language pathology, LLM, AI, field guide, IEP, clinical documentation, ASHA, language models, generative AI, speech therapy, AAC" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
@@ -48,10 +48,9 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
         "url": "https://www.slpio.org",
         "description": description,
         "author": {
-            "@type": "Person",
-            "name": "David Nyman",
-            "credentials": "MS CCC-SLP",
-            "jobTitle": "Speech-Language Pathologist",
+            "@type": "Organization",
+            "name": "Harmonic Systems",
+            "url": "https://github.com/harmonicsystems",
         },
         "publisher": {
             "@type": "Organization",
