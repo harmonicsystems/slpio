@@ -14,8 +14,16 @@ order: 6
 ## The Prompt
 
 ```
-I am an SLP drafting a prior authorization letter to an insurance company. Here are the relevant clinical details (no identifying information). Draft a prior authorization letter that includes: the specific service or procedure being requested, a summary of the patient's diagnosis and functional limitations, the clinical rationale for medical necessity (why this service is required to restore, maintain, or prevent decline in function), prior treatment history and response, the expected goals and timeline, and references to applicable coverage criteria if I provide them. Use professional, objective language. Do not fabricate diagnoses, test results, or treatment history I did not provide. Do not guarantee outcomes.
+I am an SLP drafting a prior authorization letter to an insurance company. Here are the relevant clinical details (no identifying information). My notes include: diagnosis, specific functional limitations, current treatment goals, measurable progress to date, and why continued services are medically necessary. Draft a prior authorization letter that includes: the specific service or procedure being requested, a summary of the patient's diagnosis and functional limitations, the clinical rationale for medical necessity (why this service is required to restore, maintain, or prevent decline in function), prior treatment history and response, the expected goals and timeline, and references to applicable coverage criteria if I provide them. Use professional, objective language. Do not fabricate diagnoses, test results, or treatment history I did not provide. Do not guarantee outcomes.
 ```
+
+### What to include in your clinical details
+
+- **Diagnosis** — primary and relevant secondary diagnoses
+- **Functional limitations** — what the patient cannot do that affects daily life, safety, or independence
+- **Treatment goals** — current goals with measurable criteria
+- **Progress** — data showing response to treatment (improvement, plateau, or decline)
+- **Medical necessity** — why stopping services would result in functional decline or safety risk
 
 ## Why This Works
 

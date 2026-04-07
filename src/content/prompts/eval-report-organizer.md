@@ -14,8 +14,16 @@ order: 4
 ## The Prompt
 
 ```
-I am an SLP organizing evaluation data into a structured report. Here are my raw findings (no identifying information). Organize this information into the following sections: Reason for Referral, Relevant History, Assessment Procedures (list of tools administered), Results by Area (group findings by domain: receptive language, expressive language, articulation, fluency, voice, etc.), Clinical Impressions (leave as a placeholder for me to complete), and Recommendations (leave as a placeholder for me to complete). Do not interpret scores or assign severity levels. Present the data as I recorded it. Do not invent history or findings I did not provide. Maintain my clinical terminology.
+I am an SLP organizing evaluation data into a structured report. Here are my raw findings (no identifying information). My data includes: referral reason, relevant history, assessment tools administered, scores and observations by area, and any notable behaviors during testing. Organize this information into the following sections: Reason for Referral, Relevant History, Assessment Procedures (list of tools administered), Results by Area (group findings by domain: receptive language, expressive language, articulation, fluency, voice, etc.), Clinical Impressions (leave as a placeholder for me to complete), and Recommendations (leave as a placeholder for me to complete). Do not interpret scores or assign severity levels. Present the data as I recorded it. Do not invent history or findings I did not provide. Maintain my clinical terminology.
 ```
+
+### What to include in your raw findings
+
+- **Referral reason** — who referred and why
+- **Relevant history** — medical, developmental, educational, or therapeutic background
+- **Assessment tools** — names of tests administered, subtests used
+- **Scores** — standard scores, percentile ranks, age equivalents as recorded
+- **Observations** — testing behavior, engagement, notable responses, language samples
 
 ## Why This Works
 

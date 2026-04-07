@@ -14,8 +14,16 @@ order: 5
 ## The Prompt
 
 ```
-I am an SLP documenting a bedside swallowing evaluation. Here are my raw clinical observations (no identifying information). Organize these into a structured bedside swallow evaluation note with the following sections: Reason for Referral, Relevant Medical History, Oral Mechanism Exam Findings, Trials Presented (consistency, volume, patient response), Clinical Observations (signs of aspiration risk, oral phase observations, laryngeal function indicators), and Clinical Impressions (placeholder for me to complete). Do not recommend diet texture levels or liquid consistencies. I will determine those. Do not add signs or symptoms I did not report. Present my observations exactly as stated.
+I am an SLP documenting a bedside swallowing evaluation. Here are my raw clinical observations (no identifying information). My notes include: consistencies trialed, bolus sizes, patient response to each trial, any signs of aspiration risk observed, compensatory strategies trialed and their effect, and current diet status. Organize these into a structured bedside swallow evaluation note with the following sections: Reason for Referral, Relevant Medical History, Oral Mechanism Exam Findings, Trials Presented (consistency, volume, patient response), Clinical Observations (signs of aspiration risk, oral phase observations, laryngeal function indicators), and Clinical Impressions (placeholder for me to complete). Do not recommend diet texture levels or liquid consistencies. I will determine those. Do not add signs or symptoms I did not report. Present my observations exactly as stated.
 ```
+
+### What to include in your raw notes
+
+- **Consistencies trialed** — thin, nectar-thick, puree, solids, etc.
+- **Bolus sizes** — sip, cup sip, straw, spoon, bite size
+- **Patient response** — coughing, throat clearing, wet vocal quality, delayed swallow initiation
+- **Compensatory strategies** — chin tuck, head turn, effortful swallow, and observed effect
+- **Current status** — NPO, current diet level, pending evaluations
 
 ## Why This Works
 

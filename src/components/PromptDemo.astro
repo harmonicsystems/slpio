@@ -6,49 +6,48 @@
 
 const demos = [
     {
-        label: 'IEP Goal Writing',
-        prompt: 'I have a 2nd grade student who omits /s/ clusters in all positions. She can produce /s/ in isolation. Write a measurable IEP goal.',
-        response: `By the end of the IEP period, [Student] will produce /s/ clusters (e.g., /st/, /sp/, /sn/, /sl/) in the initial position of words with 80% accuracy across 3 consecutive data collection sessions, as measured by clinician observation during structured therapy activities.
-
-**Short-term objectives:**
-1. Produce /s/ clusters in the initial position of single words with 60% accuracy given visual/verbal cues
-2. Produce /s/ clusters in initial position of phrases (3-5 words) with 70% accuracy given verbal cues only
-3. Produce /s/ clusters in initial position during sentence-level tasks with 80% accuracy independently
-
-**Why this works:** The goal builds from her current ability (/s/ in isolation) with a logical progression. It specifies position, accuracy criterion, and measurement method, all required for IDEA compliance.`,
-    },
-    {
         label: 'Progress Note',
-        prompt: 'Write a SOAP note for a 78-year-old patient with moderate cognitive-linguistic impairment following a left CVA. Session focused on functional memory strategies.',
-        response: `**S:** Patient reports difficulty remembering morning medication routine. States "I keep forgetting if I took my pills." Caregiver confirms missed doses 3x this week.
+        prompt: 'I am a school-based SLP. Here are my raw session notes (no identifying info): worked on /s/ blends today, still struggling with initial position, used minimal pairs, about 60% accuracy with verbal cues, seemed frustrated toward end of session, mom asked about home practice. Organize into a structured progress note with: target skill, activity, performance data, clinical observations, and follow-up. Do not add details I did not provide.',
+        response: `**Target:** /s/ blends, initial position
 
-**O:** Patient participated in 45-min individual session targeting external memory strategy use. Trained use of daily checklist for medication management. Patient completed checklist with 70% accuracy given moderate verbal cues (4/6 trials). Recalled 2/5 items from a categorized grocery list using semantic cueing with min assist. Required max cues for self-initiated strategy use.
+**Activity:** Minimal pair contrasts
 
-**A:** Patient demonstrates emerging ability to use external memory aids with cueing support. Functional carryover remains limited, dependent on caregiver prompts. Cueing hierarchy shows progress from max to mod assist over past 2 weeks. Current performance supports continued skilled intervention.
+**Performance:** 60% accuracy with verbal cueing
 
-**P:** Continue 3x/week. Train caregiver in checklist prompting strategy. Introduce visual schedule for ADL sequencing next session.`,
+**Clinical Observation:** Student appeared frustrated toward end of session.
+
+**Follow-up:** Parent asked about home practice.
+
+*Note: The AI organized and labeled your observations. It did not interpret the frustration, suggest a cause, add a recommendation, or invent follow-up actions. Those decisions are yours.*`,
     },
     {
-        label: 'Parent Email',
-        prompt: 'Draft a parent-friendly email explaining that their child qualified for speech services after a language evaluation. The child is 4 years old with receptive and expressive delays.',
-        response: `Subject: Speech-Language Evaluation Results for [Child\'s Name]
+        label: 'IEP Goal Check',
+        prompt: 'Review this IEP goal and tell me: (1) Is it observable? (2) Is it measurable with clear criteria? (3) Does it specify conditions and supports? (4) Could another clinician act on it immediately? If any answer is no, suggest a revision. Goal: "Student will demonstrate enhanced pragmatic communication abilities in various social contexts throughout the school day."',
+        response: `**1. Observable?** No. "Enhanced pragmatic communication abilities" is not an observable behavior. What specific action would you watch for?
 
-Dear [Parent],
+**2. Measurable?** No. There is no accuracy criterion, frequency count, or data collection method specified.
 
-Thank you for bringing [Child] in for a speech-language evaluation. I wanted to share the results with you and talk about next steps.
+**3. Conditions and supports?** No. "Various social contexts" is undefined. "Throughout the school day" is not a condition; it is a time frame with no structure.
 
-After testing, we found that [Child] is having some difficulty in two areas:
-- **Understanding language** (following directions, understanding questions, and learning new vocabulary)
-- **Using language** (putting words together in sentences, telling about experiences, and using grammar)
+**4. Could another clinician act on it immediately?** No. A substitute SLP reading this goal would not know what to target, what to count, or when the student has met it.
 
-These skills are developing a bit more slowly than we\'d expect for a child [their] age. The good news is that [Child] showed great strengths in social engagement and was very motivated during testing, both of which are really positive signs for progress.
+**Suggested revision:** During structured small-group activities with 1 verbal prompt, [Student] will initiate a topic-relevant comment or question directed at a peer in 4 out of 5 opportunities across 3 consecutive sessions, as measured by SLP observation and data collection.
 
-Based on these results, [Child] qualifies for speech-language therapy. I\'d recommend starting with twice-weekly sessions focused on building vocabulary and sentence skills through play-based activities.
+*Note: This goal was flagged on all four criteria. The revision adds a specific behavior (initiate a comment/question), a context (small-group), a support level (1 verbal prompt), measurable criteria (4/5 opportunities), and a measurement method.*`,
+    },
+    {
+        label: 'Strengths Reframe',
+        prompt: 'I am an SLP writing present levels. Help me describe these observations in language that is clinically accurate for an IEP, neurodiversity-affirming, and recognizes the function of the behavior. Do not minimize impact on participation. Observations: student talks at length about trains during group activities, has difficulty shifting to peer-selected topics, becomes upset when routines change unexpectedly.',
+        response: `**"Talks at length about trains during group activities"**
+→ [Student] demonstrates deep, focused engagement with preferred topics (transportation systems) and can sustain extended discourse on subjects of personal interest. During group activities, this strength can be leveraged for narrative and expository language targets. Currently, extended focus on preferred topics limits reciprocal exchange with peers during unstructured group interactions.
 
-I\'d love to schedule a time to talk through the full report together and answer any questions. What works best for your schedule?
+**"Has difficulty shifting to peer-selected topics"**
+→ [Student] shows strong topic maintenance and sustained attention within areas of interest. Topic flexibility during peer-led conversations is an emerging skill. [Student] currently requires support (visual cue or verbal prompt) to transition between topics during collaborative activities.
 
-Warm regards,
-[Your name], MS CCC-SLP`,
+**"Becomes upset when routines change unexpectedly"**
+→ [Student] demonstrates strong awareness of expected routines and benefits from predictable structure. Unexpected schedule changes are a source of dysregulation. With advance notice and visual supports, [Student] can navigate transitions more independently.
+
+*Note: Each description names the strength and the challenge. "Restricted interests" becomes focused engagement that can be leveraged for goals. "Rigidity" becomes predictability preference that responds to supports. The language is honest about participation impact while seeing the whole person.*`,
     },
     {
         label: 'Therapy Materials',

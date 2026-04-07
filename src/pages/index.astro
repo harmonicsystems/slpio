@@ -237,6 +237,44 @@ import PromptDemo from '../components/PromptDemo.astro';
 
     <div class="section-divider"><hr/></div>
 
+    <!-- ── Sustainability ── -->
+    <section id="sustainability">
+        <div class="section-header">
+            <div class="section-label">Sustainability</div>
+            <h2>Prompts Worth <span class="accent">the Water</span></h2>
+            <p class="section-intro">Every AI query costs electricity and water. A shared, maintained reference is a better use of resources than thousands of clinicians asking chatbots the same questions independently. When you do use an LLM, make it count.</p>
+        </div>
+
+        <div class="sustainability-grid">
+            <div class="sustain-card bad">
+                <h4><i class="ph-duotone ph-drop"></i> Low-Value Use</h4>
+                <ul>
+                    <li>Asking "what are good IEP goals for articulation?" (this already exists everywhere)</li>
+                    <li>Pasting one progress note and asking AI to "make it sound better"</li>
+                    <li>Generating generic parent letters you'll rewrite anyway</li>
+                    <li>Running the same prompt every session instead of saving a reusable template</li>
+                    <li>Using a chatbot as a search engine for information in your own files</li>
+                </ul>
+            </div>
+            <div class="sustain-card good">
+                <h4><i class="ph-duotone ph-lightbulb"></i> High-Value Use</h4>
+                <ul>
+                    <li>Correlating a semester of progress notes to identify patterns across goals</li>
+                    <li>Building a reusable documentation guide for your setting that you use all year</li>
+                    <li>Reframing deficit-based language into strengths-based, neurodiversity-affirming descriptions</li>
+                    <li>Synthesizing research across multiple sources into a team evidence summary</li>
+                    <li>Drafting complex medical necessity arguments with your specific clinical data</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sustain-callout">
+            <p><strong>The position:</strong> Being thoughtful about AI isn't just about clinical ethics. It's about resource ethics. Reformatting a three-line note isn't worth the compute. Surfacing patterns across a semester of data, or finding language that honors a student's dignity while meeting legal documentation requirements — that's worth it.</p>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
     <!-- ── About ── -->
     <section id="about">
         <div class="section-header">
@@ -604,6 +642,71 @@ import PromptDemo from '../components/PromptDemo.astro';
         transform: translateX(4px);
     }
 
+    /* ── Sustainability ── */
+    .sustainability-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    .sustain-card {
+        padding: 1.5rem;
+        border-radius: var(--radius-organic);
+        border: 1px solid var(--border);
+        box-shadow: var(--card-shadow);
+    }
+
+    .sustain-card.bad {
+        border-top: 3px solid var(--accent-red);
+        background: rgba(192,57,43,0.03);
+    }
+
+    .sustain-card.good {
+        border-top: 3px solid var(--accent-green);
+        background: rgba(39,174,96,0.03);
+    }
+
+    .sustain-card h4 {
+        font-size: 0.92rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .sustain-card.bad h4 i { color: var(--accent-red); }
+    .sustain-card.good h4 i { color: var(--accent-green); }
+
+    .sustain-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sustain-card ul li {
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sustain-card ul li:last-child { border-bottom: none; }
+
+    .sustain-callout {
+        margin-top: 1.5rem;
+        padding: 1.25rem 1.5rem;
+        background: linear-gradient(135deg, var(--primary-light) 0%, rgba(39,174,96,0.05) 100%);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--primary);
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    .sustain-callout strong { color: var(--dark); }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
         .hero {
@@ -646,6 +749,8 @@ import PromptDemo from '../components/PromptDemo.astro';
         }
 
         .layer-grid { grid-template-columns: 1fr; }
+
+        .sustainability-grid { grid-template-columns: 1fr; }
 
         .quickstart-step { padding: 1.25rem; gap: 1rem; }
     }

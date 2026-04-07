@@ -14,8 +14,16 @@ order: 8
 ## The Prompt
 
 ```
-I am an SLP writing a discharge summary. Here is my treatment data (no identifying information). Organize this into a discharge summary with the following sections: Admission Status (baseline functional levels at start of care), Treatment Provided (frequency, duration, and types of intervention), Progress Toward Goals (compare admission and discharge performance for each goal), Discharge Status (current functional levels), Reason for Discharge, and Recommendations (placeholder for me to complete; include home exercise program, follow-up, or referral sections as applicable). Do not interpret my data beyond what I have stated. Do not assign functional levels I did not report. Preserve my terminology and data exactly.
+I am an SLP writing a discharge summary. Here is my treatment data (no identifying information). My notes include: reason for referral, admission baseline, treatment targets and frequency, measurable progress for each goal, current functional status, and any outstanding concerns. Organize this into a discharge summary with the following sections: Admission Status (baseline functional levels at start of care), Treatment Provided (frequency, duration, and types of intervention), Progress Toward Goals (compare admission and discharge performance for each goal), Discharge Status (current functional levels), Reason for Discharge, and Recommendations (placeholder for me to complete; include home exercise program, follow-up, or referral sections as applicable). Do not interpret my data beyond what I have stated. Do not assign functional levels I did not report. Preserve my terminology and data exactly.
 ```
+
+### What to include in your raw notes
+
+- **Admission baseline** — functional levels, diet status, communication abilities at start of care
+- **Treatment targets** — goals addressed, frequency and duration of services
+- **Progress data** — measurable change per goal (admission vs. discharge performance)
+- **Current status** — where the patient is now functionally
+- **Outstanding concerns** — anything unresolved, pending referrals, family training needs
 
 ## Why This Works
 

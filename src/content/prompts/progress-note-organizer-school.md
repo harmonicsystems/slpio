@@ -14,8 +14,17 @@ order: 1
 ## The Prompt
 
 ```
-I am a school-based SLP. Here are my raw session notes for a student (no identifying information included). Organize these into a structured progress note with: date of service, IEP goal addressed, activity/materials used, student response data (accuracy percentage, level of cueing), clinical observations, and plan for next session. Do not add observations I didn't make. Do not change my accuracy data. Keep my clinical voice. Do not over-polish.
+I am a school-based SLP. Here are my raw session notes for a student (no identifying information included). My notes include: target skill(s), activity used, accuracy data and level of cueing, any notable behaviors or affect, and follow-up items. Organize these into a structured progress note with: date of service, IEP goal addressed, activity/materials used, student response data (accuracy percentage, level of cueing), clinical observations, and plan for next session. Do not add observations I didn't make. Do not change my accuracy data. Keep my clinical voice. Do not over-polish.
 ```
+
+### What to include in your raw notes
+
+The better your input, the better the output. Before pasting, make sure your notes cover:
+- **Target skill(s)** — what you worked on
+- **Activity/materials** — what you used
+- **Performance data** — accuracy, trials, level of cueing
+- **Affect or behavior** — anything notable (frustration, engagement, fatigue)
+- **Follow-up items** — parent questions, next session plans, materials to prep
 
 ## Why This Works
 
