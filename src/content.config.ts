@@ -178,6 +178,53 @@ const policies = defineCollection({
   }),
 });
 
+// ── Goal Bank ──
+
+const goalDomainEnum = z.enum([
+  'articulation-phonology',
+  'receptive-language',
+  'expressive-language',
+  'pragmatics-social',
+  'dysphagia',
+  'cognitive-linguistic',
+  'fluency',
+  'voice-resonance',
+  'aac',
+  'literacy',
+]);
+
+const supportLevelEnum = z.enum([
+  'independent', 'minimal', 'moderate', 'maximum',
+]);
+
+const goals = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/goals' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    domain: goalDomainEnum,
+    subdomain: z.string(),
+    settings: z.array(settingEnum),
+    populations: z.array(populationEnum),
+    ageRange: z.string().optional(),
+    supportLevel: supportLevelEnum,
+    severity: z.enum(['mild', 'moderate', 'severe', 'varies']),
+    neurodiversityAffirming: z.boolean().default(false),
+    fourQuestions: z.object({
+      conditions: z.string(),
+      behavior: z.string(),
+      criteria: z.string(),
+      measurement: z.string(),
+    }),
+    evidenceBase: z.array(z.object({
+      source: z.string(),
+      url: z.string().optional(),
+    })).min(1),
+    relatedGoals: z.array(z.string()).optional(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   foundations,
   tasks,
@@ -192,4 +239,5 @@ export const collections = {
   casestudies,
   research,
   policies,
+  goals,
 };

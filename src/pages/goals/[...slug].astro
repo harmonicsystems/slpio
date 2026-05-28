@@ -1,0 +1,186 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('goals');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const supportColors: Record<string, string> = {
+    'independent': 'var(--accent-green)',
+    'minimal': 'var(--primary)',
+    'moderate': 'var(--accent-amber)',
+    'maximum': 'var(--accent-red)',
+};
+
+const fq = entry.data.fourQuestions;
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="Goal Bank"
+    breadcrumbs={[{ label: 'Goals', href: '/goals/' }]}
+>
+    <div class="goal-meta">
+        <span><strong>Domain:</strong> {entry.data.domain.replace(/-/g, ' ')}</span>
+        <span><strong>Settings:</strong> {entry.data.settings.join(', ')}</span>
+        <span><strong>Support:</strong> <span class="support-badge" style={`color: ${supportColors[entry.data.supportLevel]};`}>{entry.data.supportLevel}</span></span>
+        <span><strong>Severity:</strong> {entry.data.severity}</span>
+        {entry.data.ageRange && <span><strong>Age:</strong> {entry.data.ageRange}</span>}
+        {entry.data.neurodiversityAffirming && <span class="nd-badge">Neurodiversity-Affirming</span>}
+    </div>
+
+    <div class="four-questions">
+        <h3 class="fq-heading">The Four Questions</h3>
+        <div class="fq-grid">
+            <div class="fq-item">
+                <div class="fq-label">Conditions</div>
+                <div class="fq-value">{fq.conditions}</div>
+            </div>
+            <div class="fq-item">
+                <div class="fq-label">Observable Behavior</div>
+                <div class="fq-value">{fq.behavior}</div>
+            </div>
+            <div class="fq-item">
+                <div class="fq-label">Measurable Criteria</div>
+                <div class="fq-value">{fq.criteria}</div>
+            </div>
+            <div class="fq-item">
+                <div class="fq-label">Measurement Method</div>
+                <div class="fq-value">{fq.measurement}</div>
+            </div>
+        </div>
+    </div>
+
+    <Content />
+
+    <div class="evidence-section">
+        <h3>Evidence Base</h3>
+        <ul class="evidence-list">
+            {entry.data.evidenceBase.map((ref) => (
+                <li>
+                    {ref.url ? <a href={ref.url} target="_blank" rel="noopener">{ref.source}</a> : ref.source}
+                </li>
+            ))}
+        </ul>
+    </div>
+</ContentLayout>
+
+<style is:global>
+    .goal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 2rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+        text-transform: capitalize;
+    }
+
+    .support-badge { font-weight: 700; }
+
+    .nd-badge {
+        background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(155,89,182,0.1));
+        color: #7b2d8e;
+        padding: 2px 10px;
+        border-radius: 99px;
+        font-weight: 600;
+        font-size: 0.7rem;
+    }
+
+    .four-questions {
+        margin-bottom: 2rem;
+        border: 2px solid var(--primary);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+
+    .fq-heading {
+        background: var(--primary);
+        color: white;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.85rem;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .fq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .fq-item {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+    }
+
+    .fq-item:nth-child(2n) { border-right: none; }
+    .fq-item:nth-child(n+3) { border-bottom: none; }
+
+    .fq-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary);
+        margin-bottom: 0.35rem;
+    }
+
+    .fq-value {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--dark);
+    }
+
+    .evidence-section {
+        margin-top: 2rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        border-left: 4px solid var(--accent-green);
+    }
+
+    .evidence-section h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .evidence-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .evidence-list li {
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        padding: 0.35rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .evidence-list li:last-child { border-bottom: none; }
+    .evidence-list a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+    .evidence-list a:hover { opacity: 0.8; }
+
+    @media (max-width: 768px) {
+        .fq-grid { grid-template-columns: 1fr; }
+        .fq-item { border-right: none; }
+        .fq-item:nth-child(3) { border-bottom: 1px solid var(--border); }
+    }
+</style>
