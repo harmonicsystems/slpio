@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .astro/
+coverage/
+.vitest-cache/
 
 # OS / editor / agent state
 .DS_Store
