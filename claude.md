@@ -22,6 +22,7 @@ slpio.org is a multi-page Astro site for SLP/IO — a clinician-first field guid
 - `glossary/` — Terms defined from both clinical and technical perspectives
 - `research/` — Structured summaries of peer-reviewed studies
 - `resources/` — Changelog, media literacy, references
+- `goals/` — Measurable, evidence-referenced goals organized by domain (articulation/phonology, receptive/expressive language, pragmatics/social, dysphagia, cognitive-linguistic, fluency, voice/resonance, AAC, literacy). Index at `/goals/` has a client-side filter UI for support level, setting, population, and ND-affirming approach. Schema enforces a four-questions structure (conditions, behavior, criteria, measurement) and at least one evidence-base entry.
 
 ### Key Components (`src/components/`)
 - `PromptDemo.astro` — Interactive demo on home page showing pre-generated prompt/response examples
@@ -62,6 +63,24 @@ Every prompt should include:
 - No adding clinical rationale that wasn't in the raw notes
 - These examples are teaching tools — they must be airtight
 
+### Goal Bank
+Every goal under `src/content/goals/<domain>/<slug>.md` must include:
+1. **Four-questions structure** — `fourQuestions: { conditions, behavior, criteria, measurement }` in frontmatter. Each field is a complete clause that reads cleanly on its own and combines into the "Full Goal" prose at the top of the body.
+2. **Evidence base** — `evidenceBase` array with at least one entry; in practice 5–10. Prefer ASHA Practice Portals with URLs, IDEA CFR citations, IDDSI / WPATH / INCOG / WHO ICF frameworks, peer-reviewed studies cited as author + year + journal, and lived-experience advocacy sources where appropriate (NSA, Aphasia Institute, AANE, etc.).
+3. **Individualization Guidance** — `## Individualization Guidance` section: bullet-pointed checks the clinician runs before adopting the goal.
+4. **Clinical Notes** — `## Clinical Notes` section explaining *why* the criterion and conditions are written that way. This is the rationale section that distinguishes a well-written goal from a copy-paste — keep it specific.
+5. **Neurodiversity-affirming framing** — When `neurodiversityAffirming: true`, add a `## Neurodiversity-Affirming Notes` (or `## Framing`) section explaining the reframe. Setting the flag without the framing is not enough.
+6. **Related Goals** — `## Related Goals` section linking 1–3 companion or contrast goals.
+
+Goal-writing rules of thumb:
+- Don't bundle multiple processes/skills into one goal. A goal that targets "phonological processes" generally instead of a single process produces unactionable data.
+- Set criteria thresholds against what the literature supports, not round numbers. 80% is conventional but not always defensible.
+- Prefer dual criteria when one measure can be gamed (e.g., trained-item accuracy AND untrained-item generalization for SFA; SPL gain AND patient-reported communicative ease for LSVT LOUD).
+- For partner-side / parent-side / caregiver-side goals, name them as such in the title — they describe the partner's behavior, not the patient's.
+- Pediatric framing is not adult framing scaled down. Developmental expectations, family agency, and no-coercion conditions are non-negotiable in infant and child feeding/communication goals.
+
+The filter UI on `/goals/` reads `data-support-level`, `data-settings`, `data-populations`, and `data-nd-affirming` attributes on each card. Adding a new filterable schema field requires both an entry in the filter-options arrays at the top of `src/pages/goals/index.astro` AND a `data-*` attribute on the rendered card.
+
 ## Design & Voice
 - Keep David's writing voice — direct, clinical, not corporate
 - Neurodivergent-affirming language throughout (strengths-based, not deficit-first)
@@ -79,3 +98,5 @@ Every prompt should include:
 - The old `index.html` at root is legacy — don't edit it for new features
 - All prompt examples and demos must practice what the guide preaches: no fabricated clinical details
 - After content changes, verify the site builds: `npm run build`
+- **Node 22.12+ required for build** (Astro 5 requirement). The system default is often Node 20, which will fail with "Node.js v20.x is not supported by Astro." Use `source ~/.nvm/nvm.sh && nvm use 22` before `npm run build` or `npx astro dev`. The dev server launch config at `.claude/launch.json` already pins to a Node 22 binary path.
+- **Dev server caches content collections.** When adding new entries to a content collection (e.g., new `goals/` markdown files), the dev server may serve a stale collection until restarted. If new entries don't appear in the UI but build output includes them, restart the dev server.
