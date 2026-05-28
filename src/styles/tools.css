@@ -1,0 +1,403 @@
+/* ── Shared styles for /tools/* pages ── */
+
+.tool-section {
+    max-width: 960px;
+    margin: auto;
+    padding: 5rem 2rem;
+    scroll-margin-top: var(--header-height);
+}
+
+.tool-card-shell { margin-top: 1.5rem; }
+
+.tool-card-shell label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.tool-card-shell textarea,
+.tool-card-shell input[type="text"],
+.tool-card-shell select {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--dark);
+    line-height: 1.5;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.tool-card-shell select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path fill='%235e6a75' d='M5 7L1 3h8z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2rem;
+}
+
+.tool-card-shell textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.tool-card-shell textarea:focus,
+.tool-card-shell input:focus,
+.tool-card-shell select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.control-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.85rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+    margin-top: 1rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-organic);
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.kbd-hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: "Roboto Mono", monospace;
+    margin-left: auto;
+}
+
+.results { margin-top: 2.5rem; }
+
+.metrics-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.metric .n {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+.metric .label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.panel {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+    box-shadow: var(--card-shadow);
+}
+
+.panel h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin: 0 0 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.group-row {
+    margin: 0.45rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.group-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+    min-width: 5.5rem;
+}
+
+.ph-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.85rem;
+    padding: 0.18em 0.6em;
+    border-radius: 999px;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    margin: 0.12em 0.18em 0.12em 0;
+    white-space: nowrap;
+    color: var(--dark);
+}
+
+.ph-chip .count {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.ph-chip[data-group="stop"]      { background: #e7eef8; border-color: #c8d8ed; }
+.ph-chip[data-group="fricative"] { background: #fef4e4; border-color: #f0d9b5; }
+.ph-chip[data-group="affricate"] { background: #e9f6ee; border-color: #c4e3cf; }
+.ph-chip[data-group="nasal"]     { background: #f3e9f6; border-color: #ddc6e4; }
+.ph-chip[data-group="liquid"]    { background: #fcebe9; border-color: #f0c8c4; }
+.ph-chip[data-group="glide"]     { background: #e6f5f1; border-color: #bfdfd6; }
+.ph-chip[data-group="vowel"]     { background: #faf3dc; border-color: #ead7a5; }
+
+@media (prefers-color-scheme: dark) {
+    .ph-chip[data-group="stop"]      { background: rgba(91,163,224,0.12); border-color: rgba(91,163,224,0.35); color: var(--dark); }
+    .ph-chip[data-group="fricative"] { background: rgba(232,144,64,0.12); border-color: rgba(232,144,64,0.35); color: var(--dark); }
+    .ph-chip[data-group="affricate"] { background: rgba(67,196,122,0.12); border-color: rgba(67,196,122,0.35); color: var(--dark); }
+    .ph-chip[data-group="nasal"]     { background: rgba(180,120,200,0.12); border-color: rgba(180,120,200,0.35); color: var(--dark); }
+    .ph-chip[data-group="liquid"]    { background: rgba(218,86,80,0.12); border-color: rgba(218,86,80,0.35); color: var(--dark); }
+    .ph-chip[data-group="glide"]     { background: rgba(110,200,180,0.12); border-color: rgba(110,200,180,0.35); color: var(--dark); }
+    .ph-chip[data-group="vowel"]     { background: rgba(220,190,100,0.12); border-color: rgba(220,190,100,0.35); color: var(--dark); }
+}
+
+.word-chip {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    padding: 0.18em 0.7em;
+    border-radius: 999px;
+    background: var(--light);
+    border: 1px solid var(--border);
+    margin: 0.12em 0.18em 0.12em 0;
+    color: var(--dark);
+}
+
+.panel table { margin: 0; }
+
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.note {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: var(--dark);
+    background: var(--primary-light);
+    padding: 0.85rem 1.1rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary);
+    margin: 1.25rem 0;
+    line-height: 1.6;
+}
+
+.note strong { color: var(--dark); }
+.note em { color: var(--text-muted); font-style: italic; }
+
+.note.warn {
+    background: rgba(212,120,46,0.08);
+    border-left-color: var(--accent-amber);
+}
+
+.callout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 3rem 0 1.5rem;
+}
+
+.callout-card {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+}
+
+.callout-head {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.callout-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.citation {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.citation strong { color: var(--dark); }
+
+.verdict-panel {
+    padding: 1.75rem;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary);
+    box-shadow: var(--card-shadow);
+}
+
+.verdict-panel.appropriate { border-left-color: var(--accent-green); }
+.verdict-panel.above { border-left-color: var(--accent-amber); }
+.verdict-panel.below { border-left-color: var(--accent-amber); }
+.verdict-panel.mixed { border-left-color: var(--text-muted); }
+
+.verdict-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.verdict-headline {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0 0 0.85rem;
+    line-height: 1.3;
+}
+
+.verdict-panel.appropriate .verdict-headline { color: var(--accent-green); }
+.verdict-panel.above .verdict-headline,
+.verdict-panel.below .verdict-headline { color: var(--accent-amber); }
+
+.reasons {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.reasons li { margin-bottom: 0.35rem; }
+
+.status-line {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.card-title {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0 0 0.4rem;
+}
+
+.card-title .meta {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 0.5rem;
+}
+
+.cues {
+    margin-top: 1rem;
+}
+
+.cues-head {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cues ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+.cues li { margin-bottom: 0.4rem; }
+
+.breadcrumb a:hover { color: var(--accent-amber); }
+
+@media (max-width: 768px) {
+    .tool-section { padding: 3rem 1.25rem; }
+    .callout-grid { grid-template-columns: 1fr; }
+    .metrics-row { gap: 1.25rem; padding: 1rem; }
+    .metric .n { font-size: 1.3rem; }
+    .kbd-hint { display: none; }
+    .input-grid { grid-template-columns: 1fr 1fr; }
+    .input-grid > *:last-child { grid-column: 1 / -1; }
+    .verdict-headline { font-size: 1.1rem; }
+    .card-title { font-size: 1.35rem; }
+}

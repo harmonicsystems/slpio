@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/tools.css';
+---
+
+<BaseLayout
+    title="Stimulability quick-check"
+    description="Pick a sound and an age. Get the acquisition window, elicitation cues, and a printable word list by position. Built for the four minutes before a session."
+>
+    <section class="tool-section">
+        <div class="breadcrumb">
+            <a href="/tools/">Tools</a><span>/</span>stimulability
+        </div>
+
+        <div class="section-header">
+            <div class="section-label">Stimulability</div>
+            <h2>What does this sound <span class="accent">look like</span> right now?</h2>
+            <p class="section-intro">
+                Pick a sound and an age. Get the typical acquisition window,
+                a few elicitation cues, and a printable word list by position.
+                For the four minutes before a session.
+            </p>
+        </div>
+
+        <div class="tool-card-shell">
+            <div class="input-grid no-print">
+                <div>
+                    <label for="sound">Target sound</label>
+                    <select id="sound"></select>
+                </div>
+                <div>
+                    <label for="age">Child age (years)</label>
+                    <select id="age">
+                        <option>3</option><option>4</option><option selected>5</option>
+                        <option>6</option><option>7</option><option>8</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="position">Position</label>
+                    <select id="position">
+                        <option value="">All positions</option>
+                        <option value="initial">Initial</option>
+                        <option value="medial">Medial</option>
+                        <option value="final">Final</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn-primary" id="go">Show</button>
+                </div>
+            </div>
+        </div>
+
+        <section id="card" class="results hidden">
+            <div class="panel">
+                <h3 id="card-title" class="card-title">—</h3>
+                <div id="status-line" class="status-line"></div>
+                <div id="cues" class="cues"></div>
+            </div>
+
+            <div class="panel">
+                <h3>Word list <span id="position-label" class="meta-label"></span></h3>
+                <div id="words"></div>
+                <p class="citation" style="border-top:0; padding-top:0.75rem; margin-top:1rem;">
+                    Drawn from a ~200-word demo dictionary. A v1 build would filter the
+                    full CMU dict by age-appropriate frequency.
+                </p>
+            </div>
+
+            <div class="control-row no-print">
+                <button class="btn-secondary" onclick="window.print()">Print this card</button>
+            </div>
+        </section>
+
+        <div class="callout-grid">
+            <div class="callout-card">
+                <div class="callout-head">What this measures</div>
+                <p>Looks up acquisition age from Crowe &amp; McLeod (2020), pulls a word list from the CMU pronouncing dictionary filtered by position, and surfaces clinician-written elicitation cues.</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Where it stops</div>
+                <p>It's a quick reference, not a diagnostic. It can't tell you whether <em>this</em> child is stimulable for <em>this</em> sound — only what the typical window looks like and what cues other clinicians have used.</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Why this beats asking an LLM</div>
+                <p>Ask "when do kids get /r/?" and an LLM might give you 6, 7, or 8 with equal confidence depending on the wind. The age here is sourced; the cues are vetted; the word list is the dictionary's, not invented.</p>
+            </div>
+        </div>
+
+        <p class="citation">
+            <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
+            Cues are clinician-facing summaries. Related reading: <a href="/domains/articulation-phonology/">Articulation &amp; Phonology</a>.
+        </p>
+    </section>
+</BaseLayout>
+
+<script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/engine.js"></script>
+<script is:inline>
+    (function () {
+        const $ = id => document.getElementById(id);
+
+        const consonants = Object.keys(SLPIO.PHONEMES)
+            .filter(p => !SLPIO.engine.isVowel(p))
+            .sort((a, b) => (SLPIO.ACQUISITION[a] || 99) - (SLPIO.ACQUISITION[b] || 99));
+
+        const select = $("sound");
+        consonants.forEach(p => {
+            const meta = SLPIO.PHONEMES[p];
+            const age = SLPIO.ACQUISITION[p];
+            const o = document.createElement("option");
+            o.value = p;
+            o.textContent = `/${meta.ipa}/  (${meta.group}${age ? `, ~${age}y` : ""})`;
+            select.appendChild(o);
+        });
+        select.value = "R";
+
+        function chip(word) {
+            return `<span class="word-chip">${word}</span>`;
+        }
+
+        function render() {
+            const phoneme = select.value;
+            const age = parseInt($("age").value, 10);
+            const position = $("position").value;
+
+            const meta = SLPIO.PHONEMES[phoneme];
+            const acqAge = SLPIO.ACQUISITION[phoneme];
+
+            $("card-title").innerHTML = `/${meta.ipa}/ <span class="meta">${phoneme} · ${meta.group}${meta.voiced != null ? (meta.voiced ? ' · voiced' : ' · voiceless') : ''}${meta.place ? ' · ' + meta.place : ''}</span>`;
+
+            let status;
+            if (!acqAge) {
+                status = `No acquisition data on file.`;
+            } else if (age >= acqAge) {
+                status = `90% of children produce this by age ${acqAge}. At ${age}, expect production.`;
+            } else if (age + 1 >= acqAge) {
+                status = `90% acquisition at ${acqAge}. At ${age}, emergence is typical; absence is not yet concerning.`;
+            } else {
+                status = `90% acquisition at ${acqAge}. At ${age}, this is still developing — stimulability matters more than presence.`;
+            }
+            $("status-line").textContent = status;
+
+            const cues = SLPIO.CUES[phoneme];
+            if (cues && cues.length) {
+                $("cues").innerHTML =
+                    '<div class="cues-head">Elicitation cues</div>' +
+                    '<ul>' + cues.map(c => `<li>${c}</li>`).join("") + '</ul>';
+            } else {
+                $("cues").innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem; margin:0;">No cue snippets on file for this sound yet.</p>';
+            }
+
+            const words = SLPIO.engine.wordsWith(phoneme, position || null);
+            $("position-label").textContent = position
+                ? `· ${position} position`
+                : `· any position`;
+            $("words").innerHTML = words.length
+                ? words.sort().map(chip).join(" ")
+                : '<p style="color: var(--text-muted); margin:0;">No matches in the demo dictionary.</p>';
+
+            $("card").classList.remove("hidden");
+        }
+
+        if (window.plausible) window.plausible('tool_load', { props: { tool: 'stimulability' } });
+
+        $("go").addEventListener("click", () => {
+            render();
+            if (window.plausible) window.plausible('tool_run', { props: { tool: 'stimulability' } });
+        });
+        ["sound", "age", "position"].forEach(id => $(id).addEventListener("change", render));
+        render();
+    })();
+</script>
+
+<style is:global>
+    .meta-label {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-transform: none;
+        letter-spacing: 0;
+        margin-left: 0.4rem;
+    }
+
+    @media print {
+        header, footer, .no-print, .breadcrumb, .callout-grid, .section-header { display: none !important; }
+        .tool-section { padding: 0.5in; max-width: 100%; }
+        .panel { box-shadow: none; border-color: #999; page-break-inside: avoid; }
+    }
+</style>

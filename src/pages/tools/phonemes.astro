@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/tools.css';
+---
+
+<BaseLayout
+    title="Phoneme inventory analyzer"
+    description="Paste any text and see what sounds it asks for, grouped by articulation and acquisition age. A deterministic tool, not an LLM guess."
+>
+    <section class="tool-section">
+        <div class="breadcrumb">
+            <a href="/tools/">Tools</a><span>/</span>phonemes
+        </div>
+
+        <div class="section-header">
+            <div class="section-label">Phonemes</div>
+            <h2>What sounds is this text <span class="accent">asking for?</span></h2>
+            <p class="section-intro">
+                Paste any text — a target word list, a homework sheet, a chapter book passage —
+                and see what sounds it's asking for, by articulation group and acquisition age.
+                Everything runs in your browser; nothing leaves the page.
+            </p>
+        </div>
+
+        <div class="tool-card-shell">
+            <label for="input">Text</label>
+            <textarea
+                id="input"
+                placeholder="Paste here. Try a sentence from a children's book, or a list of target words separated by spaces."
+            ></textarea>
+
+            <div class="control-row">
+                <button class="btn-primary" id="run">Analyze</button>
+                <button class="btn-secondary" id="sample">Load sample</button>
+                <button class="btn-secondary" id="clear">Clear</button>
+                <span class="kbd-hint">⌘+Enter to analyze</span>
+            </div>
+        </div>
+
+        <section id="results" class="results hidden">
+            <div class="metrics-row">
+                <div class="metric"><span class="n" id="m-words">0</span><span class="label">words</span></div>
+                <div class="metric"><span class="n" id="m-known">0</span><span class="label">in dictionary</span></div>
+                <div class="metric"><span class="n" id="m-phonemes">0</span><span class="label">phoneme tokens</span></div>
+                <div class="metric"><span class="n" id="m-syll">0</span><span class="label">syllables</span></div>
+                <div class="metric"><span class="n" id="m-max">—</span><span class="label">oldest sound (yrs)</span></div>
+            </div>
+
+            <div class="panel">
+                <h3>By articulation group</h3>
+                <div id="by-group"></div>
+            </div>
+
+            <div class="panel">
+                <h3>By acquisition age</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bucket</th>
+                            <th style="width:50%">Phonemes (count)</th>
+                            <th style="text-align:right">Tokens</th>
+                        </tr>
+                    </thead>
+                    <tbody id="by-age"></tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h3>Per-phoneme breakdown</h3>
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phoneme</th>
+                                <th>Group</th>
+                                <th>Acq. age</th>
+                                <th style="text-align:right">Initial</th>
+                                <th style="text-align:right">Medial</th>
+                                <th style="text-align:right">Final</th>
+                                <th style="text-align:right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="by-phoneme"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="coverage-note" class="note hidden"></div>
+        </section>
+
+        <div class="callout-grid">
+            <div class="callout-card">
+                <div class="callout-head">What this measures</div>
+                <p>Looks up each word in the CMU pronouncing dictionary, counts every phoneme by group (stop, fricative, etc.) and acquisition age (Crowe &amp; McLeod, 2020), and tracks where each phoneme falls in the word.</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Where it stops</div>
+                <p>It doesn't know your client's phonology, dialect, or co-articulation patterns. It can't tell you which sounds to target — only which are present. Words outside the demo dictionary are skipped (and named).</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Why this beats asking an LLM</div>
+                <p>Ask Claude "what sounds are in this passage?" and you'll get a confident summary with no audit trail. Here, every count is reproducible from the table — you can see the math and disagree with it.</p>
+            </div>
+        </div>
+
+        <p class="citation">
+            <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
+            Pronunciation: CMU Pronouncing Dictionary (demo subset).
+            Related reading: <a href="/domains/articulation-phonology/">Articulation &amp; Phonology</a>.
+        </p>
+    </section>
+</BaseLayout>
+
+<script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/engine.js"></script>
+<script is:inline>
+    (function () {
+        const $ = id => document.getElementById(id);
+        const input = $("input");
+        const results = $("results");
+
+        const SAMPLE = "The little rabbit hopped through the tall grass. " +
+            "She saw a curious frog sitting on a shimmering rock. " +
+            "'Hello,' whispered the rabbit. 'Have you seen my friend the fox?'";
+
+        function chip(phoneme, count) {
+            const meta = SLPIO.PHONEMES[phoneme] || {};
+            return `<span class="ph-chip" data-group="${meta.group || ""}">` +
+                   `/${meta.ipa || phoneme}/<span class="count">${count}</span></span>`;
+        }
+
+        function renderGroups(groupCounts) {
+            const order = ["stop", "nasal", "fricative", "affricate", "liquid", "glide", "vowel"];
+            const html = order.map(g => {
+                if (!groupCounts[g]) return "";
+                return `<div class="group-row">` +
+                       `<span class="group-label">${g}</span> ` +
+                       `<span class="ph-chip" data-group="${g}">${groupCounts[g]}</span></div>`;
+            }).join("");
+            $("by-group").innerHTML = html;
+        }
+
+        function renderByAge(buckets, phonemeCounts) {
+            const order = SLPIO.engine.ACQ_BUCKETS.map(b => b.label);
+            const rows = order.map(label => {
+                const phs = Object.keys(phonemeCounts).filter(p => SLPIO.engine.bucketFor(p) === label);
+                if (!phs.length) return "";
+                const chips = phs
+                    .sort((a, b) => phonemeCounts[b] - phonemeCounts[a])
+                    .map(p => chip(p, phonemeCounts[p])).join(" ");
+                const total = buckets[label] || 0;
+                return `<tr><td>${label}</td><td>${chips}</td><td style="text-align:right">${total}</td></tr>`;
+            }).filter(Boolean).join("");
+            $("by-age").innerHTML = rows ||
+                `<tr><td colspan="3" style="color:var(--text-muted)">No phonemes matched.</td></tr>`;
+        }
+
+        function renderByPhoneme(phonemeCounts, positionCounts) {
+            const rows = Object.keys(phonemeCounts)
+                .sort((a, b) => phonemeCounts[b] - phonemeCounts[a])
+                .map(p => {
+                    const meta = SLPIO.PHONEMES[p] || {};
+                    const age = SLPIO.ACQUISITION[p];
+                    const pos = positionCounts[p] || { initial: 0, medial: 0, final: 0 };
+                    return `<tr>
+                        <td><span class="ph-chip" data-group="${meta.group || ""}">/${meta.ipa || p}/</span></td>
+                        <td>${meta.group || "—"}</td>
+                        <td>${age || "—"}</td>
+                        <td style="text-align:right">${pos.initial}</td>
+                        <td style="text-align:right">${pos.medial}</td>
+                        <td style="text-align:right">${pos.final}</td>
+                        <td style="text-align:right"><strong>${phonemeCounts[p]}</strong></td>
+                    </tr>`;
+                }).join("");
+            $("by-phoneme").innerHTML = rows;
+        }
+
+        function run() {
+            const text = input.value.trim();
+            if (!text) {
+                results.classList.add("hidden");
+                return;
+            }
+            const r = SLPIO.engine.analyze(text);
+
+            $("m-words").textContent = r.words.length;
+            $("m-known").textContent = r.knownWords.length;
+            $("m-phonemes").textContent = Object.values(r.phonemeCounts).reduce((a, b) => a + b, 0);
+            $("m-syll").textContent = r.syllableEstimate;
+            $("m-max").textContent = r.maxAcquisitionAge || "—";
+
+            renderGroups(r.groupCounts);
+            renderByAge(r.acquisitionBuckets, r.phonemeCounts);
+            renderByPhoneme(r.phonemeCounts, r.positionCounts);
+
+            const note = $("coverage-note");
+            const cov = Math.round(r.coverage * 100);
+            if (r.unknownWords.length) {
+                note.classList.remove("hidden");
+                note.classList.toggle("warn", cov < 70);
+                note.innerHTML =
+                    `<strong>Dictionary coverage: ${cov}%.</strong> ` +
+                    `${r.unknownWords.length} word${r.unknownWords.length === 1 ? "" : "s"} not in the demo dictionary` +
+                    (r.unknownWords.length <= 10 ? `: <em>${r.unknownWords.join(", ")}</em>` : ".") +
+                    ` The scaffold ships a ~200-word subset; the full CMU dict has ~134k entries.`;
+            } else {
+                note.classList.add("hidden");
+            }
+
+            results.classList.remove("hidden");
+            results.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+
+        if (window.plausible) window.plausible('tool_load', { props: { tool: 'phonemes' } });
+
+        $("run").addEventListener("click", () => {
+            run();
+            if (window.plausible) window.plausible('tool_run', { props: { tool: 'phonemes' } });
+        });
+        $("sample").addEventListener("click", () => { input.value = SAMPLE; run(); });
+        $("clear").addEventListener("click", () => { input.value = ""; results.classList.add("hidden"); });
+        input.addEventListener("keydown", e => {
+            if ((e.metaKey || e.ctrlKey) && e.key === "Enter") run();
+        });
+    })();
+</script>
+

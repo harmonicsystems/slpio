@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/tools.css';
+---
+
+<BaseLayout
+    title="ZPD check for AI-generated stories"
+    description="Paste an AI-generated story and a target age. Get a developmental sanity check: sentence length, Tier-2 vocabulary load, late-acquiring sounds. The verdict shows its work."
+>
+    <section class="tool-section">
+        <div class="breadcrumb">
+            <a href="/tools/">Tools</a><span>/</span>check
+        </div>
+
+        <div class="section-header">
+            <div class="section-label">ZPD check</div>
+            <h2>Is this story <span class="accent">right for the kid?</span></h2>
+            <p class="section-intro">
+                Paste an AI-generated story — or any story you're thinking of reading aloud —
+                and a target age. The tool measures sentence length, Beck Tier-2 vocabulary load,
+                and late-acquiring sounds, then shows you the numbers underneath the verdict.
+            </p>
+        </div>
+
+        <div class="tool-card-shell">
+            <label for="story">Story</label>
+            <textarea id="story" placeholder="Paste the story here. Try one your LLM just gave you — see what shows up under the hood."></textarea>
+
+            <div class="input-grid no-print">
+                <div>
+                    <label for="target-age">Target age (years)</label>
+                    <select id="target-age">
+                        <option>3</option>
+                        <option selected>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn-primary" id="check">Check</button>
+                </div>
+                <div>
+                    <button class="btn-secondary" id="sample">Load sample</button>
+                </div>
+                <div>
+                    <span class="kbd-hint">⌘+Enter to check</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="result" class="results hidden">
+            <div id="verdict-panel" class="verdict-panel">
+                <div class="verdict-label">Verdict</div>
+                <div id="verdict" class="verdict-headline"></div>
+                <ul id="reasons" class="reasons"></ul>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric"><span class="n" id="m-words">0</span><span class="label">words</span></div>
+                <div class="metric"><span class="n" id="m-wps">0</span><span class="label">avg words/sentence</span></div>
+                <div class="metric"><span class="n" id="m-tier2">0</span><span class="label">Tier-2 words</span></div>
+                <div class="metric"><span class="n" id="m-late">0</span><span class="label">late phoneme types</span></div>
+            </div>
+
+            <div class="panel">
+                <h3>Tier-2 vocabulary</h3>
+                <div id="tier2-list"></div>
+                <p class="citation" style="border-top:0; padding-top:0.75rem; margin-top:1rem;">
+                    Tier-2 words are high-utility, cross-domain words worth pre-teaching
+                    for a target-age reader. Beck, McKeown &amp; Kucan (2002).
+                </p>
+            </div>
+
+            <div class="panel">
+                <h3>Late-acquiring sounds in the text</h3>
+                <div id="late-list"></div>
+            </div>
+
+            <div class="note">
+                <strong>Read this verdict as a starting point.</strong> It surfaces patterns;
+                it doesn't replace clinical judgment. The verdict assumes the story will be
+                <em>read aloud to</em> the child, not read independently by them.
+            </div>
+        </section>
+
+        <div class="callout-grid">
+            <div class="callout-card">
+                <div class="callout-head">What this measures</div>
+                <p>Average sentence length against age-typical norms, Beck Tier-2 vocabulary count, and late-acquiring phonemes that fall above the target age in Crowe &amp; McLeod (2020).</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Where it stops</div>
+                <p>It doesn't read for meaning, theme, cultural fit, or trauma triggers. A short-sentenced story can still be wrong for a child; a long-sentenced story can still be right. The verdict is a heuristic, not a recommendation.</p>
+            </div>
+            <div class="callout-card">
+                <div class="callout-head">Why this beats asking an LLM</div>
+                <p>An LLM that just wrote the story will tell you the story is fine for the age — it has no incentive to disagree with itself. This tool counts the words. The contrast is the point.</p>
+            </div>
+        </div>
+
+        <p class="citation">
+            <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
+            Vocabulary tiers: Beck, McKeown &amp; Kucan (2002).
+            Related reading: <a href="/reading/">Reading LLM writing</a> · <a href="/antipatterns/">Common antipatterns</a>.
+        </p>
+    </section>
+</BaseLayout>
+
+<script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/engine.js"></script>
+<script is:inline>
+    (function () {
+        const $ = id => document.getElementById(id);
+
+        const SAMPLE = "Once upon a time, in an ancient forest filled with shimmering leaves, " +
+            "a curious little rabbit wandered silently between the enormous trees. " +
+            "She discovered a tremendous, magnificent door hidden in the roots of an old oak. " +
+            "With gentle paws and unexpected courage, she pushed it open and whispered, " +
+            "'Hello?' From inside came the sound of delicate music.";
+
+        function verdictLabel(v) {
+            return {
+                appropriate: "Looks appropriate.",
+                above: "Reads above target age.",
+                below: "Reads below target age.",
+                mixed: "Mixed signals."
+            }[v] || v;
+        }
+
+        function chip(phoneme, count) {
+            const meta = SLPIO.PHONEMES[phoneme] || {};
+            return `<span class="ph-chip" data-group="${meta.group || ""}">/${meta.ipa || phoneme}/<span class="count">×${count}</span></span>`;
+        }
+
+        function run() {
+            const text = $("story").value.trim();
+            if (!text) {
+                $("result").classList.add("hidden");
+                return;
+            }
+            const age = parseInt($("target-age").value, 10);
+            const r = SLPIO.engine.zpdCheck(text, age);
+
+            const verdictPanel = $("verdict-panel");
+            verdictPanel.classList.remove("appropriate", "above", "below", "mixed");
+            verdictPanel.classList.add(r.verdict);
+
+            $("verdict").textContent = verdictLabel(r.verdict);
+            $("reasons").innerHTML = r.reasons.map(x => `<li>${x}</li>`).join("");
+
+            $("m-words").textContent = r.stats.words.length;
+            $("m-wps").textContent = r.avgWordsPerSentence.toFixed(1);
+            $("m-tier2").textContent = r.tier2Words.length;
+            $("m-late").textContent = r.lateAcquiringPhonemes.length;
+
+            $("tier2-list").innerHTML = r.tier2Words.length
+                ? r.tier2Words.map(w => `<span class="word-chip">${w}</span>`).join(" ")
+                : '<span style="color: var(--text-muted); font-size:0.9rem;">None detected in the demo dictionary.</span>';
+
+            $("late-list").innerHTML = r.lateAcquiringPhonemes.length
+                ? r.lateAcquiringPhonemes.map(x => chip(x.phoneme, x.count)).join(" ")
+                : '<span style="color: var(--text-muted); font-size:0.9rem;">No late-acquiring sounds above the target age.</span>';
+
+            $("result").classList.remove("hidden");
+            $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+
+        if (window.plausible) window.plausible('tool_load', { props: { tool: 'check' } });
+
+        $("check").addEventListener("click", () => {
+            run();
+            if (window.plausible) window.plausible('tool_run', { props: { tool: 'check' } });
+        });
+        $("sample").addEventListener("click", () => { $("story").value = SAMPLE; run(); });
+        $("story").addEventListener("keydown", e => {
+            if ((e.metaKey || e.ctrlKey) && e.key === "Enter") run();
+        });
+    })();
+</script>

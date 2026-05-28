@@ -1,0 +1,73 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+
+const tools = [
+    {
+        slug: 'phonemes',
+        name: 'Phoneme inventory analyzer',
+        blurb: 'Paste any text — a target word list, a homework sheet, a chapter book passage — and see what sounds it asks for, by articulation group and acquisition age.',
+        verb: 'Analyzes',
+        thesis: 'Counts and groups every phoneme it can resolve against the CMU pronouncing dictionary. No interpretation, no guess.',
+    },
+    {
+        slug: 'stimulability',
+        name: 'Stimulability quick-check',
+        blurb: 'Pick a sound and an age. Get the typical acquisition window, a few elicitation cues, and a printable word list by position.',
+        verb: 'Looks up',
+        thesis: 'Pulls acquisition ages from Crowe & McLeod (2020) and filters a word list by phoneme position. Cues are clinician-written, not LLM-generated.',
+    },
+    {
+        slug: 'check',
+        name: 'ZPD check for AI-generated stories',
+        blurb: 'Paste a story you generated, or one you\'re considering reading to a child, and get a developmental sanity check against a target age.',
+        verb: 'Measures',
+        thesis: 'Surfaces average sentence length, Beck Tier-2 vocabulary load, and late-acquiring phonemes against an age target. The verdict is a heuristic, and it shows the numbers underneath.',
+    },
+];
+---
+
+<SectionIndexLayout
+    title="<span class='accent'>Tools</span>"
+    label="Tools"
+    description="Small, deterministic tools that run entirely in your browser. Paste text or pick a sound; nothing leaves the page. Each tool shows its working — the count, the source, the heuristic — so you can see exactly what it did and exactly what it didn't."
+    reflection="An LLM can tell you a story is right for a four-year-old. It rarely tells you why, and almost never shows the math. These tools do the math. Use them next to your LLM, not instead of it — the contrast is the point."
+>
+    {tools.map((tool) => (
+        <a href={`/tools/${tool.slug}/`} class="nav-card tool-card">
+            <div class="tool-path">/{tool.slug}/</div>
+            <h3>{tool.name}</h3>
+            <p>{tool.blurb}</p>
+            <div class="tool-thesis">
+                <strong>{tool.verb}.</strong> {tool.thesis}
+            </div>
+        </a>
+    ))}
+</SectionIndexLayout>
+
+<style>
+    .tool-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .tool-path {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--primary);
+        letter-spacing: 0.5px;
+        text-transform: lowercase;
+    }
+    .tool-thesis {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px dashed var(--border);
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+    .tool-thesis strong {
+        color: var(--dark);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+</style>
