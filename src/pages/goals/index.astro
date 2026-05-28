@@ -68,6 +68,32 @@ const grouped = domainOrder
             .sort((a, b) => a.data.order - b.data.order),
     }))
     .filter(g => g.entries.length > 0);
+
+// Filter option definitions
+const supportLevels: Array<{value: string; label: string}> = [
+    { value: 'independent', label: 'Independent' },
+    { value: 'minimal', label: 'Minimal' },
+    { value: 'moderate', label: 'Moderate' },
+    { value: 'maximum', label: 'Maximum' },
+];
+
+const settingOptions: Array<{value: string; label: string}> = [
+    { value: 'school', label: 'School' },
+    { value: 'medical', label: 'Medical' },
+    { value: 'snf-rehab', label: 'SNF / Rehab' },
+    { value: 'early-intervention', label: 'Early Intervention' },
+    { value: 'private-practice', label: 'Private Practice' },
+    { value: 'university', label: 'University' },
+];
+
+const populationOptions: Array<{value: string; label: string}> = [
+    { value: 'pediatric', label: 'Pediatric' },
+    { value: 'adult', label: 'Adult' },
+    { value: 'geriatric', label: 'Geriatric' },
+    { value: 'all', label: 'All ages' },
+];
+
+const totalGoals = entries.length;
 ---
 
 <SectionIndexLayout
@@ -76,71 +102,377 @@ const grouped = domainOrder
     description="Measurable, evidence-referenced goals organized by domain. Every goal answers four questions: under what conditions, what observable behavior, to what measurable criteria, and how will you track it. These are starting points for individualization, never copy-paste solutions."
     reflection="Every goal here is measurable and evidence-referenced. Whether it's the right goal depends on things no bank can contain: the client's affect, the family's priorities, how the deficit presents in this specific context. Pristine structure is not the same as clinical fit."
 >
-    <div class="goal-legend">
-        <span class="legend-item"><span class="legend-dot" style="background: var(--accent-green);"></span> Independent</span>
-        <span class="legend-item"><span class="legend-dot" style="background: var(--primary);"></span> Minimal</span>
-        <span class="legend-item"><span class="legend-dot" style="background: var(--accent-amber);"></span> Moderate</span>
-        <span class="legend-item"><span class="legend-dot" style="background: var(--accent-red);"></span> Maximum</span>
-        <span class="legend-item"><span class="legend-dot nd-dot"></span> ND-Affirming</span>
-    </div>
+    <section class="goal-filters" aria-labelledby="filter-heading">
+        <div class="filter-header">
+            <h2 id="filter-heading" class="filter-title">Filter goals</h2>
+            <div class="filter-summary">
+                <span id="filter-count" data-total={totalGoals}>{totalGoals}</span>
+                <span class="filter-summary-label">of {totalGoals} goals shown</span>
+                <button type="button" id="clear-filters" class="clear-link" hidden>Clear filters</button>
+            </div>
+        </div>
 
-    {grouped.map((group) => (
-        <div class="domain-group" id={group.domain}>
-            <h3 class="domain-heading">
-                <i class={group.icon} style={`color: ${domainColors[group.domain]};`}></i>
-                {group.label}
-                <span class="domain-count">{group.entries.length} goals</span>
-            </h3>
-            <div class="goal-cards">
-                {group.entries.map((entry) => (
-                    <a href={`/goals/${entry.id}/`} class="nav-card goal-card">
-                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-                            <span class="goal-tag" style={`background: ${supportColors[entry.data.supportLevel]}15; color: ${supportColors[entry.data.supportLevel]};`}>
-                                {entry.data.supportLevel}
-                            </span>
-                            {entry.data.neurodiversityAffirming && (
-                                <span class="goal-tag nd-tag">ND-affirming</span>
-                            )}
-                            <span class="goal-tag" style="background: var(--secondary); color: var(--text-muted);">
-                                {entry.data.severity}
-                            </span>
-                        </div>
-                        <h3>{entry.data.title}</h3>
-                        <p>{entry.data.description}</p>
-                        <div style="margin-top:0.5rem; font-size:0.7rem; color:var(--text-muted);">
-                            {entry.data.settings.join(' · ')}
-                            {entry.data.ageRange && ` · ${entry.data.ageRange}`}
-                        </div>
-                    </a>
+        <div class="filter-group" data-filter-group="supportLevel">
+            <div class="filter-group-label">Support level</div>
+            <div class="filter-chips">
+                {supportLevels.map(opt => (
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        data-filter="supportLevel"
+                        data-value={opt.value}
+                        aria-pressed="false"
+                        style={`--chip-color: ${supportColors[opt.value]};`}
+                    >
+                        <span class="chip-dot" style={`background: ${supportColors[opt.value]};`}></span>
+                        {opt.label}
+                    </button>
                 ))}
             </div>
         </div>
-    ))}
+
+        <div class="filter-group" data-filter-group="setting">
+            <div class="filter-group-label">Setting</div>
+            <div class="filter-chips">
+                {settingOptions.map(opt => (
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        data-filter="setting"
+                        data-value={opt.value}
+                        aria-pressed="false"
+                    >
+                        {opt.label}
+                    </button>
+                ))}
+            </div>
+        </div>
+
+        <div class="filter-group" data-filter-group="population">
+            <div class="filter-group-label">Population</div>
+            <div class="filter-chips">
+                {populationOptions.map(opt => (
+                    <button
+                        type="button"
+                        class="filter-chip"
+                        data-filter="population"
+                        data-value={opt.value}
+                        aria-pressed="false"
+                    >
+                        {opt.label}
+                    </button>
+                ))}
+            </div>
+        </div>
+
+        <div class="filter-group" data-filter-group="ndAffirming">
+            <div class="filter-group-label">Approach</div>
+            <div class="filter-chips">
+                <button
+                    type="button"
+                    class="filter-chip nd-chip"
+                    data-filter="ndAffirming"
+                    data-value="true"
+                    aria-pressed="false"
+                >
+                    <span class="chip-dot nd-dot"></span>
+                    ND-Affirming
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="empty-state" class="empty-state" hidden>
+        <p>No goals match the current filters.</p>
+        <button type="button" class="clear-link" data-clear-trigger>Clear filters</button>
+    </div>
+
+    <div id="goal-results">
+        {grouped.map((group) => (
+            <div class="domain-group" id={group.domain} data-domain={group.domain}>
+                <h3 class="domain-heading">
+                    <i class={group.icon} style={`color: ${domainColors[group.domain]};`}></i>
+                    {group.label}
+                    <span class="domain-count" data-base-count={group.entries.length}>{group.entries.length} goals</span>
+                </h3>
+                <div class="goal-cards">
+                    {group.entries.map((entry) => (
+                        <a
+                            href={`/goals/${entry.id}/`}
+                            class="nav-card goal-card"
+                            data-support-level={entry.data.supportLevel}
+                            data-settings={entry.data.settings.join(',')}
+                            data-populations={entry.data.populations.join(',')}
+                            data-nd-affirming={entry.data.neurodiversityAffirming ? 'true' : 'false'}
+                        >
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                                <span class="goal-tag" style={`background: ${supportColors[entry.data.supportLevel]}15; color: ${supportColors[entry.data.supportLevel]};`}>
+                                    {entry.data.supportLevel}
+                                </span>
+                                {entry.data.neurodiversityAffirming && (
+                                    <span class="goal-tag nd-tag">ND-affirming</span>
+                                )}
+                                <span class="goal-tag" style="background: var(--secondary); color: var(--text-muted);">
+                                    {entry.data.severity}
+                                </span>
+                            </div>
+                            <h3>{entry.data.title}</h3>
+                            <p>{entry.data.description}</p>
+                            <div style="margin-top:0.5rem; font-size:0.7rem; color:var(--text-muted);">
+                                {entry.data.settings.join(' · ')}
+                                {entry.data.ageRange && ` · ${entry.data.ageRange}`}
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </div>
 </SectionIndexLayout>
 
+<script is:inline>
+    (() => {
+        const filterState = {
+            supportLevel: new Set(),
+            setting: new Set(),
+            population: new Set(),
+            ndAffirming: new Set(),
+        };
+
+        const chips = document.querySelectorAll('.filter-chip');
+        const cards = document.querySelectorAll('.goal-card');
+        const groups = document.querySelectorAll('.domain-group');
+        const countEl = document.getElementById('filter-count');
+        const totalCount = Number(countEl?.dataset.total || cards.length);
+        const clearBtn = document.getElementById('clear-filters');
+        const emptyState = document.getElementById('empty-state');
+
+        function cardMatches(card) {
+            const supportLevel = card.dataset.supportLevel || '';
+            const settings = (card.dataset.settings || '').split(',').filter(Boolean);
+            const populations = (card.dataset.populations || '').split(',').filter(Boolean);
+            const nd = card.dataset.ndAffirming || 'false';
+
+            if (filterState.supportLevel.size > 0 && !filterState.supportLevel.has(supportLevel)) return false;
+            if (filterState.setting.size > 0 && !settings.some(s => filterState.setting.has(s))) return false;
+            if (filterState.population.size > 0 && !populations.some(p => filterState.population.has(p))) return false;
+            if (filterState.ndAffirming.size > 0 && !filterState.ndAffirming.has(nd)) return false;
+
+            return true;
+        }
+
+        function applyFilters() {
+            let visibleCount = 0;
+            const visibleByGroup = new Map();
+
+            cards.forEach((card) => {
+                const visible = cardMatches(card);
+                card.style.display = visible ? '' : 'none';
+                if (visible) {
+                    visibleCount += 1;
+                    const group = card.closest('.domain-group');
+                    if (group) {
+                        const domain = group.dataset.domain || '';
+                        visibleByGroup.set(domain, (visibleByGroup.get(domain) || 0) + 1);
+                    }
+                }
+            });
+
+            groups.forEach((group) => {
+                const domain = group.dataset.domain || '';
+                const count = visibleByGroup.get(domain) || 0;
+                const baseCount = group.querySelector('.domain-count')?.dataset.baseCount || '0';
+                const countSpan = group.querySelector('.domain-count');
+                if (countSpan) {
+                    if (anyFilterActive()) {
+                        countSpan.textContent = `${count} of ${baseCount} goals`;
+                    } else {
+                        countSpan.textContent = `${baseCount} goals`;
+                    }
+                }
+                group.style.display = count > 0 ? '' : 'none';
+            });
+
+            if (countEl) countEl.textContent = String(visibleCount);
+            if (clearBtn) clearBtn.hidden = !anyFilterActive();
+            if (emptyState) emptyState.hidden = visibleCount > 0;
+        }
+
+        function anyFilterActive() {
+            return Object.values(filterState).some((set) => set.size > 0);
+        }
+
+        function toggleChip(chip) {
+            const filter = chip.dataset.filter;
+            const value = chip.dataset.value;
+            if (!filter || !value) return;
+            const set = filterState[filter];
+            if (!set) return;
+
+            if (set.has(value)) {
+                set.delete(value);
+                chip.setAttribute('aria-pressed', 'false');
+                chip.classList.remove('is-active');
+            } else {
+                set.add(value);
+                chip.setAttribute('aria-pressed', 'true');
+                chip.classList.add('is-active');
+            }
+            applyFilters();
+        }
+
+        function clearAll() {
+            Object.values(filterState).forEach((set) => set.clear());
+            chips.forEach((chip) => {
+                chip.setAttribute('aria-pressed', 'false');
+                chip.classList.remove('is-active');
+            });
+            applyFilters();
+        }
+
+        chips.forEach((chip) => {
+            chip.addEventListener('click', () => toggleChip(chip));
+        });
+
+        if (clearBtn) clearBtn.addEventListener('click', clearAll);
+
+        document.querySelectorAll('[data-clear-trigger]').forEach((el) => {
+            el.addEventListener('click', clearAll);
+        });
+
+        applyFilters();
+    })();
+</script>
+
 <style>
-    .goal-legend {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 0.75rem 1rem;
+    .goal-filters {
         background: var(--secondary);
         border-radius: var(--radius);
-        margin-bottom: 2rem;
-        font-size: 0.72rem;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        grid-column: 1 / -1;
+    }
+
+    .empty-state, #goal-results {
+        grid-column: 1 / -1;
+    }
+
+    .filter-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .filter-title {
         font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .filter-summary {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
         color: var(--text-muted);
     }
 
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: 6px;
+    #filter-count {
+        font-weight: 700;
+        color: var(--dark);
     }
 
-    .legend-dot {
-        width: 10px;
-        height: 10px;
+    .clear-link {
+        background: none;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--primary);
+        cursor: pointer;
+        padding: 0;
+        text-decoration: underline;
+    }
+
+    .clear-link:hover { opacity: 0.7; }
+
+    .filter-group {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 0.75rem;
+        align-items: start;
+        padding: 0.4rem 0;
+    }
+
+    .filter-group + .filter-group {
+        border-top: 1px dashed var(--border);
+    }
+
+    .filter-group-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+        padding-top: 0.3rem;
+    }
+
+    .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .filter-chip {
+        background: var(--background, white);
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        padding: 4px 10px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .filter-chip:hover {
+        border-color: var(--primary);
+        color: var(--dark);
+    }
+
+    .filter-chip.is-active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        font-weight: 600;
+    }
+
+    .filter-chip.is-active .chip-dot {
+        outline: 2px solid white;
+        outline-offset: -3px;
+    }
+
+    .filter-chip.nd-chip.is-active {
+        background: linear-gradient(135deg, #7b2d8e, #c0392b);
+        border-color: #7b2d8e;
+    }
+
+    .chip-dot {
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         flex-shrink: 0;
     }
@@ -148,6 +480,18 @@ const grouped = domainOrder
     .nd-dot {
         background: linear-gradient(135deg, #e74c3c, #e67e22, #f1c40f, #2ecc71, #3498db, #9b59b6);
     }
+
+    .empty-state {
+        background: var(--secondary);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .empty-state p { margin: 0 0 0.5rem; }
 
     .domain-group {
         margin-bottom: 2.5rem;
@@ -197,6 +541,11 @@ const grouped = domainOrder
     }
 
     @media (max-width: 768px) {
+        .filter-group {
+            grid-template-columns: 1fr;
+            gap: 0.4rem;
+        }
+        .filter-group-label { padding-top: 0; }
         .goal-cards { grid-template-columns: 1fr; }
     }
 </style>
