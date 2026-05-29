@@ -39,6 +39,7 @@ slpio.org is a multi-page Astro site for SLP/IO — a clinician-first field guid
 ### Pages (`src/pages/`)
 - `index.astro` — Home page with hero, quick start, interactive demo, explore grid, origin, sustainability, about, contact
 - Section index and slug pages for each content collection
+- `tools/` — Interactive micro-apps (not a content collection — see Tools section below)
 
 ## Content Principles
 
@@ -80,6 +81,27 @@ Goal-writing rules of thumb:
 - Pediatric framing is not adult framing scaled down. Developmental expectations, family agency, and no-coercion conditions are non-negotiable in infant and child feeding/communication goals.
 
 The filter UI on `/goals/` reads `data-support-level`, `data-settings`, `data-populations`, and `data-nd-affirming` attributes on each card. Adding a new filterable schema field requires both an entry in the filter-options arrays at the top of `src/pages/goals/index.astro` AND a `data-*` attribute on the rendered card.
+
+### Tools
+
+`/tools/` is a small section of deterministic, browser-only micro-apps that demonstrate what grounded analysis looks like — the opposite of an LLM's confident guess. Three tools today:
+
+- `/tools/phonemes/` — phoneme inventory analyzer (paste text, see what sounds it asks for)
+- `/tools/stimulability/` — sound + age quick-check (acquisition window, cues, position-filtered word list)
+- `/tools/check/` — ZPD check for AI-generated stories (sentence length, Tier-2 load, late-acquiring sounds against a target age)
+
+**Architecture.** All three share `public/tools/engine/engine.js` (analysis functions on `window.SLPIO.engine`) and `public/tools/engine/data.js` (CMU dict subset, Crowe & McLeod 2020 acquisition ages, Beck tiers, articulation phoneme metadata, elicitation cues). Engine and data are loaded via `<script is:inline src="/tools/engine/...">` from each tool page — they ship verbatim from `public/`, *not* through Astro's bundler. The inline IIFE in each page accesses the global and attaches DOM handlers. Shared styles live in `src/styles/tools.css`, imported per tool page.
+
+**Editorial framing.** Every tool page has the same three-card callout grid below the results: *What this measures*, *Where it stops*, *Why this beats asking an LLM*. This is the thesis — keep it. Removing it makes the tool look like another LLM widget instead of a reality check on one.
+
+**Hard rules:**
+- **Tools must not call LLMs.** Deterministic counters with citations. That's the whole point.
+- **Always show the math.** Counts, source attributions, and a coverage warning when dictionary lookup fails (~62% coverage on real-world inputs with the demo dict).
+- **Citations live with the result.** Crowe & McLeod (2020) for acquisition ages, Beck/McKeown/Kucan (2002) for vocabulary tiers, CMU Pronouncing Dictionary for phoneme lookup. Each tool footer links to the relevant content section (`/domains/articulation-phonology/`, `/reading/`, etc.).
+
+**Swap point for upgrading the data.** The demo dictionary (~200 words) lives in `public/tools/engine/data.js` under `SLPIO.CMU`. To take a tool to v1, drop in the full CMU dict (`cmudict-0.7b`, ~134k entries) at the same key — no engine or page changes needed. Same shape for `SLPIO.ACQUISITION` and `SLPIO.BECK_TIER` if expanding those.
+
+**Analytics.** Each tool fires Plausible custom events `tool_load` (on page load) and `tool_run` (on Analyze / Check / Show) with a `tool` prop (`phonemes` | `stimulability` | `check`).
 
 ## Design & Voice
 - Keep David's writing voice — direct, clinical, not corporate
