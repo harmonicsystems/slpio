@@ -35,12 +35,16 @@
       .toLowerCase()
       .replace(/[^a-z'\s-]/g, " ")
       .split(/\s+/)
-      .filter(Boolean);
+      // Quoted dialogue leaves stray apostrophes on tokens ("'hello", "'").
+      // Trim from the edges (keeping internal ones: "don't") and drop
+      // anything with no letters left.
+      .map(t => t.replace(/^['-]+|['-]+$/g, ""))
+      .filter(t => /[a-z]/.test(t));
   }
 
   function lookup(word) {
     if (!word) return null;
-    const w = word.toLowerCase().replace(/[^a-z']/g, "");
+    const w = word.toLowerCase().replace(/[^a-z']/g, "").replace(/^'+|'+$/g, "");
     return CMU[w] || null;
   }
 

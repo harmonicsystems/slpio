@@ -7,3 +7,6 @@ dist/
 **/.DS_Store
 .claude/
 
+# downloaded corpora for scripts/build-cmu-dict.mjs
+scripts/.cache/
+

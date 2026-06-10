@@ -60,10 +60,7 @@ import '../../styles/tools.css';
             <div class="panel">
                 <h3>Word list <span id="position-label" class="meta-label"></span></h3>
                 <div id="words"></div>
-                <p class="citation" style="border-top:0; padding-top:0.75rem; margin-top:1rem;">
-                    Drawn from a ~200-word demo dictionary. A v1 build would filter the
-                    full CMU dict by age-appropriate frequency.
-                </p>
+                <p class="citation" id="word-note" style="border-top:0; padding-top:0.75rem; margin-top:1rem;"></p>
             </div>
 
             <div class="control-row no-print">
@@ -88,12 +85,14 @@ import '../../styles/tools.css';
 
         <p class="citation">
             <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
+            Word lists: CMU Pronouncing Dictionary (cmudict-0.7b), ~48,000 everyday-English words.
             Cues are clinician-facing summaries. Related reading: <a href="/domains/articulation-phonology/">Articulation &amp; Phonology</a>.
         </p>
     </section>
 </BaseLayout>
 
 <script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/cmu.js"></script>
 <script is:inline src="/tools/engine/engine.js"></script>
 <script is:inline>
     (function () {
@@ -149,13 +148,22 @@ import '../../styles/tools.css';
                 $("cues").innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem; margin:0;">No cue snippets on file for this sound yet.</p>';
             }
 
-            const words = SLPIO.engine.wordsWith(phoneme, position || null);
+            const WORD_CAP = 48;
+            const matches = SLPIO.engine.wordsWith(phoneme, position || null);
+            // Dictionary insertion order is kid words first, then everyday
+            // frequency — so slicing before the alphabetical display sort
+            // keeps the most common words and drops the long tail.
+            const words = matches.slice(0, WORD_CAP);
             $("position-label").textContent = position
                 ? `· ${position} position`
                 : `· any position`;
             $("words").innerHTML = words.length
                 ? words.sort().map(chip).join(" ")
-                : '<p style="color: var(--text-muted); margin:0;">No matches in the demo dictionary.</p>';
+                : '<p style="color: var(--text-muted); margin:0;">No matches in the dictionary for this position.</p>';
+            $("word-note").textContent = (matches.length > WORD_CAP
+                ? `Showing the ${WORD_CAP} most common of ${matches.length.toLocaleString()} dictionary matches, ranked by everyday frequency — not by age of acquisition. `
+                : `All ${matches.length} dictionary matches shown, ranked by everyday frequency — not by age of acquisition. `)
+                + 'Position counts include clusters ("tree" counts as initial /ɹ/). Skim for age fit before printing.';
 
             $("card").classList.remove("hidden");
         }

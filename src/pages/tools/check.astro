@@ -69,6 +69,9 @@ import '../../styles/tools.css';
                 <p class="citation" style="border-top:0; padding-top:0.75rem; margin-top:1rem;">
                     Tier-2 words are high-utility, cross-domain words worth pre-teaching
                     for a target-age reader. Beck, McKeown &amp; Kucan (2002).
+                    Matched against a small curated list — there is no canonical Tier-2
+                    corpus, so a low count may just mean the list hasn't met your
+                    story's words yet. The full word list is in the page source.
                 </p>
             </div>
 
@@ -102,12 +105,14 @@ import '../../styles/tools.css';
         <p class="citation">
             <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
             Vocabulary tiers: Beck, McKeown &amp; Kucan (2002).
+            Pronunciation: CMU Pronouncing Dictionary (cmudict-0.7b), ~48,000 everyday-English words.
             Related reading: <a href="/reading/">Reading LLM writing</a> · <a href="/antipatterns/">Common antipatterns</a>.
         </p>
     </section>
 </BaseLayout>
 
 <script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/cmu.js"></script>
 <script is:inline src="/tools/engine/engine.js"></script>
 <script is:inline>
     (function () {
@@ -156,7 +161,7 @@ import '../../styles/tools.css';
 
             $("tier2-list").innerHTML = r.tier2Words.length
                 ? r.tier2Words.map(w => `<span class="word-chip">${w}</span>`).join(" ")
-                : '<span style="color: var(--text-muted); font-size:0.9rem;">None detected in the demo dictionary.</span>';
+                : '<span style="color: var(--text-muted); font-size:0.9rem;">None matched the curated Tier-2 list.</span>';
 
             $("late-list").innerHTML = r.lateAcquiringPhonemes.length
                 ? r.lateAcquiringPhonemes.map(x => chip(x.phoneme, x.count)).join(" ")

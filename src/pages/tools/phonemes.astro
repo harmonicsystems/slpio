@@ -95,7 +95,7 @@ import '../../styles/tools.css';
             </div>
             <div class="callout-card">
                 <div class="callout-head">Where it stops</div>
-                <p>It doesn't know your client's phonology, dialect, or co-articulation patterns. It can't tell you which sounds to target — only which are present. Words outside the demo dictionary are skipped (and named).</p>
+                <p>It doesn't know your client's phonology, dialect, or co-articulation patterns. It can't tell you which sounds to target — only which are present. Words outside the dictionary — usually names, invented words, or clinical jargon — are skipped and named.</p>
             </div>
             <div class="callout-card">
                 <div class="callout-head">Why this beats asking an LLM</div>
@@ -105,13 +105,14 @@ import '../../styles/tools.css';
 
         <p class="citation">
             <strong>Sources.</strong> Acquisition ages: Crowe &amp; McLeod (2020).
-            Pronunciation: CMU Pronouncing Dictionary (demo subset).
+            Pronunciation: CMU Pronouncing Dictionary (cmudict-0.7b), filtered to ~48,000 everyday-English words.
             Related reading: <a href="/domains/articulation-phonology/">Articulation &amp; Phonology</a>.
         </p>
     </section>
 </BaseLayout>
 
 <script is:inline src="/tools/engine/data.js"></script>
+<script is:inline src="/tools/engine/cmu.js"></script>
 <script is:inline src="/tools/engine/engine.js"></script>
 <script is:inline>
     (function () {
@@ -200,9 +201,9 @@ import '../../styles/tools.css';
                 note.classList.toggle("warn", cov < 70);
                 note.innerHTML =
                     `<strong>Dictionary coverage: ${cov}%.</strong> ` +
-                    `${r.unknownWords.length} word${r.unknownWords.length === 1 ? "" : "s"} not in the demo dictionary` +
-                    (r.unknownWords.length <= 10 ? `: <em>${r.unknownWords.join(", ")}</em>` : ".") +
-                    ` The scaffold ships a ~200-word subset; the full CMU dict has ~134k entries.`;
+                    `${r.unknownWords.length} word${r.unknownWords.length === 1 ? "" : "s"} not in the dictionary` +
+                    (r.unknownWords.length <= 10 ? `: <em>${r.unknownWords.join(", ")}</em>.` : ".") +
+                    ` Misses are usually names, invented words, or specialized jargon — those words aren't counted above.`;
             } else {
                 note.classList.add("hidden");
             }
