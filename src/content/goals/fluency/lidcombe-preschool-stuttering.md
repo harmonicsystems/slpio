@@ -16,7 +16,7 @@ fourQuestions:
   measurement: "as measured by parent-administered daily Severity Rating (1-10 scale), within-clinic SLP severity ratings on conversational samples, and weekly calibration between parent and clinician ratings"
 evidenceBase:
   - source: "ASHA Practice Portal: Childhood Fluency Disorders"
-    url: "https://www.asha.org/practice-portal/clinical-topics/childhood-fluency-disorders/"
+    url: "https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/"
   - source: "Onslow, M., Webber, M., Harrison, E., et al. (2020). The Lidcombe Program Treatment Guide. Australian Stuttering Research Centre."
     url: "https://www.uts.edu.au/research/australian-stuttering-research-centre/asrc-resources/lidcombe-program"
   - source: "Jones, M., Onslow, M., Packman, A., et al. (2005). Randomised controlled trial of the Lidcombe programme of early stuttering intervention. BMJ, 331(7518)."

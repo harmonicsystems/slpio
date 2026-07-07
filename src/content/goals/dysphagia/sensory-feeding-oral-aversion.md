@@ -16,7 +16,7 @@ fourQuestions:
   measurement: "as measured by therapist-completed step-hierarchy progression log, parent-completed home meal log, and pre/post Mealtime Behavior Questionnaire (or equivalent validated parent-report measure)"
 evidenceBase:
   - source: "ASHA Practice Portal: Pediatric Feeding and Swallowing"
-    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-dysphagia/"
+    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-feeding-and-swallowing/"
   - source: "Toomey, K.A., & Ross, E.S. (2011). SOS Approach to Feeding. Perspectives on Swallowing and Swallowing Disorders, 20(3)."
   - source: "Marshall, J., Hill, R.J., Ware, R.S., Ziviani, J., & Dodrill, P. (2015). Multidisciplinary intervention for childhood feeding difficulties. Journal of Pediatric Gastroenterology and Nutrition, 60(5)."
   - source: "Black, M.M., & Hurley, K.M. (2017). Responsive feeding: Strategies to promote healthy mealtime interactions. Nestle Nutrition Institute Workshop Series, 87."

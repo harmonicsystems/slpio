@@ -3,6 +3,7 @@ title: Digital Media Literacy
 description: How shifting media landscapes affect SLP practice and what "literate" even means now.
 icon: ph-duotone ph-monitor-play
 order: 1
+lastReviewed: 2026-07-07
 ---
 
 The concept of "media" has changed faster than most professional frameworks can track. For SLPs, this isn't an abstract concern. It directly affects how our students communicate, how we assess communication, and what "literate" even means.
@@ -18,11 +19,11 @@ Everyone became a publisher. Communication shifted to short-form, image-heavy, a
 ### 2018–2023 – Media = algorithmic, curated, ambient
 Feeds became personalized. Voice assistants normalized human-machine dialogue. AAC technology started converging with mainstream tools. The line between "assistive" and "everyday" tech blurred.
 
-### 2023–Present – Media = generative, synthetic, co-authored
+### 2023–2025 – Media = generative, synthetic, co-authored
 Language models produce fluent text on demand. AI-generated images and speech are indistinguishable from human-created content. The question shifts from "who wrote this" to "what process produced this."
 
-### Emerging – Media = embodied, adaptive, voice-native
-Real-time voice interfaces, ambient computing, and adaptive systems are reshaping how humans interact with information. Communication is becoming continuous, multimodal, and deeply personal.
+### 2025–Present – Media = agentic, adaptive, voice-native
+AI systems now act, not just write: booking, summarizing, drafting, and speaking in real time. Voice interfaces and adaptive systems are reshaping how humans interact with information. Communication is becoming continuous, multimodal, and deeply personal — and the process behind any given message is harder than ever to see.
 
 ## Why This Matters for SLPs
 

@@ -3,6 +3,7 @@ title: Model Quick Reference
 description: How the major language models compare for SLP-specific workflows. Practical differences, not benchmarks.
 icon: ph-duotone ph-squares-four
 order: 4
+lastReviewed: 2026-07-07
 ---
 
 Not all language models are the same. Here is how the major options compare for SLP-specific workflows: not benchmarks, but practical differences that matter in a clinical context.
@@ -34,3 +35,5 @@ Not all language models are the same. Here is how the major options compare for 
 ---
 
 > **The real answer:** The best model is the one you learn to prompt well and review critically. None of them are clinical tools. All of them are capable assistants when used within appropriate boundaries. Start with whichever you have access to and focus on developing good habits around de-identification, review, and maintaining your clinical voice.
+
+These are practical differences between model families, deliberately written without version numbers — behavior shifts with every release, but these contrasts have held. For dated, version-specific changes that affect clinical use (privacy defaults, BAA availability, new models), see [AI Updates](/ai-updates/).

@@ -7,11 +7,16 @@ interface Props {
   description?: string;
   label?: string;
   breadcrumbs?: Array<{ label: string; href: string }>;
+  lastReviewed?: Date;
 }
 
-const { title, description, label, breadcrumbs = [] } = Astro.props;
+const { title, description, label, breadcrumbs = [], lastReviewed } = Astro.props;
 const plainTitle = title.replace(/<[^>]+>/g, '');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+// timeZone UTC: frontmatter date-only values parse as UTC midnight;
+// local-time formatting would drift the label a day early.
+const reviewedLabel = lastReviewed?.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 const articleJsonLd = {
     "@context": "https://schema.org",
@@ -30,6 +35,7 @@ const articleJsonLd = {
     "mainEntityOfPage": canonicalUrl,
     "articleSection": label || '',
     "inLanguage": "en-US",
+    ...(lastReviewed && { "dateModified": lastReviewed.toISOString().slice(0, 10) }),
 };
 ---
 
@@ -50,6 +56,9 @@ const articleJsonLd = {
             {label && <div class="section-label">{label}</div>}
             <h2><Fragment set:html={title} /></h2>
             {description && <p class="section-intro">{description}</p>}
+            {reviewedLabel && (
+                <p class="last-reviewed"><i class="ph ph-check-circle"></i> Last reviewed {reviewedLabel}</p>
+            )}
         </div>
 
         <div class="prose">
@@ -131,6 +140,18 @@ const articleJsonLd = {
 </BaseLayout>
 
 <style is:global>
+    .last-reviewed {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        margin-top: 0.6rem;
+    }
+
+    .last-reviewed i { color: var(--accent-green); }
+
     .code-block-wrap {
         position: relative;
     }

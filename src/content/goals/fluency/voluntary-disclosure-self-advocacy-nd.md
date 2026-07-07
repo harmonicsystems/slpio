@@ -16,7 +16,7 @@ fourQuestions:
   measurement: "as measured by student self-report log, optional partner debrief, and SLP review with the student"
 evidenceBase:
   - source: "ASHA Practice Portal: Childhood Fluency Disorders"
-    url: "https://www.asha.org/practice-portal/clinical-topics/childhood-fluency-disorders/"
+    url: "https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/"
   - source: "Constantino, C.D. (2018). Stuttering pride: Spontaneous stuttering. Seminars in Speech and Language, 39(4)."
   - source: "Byrd, C.T., Croft, R., Gkalitsiou, Z., & Hampton, E. (2017). Clinical utility of self-disclosure for adults who stutter. Journal of Fluency Disorders, 51."
   - source: "Yaruss, J.S., & Quesal, R.W. (2006). Overall Assessment of the Speaker's Experience of Stuttering (OASES). Journal of Fluency Disorders, 31(2)."

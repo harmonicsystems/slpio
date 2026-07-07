@@ -4,6 +4,7 @@ aliases: ["context length", "context limit", "memory", "token limit"]
 slpDefinition: "The model's working memory: the total amount of text it can 'hold in mind' during a conversation. Think of it like auditory memory span: just as a patient with reduced working memory loses the beginning of a long instruction, an LLM loses access to earlier parts of a conversation when the context window fills up. Once information falls outside the window, the model doesn't remember it."
 techDefinition: "The fixed-length sequence of tokens that a transformer model can attend to during inference. All input tokens (system prompt, conversation history, user message) and output tokens must fit within this window. Information beyond the window boundary is not accessible to the model's attention mechanism."
 order: 6
+lastReviewed: 2026-07-07
 ---
 
 ## Why SLPs Need to Know This
@@ -21,7 +22,7 @@ If you've ever had a long conversation with ChatGPT or Claude and noticed the mo
 1. **Start fresh for important tasks.** Don't rely on a long conversation thread for clinical documentation
 2. **Repeat critical instructions.** If your conversation is getting long, restate key constraints ("Remember: do not add findings I didn't report")
 3. **Front-load the most important information.** Models tend to attend best to the beginning and end of the context window
-4. **Know your tool's window size.** GPT-4 offers 128K tokens; Claude offers 200K tokens. Larger windows cost more but handle longer documents
+4. **Know your tool's window size.** Current major models offer windows in the hundreds of thousands of tokens — hundreds of pages — but the exact number changes with every model release. Check your provider's documentation rather than memorizing a figure, and watch [AI Updates](/ai-updates/) for changes that matter clinically
 
 ## Related Terms
 

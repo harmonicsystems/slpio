@@ -1,6 +1,11 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+// Set when a human (or verified agent pass) last checked the entry against
+// current reality — model capabilities, policy, citations. Surfaced on the
+// page and reported by `npm run freshness`. Absent = never reviewed.
+const lastReviewed = z.coerce.date().optional();
+
 const foundations = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/foundations' }),
   schema: z.object({
@@ -8,6 +13,7 @@ const foundations = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -29,6 +35,7 @@ const settings = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -39,6 +46,7 @@ const domains = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -49,6 +57,7 @@ const resources = defineCollection({
     description: z.string(),
     icon: z.string().optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -80,6 +89,7 @@ const prompts = defineCollection({
     clinicalFrameworks: z.array(z.string()).optional(),
     ashaPrinciples: z.array(z.string()).optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -94,6 +104,7 @@ const workflows = defineCollection({
     estimatedTime: z.string(),
     difficulty: difficultyEnum,
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -107,6 +118,7 @@ const patterns = defineCollection({
     settings: z.array(settingEnum),
     populations: z.array(populationEnum),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -122,6 +134,7 @@ const antipatterns = defineCollection({
     severity: z.enum(['critical', 'major', 'minor']),
     settings: z.array(settingEnum).optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -133,6 +146,7 @@ const glossary = defineCollection({
     slpDefinition: z.string(),
     techDefinition: z.string(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -149,6 +163,7 @@ const casestudies = defineCollection({
     aiRole: z.string(),
     outcome: z.string(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -164,6 +179,7 @@ const research = defineCollection({
     relevance: z.enum(['direct', 'cross-disciplinary', 'foundational']),
     topics: z.array(z.string()),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -175,6 +191,7 @@ const policies = defineCollection({
     setting: settingEnum,
     audience: z.string(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -222,6 +239,7 @@ const goals = defineCollection({
     })).min(1),
     relatedGoals: z.array(z.string()).optional(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -233,6 +251,7 @@ const reading = defineCollection({
     title: z.string(),
     description: z.string(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 
@@ -253,6 +272,7 @@ const aiupdates = defineCollection({
     ])),
     clinicalImpact: z.string(),
     order: z.number(),
+    lastReviewed,
   }),
 });
 

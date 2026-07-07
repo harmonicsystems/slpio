@@ -2,8 +2,9 @@
 term: "Model"
 aliases: ["AI model", "language model", "LLM", "large language model"]
 slpDefinition: "A trained AI system that generates text by predicting what comes next. Think of it like a clinician's accumulated knowledge and pattern recognition, except it has no clinical judgment, no ethics, no licensure, and no understanding of what it's saying. It recognizes patterns in language. It does not understand patients."
-techDefinition: "A neural network trained on large volumes of text data to predict the probability of the next token in a sequence. Models like GPT-4, Claude, and Gemini are transformer-based architectures with billions of parameters that encode statistical relationships between words, but contain no explicit knowledge base or reasoning engine."
+techDefinition: "A neural network trained on large volumes of text data to predict the probability of the next token in a sequence. The major model families (ChatGPT, Claude, Gemini) are transformer-based architectures with billions of parameters that encode statistical relationships between words, but contain no explicit knowledge base or reasoning engine."
 order: 11
+lastReviewed: 2026-07-07
 ---
 
 ## Why SLPs Need to Know This
@@ -18,7 +19,7 @@ A model is like a graduate student who has read every textbook and journal artic
 
 - Models produce output that reads as confident regardless of accuracy
 - No model has been trained specifically on your client's needs, your setting, or your state's regulations
-- Different models (GPT-4, Claude, Gemini) have different strengths and failure modes; none are validated clinical tools
+- Different model families (ChatGPT, Claude, Gemini) have different strengths and failure modes; none are validated clinical tools
 - A model cannot tell you when it's wrong, and it will not flag its own errors
 
 ## Related Terms

@@ -16,7 +16,7 @@ fourQuestions:
   measurement: "as measured by caregiver-reported feeding log and SLP observation (in-person or via video review), with periodic team consultation if oral motor patterns or distress signals are atypical"
 evidenceBase:
   - source: "ASHA Practice Portal: Pediatric Feeding and Swallowing"
-    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-dysphagia/"
+    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-feeding-and-swallowing/"
   - source: "Arvedson, J.C., & Brodsky, L. (2002). Pediatric Swallowing and Feeding: Assessment and Management (2nd ed.). Singular."
   - source: "Delaney, A.L., & Arvedson, J.C. (2008). Development of swallowing and feeding: Prenatal through first year of life. Developmental Disabilities Research Reviews, 14(2)."
   - source: "WHO Complementary Feeding Guidelines (2003 / updated). World Health Organization."

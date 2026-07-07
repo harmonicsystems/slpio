@@ -37,7 +37,9 @@ SLP/IO launched as a portfolio of speech-language pathology coding projects.
 ## What's Coming
 
 - **ASD Goal Bank** – Individualized, non-generic goal examples for students with Autism Spectrum Disorder
-- **Media Literacy Toolkit** – Practical resources for teaching digital media literacy through a communication science lens
-- **Community Contributions** – Open the guide to peer-reviewed additions from practicing SLPs and educators
-- **Interactive PHI Checker** – Restored interactive compliance questionnaire
-- **Chat Assistant** – Restored Claude-powered clinical workflow assistant
+- **Content elevation pass** – Deepening the thinnest entries (Settings, Tasks, parts of the Glossary) with worked examples and setting-specific realities, drafted with LLM tools and reviewed clinically — the same workflow this guide teaches
+- **Over-reliance antipatterns** – New worked examples on automation bias and authority bias: what happens when the reading stops
+- **ASD-specific goal expansion** – The goal bank includes neurodiversity-affirming goals today; a dedicated autism-specific set with lived-experience sources is planned
+- **Media Literacy Toolkit** – On hold; the [media literacy overview](/resources/media-literacy/) stands in the meantime
+
+*Delivered from earlier roadmaps: the interactive PHI checker (on [PHI Safety](/foundations/phi-safety/)), the chat assistant (site-wide), and community contributions via the [specimen submission form](/reading/#submit).*

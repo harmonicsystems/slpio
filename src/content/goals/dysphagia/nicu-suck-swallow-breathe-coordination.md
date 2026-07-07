@@ -16,7 +16,7 @@ fourQuestions:
   measurement: "as measured by SLP bedside observation, cue-based feeding readiness assessment (e.g., Preterm Infant Oral Feeding Readiness Assessment Scale [PIOFRAS] or Early Feeding Skills [EFS]), bedside vitals monitoring, and intake documentation"
 evidenceBase:
   - source: "ASHA Practice Portal: Pediatric Feeding and Swallowing"
-    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-dysphagia/"
+    url: "https://www.asha.org/practice-portal/clinical-topics/pediatric-feeding-and-swallowing/"
   - source: "Lau, C. (2015). Development of suck and swallow mechanisms in infants. Annals of Nutrition and Metabolism, 66 Suppl 5."
   - source: "Thoyre, S.M., Shaker, C.S., & Pridham, K.F. (2005). The Early Feeding Skills Assessment for preterm infants. Neonatal Network, 24(3)."
   - source: "Shaker, C.S. (2013). Cue-based feeding in the NICU: Using the infant's communication as a guide. Neonatal Network, 32(6)."
