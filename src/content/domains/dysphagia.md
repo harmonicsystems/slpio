@@ -118,3 +118,5 @@ When writing about diet levels, use the IDDSI framework consistently <cite data-
 - [Compliance](/tasks/compliance/): Prior authorization for instrumental evals
 - [Medical & Acute Care](/settings/medical-acute/): Hospital documentation context
 - [SNF & Rehab](/settings/snf-rehab/): Functional outcomes and discharge planning
+
+**See it in practice:** [Case study — MBSS documentation and the diet-recommendation error an SLP caught](/case-studies/medical-dysphagia-documentation/).

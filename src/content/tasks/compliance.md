@@ -33,3 +33,9 @@ IDEA requires that IEP goals are measurable, address the child's disability-rela
 ## Medicaid Billing Documentation
 
 Documentation must support the billing code used. LLMs can help ensure your note structure includes the elements required by your state's Medicaid program, but the clinical details must be accurate and your own.
+
+## Related
+
+- **Prompt:** [Prior Authorization Letter](/prompts/prior-authorization-letter/)
+- **Workflow:** [Discharge Planning (Medical)](/workflows/discharge-planning-medical/)
+- **Also:** [PHI Safety](/foundations/phi-safety/) · [Policy templates](/policies/) for your setting

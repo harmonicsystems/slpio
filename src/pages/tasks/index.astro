@@ -4,12 +4,15 @@ import { getCollection } from 'astro:content';
 
 const entries = await getCollection('tasks');
 const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const workflows = (await getCollection('workflows'))
+    .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <SectionIndexLayout
     title="<span class='accent'>Tasks</span>"
-    label="Workflows by Task"
-    description="The 'I need to do X right now' entry point. Each task includes domain-specific guidance, prompt templates, and before/after examples."
+    label="Do the Work"
+    description="The 'I need to do X right now' entry point. Each task includes domain-specific guidance, prompt templates, and before/after examples — and links to the multi-step workflows and copyable prompts that go with it."
     reflection="The task you're doing right now has constraints the tool doesn't know: your caseload, the report due tomorrow, the family who needs plain language. The output may be structurally correct and still miss the context that makes it useful."
 >
     {sorted.map((entry) => (
@@ -19,4 +22,51 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
             <p>{entry.data.description}</p>
         </a>
     ))}
+
+    <div class="tier-header">
+        <h3>Multi-Step Workflows</h3>
+        <p>Not every clinical task is a single prompt. These walk through longer sequences, with decision points where your clinical judgment overrides the tool.</p>
+    </div>
+
+    {workflows.map((entry) => (
+        <a href={`/workflows/${entry.id}/`} class="nav-card">
+            <div class="wf-meta">
+                <span><i class="ph ph-steps"></i> {entry.data.stepCount} steps</span>
+                <span><i class="ph ph-clock"></i> {entry.data.estimatedTime}</span>
+                <span style="text-transform:capitalize;">{entry.data.difficulty}</span>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+        </a>
+    ))}
 </SectionIndexLayout>
+
+<style>
+    .tier-header {
+        grid-column: 1 / -1;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .tier-header h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .tier-header p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 640px;
+    }
+
+    .wf-meta {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        font-family: 'Poppins', sans-serif;
+    }
+</style>

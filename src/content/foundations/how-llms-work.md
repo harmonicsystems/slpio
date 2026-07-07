@@ -9,19 +9,21 @@ You don't need to understand transformer architectures to use language models we
 
 ## What a language model does
 
-A large language model (LLM) is a system trained on enormous amounts of text to predict what comes next in a sequence. When you type a prompt, it generates a response by predicting the most likely continuation, word by word.
+A large language model (LLM) is a system trained on enormous amounts of text to predict what comes next in a sequence. When you type a [prompt](/glossary/prompt/), it generates a response by predicting the most likely continuation, [token](/glossary/token/) by token.
 
 This means:
 
 - **It doesn't "know" things.** It produces text that statistically resembles what it was trained on.
 - **It doesn't reason.** It pattern-matches. When the output looks like reasoning, that's because reasoning-shaped text was common in its training data.
-- **It doesn't remember your students.** Each conversation starts fresh (unless you're using a tool with memory features, which has its own privacy implications).
+- **It doesn't remember your students.** Each conversation starts fresh, bounded by its [context window](/glossary/context-window/) (unless you're using a tool with memory features, which has its own privacy implications).
+
+Every technical term here is defined from both the clinical and technical side in the [glossary](/glossary/).
 
 ## Why this matters for clinical work
 
 Understanding this helps you predict failure modes:
 
-- **Hallucination:** The model will confidently generate plausible-sounding details it invented. This is not a bug; it's how the system works. Always verify.
+- **[Hallucination](/glossary/hallucination/):** The model will confidently generate plausible-sounding details it invented. This is not a bug; it's how the system works. Always verify.
 - **Generic output:** The model defaults to the most common patterns in its training data. Clinical writing that sounds "professional but generic" is the model doing exactly what it's designed to do. Your job is to push past that.
 - **Confidentiality gaps:** The model doesn't understand HIPAA. It processes whatever you give it. The responsibility for de-identification is entirely yours.
 

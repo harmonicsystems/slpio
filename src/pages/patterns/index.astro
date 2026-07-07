@@ -9,7 +9,7 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
 <SectionIndexLayout
     title="Clinical <span class='accent'>Patterns</span>"
     label="Patterns"
-    description="Your clinical philosophy shapes how you should prompt an LLM. These patterns map clinical orientations (naturalistic, discrete trial, family-centered) to specific LLM interaction strategies. This is the piece nobody else is doing."
+    description="Your clinical orientation shapes how you should prompt an LLM. These patterns map orientations (naturalistic, discrete trial, family-centered) to specific LLM interaction strategies. For the mechanics of prompt structure itself, start with Anatomy of a Clinical Prompt in Foundations."
     reflection="Your clinical orientation isn't just a preference — it shapes what you notice, measure, and consider progress. If the output doesn't match your orientation, that's clinical information worth paying attention to."
 >
     {sorted.map((entry) => (

@@ -1,11 +1,11 @@
 ---
-title: Prompt Patterns
-description: Templates give you a starting point. Patterns teach you why they work, so you can write better prompts on your own.
+title: Anatomy of a Clinical Prompt
+description: Templates give you a starting point. Understanding the structure underneath teaches you why they work, so you can write better prompts on your own.
 icon: ph-duotone ph-puzzle-piece
 order: 6
 ---
 
-Templates give you a starting point. Patterns teach you why they work, so you can write better prompts on your own, for any situation.
+Templates give you a starting point. Understanding the structure underneath teaches you why they work, so you can write better prompts on your own, for any situation. (Looking for how your *clinical orientation* shapes prompting — naturalistic, discrete trial, family-centered? That's [Clinical Patterns](/patterns/).)
 
 ## Pattern 01. Set your role
 

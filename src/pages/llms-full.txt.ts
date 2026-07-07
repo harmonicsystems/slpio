@@ -15,7 +15,7 @@ function stripMarkdown(text: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies] = await Promise.all([
+  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies, goals, aiupdates, reading] = await Promise.all([
     getCollection('foundations'),
     getCollection('tasks'),
     getCollection('settings'),
@@ -29,6 +29,9 @@ export const GET: APIRoute = async () => {
     getCollection('casestudies'),
     getCollection('research'),
     getCollection('policies'),
+    getCollection('goals'),
+    getCollection('aiupdates'),
+    getCollection('reading'),
   ]);
 
   const sections = [
@@ -44,6 +47,9 @@ export const GET: APIRoute = async () => {
     { name: 'Case Studies', path: 'case-studies', entries: casestudies.sort((a, b) => a.data.order - b.data.order) },
     { name: 'Research Digests', path: 'research', entries: research.sort((a, b) => a.data.order - b.data.order) },
     { name: 'Policy Templates', path: 'policies', entries: policies.sort((a, b) => a.data.order - b.data.order) },
+    { name: 'Goal Bank', path: 'goals', entries: goals.sort((a, b) => a.id.localeCompare(b.id)) },
+    { name: 'Reading LLM Writing', path: 'reading', entries: reading.sort((a, b) => a.data.order - b.data.order) },
+    { name: 'AI Updates', path: 'ai-updates', entries: aiupdates.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()) },
     { name: 'Resources', path: 'resources', entries: resources.sort((a, b) => a.data.order - b.data.order) },
   ];
 

@@ -1,5 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const antipatterns = (await getCollection('antipatterns'))
+    .sort((a, b) => a.data.order - b.data.order);
+
+const severityColors: Record<string, string> = {
+    'critical': 'var(--accent-red)',
+    'major': 'var(--accent-amber)',
+    'minor': 'var(--text-muted)',
+};
 ---
 
 <BaseLayout title="Reading LLM-Generated Clinical Writing" description="Develop the skill of critically reading LLM-generated clinical text — your own and others'.">
@@ -46,7 +56,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                     <span>Goals that are measurable on paper but not observable or achievable in the actual clinical context</span>
                 </div>
             </div>
-            <p class="reading-stub">More patterns coming. <a href="#submit">Contributions welcome.</a></p>
+            <p class="reading-stub">More patterns coming. <a href="#submit">Contributions welcome.</a> Unfamiliar terms along the way? The <a href="/glossary/">glossary</a> defines each one from both the clinical and technical side.</p>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Antipatterns: the worked examples ── -->
+    <section id="antipatterns">
+        <div class="reading-content">
+            <h3><i class="ph-duotone ph-warning"></i> Antipatterns: The Worked Examples</h3>
+            <p>The patterns above are the theory. These are the practice: concrete before-and-after examples of LLM output that looks plausible and fails clinically — what went wrong, why the model produced it, and exactly how to fix it.</p>
+        </div>
+        <div class="antipattern-grid">
+            {antipatterns.map((entry) => (
+                <a href={`/antipatterns/${entry.id}/`} class="nav-card">
+                    <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+                        <span class="severity-tag" style={`background: ${severityColors[entry.data.severity]}15; color: ${severityColors[entry.data.severity]};`}>
+                            {entry.data.severity}
+                        </span>
+                        <span class="severity-tag" style="background: var(--secondary); color: var(--text-muted);">
+                            {entry.data.category.replace(/-/g, ' ')}
+                        </span>
+                    </div>
+                    <h4>{entry.data.title}</h4>
+                    <p>{entry.data.description}</p>
+                </a>
+            ))}
         </div>
     </section>
 
@@ -218,6 +254,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         font-size: 0.82rem;
         color: var(--text-muted);
         line-height: 1.5;
+    }
+
+    .antipattern-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        max-width: 960px;
+        margin: 1.5rem auto 0;
+        padding: 0 1rem;
+    }
+
+    .antipattern-grid h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .antipattern-grid p {
+        font-size: 0.82rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    .severity-tag {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
     }
 
     .phi-warning {

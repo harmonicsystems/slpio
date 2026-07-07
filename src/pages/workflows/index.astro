@@ -12,6 +12,9 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
     description="Not every clinical task is a single prompt. These workflows walk you through multi-step sequences, with decision points where your clinical judgment overrides the tool."
     reflection="A workflow structures your process. It can't tell you when to deviate. The decision points marked here are where the tool stops and you start."
 >
+    <div class="section-home-note">
+        Part of <a href="/tasks/">Tasks</a> — start there to find the right workflow for what you're doing.
+    </div>
     {sorted.map((entry) => (
         <a href={`/workflows/${entry.id}/`} class="nav-card">
             <div style="display:flex; gap:0.75rem; margin-bottom:0.75rem; font-size:0.7rem; color:var(--text-muted); font-family:'Poppins',sans-serif;">
@@ -24,3 +27,16 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
         </a>
     ))}
 </SectionIndexLayout>
+
+<style>
+    .section-home-note {
+        grid-column: 1 / -1;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        padding: 0.5rem 0.85rem;
+        background: var(--secondary);
+        border-radius: var(--radius-sm);
+        border-left: 3px solid var(--primary);
+    }
+</style>

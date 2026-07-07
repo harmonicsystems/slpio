@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies] = await Promise.all([
+  const [foundations, tasks, settings, domains, resources, prompts, workflows, patterns, antipatterns, glossary, casestudies, research, policies, goals, aiupdates, reading] = await Promise.all([
     getCollection('foundations'),
     getCollection('tasks'),
     getCollection('settings'),
@@ -16,6 +16,9 @@ export const GET: APIRoute = async () => {
     getCollection('casestudies'),
     getCollection('research'),
     getCollection('policies'),
+    getCollection('goals'),
+    getCollection('aiupdates'),
+    getCollection('reading'),
   ]);
 
   const index = [
@@ -122,6 +125,30 @@ export const GET: APIRoute = async () => {
       layer: 'Policies',
       icon: '',
       body: (e.data.audience + ' ' + (e.body || '')),
+    })),
+    ...goals.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/goals/${e.id}/`,
+      layer: 'Goal Bank',
+      icon: '',
+      body: (e.data.subdomain + ' ' + Object.values(e.data.fourQuestions).join(' ') + ' ' + (e.body || '')),
+    })),
+    ...aiupdates.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/ai-updates/${e.id}/`,
+      layer: 'AI Updates',
+      icon: '',
+      body: (e.data.clinicalImpact + ' ' + (e.body || '')),
+    })),
+    ...reading.map((e) => ({
+      title: e.data.title,
+      description: e.data.description,
+      url: `/reading/${e.id}/`,
+      layer: 'Reading',
+      icon: '',
+      body: e.body || '',
     })),
   ];
 

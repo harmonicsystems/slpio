@@ -64,3 +64,9 @@ If any answer is missing, the goal is not ready for a legal document, a medical 
 *Which cognitive-communication skills? What does "improved" look like? What daily activities?*
 
 **After:** "Given a structured multi-step activity (e.g., meal preparation sequence, medication management task), patient will complete 3-step written directions with no more than 1 verbal cue per step in 4 out of 5 trials across 2 consecutive sessions."
+
+## Related
+
+- **Goal Bank** — [40 measurable, evidence-referenced goals](/goals/) organized by domain, each with individualization guidance
+- **Prompts:** [IEP Goal Strengthener](/prompts/iep-goal-strengthener/) · [Cognitive-Linguistic Goal Writer](/prompts/cognitive-linguistic-goal-writer/)
+- **Workflow:** [IEP Meeting Prep](/workflows/iep-meeting-prep/)

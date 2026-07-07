@@ -31,3 +31,9 @@ You'll still need to pair the text with images appropriate for the student.
 Generating parent-friendly carryover activities is a strong use case. The model can translate your clinical targets into everyday practice suggestions.
 
 > "I am working on [target skill] with a [age]-year-old. Suggest 5 home practice activities a parent could do in everyday routines. Keep the language simple and the activities practical. Do not include clinical jargon."
+
+## Related
+
+- **Prompt:** [Therapy Activity Generator](/prompts/therapy-activity-generator/)
+- **Workflow:** [Home Program Creation](/workflows/home-program-creation/)
+- **Also:** [Tools](/tools/) — deterministic phoneme analysis and word lists for materials you're building, no LLM guessing

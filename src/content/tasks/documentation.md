@@ -57,3 +57,8 @@ I am an SLP preparing a discharge summary for a patient in [acute care / inpatie
 ```
 I am a medical SLP. Here are my raw observations from an instrumental swallowing evaluation (no patient identifiers included). Help me organize these into a structured report with: referral reason, oral phase findings, pharyngeal phase findings, Penetration-Aspiration Scale ratings per consistency, compensatory strategy trials and their effects, and clinical recommendations. Do not add findings I did not observe. Do not recommend diet levels. I will determine those.
 ```
+
+## Related
+
+- **Prompts:** [SOAP Note Formatter](/prompts/soap-note-formatter/) · [Progress Note Organizer (School)](/prompts/progress-note-organizer-school/) · [Dysphagia Bedside Note](/prompts/dysphagia-bedside-note/)
+- **Workflows:** [Evaluation Report Writing](/workflows/eval-report-writing/) · [Progress Monitoring in Batches](/workflows/progress-monitoring-batch/)

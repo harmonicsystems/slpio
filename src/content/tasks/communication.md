@@ -40,3 +40,8 @@ For medical settings, creating plain-language handouts for patients and caregive
 - Home exercise programs
 - Compensatory strategy reminders
 - Caregiver training summaries
+
+## Related
+
+- **Prompts:** [Parent Email Draft](/prompts/parent-email-draft/) · [Parent-Friendly Summary](/prompts/parent-friendly-summary/)
+- **Workflow:** [IEP Meeting Prep](/workflows/iep-meeting-prep/)

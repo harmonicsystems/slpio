@@ -27,3 +27,5 @@ SNF and rehab SLPs balance functional outcomes, insurance justification, and pro
 - [Discharge Summary Draft](/tasks/documentation/)
 - [Prior Authorization / Medical Necessity](/tasks/compliance/)
 - [Goal Writing – Medical Examples](/tasks/writing-goals/)
+
+**See it in practice:** [Case study — SNF progress notes](/case-studies/snf-progress-notes/).

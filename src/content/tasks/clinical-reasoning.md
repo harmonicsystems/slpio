@@ -27,3 +27,9 @@ The model can help you identify patterns across your caseload: grouping students
 Useful for CEU planning, clinical questions, or staying current, but **always verify citations**. LLMs can and do hallucinate references.
 
 > "Summarize the current evidence on [topic]. Include author names and years so I can verify the sources independently. Flag any claims you are less confident about."
+
+## Related
+
+- **Prompt:** [Ethical Reflection](/prompts/ethical-reflection-prompt/)
+- **Workflow:** [CFY Supervision Feedback](/workflows/cfy-supervision-feedback/)
+- **Also:** [Ethical Decision Tree](/foundations/ethical-decision-tree/) · [Case study: grad student supervision](/case-studies/grad-student-supervision/)

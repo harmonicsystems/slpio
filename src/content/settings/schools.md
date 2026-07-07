@@ -48,3 +48,5 @@ School-based SLPs face unique documentation demands: IEPs that carry legal weigh
 - [Parent Email Draft](/tasks/communication/)
 - [Ethical Reflection](/tasks/compliance/)
 - [Jargon Simplifier](/tasks/communication/)
+
+**See it in practice:** [Case study — eval season, 8 referrals in 3 weeks](/case-studies/school-eval-season/).

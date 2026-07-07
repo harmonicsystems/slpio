@@ -35,9 +35,23 @@ const relevanceColors: Record<string, string> = {
             </div>
         </a>
     ))}
+
+    <div class="section-foot-note">
+        Every source cited across the guide is collected in the <a href="/resources/references/">full reference list</a>.
+    </div>
 </SectionIndexLayout>
 
 <style>
+    .section-foot-note {
+        grid-column: 1 / -1;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        margin-top: 0.5rem;
+    }
+
     .research-tag {
         font-family: 'Poppins', sans-serif;
         font-size: 0.6rem;

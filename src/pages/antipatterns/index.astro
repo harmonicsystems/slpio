@@ -18,6 +18,9 @@ const severityColors: Record<string, string> = {
     description="Concrete before-and-after examples of bad LLM use in clinical practice. Each antipattern shows what went wrong, why the model produced it, and exactly how to fix it."
     reflection="These examples show output that looks plausible but fails clinically. The harder question: would you catch the problem if you were tired, behind on paperwork, and the phrasing was smooth?"
 >
+    <div class="section-home-note">
+        Part of <a href="/reading/">Reading LLM Writing</a> — the skill these examples train.
+    </div>
     {sorted.map((entry) => (
         <a href={`/antipatterns/${entry.id}/`} class="nav-card">
             <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
@@ -35,6 +38,17 @@ const severityColors: Record<string, string> = {
 </SectionIndexLayout>
 
 <style>
+    .section-home-note {
+        grid-column: 1 / -1;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        padding: 0.5rem 0.85rem;
+        background: var(--secondary);
+        border-radius: var(--radius-sm);
+        border-left: 3px solid var(--primary);
+    }
+
     .severity-tag {
         font-family: 'Poppins', sans-serif;
         font-size: 0.6rem;
