@@ -1,0 +1,7 @@
+name = "slpio-chat"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# After deploying, add your API key as an encrypted secret:
+#   wrangler secret put ANTHROPIC_API_KEY
+# Then paste your key when prompted.
