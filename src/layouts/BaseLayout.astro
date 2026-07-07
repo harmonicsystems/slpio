@@ -7,7 +7,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'A free clinical knowledge resource for SLPs — because the people writing goals, reports, and session notes deserve to shape how that work gets done.' } = Astro.props;
+const { title, description = 'A free clinical knowledge resource for SLPs — tools for writing with LLMs and the skill to read what comes back.' } = Astro.props;
 const plainTitle = title.replace(/<[^>]+>/g, '');
 ---
 
@@ -79,6 +79,7 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                 <a href="/prompts/">Prompts</a>
                 <a href="/tools/">Tools</a>
                 <a href="/workflows/">Workflows</a>
+                <a href="/reading/">Reading</a>
                 <a href="/domains/">Domains</a>
                 <div class="nav-more" id="nav-more">
                     <button class="nav-more-btn" id="nav-more-btn">More <i class="ph ph-caret-down"></i></button>
@@ -91,6 +92,7 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                         <a href="/case-studies/">Case Studies</a>
                         <a href="/research/">Research</a>
                         <a href="/policies/">Policies</a>
+                        <a href="/ai-updates/">AI Updates</a>
                         <a href="/resources/">Resources</a>
                     </div>
                 </div>
@@ -123,9 +125,11 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
         </div>
         <div class="mobile-nav-group">
             <div class="mobile-nav-label">Verify</div>
+            <a href="/reading/">Reading LLM Writing</a>
             <a href="/antipatterns/">Antipatterns</a>
             <a href="/case-studies/">Case Studies</a>
             <a href="/policies/">Policies</a>
+            <a href="/ai-updates/">AI Updates</a>
             <a href="/resources/">Resources</a>
         </div>
     </div>
@@ -149,15 +153,15 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                     <a href="/prompts/">Prompts</a>
                     <a href="/tools/">Tools</a>
                     <a href="/workflows/">Workflows</a>
+                    <a href="/reading/">Reading</a>
                     <a href="/domains/">Domains</a>
-                    <a href="/glossary/">Glossary</a>
                 </div>
                 <div class="footer-col">
                     <div class="footer-heading">Resources</div>
                     <a href="/case-studies/">Case Studies</a>
                     <a href="/research/">Research</a>
+                    <a href="/ai-updates/">AI Updates</a>
                     <a href="/policies/">Policies</a>
-                    <a href="/patterns/">Patterns</a>
                     <a href="/resources/">Resources</a>
                 </div>
                 <div class="footer-col">
@@ -166,6 +170,9 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
                     <a href="mailto:harmonicsystems.io@gmail.com"><i class="ph ph-envelope-simple"></i> Email</a>
                     <a href="https://reddit.com/r/slp" target="_blank"><i class="ph ph-reddit-logo"></i> r/slp</a>
                 </div>
+            </div>
+            <div class="footer-cta">
+                Have an LLM-generated clinical artifact you've been thinking about? <a href="/reading/#submit">Share it.</a>
             </div>
             <div class="footer-bottom">
                 <span>v3.0 &middot; Field Guide Edition &middot; Built in Kinderhook, NY</span>
@@ -433,6 +440,19 @@ const plainTitle = title.replace(/<[^>]+>/g, '');
 
     .footer-col a:hover { color: #a8e6cf; }
     .footer-col a i { font-size: 0.85rem; }
+
+    .footer-cta {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.35);
+    }
+    .footer-cta a {
+        color: #a8e6cf;
+        text-decoration: none;
+    }
+    .footer-cta a:hover { text-decoration: underline; }
 
     .footer-bottom {
         display: flex;

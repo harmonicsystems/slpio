@@ -5,9 +5,10 @@ interface Props {
   title: string;
   description?: string;
   label?: string;
+  reflection?: string;
 }
 
-const { title, description, label } = Astro.props;
+const { title, description, label, reflection } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +17,7 @@ const { title, description, label } = Astro.props;
             {label && <div class="section-label">{label}</div>}
             <h2><Fragment set:html={title} /></h2>
             {description && <p class="section-intro">{description}</p>}
+            {reflection && <p class="section-reflection">{reflection}</p>}
         </div>
 
         <div class="card-grid" style="margin-top: 2rem;">
@@ -23,3 +25,16 @@ const { title, description, label } = Astro.props;
         </div>
     </section>
 </BaseLayout>
+
+<style>
+    .section-reflection {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        border-left: 2px solid var(--border);
+        padding-left: 1rem;
+        margin-top: 0.75rem;
+        max-width: 640px;
+        line-height: 1.6;
+        font-style: italic;
+    }
+</style>

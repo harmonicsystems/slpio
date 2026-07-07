@@ -19,6 +19,7 @@ const settingColors: Record<string, string> = {
     title="Case <span class='accent'>Studies</span>"
     label="Real-World Scenarios"
     description="De-identified clinical scenarios showing how SLPs integrate LLMs into actual workflows: what worked, what didn't, and what to watch for."
+    reflection="Every case study is someone else's context. The value is in noticing where their constraints differ from yours, not in replicating their approach."
 >
     {sorted.map((entry) => (
         <a href={`/case-studies/${entry.id}/`} class="nav-card">

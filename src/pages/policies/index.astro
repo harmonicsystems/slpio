@@ -19,6 +19,7 @@ const settingColors: Record<string, string> = {
     title="Policy <span class='accent'>Templates</span>"
     label="Governance & Compliance"
     description="Adaptable AI use policy templates for different clinical settings. Each template addresses documentation standards, PHI protections, training requirements, and accountability structures."
+    reflection="A policy template is a starting point for your institution's conversation, not a substitute for it. The hardest governance questions are the ones these templates leave open."
 >
     {sorted.map((entry) => (
         <a href={`/policies/${entry.id}/`} class="nav-card">

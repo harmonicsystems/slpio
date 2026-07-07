@@ -16,6 +16,7 @@ const relevanceColors: Record<string, string> = {
     title="Research <span class='accent'>Digests</span>"
     label="Evidence Base"
     description="Structured summaries of peer-reviewed research relevant to AI use in speech-language pathology. Each digest explains what the study found and why it matters for clinical practice."
+    reflection="Research here is early-stage and mostly from adjacent fields. Apply the same evidence-appraisal skills you use with any emerging literature."
 >
     {sorted.map((entry) => (
         <a href={`/research/${entry.id}/`} class="nav-card">

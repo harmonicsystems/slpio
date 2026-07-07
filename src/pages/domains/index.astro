@@ -10,6 +10,7 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
     title="Clinical <span class='accent'>Domains</span>"
     label="Clinical Specialties"
     description="Deep dives into each clinical area across the SLP scope of practice. Each domain covers LLM strengths, limitations, goal examples, and cross-references to relevant tasks and settings."
+    reflection="LLMs have uneven coverage across clinical domains. Some areas are well-represented in training data. Others are not. Notice where the model's confidence outstrips its competence — that gap is where your clinical judgment matters most."
 >
     {sorted.map((entry) => (
         <a href={`/domains/${entry.id}/`} class="nav-card">

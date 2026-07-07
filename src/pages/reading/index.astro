@@ -1,0 +1,337 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Reading LLM-Generated Clinical Writing" description="Develop the skill of critically reading LLM-generated clinical text — your own and others'.">
+    <section>
+        <div class="section-header">
+            <div class="section-label">New Section</div>
+            <h2>Reading LLM-Generated <span class="accent">Clinical Writing</span></h2>
+            <p class="section-intro">Most clinicians are developing this skill informally and privately. This section makes it explicit, shared, and craft-based.</p>
+        </div>
+    </section>
+
+    <!-- ── Why This Matters ── -->
+    <section id="why">
+        <div class="reading-content">
+            <h3><i class="ph-duotone ph-eyeglasses"></i> Why This Matters</h3>
+            <p>LLM-generated clinical writing is a new kind of artifact. It isn't your writing and it isn't the machine's writing — it's a collaboration that inherits the strengths and blind spots of both your prompt and the model's training data.</p>
+            <p>Most clinicians are already developing the skill of reading this writing critically. They notice when a goal sounds right but isn't performable. They catch when a progress note adds clinical interpretations that weren't in the raw data. They recognize when the phrasing is too smooth for the complexity of the case.</p>
+            <p>This section names that skill and makes it shareable. The goal isn't suspicion — it's the same clinical precision you'd bring to any professional document that carries your name.</p>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Common Patterns ── -->
+    <section id="patterns">
+        <div class="reading-content">
+            <h3><i class="ph-duotone ph-magnifying-glass"></i> Common Patterns in LLM Clinical Writing</h3>
+            <p class="reading-stub">This section is in development. We are collecting and categorizing patterns in LLM-generated clinical text — the recurring shapes that show up across models, settings, and clinical domains.</p>
+            <div class="pattern-preview">
+                <div class="pattern-item">
+                    <strong>Confidence without specificity</strong>
+                    <span>Fluent, assertive phrasing that masks vague or generic clinical content</span>
+                </div>
+                <div class="pattern-item">
+                    <strong>Invented consistency</strong>
+                    <span>Adding clinical details to make a narrative cohere when the input data was incomplete</span>
+                </div>
+                <div class="pattern-item">
+                    <strong>Default to deficit</strong>
+                    <span>Framing that defaults to deficit-based language even when the prompt was strengths-oriented</span>
+                </div>
+                <div class="pattern-item">
+                    <strong>Performability gap</strong>
+                    <span>Goals that are measurable on paper but not observable or achievable in the actual clinical context</span>
+                </div>
+            </div>
+            <p class="reading-stub">More patterns coming. <a href="#submit">Contributions welcome.</a></p>
+        </div>
+    </section>
+
+    <div class="section-divider"><hr/></div>
+
+    <!-- ── Submit a Specimen ── -->
+    <section id="submit">
+        <div class="reading-content">
+            <h3><i class="ph-duotone ph-flask"></i> Submit a Specimen</h3>
+            <p>Have an LLM-generated clinical artifact you've been thinking about? Share it here. Your noticings help build the field's shared vocabulary for reading AI-assisted clinical writing.</p>
+
+            <div class="phi-warning">
+                <i class="ph-duotone ph-shield-warning"></i>
+                <div>
+                    <strong>Do not include any Protected Health Information (PHI).</strong>
+                    <p>No client names, dates of birth, locations, medical record numbers, or any details that could identify a real person. De-identify everything before submitting. This form is not HIPAA-compliant.</p>
+                </div>
+            </div>
+
+            <p class="form-note">All submissions are reviewed by a clinician. Nothing is published without explicit permission.</p>
+
+            <form id="specimen-form" class="specimen-form" novalidate>
+                <div class="form-group">
+                    <label for="output">1. What did the LLM output?</label>
+                    <p class="form-hint">Paste the LLM-generated text. <strong>Remove ALL identifying information first.</strong></p>
+                    <textarea id="output" name="output" rows="6" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>2. LEGIBLE: Could you interpret what it said clinically?</label>
+                    <p class="form-hint">Was the output readable and interpretable from a clinical perspective?</p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="legible" value="Yes" required /> Yes</label>
+                        <label class="radio-label"><input type="radio" name="legible" value="Partially" /> Partially</label>
+                        <label class="radio-label"><input type="radio" name="legible" value="No" /> No</label>
+                    </div>
+                    <textarea name="legible-explain" rows="2" placeholder="Explain..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>3. LEGITIMATE: Was it within physiological/clinical bounds?</label>
+                    <p class="form-hint">Was the content clinically accurate and within the bounds of what's physiologically or developmentally plausible?</p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="legitimate" value="Yes" required /> Yes</label>
+                        <label class="radio-label"><input type="radio" name="legitimate" value="Partially" /> Partially</label>
+                        <label class="radio-label"><input type="radio" name="legitimate" value="No" /> No</label>
+                    </div>
+                    <textarea name="legitimate-explain" rows="2" placeholder="Explain..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>4. MECHANISM: What constraint do you think triggered this output?</label>
+                    <p class="form-hint">Select all that apply, or describe your own hypothesis.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" name="mechanism" value="Vague prompt" /> Vague prompt</label>
+                        <label class="checkbox-label"><input type="checkbox" name="mechanism" value="Underrepresented population" /> Underrepresented population</label>
+                        <label class="checkbox-label"><input type="checkbox" name="mechanism" value="Domain gap" /> Domain gap</label>
+                        <label class="checkbox-label"><input type="checkbox" name="mechanism" value="Tokenization artifact" /> Tokenization artifact</label>
+                    </div>
+                    <textarea name="mechanism-other" rows="2" placeholder="Other mechanism or additional context..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>5. What did you do with it?</label>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="action" value="Used as-is" required /> Used as-is</label>
+                        <label class="radio-label"><input type="radio" name="action" value="Modified" /> Modified</label>
+                        <label class="radio-label"><input type="radio" name="action" value="Discarded" /> Discarded</label>
+                        <label class="radio-label"><input type="radio" name="action" value="Used to troubleshoot" /> Used to troubleshoot</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="context">6. Client population/context (deidentified)</label>
+                    <p class="form-hint">AAC? Voice? Aphasia? Age range? Setting? <strong>No identifying information.</strong> Use general descriptors only.</p>
+                    <textarea id="context" name="context" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Open in email</button>
+                <p class="form-hint" style="margin-top: 0.5rem;">Clicking submit will open your email client with the form data pre-filled. Review before sending.</p>
+            </form>
+        </div>
+    </section>
+
+
+</BaseLayout>
+
+<script is:inline>
+    document.getElementById('specimen-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = e.target;
+        var data = new FormData(form);
+
+        var lines = [];
+        lines.push('=== SPECIMEN SUBMISSION ===\n');
+        lines.push('1. LLM OUTPUT:\n' + (data.get('output') || '(empty)') + '\n');
+        lines.push('2. LEGIBLE: ' + (data.get('legible') || '(not selected)'));
+        lines.push('   Explain: ' + (data.get('legible-explain') || '(none)') + '\n');
+        lines.push('3. LEGITIMATE: ' + (data.get('legitimate') || '(not selected)'));
+        lines.push('   Explain: ' + (data.get('legitimate-explain') || '(none)') + '\n');
+
+        var mechanisms = data.getAll('mechanism');
+        lines.push('4. MECHANISM: ' + (mechanisms.length ? mechanisms.join(', ') : '(none selected)'));
+        lines.push('   Other: ' + (data.get('mechanism-other') || '(none)') + '\n');
+
+        lines.push('5. ACTION: ' + (data.get('action') || '(not selected)') + '\n');
+        lines.push('6. CONTEXT: ' + (data.get('context') || '(none)'));
+
+        var subject = encodeURIComponent('SLP/IO Specimen Submission');
+        var body = encodeURIComponent(lines.join('\n'));
+        window.location.href = 'mailto:harmonicsystems.io@gmail.com?subject=' + subject + '&body=' + body;
+    });
+</script>
+
+<style>
+    .reading-content {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .reading-content h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+    }
+
+    .reading-content h3 i {
+        font-size: 1.3rem;
+        color: var(--primary);
+    }
+
+    .reading-content p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--dark);
+        margin-bottom: 1rem;
+    }
+
+    .reading-content p.reading-stub {
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .pattern-preview {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+    }
+
+    .pattern-item {
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--secondary);
+    }
+
+    .pattern-item strong {
+        display: block;
+        font-size: 0.88rem;
+        margin-bottom: 0.25rem;
+        color: var(--dark);
+    }
+
+    .pattern-item span {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    .phi-warning {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+        background: rgba(191, 54, 54, 0.06);
+        border: 1px solid rgba(191, 54, 54, 0.2);
+        border-radius: var(--radius);
+        margin-bottom: 1.5rem;
+    }
+
+    .phi-warning i {
+        font-size: 1.5rem;
+        color: var(--accent-red);
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+    .phi-warning strong {
+        display: block;
+        font-size: 0.88rem;
+        color: var(--accent-red);
+        margin-bottom: 0.25rem;
+    }
+
+    .phi-warning p {
+        font-size: 0.82rem !important;
+        line-height: 1.5 !important;
+        color: var(--text-muted) !important;
+        margin: 0 !important;
+    }
+
+    /* ── Form Styles ── */
+    .specimen-form {
+        margin-top: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.75rem;
+    }
+
+    .form-group > label {
+        display: block;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 0.25rem;
+    }
+
+    .form-hint {
+        font-size: 0.78rem !important;
+        color: var(--text-muted) !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .form-note {
+        font-size: 0.82rem !important;
+        color: var(--text-muted) !important;
+        border-left: 2px solid var(--border);
+        padding-left: 1rem;
+        font-style: italic;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        resize: vertical;
+        background: var(--light);
+        color: var(--dark);
+        transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+    }
+
+    .radio-group, .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .radio-label, .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.82rem;
+        color: var(--dark);
+        cursor: pointer;
+    }
+
+    .radio-label input, .checkbox-label input {
+        accent-color: var(--primary);
+    }
+
+    .specimen-form .btn-primary {
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .radio-group, .checkbox-group {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+</style>

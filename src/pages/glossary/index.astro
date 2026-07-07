@@ -10,6 +10,7 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
     title="<span class='accent'>Glossary</span>"
     label="Bridge the Gap"
     description="SLPs know 'pragmatics' but not 'temperature.' Developers know 'hallucination' but not 'functional communication.' Each term is defined from both directions."
+    reflection="Terminology shapes thinking. When an LLM 'hallucinates,' we use a metaphor that obscures the mechanism. Both the clinical and technical vocabularies deserve scrutiny."
 >
     {sorted.map((entry) => (
         <a href={`/glossary/${entry.id}/`} class="nav-card">

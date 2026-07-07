@@ -21,6 +21,7 @@ const categoryColors: Record<string, string> = {
     title="Prompt <span class='accent'>Library</span>"
     label="Prompts"
     description="Each prompt is an inventory of what competent clinicians know: IDEA requirements, measurement design, population-specific considerations, ethical boundaries. Learning to write a better prompt means learning to articulate your clinical reasoning. The AI is just the medium."
+    reflection="A well-structured prompt produces well-structured output. That doesn't mean it knows your client. Read what comes back the way you'd read a student clinician's draft — with respect for the structure and precision about where it misses."
 >
     {sorted.map((entry) => (
         <a href={`/prompts/${entry.id}/`} class="nav-card">

@@ -1,0 +1,136 @@
+---
+import ContentLayout from '../../layouts/ContentLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('aiupdates');
+    return entries.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const riskColors: Record<string, string> = {
+    'info': 'var(--primary)',
+    'caution': 'var(--accent-amber)',
+    'critical': 'var(--accent-red)',
+};
+
+const modelColors: Record<string, string> = {
+    'chatgpt': '#10a37f',
+    'claude': '#d97706',
+    'gemini': '#4285f4',
+    'deepseek': '#1a73e8',
+    'copilot': '#0078d4',
+    'other': 'var(--text-muted)',
+    'all': 'var(--primary)',
+};
+
+function formatDate(date: Date): string {
+    // timeZone UTC: frontmatter date-only values parse as UTC midnight;
+    // formatting in local time would drift every date a day early.
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<ContentLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    label="AI Updates"
+    breadcrumbs={[{ label: 'AI Updates', href: '/ai-updates/' }]}
+>
+    <div class="update-meta">
+        <span class="meta-date">{formatDate(entry.data.date)}</span>
+        <span class="meta-risk" style={`background: ${riskColors[entry.data.riskLevel]}15; color: ${riskColors[entry.data.riskLevel]};`}>
+            {entry.data.riskLevel}
+        </span>
+        {entry.data.models.map((model) => (
+            <span class="meta-model" style={`background: ${modelColors[model] || 'var(--text-muted)'}15; color: ${modelColors[model] || 'var(--text-muted)'};`}>
+                {model}
+            </span>
+        ))}
+        {entry.data.categories.map((cat) => (
+            <span class="meta-cat">{cat}</span>
+        ))}
+    </div>
+
+    <div class="clinical-impact-box">
+        <strong>Clinical Impact:</strong> {entry.data.clinicalImpact}
+    </div>
+
+    <Content />
+
+    <div class="update-footer">
+        <p><strong>Related:</strong>
+            <a href="/foundations/phi-safety/">PHI Safety Checker</a> ·
+            <a href="/foundations/comparison-matrix/">Model Comparison Matrix</a> ·
+            <a href="/foundations/model-reference/">Model Reference Guide</a>
+        </p>
+    </div>
+</ContentLayout>
+
+<style is:global>
+    .update-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        margin-bottom: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .meta-date {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-right: 0.5rem;
+    }
+
+    .meta-risk, .meta-model, .meta-cat {
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
+    }
+
+    .meta-cat {
+        background: var(--secondary);
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+    }
+
+    .clinical-impact-box {
+        padding: 1rem 1.25rem;
+        background: rgba(231, 76, 60, 0.05);
+        border-left: 4px solid var(--accent-red);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        margin-bottom: 2rem;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--dark);
+    }
+
+    .clinical-impact-box strong { color: var(--accent-red); }
+
+    .update-footer {
+        margin-top: 2rem;
+        padding: 1rem 1.25rem;
+        background: var(--secondary);
+        border-radius: var(--radius);
+        font-size: 0.82rem;
+        color: var(--text-muted);
+    }
+
+    .update-footer a {
+        color: var(--primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--primary);
+    }
+</style>

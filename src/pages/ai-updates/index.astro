@@ -1,0 +1,111 @@
+---
+import SectionIndexLayout from '../../layouts/SectionIndexLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('aiupdates');
+const sorted = entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const riskColors: Record<string, string> = {
+    'info': 'var(--primary)',
+    'caution': 'var(--accent-amber)',
+    'critical': 'var(--accent-red)',
+};
+
+const modelColors: Record<string, string> = {
+    'chatgpt': '#10a37f',
+    'claude': '#d97706',
+    'gemini': '#4285f4',
+    'deepseek': '#1a73e8',
+    'copilot': '#0078d4',
+    'other': 'var(--text-muted)',
+    'all': 'var(--primary)',
+};
+
+function formatDate(date: Date): string {
+    // timeZone UTC: frontmatter date-only values parse as UTC midnight;
+    // formatting in local time would drift every date a day early.
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<SectionIndexLayout
+    title="AI Model <span class='accent'>Updates</span>"
+    label="Stay Current"
+    description="Breaking changes, privacy updates, and policy shifts that affect how SLPs use AI tools. Each update includes what changed, why it matters clinically, and what to do about it."
+    reflection="Model updates change what the tool can do. They don't change what your client needs. Read these for what they mean for your specific clinical decisions."
+>
+    {sorted.map((entry) => (
+        <a href={`/ai-updates/${entry.id}/`} class={`nav-card update-card risk-${entry.data.riskLevel}`}>
+            <div class="update-header">
+                <span class="update-date">{formatDate(entry.data.date)}</span>
+                <span class="risk-tag" style={`background: ${riskColors[entry.data.riskLevel]}15; color: ${riskColors[entry.data.riskLevel]};`}>
+                    {entry.data.riskLevel}
+                </span>
+            </div>
+            <div style="display:flex; gap:0.35rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                {entry.data.models.map((model) => (
+                    <span class="model-tag" style={`background: ${modelColors[model] || 'var(--text-muted)'}15; color: ${modelColors[model] || 'var(--text-muted)'};`}>
+                        {model}
+                    </span>
+                ))}
+                {entry.data.categories.map((cat) => (
+                    <span class="cat-tag">{cat}</span>
+                ))}
+            </div>
+            <h3>{entry.data.title}</h3>
+            <p class="clinical-impact">{entry.data.clinicalImpact}</p>
+        </a>
+    ))}
+</SectionIndexLayout>
+
+<style>
+    .update-card.risk-critical {
+        border-left: 4px solid var(--accent-red);
+    }
+
+    .update-card.risk-caution {
+        border-left: 4px solid var(--accent-amber);
+    }
+
+    .update-card.risk-info {
+        border-left: 4px solid var(--primary);
+    }
+
+    .update-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .update-date {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+    }
+
+    .risk-tag, .model-tag, .cat-tag {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 99px;
+    }
+
+    .cat-tag {
+        background: var(--secondary);
+        color: var(--text-muted);
+    }
+
+    .clinical-impact {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-style: italic;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+    }
+</style>

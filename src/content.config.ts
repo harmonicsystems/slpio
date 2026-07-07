@@ -225,6 +225,37 @@ const goals = defineCollection({
   }),
 });
 
+// ── Reading LLM Writing ──
+
+const reading = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/reading' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number(),
+  }),
+});
+
+// ── AI Updates Feed ──
+
+const aiupdates = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/ai-updates' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    models: z.array(z.enum([
+      'chatgpt', 'claude', 'gemini', 'deepseek', 'copilot', 'other', 'all',
+    ])),
+    riskLevel: z.enum(['info', 'caution', 'critical']),
+    categories: z.array(z.enum([
+      'privacy', 'accuracy', 'features', 'pricing', 'baa', 'policy', 'new-model',
+    ])),
+    clinicalImpact: z.string(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   foundations,
   tasks,
@@ -240,4 +271,6 @@ export const collections = {
   research,
   policies,
   goals,
+  aiupdates,
+  reading,
 };

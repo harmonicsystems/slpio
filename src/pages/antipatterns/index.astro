@@ -16,6 +16,7 @@ const severityColors: Record<string, string> = {
     title="Anti<span class='accent'>patterns</span>"
     label="What Not to Do"
     description="Concrete before-and-after examples of bad LLM use in clinical practice. Each antipattern shows what went wrong, why the model produced it, and exactly how to fix it."
+    reflection="These examples show output that looks plausible but fails clinically. The harder question: would you catch the problem if you were tired, behind on paperwork, and the phrasing was smooth?"
 >
     {sorted.map((entry) => (
         <a href={`/antipatterns/${entry.id}/`} class="nav-card">

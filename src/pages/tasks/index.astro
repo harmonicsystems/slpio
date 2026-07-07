@@ -10,6 +10,7 @@ const sorted = entries.sort((a, b) => a.data.order - b.data.order);
     title="<span class='accent'>Tasks</span>"
     label="Workflows by Task"
     description="The 'I need to do X right now' entry point. Each task includes domain-specific guidance, prompt templates, and before/after examples."
+    reflection="The task you're doing right now has constraints the tool doesn't know: your caseload, the report due tomorrow, the family who needs plain language. The output may be structurally correct and still miss the context that makes it useful."
 >
     {sorted.map((entry) => (
         <a href={`/tasks/${entry.id}/`} class="nav-card">
